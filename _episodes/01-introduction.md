@@ -1,15 +1,13 @@
 ---
 title: "Introduction"
-teaching: 0
+teaching: 5
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "Who is teaching?"
+- "What is the schedule?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Explain the overall content and in more detail the content of todays lesson."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
 ---
-FIXME
 
 {% include links.md %}
-
