@@ -50,9 +50,24 @@ Melissa notices that assignment also returns the value.
 ## Unicode
 
 In julia also unicode characters are allowed as variables like `α = 2`.
-Where unicode characters can be entered by a backslash followed by their LaTeX-name and then pressing <kdb>tab</kdb> (in this case `\alpha`<kdb>tab</kdb>).
+Where unicode characters can be entered by a backslash followed by their LaTeX-name and then pressing <kbd>tab</kbd> (in this case `\alpha`<kbd>tab</kbd>).
 
+## REPL-modes
 
+Unfortunately Melissa can't remember the LaTeX name of ∂ so she copies the character, presses <kbd>?</kbd> to enter the help mode, pastes the character and gets
+~~~
+help?> ∂
+"∂" can be typed by \partial<tab>
+~~~
+{: .output}
+
+Great! This way she can easily look up the names she needs.
+She gets back to normal mode by pressing backspace.
+
+Another useful mode is the shell mode that can be entered by pressing <kbd>;</kbd>.
+It can be used to use commands of the underlying shell, but don't confuse it with an actual shell: Special shell syntax like piping won't work.
+
+Finally there is the package mode that is enetered with <kbd>]</kbd> which is used for package management, which will be covered later on.
 
 {% include links.md %}
 
