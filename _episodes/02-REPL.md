@@ -18,6 +18,8 @@ keypoints:
 
 ---
 
+## Variables
+
 After downloading and executing a julia binary from https://julialang.org Melissa and her classmates face the so called REPL, which stands for <u>r</u>ead-<u>e</u>valuate-<u>p</u>rint-<u>l</u>oop.
 The first thing they try is to perform basic arithmetic operations
 ~~~
@@ -44,4 +46,13 @@ distance_x_2 = 2 * distance
 {: .output}
 
 Melissa notices that assignment also returns the value.
+
+## Unicode
+
+In julia also unicode characters are allowed as variables like `α = 2`.
+Where unicode characters can be entered by a backslash followed by their LaTeX-name and then pressing <kdb>tab</kdb> (in this case `\alpha`<kdb>tab</kdb>).
+
+
+
 {% include links.md %}
+
