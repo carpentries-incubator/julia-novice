@@ -21,7 +21,7 @@ Melissa enters the package mode by pressing <kbd>]</kbd>.
 The `julia>` prompt becomes a blue prompt that reads the julia version that Melissa is running.
 After consulting the [documentation](https://julialang.github.io/Pkg.jl/v1/) she knows that the prompt is showing the currently activated environment and that this is the global environment that is activated by default.
 
-However, she don't want to clutter the global environment when working on her project, so she creates a new environment via
+However, she doesn't want to clutter the global environment when working on her project, so she creates a new environment via
 ~~~
 (v1.x) pkg> activate projects/trebuchet
 ~~~
