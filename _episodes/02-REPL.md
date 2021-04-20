@@ -18,6 +18,8 @@ keypoints:
 
 ---
 
+# Entering the REPL
+
 ## Variables
 
 After downloading and executing a julia binary from https://julialang.org Melissa and her classmates face the so called REPL, which stands for <u>r</u>ead-<u>e</u>valuate-<u>p</u>rint-<u>l</u>oop.
