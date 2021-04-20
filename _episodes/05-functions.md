@@ -1,5 +1,5 @@
 ---
-title: "Using functions"
+title: "Write functions!"
 teaching: 30
 exercises: 0
 questions:
@@ -9,3 +9,66 @@ keypoints:
 
 {% include links.md %}
 
+## Working with functions
+
+Now that Melissa successfully installed the package she wants to figure out what she can do with it.
+
+Julias `Base` module offers a handy function for inspecting other modules called `names`.
+Let's look at its docstring:
+~~~
+help?> names
+    
+    names(x::Module; all::Bool = false, imported::Bool = false)
+    
+    Get an array of the names exported by a Module, excluding deprecated names. If all is true, then the list also includes non-exported names defined in the module, deprecated names, and compiler-generated names. If imported
+    is true, then names explicitly imported from other modules are also included.
+
+    As a special case, all names defined in Main are considered "exported", since it is not idiomatic to explicitly export names from Main.
+~~~
+{. :language-julia}
+TODO: mention positional and keyword arguments
+
+Thus Melissa executes
+~~~
+julia> names(Trebuchet)
+6-element Vector{Symbol}:
+ :Trebuchet
+ :TrebuchetState
+ :run
+ :shoot
+ :simulate
+ :visualise
+~~~
+{. :language-julia}
+
+which yields the exportet names of the `Trebuchet` module.
+By convention types are named with _CamelCase_ while functions typically have _snake_case_.
+Since Melissa is interested in simulating shots, she looks at the `shoot` function
+~~~
+help?> shoot
+
+  shoot(ws, angle, w)
+  shoot((ws, angle, w))
+
+  Shoots a Trebuchet with weight w. Releases the weight at the release angle angle in radians. The current wind speed is ws. Returns (t, dist), with travel time t and travelled distance dist.
+~~~
+{. :language-julia}
+TODO: mention different methods
+
+Now she is ready to fire the first shot
+~~~
+julia> shoot(5, 0.5pi, 500)
+(TrebuchetState(Trebuchet.Lengths{Float64}(1.524, 2.0702016, 0.5334, 0.6096, 2.0826984, 0.8311896, 0.037947600000000005), Trebuchet.Masses{Float64}(226.796185, 0.14877829736, 4.8307587405), Trebuchet.Angles{Float64}(0.4492813368925445, -0.34499997443128777, 1.9490898485992505), Trebuchet.AnglularVelocities{Float64}(-14.146925121405534, 24.535174583729475, -3.056176246186392), Trebuchet.Constants{Float64}(5.0, 1.0, 1.0, 9.80665, 1.5707963267948966), Trebuchet.Inertias{Float64}(0.042140110093804806, 2.7288719786342384), Val{:End}(), 60.0, Trebuchet.Vec(10.261244089343178, -1.5239999999999965), Trebuchet.Vec(3.503567261141993, -21.199573034412225), Solution(375)
+, 0, Val{:Released}()), 10.261244089343178)
+~~~
+{. :language-julia}
+
+That is a lot of output, but Melissa is actually only interested in the distance, which is the second element of the tuple that was returned.
+So she tries again and graps the second element this time
+~~~
+julia> shoot(5, 0.5pi, 500)[2]
+10.261244089343178
+~~~
+{. :language-julia}
+
+which means the shot travelled approximately 10.26m.
