@@ -37,7 +37,12 @@ help?> names
 > Positional and keyword arguments are separated by a semi-colon.
 {: .callout}
 
-TODO: question about how calling `names` with keyword argument would look like
+> ## Calling with keyword arguments
+> Suppose Melissa wanted to get `all` names of the `Trebuchet` module, what would the call look like?
+{: .challange}
+
+> `names(Trebuchet, all = true)`
+{: .solution}
 
 Thus Melissa executes
 ~~~
