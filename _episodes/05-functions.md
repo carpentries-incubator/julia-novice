@@ -76,21 +76,21 @@ help?> shoot
 
 Now she is ready to fire the first shot
 ~~~
-julia> shoot(5, 0.5pi, 500)
-(TrebuchetState(Trebuchet.Lengths{Float64}(1.524, 2.0702016, 0.5334, 0.6096, 2.0826984, 0.8311896, 0.037947600000000005), Trebuchet.Masses{Float64}(226.796185, 0.14877829736, 4.8307587405), Trebuchet.Angles{Float64}(0.4492813368925445, -0.34499997443128777, 1.9490898485992505), Trebuchet.AnglularVelocities{Float64}(-14.146925121405534, 24.535174583729475, -3.056176246186392), Trebuchet.Constants{Float64}(5.0, 1.0, 1.0, 9.80665, 1.5707963267948966), Trebuchet.Inertias{Float64}(0.042140110093804806, 2.7288719786342384), Val{:End}(), 60.0, Trebuchet.Vec(10.261244089343178, -1.5239999999999965), Trebuchet.Vec(3.503567261141993, -21.199573034412225), Solution(375)
-, 0, Val{:Released}()), 10.261244089343178)
+julia> shoot(5, 0.25pi, 500)
+(TrebuchetState(Trebuchet.Lengths{Float64}(1.524, 2.0702016, 0.5334, 0.6096, 2.0826984, 0.8311896, 0.037947600000000005), Trebuchet.Masses{Float64}(226.796185, 0.14877829736, 4.8307587405), Trebuchet.Angles{Float64}(-0.5033953025972455, 1.322643200282786, 1.4614900249109948), Trebuchet.AnglularVelocities{Float64}(-5.571655186015145, 7.720538762011071, -25.384361188794127), Trebuchet.Constants{Float64}(5.0, 1.0, 1.0, 9.80665, 0.7853981633974482), Trebuchet.Inertias{Float64}(0.042140110093804806, 2.7288719786342384), Val{:End}(), 60.0, Trebuchet.Vec(117.8468674726198, -1.5239999999999974), Trebuchet.Vec(10.790333612654146, -21.45379494231241), Solution(394)
+, 0, Val{:Released}()), 117.8468674726198)
 ~~~
 {. :language-julia}
 
 That is a lot of output, but Melissa is actually only interested in the distance, which is the second element of the tuple that was returned.
 So she tries again and grabs the second element this time
 ~~~
-julia> shoot(5, 0.5pi, 500)[2]
-10.261244089343178
+julia> shoot(5, 0.25pi, 500)[2]
+117.8468674726198
 ~~~
 {. :language-julia}
 
-which means the shot traveled approximately 10.26m.
+which means the shot traveled approximately 118m.
 
 ### Defining functions
 
@@ -108,4 +108,22 @@ julia> function shoot_distance(windspeed, angle, weight)
 > But she could have used an explicit return and the function would behave the same.
 {: .callout}
 
+### Anonymous functions
 
+Sometimes it is useful to have a new function and not having to come up with a new name.
+These are _anonymous functions_.
+They can be defined by either with the so called stabby lambda notation
+
+~~~
+julia> (windspeed, angle, weight) -> shoot(windspeed, angle, weight)[2]
+~~~
+{: .language-julia}
+
+or in the long form, by omitting the name:
+
+~~~
+julia> function (windspeed, angle, weight)
+           shoot(windspeed, angle, weight)[2]
+       end
+~~~
+{: .language-julia}

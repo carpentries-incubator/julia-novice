@@ -20,7 +20,7 @@
 		"body": ["~~~",
 			"$1",
 			"~~~",
-			"{. :language-julia}"
+			"{: .language-julia}"
 		]
 	}
 
@@ -29,7 +29,7 @@
 		"body": ["~~~",
 			"$1",
 			"~~~",
-			"{. :output}"
+			"{: .output}"
 		]
 	}
 }
