@@ -26,7 +26,18 @@ help?> names
     As a special case, all names defined in Main are considered "exported", since it is not idiomatic to explicitly export names from Main.
 ~~~
 {. :language-julia}
-TODO: mention positional and keyword arguments
+> ## Positional and keyword arguments
+> Let's take a closer look at the signature of the `names` function.
+> In julia we have two types of arguments:
+> 1. _Positional arguments_ are determined by their position and thus the order in which arguments are given to the function matters.
+>  The `names` function has one positional argument `x` of type `Module`.
+> 2. _Keyword arguments_ are passed as a combination of the keyword and the value to the function.
+> They can be given in any order, but they need to have a default value.
+> The `names` function has two keyword arguments `all` and `imported` which are both of type `Bool` and default to `false`.
+> Positional and keyword arguments are separated by a semi-colon.
+{: .callout}
+
+TODO: question about how calling `names` with keyword argument would look like
 
 Thus Melissa executes
 ~~~
@@ -41,7 +52,7 @@ julia> names(Trebuchet)
 ~~~
 {. :language-julia}
 
-which yields the exportet names of the `Trebuchet` module.
+which yields the exported names of the `Trebuchet` module.
 By convention types are named with _CamelCase_ while functions typically have _snake_case_.
 Since Melissa is interested in simulating shots, she looks at the `shoot` function
 ~~~
@@ -50,10 +61,13 @@ help?> shoot
   shoot(ws, angle, w)
   shoot((ws, angle, w))
 
-  Shoots a Trebuchet with weight w. Releases the weight at the release angle angle in radians. The current wind speed is ws. Returns (t, dist), with travel time t and travelled distance dist.
+  Shoots a Trebuchet with weight w. Releases the weight at the release angle angle in radians. The current wind speed is ws. Returns (t, dist), with travel time t and traveled distance dist.
 ~~~
 {. :language-julia}
-TODO: mention different methods
+> ## Methods
+> Here we see, that the `shoot` function has two different _methods_.
+> The first one takes three arguments, while the second takes a `Tuple` with three elements.
+{: .callout}
 
 Now she is ready to fire the first shot
 ~~~
@@ -64,11 +78,29 @@ julia> shoot(5, 0.5pi, 500)
 {. :language-julia}
 
 That is a lot of output, but Melissa is actually only interested in the distance, which is the second element of the tuple that was returned.
-So she tries again and graps the second element this time
+So she tries again and grabs the second element this time
 ~~~
 julia> shoot(5, 0.5pi, 500)[2]
 10.261244089343178
 ~~~
 {. :language-julia}
 
-which means the shot travelled approximately 10.26m.
+which means the shot traveled approximately 10.26m.
+
+### Defining functions
+
+Melissa wants to make her future work easier and she fears she might forget to take the second element.
+That's why she puts it together in a _function_ like this:
+~~~
+julia> function shoot_distance(windspeed, angle, weight)
+           shoot(windspeed, angle, weight)[2]
+       end
+~~~
+{. :language-julia}
+
+> ## Implicit return
+> Note that Melissa didn't have to use the `return` keyword, since in julia the value of the last line will be returned by default.
+> But she could have used an explicit return and the function would behave the same.
+{: .callout}
+
+
