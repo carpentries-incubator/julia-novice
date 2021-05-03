@@ -90,12 +90,12 @@ We can check this at the REPL:
 ~~~
 julia> 1.0 isa Float64
 ~~~
-{. :language-julia}
+{: .language-julia}
 
 ~~~
 true
 ~~~
-{. :output}
+{: .output}
 
 All the other types are _abstract_ types that are used to adress groups of types.
 For example, if we declare a variable as `a::Real` then it can be bound to any value that is a subtype of `Real`.
@@ -104,7 +104,7 @@ Let's quickly check what are all the subtypes of `Real`:
 ~~~
 julia> subtypes(Real)
 ~~~
-{. :language-julia}
+{: .language-julia}
 
 ~~~
 4-element Array{Any,1}:
@@ -113,5 +113,5 @@ julia> subtypes(Real)
  Integer
  Rational
 ~~~
-{. :output}
+{: .output}
 {% include links.md %}

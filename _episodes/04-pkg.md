@@ -25,13 +25,13 @@ However, she doesn't want to clutter the global environment when working on her 
 ~~~
 (v1.x) pkg> activate projects/trebuchet
 ~~~
-{. :language-julia}
+{: .language-julia}
 
 In this environment she adds the `Trebuchet` package by typing
 ~~~
 (trebuchet) pkg> add Trebuchet
 ~~~
-{. :language-julia}
+{: .language-julia}
 
 Melissa quickly recognizes that far more packages are being installed than just `Trebuchet`.
 These are the dependencies of `Trebuchet`.
@@ -47,7 +47,7 @@ Updating `[...]/projects/trebuchet/Project.toml`
   [...]
 
 ~~~
-{. :output}
+{: .output}
 
 she sees that two files were created: `Project.toml` and `Manifest.toml`.
 
