@@ -7,8 +7,6 @@ objectives:
 keypoints:
 ---
 
-{% include links.md %}
-
 ## Working with functions
 
 Now that Melissa successfully installed the package she wants to figure out what she can do with it.
@@ -153,3 +151,5 @@ julia> function (windspeed, angle, weight)
        end
 ~~~
 {: .language-julia}
+
+{% include links.md %}
