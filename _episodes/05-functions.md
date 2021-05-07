@@ -110,6 +110,18 @@ julia> function shoot_distance(windspeed, angle, weight)
 > But she could have used an explicit return and the function would behave the same.
 {: .callout}
 
+### Adding methods
+
+Since Melissa wants to work with the structs `Trebuchet` and `Environment` she adds another convenience method for those
+~~~
+julia> function shoot_distance(trebuchet::Trebuchet, env::Environment)
+           shoot_distance(env.wind, trebuchet.release_angle, trebuchet.counterweight)
+       end    
+~~~
+{: .language-julia} 
+
+This method will call the former method and pass the correct fields from the `Trebuchet` and `Environment` structures.
+
 ### Slurping and splatting
 
 By peeking into the [documentation](https://docs.julialang.org/en/v1/manual/faq/#The-two-uses-of-the-...-operator:-slurping-and-splatting) Melissa discovers that she doesn't need to explicitly declare all the input arguments.
