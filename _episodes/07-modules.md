@@ -55,5 +55,6 @@ shoot_distance([5, ans...])
 ~~~
 {: .language-julia}
 
+Now Melissa can run `include(aim_trebuchet.jl)` in the REPL to execute her code.
 
 {% include links.md %}
