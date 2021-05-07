@@ -79,4 +79,15 @@ julia> subtypes(Real)
 ~~~
 {: .language-julia}
 
+## Creating a subtype
+
+A subtype is created with the subtype operator `<:`, since `Trebuchet` contains several fields Melissa thinks it is a good idea to make it a subtype of `AbstractArray`.
+~~~
+struct Trebuchet <: AbstractArray
+  counterweight::Float64
+  release_angle::Float64
+end
+~~~
+{: .language-julia}
+
 {% include links.md %}
