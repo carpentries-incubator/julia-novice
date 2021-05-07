@@ -23,7 +23,7 @@ Melissa wants to keep the variables corresponding to the trebuchet (`counterweig
 That is why she choses to group them together using `struct`s:
 
 ~~~
-struct Trebuchet
+mutable struct Trebuchet
   counterweight::Float64
   release_angle::Float64
 end
@@ -34,6 +34,9 @@ struct Environment
 end
 ~~~
 {: .language-julia}
+
+`struct`s can be either immutable or mutable.
+The fields of a mutable `struct` can be altered after an instance of this `struct` was created while this is impossible for an immutable `struct`.
 
 ### Types and hierarchy
 
@@ -83,7 +86,7 @@ julia> subtypes(Real)
 
 A subtype is created with the subtype operator `<:`, since `Trebuchet` contains several fields Melissa thinks it is a good idea to make it a subtype of `AbstractArray`.
 ~~~
-struct Trebuchet <: AbstractArray
+mutable struct Trebuchet <: AbstractArray
   counterweight::Float64
   release_angle::Float64
 end
