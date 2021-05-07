@@ -44,43 +44,15 @@ In julia every type can have only one supertype, so lets check how many types ar
 
 ~~~
 julia> supertype(Float64)
-~~~
-{: .language-julia}
-
-~~~
 AbstractFloat
-~~~
-{: .output}
-
-~~~
 julia> supertype(AbstractFloat)
-~~~
-{: .language-julia}
-
-~~~
 Real
-~~~
-{: .output}
-
-~~~
 julia> supertype(Real)
-~~~
-{: .language-julia}
-
-~~~
 Number
-~~~
-{: .output}
-
-~~~
 julia> supertype(Number)
-~~~
-{: .language-julia}
-
-~~~
 Any
 ~~~
-{: .output}
+{: .language-julia}
 
 So we have the relationship `Float64 <: AbstractFloat <: Real <: Number <: Any`, where `<:` means "subtype of".
 
@@ -89,13 +61,9 @@ For example `1.0` is a object of type `Float64`.
 We can check this at the REPL:
 ~~~
 julia> 1.0 isa Float64
-~~~
-{: .language-julia}
-
-~~~
 true
 ~~~
-{: .output}
+{: .language-julia}
 
 All the other types are _abstract_ types that are used to adress groups of types.
 For example, if we declare a variable as `a::Real` then it can be bound to any value that is a subtype of `Real`.
@@ -103,15 +71,12 @@ For example, if we declare a variable as `a::Real` then it can be bound to any v
 Let's quickly check what are all the subtypes of `Real`:
 ~~~
 julia> subtypes(Real)
-~~~
-{: .language-julia}
-
-~~~
 4-element Array{Any,1}:
  AbstractFloat
  AbstractIrrational
  Integer
  Rational
 ~~~
-{: .output}
+{: .language-julia}
+
 {% include links.md %}
