@@ -102,6 +102,7 @@ julia> shoot_distance([5, new_arguments...])
 > ## Explore
 > Play around with different inputs of `N` and `η`.
 > How close can you come?
+{: .discussion}
 
 ### While loops
 
