@@ -57,7 +57,7 @@ Look for the tag ![good_first_issue](https://img.shields.io/badge/-good%20first%
 
 Current maintainers of this lesson are
 
-* [Simon](https://carpentries.org/instructors/): [@BeastyBlacksmith](https://github.com/BeastyBlacksmith)
+* [Simon](https://carpentries.org/instructors/#beastyblacksmith): [@BeastyBlacksmith](https://github.com/BeastyBlacksmith)
 
 
 ## Authors
