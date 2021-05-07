@@ -36,16 +36,17 @@ Melissa uses the `gradient` function of `ForwardDiff.jl` to get the direction in
 
 > ## Do you remember?
 > What does Melissa need to write into the REPL to install the package `ForwardDiff`?
+> 
+>> ## Solution
+>> <kbd>]</kbd> to enter Pkg-mode.
+>> Then 
+>> ~~~
+>> pkg> add ForwardDiff
+>> ~~~
+>> {: .language-julia}
+>{: .solution}
 {: .challenge}
 
-> ##
-> <kbd>]</kbd> to enter Pkg-mode.
-> Then 
-> ~~~
-> pkg> add ForwardDiff
-> ~~~
-> {: .language-julia}
-{: .solution}
 
 Since she can't influence the wind, the only arguments that can vary are the release angle and the mass of the counterweight.
 ~~~

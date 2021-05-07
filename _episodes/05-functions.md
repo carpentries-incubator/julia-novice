@@ -35,14 +35,16 @@ help?> names
 > They can be given in any order, but they need to have a default value.
 > The `names` function has two keyword arguments `all` and `imported` which are both of type `Bool` and default to `false`.
 > Positional and keyword arguments are separated by a semi-colon.
+> 
 {: .callout}
 
 > ## Calling with keyword arguments
 > Suppose Melissa wanted to get `all` names of the `Trebuchet` module, what would the call look like?
+> >## Solution
+> >`names(Trebuchet, all = true)`
+> {: .solution}
 {: .challange}
 
-> `names(Trebuchet, all = true)`
-{: .solution}
 
 Thus Melissa executes
 ~~~
