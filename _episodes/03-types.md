@@ -20,8 +20,15 @@ keypoints:
 ## Structuring variables
 
 Melissa wants to keep the variables corresponding to the trebuchet (`counterweight`, `release_angle`) separate from the variables coming from the environment (`wind`, `target_distance`).
-That is why she choses to group them together using `struct`s:
+That is why she chooses to group them together using _structures_.
+There are two type structures:
+ - immutable structures, whose fields can not be changed after creation
+   - keyword: `struct`
+ - mutable structures, whose fields can change after creation
+   - keyword: `mutable struct`
 
+Since Melissa wants to change the parameters of the trebuchet and uses a `mutable struct` for this.
+But she cannot influence the environment and thus uses a `struct` for it.
 ~~~
 mutable struct Trebuchet
   counterweight::Float64
@@ -34,9 +41,6 @@ struct Environment
 end
 ~~~
 {: .language-julia}
-
-`struct`s can be either immutable or mutable.
-The fields of a mutable `struct` can be altered after an instance of this `struct` was created while this is impossible for an immutable `struct`.
 
 ### Types and hierarchy
 
@@ -82,9 +86,18 @@ julia> subtypes(Real)
 ~~~
 {: .language-julia}
 
+> ## Is it `Real`?
+> What do you think `1.0 isa Real`?
+> > ## Solution
+> > Since `Float64` is a subtype of `Real` `1.0` is also a `Real`.
+>{: .solution}
+{: .challange}
+
+
 ## Creating a subtype
 
-A subtype is created with the subtype operator `<:`, since `Trebuchet` contains several fields Melissa thinks it is a good idea to make it a subtype of `AbstractArray`.
+A concrete type can be made a subtype of an abstract type  with the subtype operator `<:`.
+Since `Trebuchet` contains several fields that are mutable Melissa thinks it is a good idea to make it a subtype of `AbstractArray`.
 ~~~
 mutable struct Trebuchet <: AbstractArray
   counterweight::Float64

@@ -36,7 +36,7 @@ If Melissa does this then her `Trebuchet` type will work with every function in 
 > >     else
 > >         error("Trebuchet only accepts indices 1 and 2, yours is $i")
 > >     end
-> > end  
+> > end
 
 
 ## Loops
@@ -52,12 +52,12 @@ But first Melissa needs a way to improve her parameters.
 > ## Digression: gradients
 > The `shoot_distance` function takes three input parameters and returns one value (the distance).
 > Whenever we change one of the input parameters, we will get a different distance.
-> 
+>
 > The [_gradient_](https://en.wikipedia.org/wiki/Gradient) of a function gives the direction in which the return value will change by the largest amount.
-> 
+>
 > Since the `shoot_distance` function has three input parameters, the gradient of `shoot_distance` will return a 3-element `Array`.
 > One direction for each input parameter.
-> 
+>
 > Thanks to [automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation) and the julia package `ForwardDiff.jl` gradients can be calculated easily.
 {: .quotation}
 
@@ -65,10 +65,10 @@ Melissa uses the `gradient` function of `ForwardDiff.jl` to get the direction in
 
 > ## Do you remember?
 > What does Melissa need to write into the REPL to install the package `ForwardDiff`?
-> 
+>
 >> ## Solution
 >> <kbd>]</kbd> to enter Pkg-mode.
->> Then 
+>> Then
 >> ~~~
 >> pkg> add ForwardDiff
 >> ~~~
