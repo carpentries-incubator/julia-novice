@@ -15,9 +15,9 @@ Julias `Base` module offers a handy function for inspecting other modules called
 Let's look at its docstring:
 ~~~
 help?> names
-    
+
     names(x::Module; all::Bool = false, imported::Bool = false)
-    
+
     Get an array of the names exported by a Module, excluding deprecated names. If all is true, then the list also includes non-exported names defined in the module, deprecated names, and compiler-generated names. If imported
     is true, then names explicitly imported from other modules are also included.
 
@@ -33,20 +33,20 @@ help?> names
 > They can be given in any order, but they need to have a default value.
 > The `names` function has two keyword arguments `all` and `imported` which are both of type `Bool` and default to `false`.
 > Positional and keyword arguments are separated by a semi-colon.
-> 
+>
 {: .callout}
 
 > ## Calling with keyword arguments
-> Suppose Melissa wanted to get `all` names of the `Trebuchet` module, what would the call look like?
+> Suppose Melissa wanted to get `all` names of the `Trebuchets` module, what would the call look like?
 > >## Solution
-> >`names(Trebuchet, all = true)`
+> >`names(Trebuchets, all = true)`
 > {: .solution}
 {: .challange}
 
 
 Thus Melissa executes
 ~~~
-julia> names(Trebuchet)
+julia> names(Trebuchets)
 6-element Vector{Symbol}:
  :Trebuchet
  :TrebuchetState
@@ -57,11 +57,11 @@ julia> names(Trebuchet)
 ~~~
 {: .language-julia}
 
-which yields the exported names of the `Trebuchet` module.
+which yields the exported names of the `Trebuchets` module.
 By convention types are named with _CamelCase_ while functions typically have _snake_case_.
-Since Melissa is interested in simulating shots, she looks at the `shoot` function
+Since Melissa is interested in simulating shots, she looks at the `Trebuchets.shoot` function
 ~~~
-help?> shoot
+help?> Trebuchets.shoot
 
   shoot(ws, angle, w)
   shoot((ws, angle, w))
@@ -85,7 +85,7 @@ julia> shoot(5, 0.25pi, 500)
 That is a lot of output, but Melissa is actually only interested in the distance, which is the second element of the tuple that was returned.
 So she tries again and grabs the second element this time
 ~~~
-julia> shoot(5, 0.25pi, 500)[2]
+julia> Trebuchets.shoot(5, 0.25pi, 500)[2]
 117.8468674726198
 ~~~
 {: .language-julia}
@@ -98,7 +98,7 @@ Melissa wants to make her future work easier and she fears she might forget to t
 That's why she puts it together in a _function_ like this:
 ~~~
 julia> function shoot_distance(windspeed, angle, weight)
-           shoot(windspeed, angle, weight)[2]
+           Trebuchets.shoot(windspeed, angle, weight)[2]
        end
 ~~~
 {: .language-julia}
@@ -114,9 +114,9 @@ Since Melissa wants to work with the structs `Trebuchet` and `Environment` she a
 ~~~
 julia> function shoot_distance(trebuchet::Trebuchet, env::Environment)
            shoot_distance(env.wind, trebuchet.release_angle, trebuchet.counterweight)
-       end    
+       end
 ~~~
-{: .language-julia} 
+{: .language-julia}
 
 This method will call the former method and pass the correct fields from the `Trebuchet` and `Environment` structures.
 
@@ -126,11 +126,11 @@ By peeking into the [documentation](https://docs.julialang.org/en/v1/manual/faq/
 Instead she can _slurp_ the arguments in the function definition and _splat_ them in the function body using three dots (`...`) like this
 ~~~
 julia> function shoot_distance(args...) # slurping
-           shoot(args...)[2] # splatting
+           Trebuchets.shoot(args...)[2] # splatting
        end
 ~~~
 {: .language-julia}
- 
+
 
 ### Anonymous functions
 
@@ -139,7 +139,7 @@ These are _anonymous functions_.
 They can be defined by either with the so called stabby lambda notation
 
 ~~~
-julia> (windspeed, angle, weight) -> shoot(windspeed, angle, weight)[2]
+julia> (windspeed, angle, weight) -> Trebuchets.shoot(windspeed, angle, weight)[2]
 ~~~
 {: .language-julia}
 
@@ -147,7 +147,7 @@ or in the long form, by omitting the name:
 
 ~~~
 julia> function (windspeed, angle, weight)
-           shoot(windspeed, angle, weight)[2]
+           Trebuchets.shoot(windspeed, angle, weight)[2]
        end
 ~~~
 {: .language-julia}

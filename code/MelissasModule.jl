@@ -29,11 +29,11 @@ end
 function shoot_distance(windspeed, angle, weight)
     Trebuchets.shoot(windspeed, angle, weight)[2]
 end
-function shoot_distance(trebuchet::Trebuchet, environment::Environment)
-    Trebuchets.shoot(environment.wind, trebuchet.release_angle, trebuchet.counterweight)[2]
-end
 function shoot_distance(args...)
     Trebuchets.shoot(args...)[2]
+end
+function shoot_distance(trebuchet::Trebuchet, env::Environment)
+    shoot_distance(env.wind, trebuchet.release_angle, trebuchet.counterweight)
 end
 
 function aim(trebuchet::Trebuchet, environment::Environment; ε = 1e-1, η = 0.05)
