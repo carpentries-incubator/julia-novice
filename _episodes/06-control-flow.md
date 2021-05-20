@@ -37,6 +37,9 @@ If Melissa does this then her `Trebuchet` type will work with every function in 
 > >         error("Trebuchet only accepts indices 1 and 2, yours is $i")
 > >     end
 > > end
+> >{: .language-julia}
+> {: .solution}
+{: .challange}
 
 
 ## Loops

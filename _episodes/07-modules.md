@@ -22,9 +22,23 @@ This is what it looks like:
 import Trebuchet as Trebuchets
 using ForwardDiff: gradient
 
-struct Trebuchet
-  counterweight::Float64
-  release_angle::Float64
+export aim, shoot_distance, Trebuchet, Environment
+
+mutable struct Trebuchet{T} <: AbstractVector{T}
+  counterweight::T
+  release_angle::T
+end
+Base.copy(trebuchet::Trebuchet) = Trebuchet(trebuchet.counterweight, trebuchet.release_angle)
+Base.size(trebuchet::Trebuchet) = tuple(2)
+Base.getindex(trebuchet::Trebuchet, i::Int) = getfield(trebuchet, i)
+function Base.setindex!(trebuchet::Trebuchet, v, i::Int)
+    if i === 1
+        trebuchet.counterweight = v
+    elseif i === 2
+        trebuchet.release_angle = v
+    else
+        error("Trebuchet only accepts indices 1 and 2, yours is $i")
+    end
 end
 
 struct Environment
@@ -38,20 +52,25 @@ end
 function shoot_distance(args...)
     Trebuchets.shoot(args...)[2]
 end
-
-function aim(target, arguments; ε = 1e-1, η = 0.05, wind::Float64 = 5.0)
-    new_arguments = copy(arguments)
-    hit = x -> (shoot_distance([wind, x...]) - target)
-    while abs(hit(new_arguments)) > ε
-        grad = gradient(hit, new_arguments)
-        new_arguments -= η * grad
-    end
-    return new_arguments
+function shoot_distance(trebuchet::Trebuchet, env::Environment)
+    shoot_distance(env.wind, trebuchet.release_angle, trebuchet.counterweight)
 end
 
-arguments = [0.25pi, 500]
-aim(100, arguments)
-shoot_distance([5, ans...])
+function aim(trebuchet::Trebuchet, environment::Environment; ε = 1e-1, η = 0.05)
+    better_trebuchet = copy(trebuchet)
+    hit = x -> (shoot_distance([environment.wind, x[2], x[1]]) - environment.target_distance)
+    while abs(hit(better_trebuchet)) > ε
+        grad = gradient(hit, better_trebuchet)
+        better_trebuchet -= η * grad
+    end
+    return Trebuchet(better_trebuchet[1], better_trebuchet[2])
+end
+
+imprecise_trebuchet = Trebuchet(500.0, 0.25pi)
+environment = Environment(5, 100)
+precise_trebuchet = aim(imprecise_trebuchet, environment)
+shoot_distance(precise_trebuchet, environment)
+
 ~~~
 {: .language-julia}
 
