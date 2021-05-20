@@ -3,12 +3,12 @@ title: "Using the package manager"
 teaching: 30
 exercises: 0
 questions:
-- 
+-
 objectives:
-- 
+-
 keypoints:
-- 
-- 
+-
+-
 ---
 
 ## The package manager
@@ -53,4 +53,25 @@ she sees that two files were created: `Project.toml` and `Manifest.toml`.
 
 The project file `Project.toml` only contains the packages needed for her project, while the manifest file `Manifest.toml` records the direct and indirect dependencies as well as their current version, thus providing a fully reproducible record of the code that is actually executed.
 "That is really handy when I want to share my work with the others." thinks Melissa.
+
+## Using and importing packages
+
+Now that Melissa added the package to her environment, she needs to load it.
+Julia provides two keywords for loading packages `using` and `import`.
+
+The difference is that `import` brings only the name of the package into the namespace and then all functions in that package needs the name in front.
+But packages can also define an export list for function names that should be brought into the users namespace when he loads the package with `using`.
+This makes working at the REPL often more convenient.
+
+### Name conflicts
+
+It may happen that name conflicts arise.
+For example defined Melissa a structure named `Trebuchet`, but the package she added to the environment is also named `Trebuchet`.
+Now she would get an error if she tried to `import`/`using` it directly.
+One solution is to rename the package upon `import` with `as`.
+~~~
+import Trebuchet as Trebuchets
+~~~
+{: .language-julia}
+
 {% include links.md %}
