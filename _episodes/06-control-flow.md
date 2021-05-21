@@ -24,22 +24,24 @@ If Melissa does this then her `Trebuchet` type will work with every function in 
 > You don't need to implement the optional methods.
 > We set `IndexStyle(Trebuchet) = IndexLinear()`
 > <!-- TODO: this might be a bit too difficult -->
-> > ## Solution
-> > ~~~
-> > size(trebuchet::Trebuchet) = (1, 2)
-> > getindex(trebuchet::Trebuchet, i::Int) = getfield(trebuchet, i)
-> > function setindex!(trebuchet::Trebuchet, v, i::Int)
-> >     if i === 1
-> >         trebuchet.counterweight = v
-> >     elseif i === 2
-> >         trebuchet.release_angle = v
-> >     else
-> >         error("Trebuchet only accepts indices 1 and 2, yours is $i")
-> >     end
-> > end
-> >{: .language-julia}
-> {: .solution}
-{: .challange}
+>
+>> ## Solution
+>> ~~~
+>> Base.size(trebuchet::Trebuchet) = tuple(2)
+>> Base.getindex(trebuchet::Trebuchet, i::Int) = getfield(trebuchet, i)
+>> function Base.setindex!(trebuchet::Trebuchet, v, i::Int)
+>>     if i === 1
+>>         trebuchet.counterweight = v
+>>     elseif i === 2
+>>         trebuchet.release_angle = v
+>>     else
+>>         error("Trebuchet only accepts indices 1 and 2, yours is $i")
+>>     end
+>> end
+>> ~~~
+>>{: .language-julia}
+>{: .solution}
+{: .challenge}
 
 
 ## Loops
@@ -79,14 +81,13 @@ Melissa uses the `gradient` function of `ForwardDiff.jl` to get the direction in
 >{: .solution}
 {: .challenge}
 
-
-Since she can't influence the wind, the only arguments that can vary are the release angle and the mass of the counterweight.
 ~~~
 julia> using ForwardDiff: gradient
 
-julia> arguments = [0.25pi, 500];
+julia> imprecise_trebuchet = Trebuchet(500.0, 0.25pi);
+julia> environment = Environment(5.0, 100.0);
 
-julia> grad = gradient(x -> (shoot_distance([5, x...]) - 100), arguments)
+julia> grad = gradient(x -> (shoot_distance(x, environment) - environment.target_distance), imprecise_trebuchet)
 2-element Vector{Float64}:
  -47.1917378801788
   -0.022101014146311698
