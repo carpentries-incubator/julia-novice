@@ -81,13 +81,16 @@ Melissa uses the `gradient` function of `ForwardDiff.jl` to get the direction in
 >{: .solution}
 {: .challenge}
 
+<!-- TODO: can we get promotion to Trebuchet here? -->
+<!-- so we can write
+julia> grad = gradient(x -> (shoot_distance(x, environment) - environment.target_distance), imprecise_trebuchet) -->
 ~~~
 julia> using ForwardDiff: gradient
 
 julia> imprecise_trebuchet = Trebuchet(500.0, 0.25pi);
 julia> environment = Environment(5.0, 100.0);
 
-julia> grad = gradient(x -> (shoot_distance(x, environment) - environment.target_distance), imprecise_trebuchet)
+julia> grad = gradient(x -> (shoot_distance([environment.wind, x[2], x[1]] - environment.target_distance), imprecise_trebuchet)
 2-element Vector{Float64}:
  -47.1917378801788
   -0.022101014146311698
@@ -96,8 +99,9 @@ julia> grad = gradient(x -> (shoot_distance(x, environment) - environment.target
 
 Melissa now changes her arguments a little bit in the direction of the gradient and checks the new distance.
 
+<!-- TODO: can we get promotion to Trebuchet here? -->
 ~~~
-julia> new_arguments = arguments - 0.05 * grad;
+julia> better_trebuchet = imprecise_trebuchet - 0.05 * grad;
 
 julia> shoot_distance([5, new_arguments...])
 58.871526223121755
@@ -115,19 +119,19 @@ That got shorter, but also a bit too short.
 Now that Melissa knows it is going in the right direction she wants to automate the additional iterations.
 She writes a new function `aim`, that performs the application of the gradient `N` times.
 ~~~
-julia> function aim(target, arguments; N = 10, η = 0.05, wind::Float64 = 5.0)
-           new_arguments = copy(arguments)
+julia> function aim(trebuchet, environment; N = 10, η = 0.05)
+           better_trebuchet = copy(trebuchet)
            for _ in 1:N
-               grad = gradient(x -> (shoot_distance([wind, x...]) - target), new_arguments)
-               new_arguments -= η * grad
-               # short form of `new_arguments = new_arguments - η * grad`
+               grad = gradient(x -> (shoot_distance([environment.wind, x[2], x[1]]) - environment.target_distance), better_trebuchet)
+               better_trebuchet -= η * grad
+               # short form of `better_trebuchet = better_trebuchet - η * grad`
            end
-           return new_arguments
+           return Trebuchet(better_trebuchet[1], better_trebuchet[2])
        end
 
-julia> new_arguments = aim(100, arguments);
+julia> better_trebuchet  = aim(imprecise_trebuchet, environment);
 
-julia> shoot_distance([5, new_arguments...])
+julia> shoot_distance(better_trebuchet, environment)
 92.90796744088856
 ~~~
 {: .language-julia}
@@ -144,22 +148,22 @@ That's why she decides to change it a bit.
 This time she uses a `while`-loop to run the iterations until she is sufficiently near her target.
 
 ~~~
-julia> function aim(target, arguments; ε = 1e-1, η = 0.05, wind::Float64 = 5.0)
-           new_arguments = copy(arguments)
-           hit = x -> (shoot_distance([wind, x...]) - target)
-           while abs(hit(new_arguments)) > ε
-               grad = gradient(hit, new_arguments)
-               new_arguments -= η * grad
-           end
-           return new_arguments
-       end
+julia> function aim(trebuchet::Trebuchet, environment::Environment; ε = 1e-1, η = 0.05)
+            better_trebuchet = copy(trebuchet)
+            hit = x -> (shoot_distance([environment.wind, x[2], x[1]]) - environment.target_distance)
+            while abs(hit(better_trebuchet)) > ε
+                grad = gradient(hit, better_trebuchet)
+                better_trebuchet -= η * grad
+            end
+            return Trebuchet(better_trebuchet[1], better_trebuchet[2])
+        end
 
-julia> aim(100, arguments)
-2-element Vector{Float64}:
- 119.59293257732767
+julia> better_trebuchet = aim(imprecise_trebuchet, environment)
+2-element Trebuchet:
  499.9498970976752
+ 119.59293257732767
 
-julia> shoot_distance([5, ans...])
+julia> shoot_distance(better_trebuchet, environment)
 100.0975848073789
 ~~~
 {: .language-julia}
