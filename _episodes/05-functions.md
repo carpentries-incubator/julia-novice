@@ -76,7 +76,7 @@ help?> Trebuchets.shoot
 
 Now she is ready to fire the first shot
 ~~~
-julia> shoot(5, 0.25pi, 500)
+julia> Trebuchets.shoot(5, 0.25pi, 500)
 (TrebuchetState(Trebuchet.Lengths{Float64}(1.524, 2.0702016, 0.5334, 0.6096, 2.0826984, 0.8311896, 0.037947600000000005), Trebuchet.Masses{Float64}(226.796185, 0.14877829736, 4.8307587405), Trebuchet.Angles{Float64}(-0.5033953025972455, 1.322643200282786, 1.4614900249109948), Trebuchet.AnglularVelocities{Float64}(-5.571655186015145, 7.720538762011071, -25.384361188794127), Trebuchet.Constants{Float64}(5.0, 1.0, 1.0, 9.80665, 0.7853981633974482), Trebuchet.Inertias{Float64}(0.042140110093804806, 2.7288719786342384), Val{:End}(), 60.0, Trebuchet.Vec(117.8468674726198, -1.5239999999999974), Trebuchet.Vec(10.790333612654146, -21.45379494231241), Solution(394)
 , 0, Val{:Released}()), 117.8468674726198)
 ~~~
