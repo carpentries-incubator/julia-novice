@@ -70,7 +70,7 @@ Another useful mode is the shell mode that can be entered by pressing <kbd>;</kb
 It can be used to use commands of the underlying shell, but don't confuse it with an actual shell: Special shell syntax like piping won't work.
 > ## Hello shell mode
 > Use the shell mode to start nano and save your first `.jl` file
-{: .challange}
+{: .challenge}
 
 Finally there is the package mode that is enetered with <kbd>]</kbd> which is used for package management, which will be covered later on.
 
