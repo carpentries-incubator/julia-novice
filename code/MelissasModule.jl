@@ -37,6 +37,7 @@ function shoot_distance(trebuchet::Trebuchet, env::Environment)
 end
 
 function aim(trebuchet::Trebuchet, environment::Environment; ε = 1e-1, η = 0.05)
+    # @show ε
     better_trebuchet = copy(trebuchet)
     hit = x -> (shoot_distance([environment.wind, x[2], x[1]]) - environment.target_distance)
     while abs(hit(better_trebuchet)) > ε

@@ -153,5 +153,27 @@ If she changes the code in the module, reincludes the module and runs her code a
 
 ## Revise.jl
 
-s
+`Revise.jl` is a pacakge that can keep track of changes in your files and load these in a running julia session.
+
+Melissa needs to take two things into account
+ - `using Revise` must come before `using` any Package that she wants to be tracked
+ - she should use `includet` instead of `include` for included files (`t` for "tracking")
+
+Thus she now runs
+~~~
+julia> using Revise
+
+julia> includet("MelissasModule.jl")
+
+julia> include("MelissasCode.jl")
+100.0975848073789
+~~~
+{: .language-julia}
+
+and any change she makes in `MelissasModule.jl` will be visible in the next run of her code.
+
+> ## Did I say any changes?
+> Well, almost any. Revise can't track changes to structures.
+{: .callout}
+
 {% include links.md %}
