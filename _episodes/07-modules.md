@@ -24,7 +24,7 @@ This is what it looks like:
 import Trebuchet as Trebuchets
 using ForwardDiff: gradient
 
-mutable struct Trebuchet <: AbstractVecor{Float64}
+mutable struct Trebuchet <: AbstractVector{Float64}
   counterweight::Float64
   release_angle::Float64
 end
