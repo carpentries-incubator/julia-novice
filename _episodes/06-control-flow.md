@@ -1,11 +1,15 @@
 ---
 title: "Control flow"
 teaching: 45
-exercises: 0
+exercises: 15
 questions:
 - "What are for and while loops?"
 - "How to use conditionals?"
+- "What is an interface?"
 objectives:
+keypoints:
+- "Interfaces are informal"
+- "Use for loops for a known number of iterations and while loops for an unkown number of iterations."
 ---
 
 {% include links.md %}

@@ -1,7 +1,7 @@
 ---
 title: "Using the REPL"
-teaching: 20
-exercises: 0
+teaching: 18
+exercises: 2
 questions:
 - "How to use the REPL?"
 objectives:
@@ -13,8 +13,6 @@ keypoints:
 - "Pressing <kbd>?</kbd> enters help mode."
 - "Pressing <kbd>;</kbd> enters shell mode."
 - "Pressing <kbd>]</kbd> enters pkg mode."
-- "Functions are compiled when first called with a given set of arguments and cached for later reuse."
-- "Redefinition of functions is possible with the Revise package."
 
 ---
 

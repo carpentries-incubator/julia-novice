@@ -6,8 +6,10 @@ questions:
 - "Whats the purpose of modules?"
 objectives:
 - "Structure your code using modules"
+- "Use Revise.jl to track changes"
 keypoints:
-- "Modules introduce namespaces. Public API has to be documented and can be exported."
+- "Modules introduce namespaces"
+- "Public API has to be documented and can be exported."
 ---
 
 ## Modules

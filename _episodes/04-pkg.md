@@ -1,14 +1,19 @@
 ---
 title: "Using the package manager"
-teaching: 30
+teaching: 20
 exercises: 0
 questions:
--
+- "Where do I find packages?"
+- "How do I add pacakges?"
+- "How can I use packages?"
 objectives:
--
+- "Learn to add packages using pkg-mode"
+- "Learn to resolve name conflicts"
+- "Learn to activate environments"
 keypoints:
--
--
+- "Find pacakges on juliahub"
+- "add packages using `pkg> add`"
+- "use many small environments rather than one big environment"
 ---
 
 ## The package manager

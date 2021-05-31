@@ -1,7 +1,7 @@
 ---
 title: "Creating Packages"
 teaching: 30
-exercises: 0
+exercises: 10
 questions:
 - "How to create a package?"
 objectives:
