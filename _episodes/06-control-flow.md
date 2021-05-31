@@ -12,9 +12,29 @@ objectives:
 
 ## Conditionals
 
-<!-- TODO: write a section introducin if elseif else -->
+Now that Melissa knows which method to add she thinks about the implementation.
+
+If the index is `1` she wants to set `counterweight` while if the index is `2` she wants to set `release_angle` and since these are the only to fields she wants to return an error if anything else comes in.
+In julia the keywords to specify conditions are `if`, `elseif` and `else`.
+Closed with an `end`.
+
+Thus she writes
+~~~
+function Base.setindex!(trebuchet::Trebuchet, v, i::Int)
+    if i === 1
+        trebuchet.counterweight = v
+    elseif i === 2
+        trebuchet.release_angle = v
+    else
+        error("Trebuchet only accepts indices 1 and 2, yours is $i")
+    end
+end
+~~~
+{: .language-julia}
+
 ### Interfaces
 
+`setindex!` is actually one function of a widespread _interface_ in the julia language: `AbstractArray`s.
 An interface is a collection of methods that are all implemented by a certain type.
 For example lists the [julia manual](https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-array) all methods that a subtype of `AbstractArray` need to implement to adhere to the `AbstractArray` interface.
 If Melissa does this then her `Trebuchet` type will work with every function in `Base` that accepts an `AbstractArray`.
@@ -23,7 +43,6 @@ If Melissa does this then her `Trebuchet` type will work with every function in 
 > Now we know enough to actually implement the `AbstractArray` interface.
 > You don't need to implement the optional methods.
 > We set `IndexStyle(Trebuchet) = IndexLinear()`
-> <!-- TODO: this might be a bit too difficult -->
 >
 >> ## Solution
 >> ~~~

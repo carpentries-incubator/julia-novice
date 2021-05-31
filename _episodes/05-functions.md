@@ -152,4 +152,37 @@ julia> function (windspeed, angle, weight)
 ~~~
 {: .language-julia}
 
+### Errors and macros
+
+Melissa would like to set the fields of a `Trebuchet` using an index.
+She writes
+~~~
+julia> trebuchet[1] = 2
+ERROR: MethodError: no method matching setindex!(::Trebuchet{Int64}, ::Int64, ::Int64)
+Stacktrace:
+ [1] top-level scope
+   @ REPL[4]:1
+~~~
+{: .language-julia}
+
+which tells her two things:
+    1. a function named `setindex!` was called
+    2. it didn't have a method for `Trebuchet`s
+
+Melissa wants to add the missing method to `setindex!` but she doesn't know where it is defined.
+There is a handy _macro_ named `@which` which can be used to obtain the module where the function is defined.
+~~~
+julia> @which setindex!
+Base
+~~~
+{: .language-julia}
+
+> ## Macros
+> Macro names begin with `@` and they don't need parentheses or commas for delimit their arguments.
+> Macros can transform any valid julia expression and are quite powerful.
+> They can be expanded using `@macroexpand`.
+{: .callout}
+
+Now Melissa knows she needs to add a method to `Base.setindex!` with the signature `(::Trebuchet{Int64}, ::Int64, ::Int64)`.
+
 {% include links.md %}
