@@ -10,7 +10,7 @@ objectives:
 - "Learn to browse github or juliahub for packages and find documentation."
 keypoints:
 - "The general registry is hosted on github."
-- "Packaging is easy
+- "Packaging is easy"
 ---
 
 Melissa is now confident that her module fine and she wants to make it available for the rest of her physics club.
