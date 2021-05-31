@@ -91,7 +91,7 @@ julia> subtypes(Real)
 > > ## Solution
 > > Since `Float64` is a subtype of `Real` `1.0` is also a `Real`.
 >{: .solution}
-{: .challange}
+{: .challenge}
 
 
 ## Creating a subtype
