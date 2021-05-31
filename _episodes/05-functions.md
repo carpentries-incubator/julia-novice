@@ -41,7 +41,7 @@ help?> names
 > >## Solution
 > >`names(Trebuchets, all = true)`
 > {: .solution}
-{: .challange}
+{: .challenge}
 
 
 Thus Melissa executes
