@@ -14,7 +14,7 @@ keypoints:
 ## The package manager
 
 Now it is time for Melissa and their mates to simulate the launch of the trebuchet.
-The necessary equations are really complicated, but an investigation on https://juliahub.com/ revealed that someone already implemented these and published it as the julia package `Trebuchet.jl`.
+The necessary equations are really complicated, but an investigation on [juliahub](https://juliahub.com/) revealed that someone already implemented these and published it as the julia package `Trebuchet.jl`.
 That spares some real work.
 
 Melissa enters the package mode by pressing <kbd>]</kbd>.
