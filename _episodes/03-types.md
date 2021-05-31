@@ -97,13 +97,19 @@ julia> subtypes(Real)
 ## Creating a subtype
 
 A concrete type can be made a subtype of an abstract type  with the subtype operator `<:`.
-Since `Trebuchet` contains several fields that are mutable Melissa thinks it is a good idea to make it a subtype of `AbstractArray`.
+Since `Trebuchet` contains several fields that are mutable Melissa thinks it is a good idea to make it a subtype of `AbstractVector`.
 ~~~
-mutable struct Trebuchet <: AbstractArray
+mutable struct Trebuchet <: AbstractVector{Float64}
   counterweight::Float64
   release_angle::Float64
 end
 ~~~
 {: .language-julia}
+
+> ## Caveat: redefining `struct`s
+> In julia it is not very easy to redefine `struct`s.
+> It is necessary to restart the REPL to define the new definition of `Trebuchet`
+> or take a different name.
+{: .callout}
 
 {% include links.md %}

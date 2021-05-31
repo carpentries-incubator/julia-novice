@@ -4,9 +4,9 @@ using ForwardDiff: gradient
 
 export aim, shoot_distance, Trebuchet, Environment
 
-mutable struct Trebuchet{T} <: AbstractVector{T}
-  counterweight::T
-  release_angle::T
+mutable struct Trebuchet <: AbstractVector{Float64}
+  counterweight::Float64
+  release_angle::Float64
 end
 Base.copy(trebuchet::Trebuchet) = Trebuchet(trebuchet.counterweight, trebuchet.release_angle)
 Base.size(trebuchet::Trebuchet) = tuple(2)
