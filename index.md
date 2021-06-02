@@ -17,7 +17,7 @@ Unfortunately nobody knows this language already, so they have to learn it from 
 >
 > You need to understand the concepts of **files** and **directories** and how to start the julia REPL before tackling this lesson.
 >
-> This lesson requires julia 1.
+> This lesson requires julia 1.6 or greater
 {: .prereq}
 
 {% include links.md %}
