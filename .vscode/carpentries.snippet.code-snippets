@@ -37,7 +37,7 @@
 			"> ## $1",
 			"> > ## ${2:Solution}",
 			">{: .solution}",
-			"{: .challange}",
+			"{: .challenge}",
 			"$0"
 		]
 	}

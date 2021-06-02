@@ -1,20 +1,16 @@
 ---
 title: "Julia type system"
-teaching: 60
-exercises: 0
+teaching: 58
+exercises: 2
 questions:
 - "What is the use of types?"
 - "How are types organized in julia?"
 objectives:
 - "Understand the structure of the type tree."
 - "Know how to traverse the type tree."
-- "Know how to build abstract, mutable and immutable types."
-- "Know how to use type parameters."
+- "Know how to build mutable and immutable types."
 keypoints:
-- "Types enable the compiler to optimize code."
 - "In julia types have only one direct supertype."
-- "Types increase security, Type annotations are mainly used for dispatch."
-- "Parametric types are useful for flexible yet performant code."
 ---
 
 ## Structuring variables
@@ -91,19 +87,25 @@ julia> subtypes(Real)
 > > ## Solution
 > > Since `Float64` is a subtype of `Real` `1.0` is also a `Real`.
 >{: .solution}
-{: .challange}
+{: .challenge}
 
 
 ## Creating a subtype
 
 A concrete type can be made a subtype of an abstract type  with the subtype operator `<:`.
-Since `Trebuchet` contains several fields that are mutable Melissa thinks it is a good idea to make it a subtype of `AbstractArray`.
+Since `Trebuchet` contains several fields that are mutable Melissa thinks it is a good idea to make it a subtype of `AbstractVector`.
 ~~~
-mutable struct Trebuchet <: AbstractArray
+mutable struct Trebuchet <: AbstractVector{Float64}
   counterweight::Float64
   release_angle::Float64
 end
 ~~~
 {: .language-julia}
+
+> ## Caveat: redefining `struct`s
+> In julia it is not very easy to redefine `struct`s.
+> It is necessary to restart the REPL to define the new definition of `Trebuchet`
+> or take a different name.
+{: .callout}
 
 {% include links.md %}

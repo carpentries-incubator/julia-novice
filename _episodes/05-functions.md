@@ -1,10 +1,19 @@
 ---
 title: "Write functions!"
-teaching: 30
-exercises: 0
+teaching: 35
+exercises: 5
 questions:
+- "How do I call a function?"
+- "Where can I find help about using a function?"
+- "What are methods?"
 objectives:
+- "usage of positional and keyword arguments"
+- "defining named and anonymous functions"
+- "reading error messages"
 keypoints:
+- "You can think of functions being a collection of methods"
+- "Keep the number of positional arguments low"
+- "Macros transform julia expressions"
 ---
 
 ## Working with functions
@@ -41,7 +50,7 @@ help?> names
 > >## Solution
 > >`names(Trebuchets, all = true)`
 > {: .solution}
-{: .challange}
+{: .challenge}
 
 
 Thus Melissa executes
@@ -151,5 +160,39 @@ julia> function (windspeed, angle, weight)
        end
 ~~~
 {: .language-julia}
+
+### Errors and macros
+
+Melissa would like to set the fields of a `Trebuchet` using an index.
+She writes
+~~~
+julia> trebuchet[1] = 2
+ERROR: MethodError: no method matching setindex!(::Trebuchet{Int64}, ::Int64, ::Int64)
+Stacktrace:
+ [1] top-level scope
+   @ REPL[4]:1
+~~~
+{: .language-julia}
+
+which tells her two things:
+
+1. a function named `setindex!` was called
+2. it didn't have a method for `Trebuchet`s
+
+Melissa wants to add the missing method to `setindex!` but she doesn't know where it is defined.
+There is a handy _macro_ named `@which` which can be used to obtain the module where the function is defined.
+~~~
+julia> @which setindex!
+Base
+~~~
+{: .language-julia}
+
+> ## Macros
+> Macro names begin with `@` and they don't need parentheses or commas to delimit their arguments.
+> Macros can transform any valid julia expression and are quite powerful.
+> They can be expanded using `@macroexpand`.
+{: .callout}
+
+Now Melissa knows she needs to add a method to `Base.setindex!` with the signature `(::Trebuchet{Int64}, ::Int64, ::Int64)`.
 
 {% include links.md %}

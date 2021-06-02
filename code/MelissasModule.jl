@@ -4,9 +4,9 @@ using ForwardDiff: gradient
 
 export aim, shoot_distance, Trebuchet, Environment
 
-mutable struct Trebuchet{T} <: AbstractVector{T}
-  counterweight::T
-  release_angle::T
+mutable struct Trebuchet <: AbstractVector{Float64}
+  counterweight::Float64
+  release_angle::Float64
 end
 Base.copy(trebuchet::Trebuchet) = Trebuchet(trebuchet.counterweight, trebuchet.release_angle)
 Base.size(trebuchet::Trebuchet) = tuple(2)
@@ -37,6 +37,7 @@ function shoot_distance(trebuchet::Trebuchet, env::Environment)
 end
 
 function aim(trebuchet::Trebuchet, environment::Environment; ε = 1e-1, η = 0.05)
+    # @show ε
     better_trebuchet = copy(trebuchet)
     hit = x -> (shoot_distance([environment.wind, x[2], x[1]]) - environment.target_distance)
     while abs(hit(better_trebuchet)) > ε

@@ -1,20 +1,25 @@
 ---
 title: "Using the package manager"
-teaching: 30
+teaching: 20
 exercises: 0
 questions:
--
+- "Where do I find packages?"
+- "How do I add pacakges?"
+- "How can I use packages?"
 objectives:
--
+- "Learn to add packages using pkg-mode"
+- "Learn to resolve name conflicts"
+- "Learn to activate environments"
 keypoints:
--
--
+- "Find pacakges on juliahub"
+- "add packages using `pkg> add`"
+- "use many small environments rather than one big environment"
 ---
 
 ## The package manager
 
 Now it is time for Melissa and their mates to simulate the launch of the trebuchet.
-The necessary equations are really complicated, but an investigation on https://juliahub.com/ revealed that someone already implemented these and published it as the julia package `Trebuchet.jl`.
+The necessary equations are really complicated, but an investigation on [juliahub](https://juliahub.com/) revealed that someone already implemented these and published it as the julia package `Trebuchet.jl`.
 That spares some real work.
 
 Melissa enters the package mode by pressing <kbd>]</kbd>.
