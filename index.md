@@ -15,7 +15,7 @@ Unfortunately nobody knows this language already, so they have to learn it from 
 
 > ## Prerequisites
 >
-> You need to understand the concepts of **files** and **directories**.
+> You need to understand the concepts of **files** and **directories** as well as **arrays** and **indices**.
 >
 > This lesson requires julia 1.6 or greater
 {: .prereq}
