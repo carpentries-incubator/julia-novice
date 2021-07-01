@@ -50,8 +50,8 @@ Melissa notices that assignment also returns the value.
 
 ## Unicode
 
-In julia ~~also~~ unicode characters are also allowed as variables like `α = 2`.
-~~Where~~ Unicode characters can be entered by a backslash followed by their LaTeX-name and then pressing <kbd>tab</kbd> (in this case `\alpha`<kbd>tab</kbd>).
+In julia unicode characters are also allowed as variables like `α = 2`.
+Unicode characters can be entered by a backslash followed by their LaTeX-name and then pressing <kbd>tab</kbd> (in this case `\alpha`<kbd>tab</kbd>).
 
 ## REPL-modes
 
