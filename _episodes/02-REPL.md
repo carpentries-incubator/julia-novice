@@ -33,7 +33,7 @@ The first thing they try is to perform basic arithmetic operations
 {: .output}
 
 That works as expected.
-It is also possible to ~~bind~~ allot names to values via the assignment operator `=`, which makes it easier to refer to them later on.
+It is also possible to create a variable by binding a name to a value via the assignment operator `=`, which makes it easier to refer to them later on.
 These names are called _variables_.
 
 ~~~
@@ -75,4 +75,3 @@ It can be used to ~~use~~ issue commands of the underlying shell, but don't conf
 Finally there is the package mode that is ~~enetered~~ entered with <kbd>]</kbd> which is used for package management, which will be covered later on.
 
 {% include links.md %}
-
