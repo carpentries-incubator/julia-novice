@@ -67,7 +67,7 @@ She gets back to normal mode by pressing backspace.
 
 Another useful mode is the shell mode that can be entered by pressing <kbd>;</kbd>.
 The prompt has now changed to shell.
-It can be used to ~~use~~ issue commands of the underlying shell, but don't confuse it with an actual shell: Special shell syntax like piping won't work.
+It can be used to issue commands of the underlying shell, but don't confuse it with an actual shell: Special shell syntax like piping won't work.
 > ## Hello shell mode
 > Use the shell mode to start nano and save your first `.jl` file
 {: .challenge}
