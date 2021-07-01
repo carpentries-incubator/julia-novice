@@ -20,7 +20,8 @@ keypoints:
 
 ## Variables
 
-After downloading and executing a julia binary from https://julialang.org Melissa and her classmates face the so called REPL, which stands for <u>r</u>ead-<u>e</u>valuate-<u>p</u>rint-<u>l</u>oop.
+
+After downloading and executing a julia binary from https://julialang.org Melissa and her classmates face the so called REPL, which stands for <u>r</u>ead-<u>e</u>valuate-<u>p</u>rint-<u>l</u>oop. The interactive command-line REPL allows quick and easy execution of Julia statements.
 The first thing they try is to perform basic arithmetic operations
 ~~~
 1 + 4 * 7.3
@@ -32,7 +33,7 @@ The first thing they try is to perform basic arithmetic operations
 {: .output}
 
 That works as expected.
-It is also possible to bind names to values via the assignment operator `=`, which makes it easier to refer to them later on.
+It is also possible to create a variable by binding a name to a value via the assignment operator `=`, which makes it easier to refer to them later on.
 These names are called _variables_.
 
 ~~~
@@ -49,8 +50,8 @@ Melissa notices that assignment also returns the value.
 
 ## Unicode
 
-In julia also unicode characters are allowed as variables like `α = 2`.
-Where unicode characters can be entered by a backslash followed by their LaTeX-name and then pressing <kbd>tab</kbd> (in this case `\alpha`<kbd>tab</kbd>).
+In julia unicode characters are also allowed as variables like `α = 2`.
+Unicode characters can be entered by a backslash followed by their LaTeX-name and then pressing <kbd>tab</kbd> (in this case `\alpha`<kbd>tab</kbd>).
 
 ## REPL-modes
 
@@ -65,12 +66,12 @@ Great! This way she can easily look up the names she needs.
 She gets back to normal mode by pressing backspace.
 
 Another useful mode is the shell mode that can be entered by pressing <kbd>;</kbd>.
-It can be used to use commands of the underlying shell, but don't confuse it with an actual shell: Special shell syntax like piping won't work.
+The prompt has now changed to shell.
+It can be used to issue commands of the underlying shell, but don't confuse it with an actual shell: Special shell syntax like piping won't work.
 > ## Hello shell mode
 > Use the shell mode to start nano and save your first `.jl` file
 {: .challenge}
 
-Finally there is the package mode that is enetered with <kbd>]</kbd> which is used for package management, which will be covered later on.
+Finally there is the package mode that is entered with <kbd>]</kbd> which is used for package management, which will be covered later on.
 
 {% include links.md %}
-
