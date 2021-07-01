@@ -72,6 +72,6 @@ It can be used to issue commands of the underlying shell, but don't confuse it w
 > Use the shell mode to start nano and save your first `.jl` file
 {: .challenge}
 
-Finally there is the package mode that is ~~enetered~~ entered with <kbd>]</kbd> which is used for package management, which will be covered later on.
+Finally there is the package mode that is entered with <kbd>]</kbd> which is used for package management, which will be covered later on.
 
 {% include links.md %}
