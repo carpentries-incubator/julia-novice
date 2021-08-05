@@ -4,14 +4,14 @@ teaching: 20
 exercises: 0
 questions:
 - "Where do I find packages?"
-- "How do I add pacakges?"
+- "How do I add packages?"
 - "How can I use packages?"
 objectives:
 - "Learn to add packages using pkg-mode"
 - "Learn to resolve name conflicts"
 - "Learn to activate environments"
 keypoints:
-- "Find pacakges on juliahub"
+- "Find packages on juliahub"
 - "add packages using `pkg> add`"
 - "use many small environments rather than one big environment"
 ---

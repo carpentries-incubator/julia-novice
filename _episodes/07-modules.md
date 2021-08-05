@@ -3,7 +3,7 @@ title: "using Modules"
 teaching: 30
 exercises: 0
 questions:
-- "Whats the purpose of modules?"
+- "What's the purpose of modules?"
 objectives:
 - "Structure your code using modules"
 - "Use Revise.jl to track changes"
@@ -155,7 +155,7 @@ If she changes the code in the module, reincludes the module and runs her code a
 
 ## Revise.jl
 
-`Revise.jl` is a pacakge that can keep track of changes in your files and load these in a running julia session.
+`Revise.jl` is a package that can keep track of changes in your files and load these in a running julia session.
 
 Melissa needs to take two things into account
  - `using Revise` must come before `using` any Package that she wants to be tracked
