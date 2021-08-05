@@ -83,4 +83,12 @@ jobs:
           skip: bin
           ignore_words_list: rouge
 
-      - run: make site
+      - name: "Check build"
+        run: |
+          make --always-make site
+      - name: "Check lesson for warnings"
+        run: |
+          make lesson-check-all
+      - name: "Check lesson for errors"
+        run: |
+          make lesson-check
