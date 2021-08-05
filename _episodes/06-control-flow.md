@@ -9,7 +9,7 @@ questions:
 objectives:
 keypoints:
 - "Interfaces are informal"
-- "Use for loops for a known number of iterations and while loops for an unkown number of iterations."
+- "Use for loops for a known number of iterations and while loops for an unknown number of iterations."
 ---
 
 {% include links.md %}
