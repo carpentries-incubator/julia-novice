@@ -24,6 +24,24 @@ The path from having a module to having a package is actually very short: Packag
 A `uuid` is a universally unique identifier.
 Thankfully julia comes with the `UUIDs` package, that can generate `uuid`s for Melissa via `UUIDs.uuid4()`.
 
+In addition Melissa needs to have a specific directory structure.
+She looks at the example package [`Example.jl`](https://github.com/JuliaLang/Example.jl) which has the following structure
+~~~
+├── docs
+│   ├── make.jl
+│   ├── Project.toml
+│   └── src
+│       └── index.md
+├── LICENSE.md
+├── Project.toml
+├── README.md
+├── src
+│   └── Example.jl
+└── test
+    └── runtests.jl
+~~~
+{: .output}
+
 > ## Make it a package
 > Open your `Project.toml` and add `name = <your name>`, `uuid = <your uuid>` and optionally an `authors` field.
 > Each on a separate line.
