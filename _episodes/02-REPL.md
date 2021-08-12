@@ -48,6 +48,21 @@ distance_x_2 = 2 * distance
 
 Melissa notices that assignment also returns the value.
 
+She can also check which variables are defined in the current session by running
+~~~
+julia> varinfo()
+  name                    size summary
+  –––––––––––––––– ––––––––––– –––––––
+  Base                         Module
+  Core                         Module
+  InteractiveUtils 270.164 KiB Module
+  Main                         Module
+  ans                  8 bytes Float64
+  distance             8 bytes Float64
+  distance_x_2         8 bytes Float64
+~~~
+{: .language-julia}
+
 ## Unicode
 
 In julia unicode characters are also allowed as variables like `α = 2`.
