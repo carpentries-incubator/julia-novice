@@ -3,7 +3,7 @@ layout: lesson
 root: .  # Is the only page that doesn't follow the pattern /:path/index.html
 permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
 ---
-![Trebuchet](https://upload.wikimedia.org/wikipedia/commons/e/ee/Trebuchet_Scheme.svg)
+![Trebuchet](https://upload.wikimedia.org/wikipedia/commons/e/ee/Trebuchet_Scheme.svg){: height="400px"}
 
 Melissa and her schoolmates built a trebuchet in their physics-club.
 In their first tests they experienced that aiming it is not that easy and intuitive, so they are planning to write a program that automatically aims their trebuchet given the distance of the target and the velocity of the wind.
