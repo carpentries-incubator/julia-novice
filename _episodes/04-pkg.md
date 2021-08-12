@@ -59,6 +59,12 @@ she sees that two files were created: `Project.toml` and `Manifest.toml`.
 The project file `Project.toml` only contains the packages needed for her project, while the manifest file `Manifest.toml` records the direct and indirect dependencies as well as their current version, thus providing a fully reproducible record of the code that is actually executed.
 "That is really handy when I want to share my work with the others." thinks Melissa.
 
+After the installation finished she can check the packages present in her environment.
+~~~
+(trebuchet) pkg> status
+~~~
+{: .language-julia}
+
 ## Using and importing packages
 
 Now that Melissa added the package to her environment, she needs to load it.
