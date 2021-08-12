@@ -45,7 +45,7 @@ Either via [juliahub](https://juliahub.com/ui/Registrator) or by making a pull r
 
 Melissa thinks next time she will start with a package right away.
 
-Browsing the packages she found [PkgTemplates.jl](https://invenia.github.io/PkgTemplates.jl/stable/) which makes setting up the typical folder structure very easy.
+Browsing the packages she found [PkgTemplates.jl](https://invenia.github.io/PkgTemplates.jl/stable/) and [PkgSkeleton.jl](https://github.com/tpapp/PkgSkeleton.jl) which makes setting up the typical folder structure very easy.
 
 > ## Create your own package
 > Start a new package with `PkgTemplates.generate`.
