@@ -81,7 +81,7 @@ jobs:
         uses: codespell-project/actions-codespell@master
         with:
           skip: bin
-          ignore_words_list: rouge
+          ignore_words_list: rouge, ans
 
       - name: "Check build"
         run: |
