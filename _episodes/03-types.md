@@ -68,7 +68,7 @@ true
 ~~~
 {: .language-julia}
 
-All the other types are _abstract_ types that are used to adress groups of types.
+All the other types are _abstract_ types that are used to address groups of types.
 For example, if we declare a variable as `a::Real` then it can be bound to any value that is a subtype of `Real`.
 
 Let's quickly check what are all the subtypes of `Real`:

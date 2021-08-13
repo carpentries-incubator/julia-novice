@@ -48,10 +48,11 @@ With this Melissa can run her test using the pkg mode of the REPL:
 
 Melissa needed to add `Test` to her package in order to run the code above, but actually `Test` is not needed for her package other than testing.
 Thus it is possible to move the `Test` entry in the `Project.toml` file from `[deps]` to an `[extras]` section and then add another entry
-```
+~~~
 [targets]
 test = ["Test"]
-```
+~~~
+{: .language-julia}
 Check out the [sample project file](../code/Project.toml) for a complete example.
 
 > ## Create a test for MelissasModule
