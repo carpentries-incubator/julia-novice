@@ -1,7 +1,7 @@
 ---
 title: "Control flow"
-teaching: 45
-exercises: 15
+teaching: 60
+exercises: 60
 questions:
 - "What are for and while loops?"
 - "How to use conditionals?"

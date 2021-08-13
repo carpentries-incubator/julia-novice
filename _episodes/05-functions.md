@@ -1,6 +1,6 @@
 ---
 title: "Write functions!"
-teaching: 35
+teaching: 15
 exercises: 5
 questions:
 - "How do I call a function?"

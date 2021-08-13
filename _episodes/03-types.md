@@ -1,7 +1,7 @@
 ---
 title: "Julia type system"
-teaching: 58
-exercises: 2
+teaching: 15
+exercises: 5
 questions:
 - "What is the use of types?"
 - "How are types organized in julia?"

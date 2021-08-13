@@ -1,7 +1,7 @@
 ---
 title: "Creating Packages"
-teaching: 30
-exercises: 10
+teaching: 15
+exercises: 15
 questions:
 - "How to create a package?"
 objectives:
@@ -66,7 +66,7 @@ Melissa thinks next time she will start with a package right away.
 Browsing the packages she found [PkgTemplates.jl](https://invenia.github.io/PkgTemplates.jl/stable/) and [PkgSkeleton.jl](https://github.com/tpapp/PkgSkeleton.jl) which makes setting up the typical folder structure very easy.
 
 > ## Create your own package
-> Start a new package with `PkgTemplates.generate`.
+> Look at the documentation of the package creation helper packages and create a new package using `generate`.
 {: .challenge}
 
 {% include links.md %}
