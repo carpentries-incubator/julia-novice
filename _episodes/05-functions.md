@@ -47,8 +47,13 @@ help?> names
 
 > ## Calling with keyword arguments
 > Suppose Melissa wanted to get `all` names of the `Trebuchets` module, what would the call look like?
+> 1. `names(Trebuchets, true)`
+> 2. `names(Trebuchets, all = true)`
+> 3. `names(Trebuchets; all = true)`
+> 4. `names(Trebuchets, all)`
+> 5. 2. and 3.
 > >## Solution
-> >`names(Trebuchets, all = true)`
+> > its 5
 > {: .solution}
 {: .challenge}
 
