@@ -43,10 +43,14 @@ An interface is a collection of methods that are all implemented by a certain ty
 For example lists the [julia manual](https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-array) all methods that a subtype of `AbstractArray` need to implement to adhere to the `AbstractArray` interface.
 If Melissa does this then her `Trebuchet` type will work with every function in `Base` that accepts an `AbstractArray`.
 
+She also needs to make `Trebuchet` a proper subtype of `AbstractArray` as she tried in [the types episode]({{ site.baseurl }}{%link _episodes/03-types.md %}).
+Therefore she restarts her REPL.
+
 > ## Implement the `AbstractArray` interface for `Trebuchet`
 > Now we know enough to actually implement the `AbstractArray` interface.
 > You don't need to implement the optional methods.
-> We set `IndexStyle(Trebuchet) = IndexLinear()`
+>
+> Hint: Take a look at the docstrings of `getfield` and `tuple`.
 >
 >> ## Solution
 >> ~~~
@@ -94,7 +98,13 @@ Melissa uses the `gradient` function of `ForwardDiff.jl` to get the direction in
 > ## Do you remember?
 > What does Melissa need to write into the REPL to install the package `ForwardDiff`?
 >
+> 1. `] install ForwardDiff`
+> 2. `add ForwardDiff`
+> 3. `] add ForwardDiff.jl`
+> 4. `] add ForwardDiff`
+>
 >> ## Solution
+>> The correct solution is 4.
 >> <kbd>]</kbd> to enter Pkg-mode.
 >> Then
 >> ~~~
@@ -163,6 +173,10 @@ julia> shoot_distance(better_trebuchet, environment)
 > Play around with different inputs of `N` and `η`.
 > How close can you come?
 {: .discussion}
+
+> ## Aborting programs
+> If a call takes too long, you can abort it with <kbd>ctrl-c</kbd>
+{: .callout}
 
 ### While loops
 
