@@ -9,6 +9,7 @@ objectives:
 - "Explain the overall content and in more detail the content of todays lesson."
 keypoints:
 - "Julia is a just in time compiled language"
+- "Julia code composes well"
 ---
 
 ## What is a programming language?
@@ -32,5 +33,24 @@ Julia is a programming language that superficially looks like an interpreted lan
 But before each function is executed it will compile it _just in time_.
 
 Thus you get the flexibility of an interpreted language and the execution speed of the compiled language at the cost of waiting a bit longer for the first execution of any function.
+
+There is another aspect of julia that makes it interesting and that is the way packages compose.
+This is captured the best by an analogy from [Sam Urmy](https://github.com/ElOceanografo):
+
+> Say you want a toy truck.
+>
+> The Python/R solution is to look for the appropriate package–like buying a Playmobil truck. It comes pre-manufactured, well-engineered and tested, and does 95% of what you would ever want a toy truck to do.
+>
+> The Fortran/C solution is to build the truck from scratch. This allows total customization and you can optimize the features and performance however you want. The downside is that it takes more time, you need woodworking skills, and might hurt yourself with the power tools.
+>
+> The Julia solution is like Legos. You can get the truck kit if you want–which will require a bit more assembly than the Playmobil, but way less than building it from scratch. Or, you can get the component pieces and assemble the truck to your own specs. There’s no limit to what you can put together, and because the pieces all have the same system of bumps, everything snaps together quickly and easily.
+>
+> ![Trucks](https://aws1.discourse-cdn.com/business5/uploads/julialang/original/3X/5/2/52e63856ad9e23876cda4297a04171879fa625b4.jpeg){: height="400px"}
+> Ok, sure. Toy trucks are like linear algebra, though, a common request, and every “toy system” will have an implementation that works basically fine. But what if you want a time-traveling sailing/space ship with lasers AND dragon wings? And it should be as easy to build and use as a basic dump truck?
+>
+> ![Vessel](https://aws1.discourse-cdn.com/business5/uploads/julialang/original/3X/2/8/2865d34fb35c181dc3c5c0f0b71915f31310269c.jpeg){: height="400px"}
+> There’s a reason that only Lego ever made anything like Dr Cyber’s Flying Time Vessel
+
+Originally posted on [Discourse](https://discourse.julialang.org/t/what-is-the-advantage-of-julia-over-fortran/65964/101).
 
 {% include links.md %}
