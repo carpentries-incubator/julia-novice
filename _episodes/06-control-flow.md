@@ -10,6 +10,7 @@ objectives:
 keypoints:
 - "Interfaces are informal"
 - "Use for loops for a known number of iterations and while loops for an unknown number of iterations."
+- "Julia packages compose nicely."
 ---
 
 {% include links.md %}
