@@ -48,6 +48,21 @@ distance_x_2 = 2 * distance
 
 Melissa notices that assignment also returns the value.
 
+She can also check which variables are defined in the current session by running
+~~~
+julia> varinfo()
+  name                    size summary
+  –––––––––––––––– ––––––––––– –––––––
+  Base                         Module
+  Core                         Module
+  InteractiveUtils 270.164 KiB Module
+  Main                         Module
+  ans                  8 bytes Float64
+  distance             8 bytes Float64
+  distance_x_2         8 bytes Float64
+~~~
+{: .language-julia}
+
 ## Unicode
 
 In julia unicode characters are also allowed as variables like `α = 2`.
@@ -68,10 +83,12 @@ She gets back to normal mode by pressing backspace.
 Another useful mode is the shell mode that can be entered by pressing <kbd>;</kbd>.
 The prompt has now changed to shell.
 It can be used to issue commands of the underlying shell, but don't confuse it with an actual shell: Special shell syntax like piping won't work.
+
 > ## Hello shell mode
 > Use the shell mode to start nano and save your first `.jl` file
 {: .challenge}
 
 Finally there is the package mode that is entered with <kbd>]</kbd> which is used for package management, which will be covered later on.
+To exit the shell or pkg mode use <kbd>backspace</kbd>.
 
 {% include links.md %}

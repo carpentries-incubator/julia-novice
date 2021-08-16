@@ -1,7 +1,7 @@
 ---
 title: "Adding tests"
 teaching: 10
-exercises: 10
+exercises: 30
 questions:
 - "What are unit tests?"
 - "How are tests organized in julia?"

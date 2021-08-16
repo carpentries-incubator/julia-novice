@@ -1,6 +1,6 @@
 ---
 title: "Write functions!"
-teaching: 35
+teaching: 15
 exercises: 5
 questions:
 - "How do I call a function?"
@@ -46,9 +46,17 @@ help?> names
 {: .callout}
 
 > ## Calling with keyword arguments
+>
 > Suppose Melissa wanted to get `all` names of the `Trebuchets` module, what would the call look like?
+>
+> 1. `names(Trebuchets, true)`
+> 2. `names(Trebuchets, all = true)`
+> 3. `names(Trebuchets; all = true)`
+> 4. `names(Trebuchets, all)`
+> 5. Answer 2. and 3.
+>
 > >## Solution
-> >`names(Trebuchets, all = true)`
+> > its 5
 > {: .solution}
 {: .challenge}
 
@@ -167,7 +175,7 @@ Melissa would like to set the fields of a `Trebuchet` using an index.
 She writes
 ~~~
 julia> trebuchet[1] = 2
-ERROR: MethodError: no method matching setindex!(::Trebuchet{Int64}, ::Int64, ::Int64)
+ERROR: MethodError: no method matching setindex!(::Trebuchet, ::Int64, ::Int64)
 Stacktrace:
  [1] top-level scope
    @ REPL[4]:1
@@ -193,6 +201,6 @@ Base
 > They can be expanded using `@macroexpand`.
 {: .callout}
 
-Now Melissa knows she needs to add a method to `Base.setindex!` with the signature `(::Trebuchet{Int64}, ::Int64, ::Int64)`.
+Now Melissa knows she needs to add a method to `Base.setindex!` with the signature `(::Trebuchet, ::Int64, ::Int64)`.
 
 {% include links.md %}

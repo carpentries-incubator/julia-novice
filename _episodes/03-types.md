@@ -1,7 +1,7 @@
 ---
 title: "Julia type system"
-teaching: 58
-exercises: 2
+teaching: 15
+exercises: 5
 questions:
 - "What is the use of types?"
 - "How are types organized in julia?"
@@ -82,10 +82,21 @@ julia> subtypes(Real)
 ~~~
 {: .language-julia}
 
+This way the types form a tree with abstract types on the nodes and concrete types as leafs.
+Have a look at this visualization of all subtypes of `Number`:
+![Type_tree-Number](https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Type-hierarchy-for-julia-numbers.png/1200px-Type-hierarchy-for-julia-numbers.png)
+
 > ## Is it `Real`?
-> What do you think `1.0 isa Real`?
+>
+> For which of these types `T` does not hold `(1.0 isa T) == true`?
+>
+> 1. Real
+> 2. Number
+> 3. Float64
+> 4. Integer
+>
 > > ## Solution
-> > Since `Float64` is a subtype of `Real` `1.0` is also a `Real`.
+> > The correct answer is 4. While `1.0` represents an integer value it is still a floating point number in contrast to `1`.
 >{: .solution}
 {: .challenge}
 
@@ -95,17 +106,27 @@ julia> subtypes(Real)
 A concrete type can be made a subtype of an abstract type  with the subtype operator `<:`.
 Since `Trebuchet` contains several fields that are mutable Melissa thinks it is a good idea to make it a subtype of `AbstractVector`.
 ~~~
-mutable struct Trebuchet <: AbstractVector{Float64}
+julia> mutable struct Trebuchet <: AbstractVector{Float64}
   counterweight::Float64
   release_angle::Float64
 end
 ~~~
 {: .language-julia}
 
+~~~
+ERROR: invalid redefinition of constant Trebuchet
+Stacktrace:
+ [1] top-level scope
+   @ REPL[9]:1
+~~~
+{: .error}
+
 > ## Caveat: redefining `struct`s
 > In julia it is not very easy to redefine `struct`s.
 > It is necessary to restart the REPL to define the new definition of `Trebuchet`
 > or take a different name.
 {: .callout}
+
+Melissa decides to keep going and come back to this later.
 
 {% include links.md %}

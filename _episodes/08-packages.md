@@ -1,7 +1,7 @@
 ---
 title: "Creating Packages"
-teaching: 30
-exercises: 10
+teaching: 15
+exercises: 15
 questions:
 - "How to create a package?"
 objectives:
@@ -24,6 +24,24 @@ The path from having a module to having a package is actually very short: Packag
 A `uuid` is a universally unique identifier.
 Thankfully julia comes with the `UUIDs` package, that can generate `uuid`s for Melissa via `UUIDs.uuid4()`.
 
+In addition Melissa needs to have a specific directory structure.
+She looks at the example package [`Example.jl`](https://github.com/JuliaLang/Example.jl) which has the following structure
+~~~
+├── docs
+│   ├── make.jl
+│   ├── Project.toml
+│   └── src
+│       └── index.md
+├── LICENSE.md
+├── Project.toml
+├── README.md
+├── src
+│   └── Example.jl
+└── test
+    └── runtests.jl
+~~~
+{: .output}
+
 > ## Make it a package
 > Open your `Project.toml` and add `name = <your name>`, `uuid = <your uuid>` and optionally an `authors` field.
 > Each on a separate line.
@@ -45,10 +63,10 @@ Either via [juliahub](https://juliahub.com/ui/Registrator) or by making a pull r
 
 Melissa thinks next time she will start with a package right away.
 
-Browsing the packages she found [PkgTemplates.jl](https://invenia.github.io/PkgTemplates.jl/stable/) which makes setting up the typical folder structure very easy.
+Browsing the packages she found [PkgTemplates.jl](https://invenia.github.io/PkgTemplates.jl/stable/) and [PkgSkeleton.jl](https://github.com/tpapp/PkgSkeleton.jl) which makes setting up the typical folder structure very easy.
 
 > ## Create your own package
-> Start a new package with `PkgTemplates.generate`.
+> Look at the documentation of the package creation helper packages and create a new package using `generate`.
 {: .challenge}
 
 {% include links.md %}
