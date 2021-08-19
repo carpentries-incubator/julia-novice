@@ -50,6 +50,7 @@ This is captured the best by an analogy from [Sam Urmy](https://github.com/ElOce
 >
 > ![Vessel](https://aws1.discourse-cdn.com/business5/uploads/julialang/original/3X/2/8/2865d34fb35c181dc3c5c0f0b71915f31310269c.jpeg){: height="400px"}
 > There’s a reason that only Lego ever made anything like Dr Cyber’s Flying Time Vessel
+{: .quotation}
 
 Originally posted on [Discourse](https://discourse.julialang.org/t/what-is-the-advantage-of-julia-over-fortran/65964/101).
 
