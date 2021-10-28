@@ -173,6 +173,11 @@ julia> shoot_distance(better_trebuchet, environment)
 > ## Explore
 > Play around with different inputs of `N` and `η`.
 > How close can you come?
+> > ## Reason
+> > This is a highly non-linear system and thus very sensitive.
+> > The distances across different values for the counterweight and the release angle α look like this
+> > ![distance-surface](../fig/shoot_surface.png)
+> {: .solution}
 {: .discussion}
 
 > ## Aborting programs
