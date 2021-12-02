@@ -1,10 +1,10 @@
-# julia-novice-trebuchet
+# Programming with Julia
 
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
 
 [![Our channel](https://img.shields.io/badge/juliaswc-slack_channel-orange)](https://swcarpentry.slack.com/archives/CBJ8C7NE6)
 
-This lesson targets people who already have some experience with (scientific) programming, but are new to julia.
+This lesson targets people who already have some experience with (scientific) programming, but are new to Julia.
 
 
 **Thanks for contributing to The Carpentries Incubator!**

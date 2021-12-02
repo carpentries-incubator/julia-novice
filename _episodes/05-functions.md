@@ -13,7 +13,7 @@ objectives:
 keypoints:
 - "You can think of functions being a collection of methods"
 - "Keep the number of positional arguments low"
-- "Macros transform julia expressions"
+- "Macros transform Julia expressions"
 ---
 
 ## Working with functions
@@ -35,7 +35,7 @@ help?> names
 {: .language-julia}
 > ## Positional and keyword arguments
 > Let's take a closer look at the signature of the `names` function.
-> In julia we have two types of arguments:
+> In Julia we have two types of arguments:
 > 1. _Positional arguments_ are determined by their position and thus the order in which arguments are given to the function matters.
 >  The `names` function has one positional argument `x` of type `Module`.
 > 2. _Keyword arguments_ are passed as a combination of the keyword and the value to the function.
@@ -121,7 +121,7 @@ julia> function shoot_distance(windspeed, angle, weight)
 {: .language-julia}
 
 > ## Implicit return
-> Note that Melissa didn't have to use the `return` keyword, since in julia the value of the last line will be returned by default.
+> Note that Melissa didn't have to use the `return` keyword, since in Julia the value of the last line will be returned by default.
 > But she could have used an explicit return and the function would behave the same.
 {: .callout}
 
@@ -197,7 +197,7 @@ Base
 
 > ## Macros
 > Macro names begin with `@` and they don't need parentheses or commas to delimit their arguments.
-> Macros can transform any valid julia expression and are quite powerful.
+> Macros can transform any valid Julia expression and are quite powerful.
 > They can be expanded using `@macroexpand`.
 {: .callout}
 

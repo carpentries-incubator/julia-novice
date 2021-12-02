@@ -14,7 +14,7 @@ keypoints:
 
 ## Modules
 
-Melissa now has a bunch of definitions in her running julia session and using the REPL for interactive exploration is great, but on the one hand it is more and more taxing to keep in mind, what is defined and on the other hand all the definitions are lost once she closes the REPL.
+Melissa now has a bunch of definitions in her running Julia session and using the REPL for interactive exploration is great, but on the one hand it is more and more taxing to keep in mind, what is defined and on the other hand all the definitions are lost once she closes the REPL.
 
 That is why she decides to put her code in a file.
 She opens up her text editor and creates a file called `aim_trebuchet.jl` in the current working directory and pastes the code she got so far in there.
@@ -155,7 +155,7 @@ If she changes the code in the module, reincludes the module and runs her code a
 
 ## Revise.jl
 
-`Revise.jl` is a package that can keep track of changes in your files and load these in a running julia session.
+`Revise.jl` is a package that can keep track of changes in your files and load these in a running Julia session.
 
 Melissa needs to take two things into account
  - `using Revise` must come before `using` any Package that she wants to be tracked

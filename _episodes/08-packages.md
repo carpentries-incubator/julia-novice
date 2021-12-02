@@ -15,14 +15,14 @@ keypoints:
 
 Melissa is now confident that her module fine and she wants to make it available for the rest of her physics club.
 She decides to put it in a package.
-This way she can also locally use julias package manager for managing her module.
+This way she can also locally use Julia's package manager for managing her module.
 
 ## From project to package
 
 The path from having a module to having a package is actually very short: Packages need a `name` and a `uuid` field in their `Project.toml`.
 
 A `uuid` is a universally unique identifier.
-Thankfully julia comes with the `UUIDs` package, that can generate `uuid`s for Melissa via `UUIDs.uuid4()`.
+Thankfully Julia comes with the `UUIDs` package, that can generate `uuid`s for Melissa via `UUIDs.uuid4()`.
 
 In addition Melissa needs to have a specific directory structure.
 She looks at the example package [`Example.jl`](https://github.com/JuliaLang/Example.jl) which has the following structure
@@ -57,7 +57,7 @@ instead of needing to `includet` `MelissasModule.jl` and use `using MelissasModu
 ## Register a package
 
 In order for her friends to be able to get the package the registers the package in the _general registry_.
-Either via [juliahub](https://juliahub.com/ui/Registrator) or by making a pull request on [github](https://github.com/JuliaRegistries/General/pulls) which can also be automated by the [julia registrator](https://github.com/JuliaRegistries/Registrator.jl).
+Either via [juliahub](https://juliahub.com/ui/Registrator) or by making a pull request on [github](https://github.com/JuliaRegistries/General/pulls) which can also be automated by the [Julia registrator](https://github.com/JuliaRegistries/Registrator.jl).
 
 ## Creating a new package
 

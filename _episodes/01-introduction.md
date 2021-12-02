@@ -27,14 +27,14 @@ Interpreted languages such as python and R translate instructions one at a time,
 This leads to more efficient machine instructions of the compiled code at the cost of less flexibility and more verbose code.
 Most prominently the need for type declarations in compiled languages.
 
-## Why julia?
+## Why Julia?
 
 Julia is a programming language that superficially looks like an interpreted language and mostly behaves like one.
 But before each function is executed it will compile it _just in time_.
 
 Thus you get the flexibility of an interpreted language and the execution speed of the compiled language at the cost of waiting a bit longer for the first execution of any function.
 
-There is another aspect of julia that makes it interesting and that is the way packages compose.
+There is another aspect of Julia that makes it interesting and that is the way packages compose.
 This is captured the best by an analogy from [Sam Urmy](https://github.com/ElOceanografo):
 
 > Say you want a toy truck.

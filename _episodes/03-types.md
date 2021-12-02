@@ -4,13 +4,13 @@ teaching: 15
 exercises: 5
 questions:
 - "What is the use of types?"
-- "How are types organized in julia?"
+- "How are types organized in Julia?"
 objectives:
 - "Understand the structure of the type tree."
 - "Know how to traverse the type tree."
 - "Know how to build mutable and immutable types."
 keypoints:
-- "In julia types have only one direct supertype."
+- "In Julia types have only one direct supertype."
 ---
 
 ## Structuring variables
@@ -43,7 +43,7 @@ end
 Here `::Float64` is a type specification, indicating that this variable should be a 64-bit floating point number.
 If Melissa hadn't specified the type, the variables would have the type `Any` by default.
 
-In julia every type can have only one supertype, so lets check how many types are between `Float64` and `Any`
+In Julia every type can have only one supertype, so lets check how many types are between `Float64` and `Any`
 
 ~~~
 julia> supertype(Float64)
@@ -122,7 +122,7 @@ Stacktrace:
 {: .error}
 
 > ## Caveat: redefining `struct`s
-> In julia it is not very easy to redefine `struct`s.
+> In Julia it is not very easy to redefine `struct`s.
 > It is necessary to restart the REPL to define the new definition of `Trebuchet`
 > or take a different name.
 {: .callout}

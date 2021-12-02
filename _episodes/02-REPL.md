@@ -21,7 +21,7 @@ keypoints:
 ## Variables
 
 
-After downloading and executing a julia binary from https://julialang.org Melissa and her classmates face the so called REPL, which stands for <u>r</u>ead-<u>e</u>valuate-<u>p</u>rint-<u>l</u>oop. The interactive command-line REPL allows quick and easy execution of Julia statements.
+After downloading and executing a Julia binary from https://julialang.org Melissa and her classmates face the so called REPL, which stands for <u>r</u>ead-<u>e</u>valuate-<u>p</u>rint-<u>l</u>oop. The interactive command-line REPL allows quick and easy execution of Julia statements.
 The first thing they try is to perform basic arithmetic operations
 ~~~
 1 + 4 * 7.3
@@ -65,7 +65,7 @@ julia> varinfo()
 
 ## Unicode
 
-In julia unicode characters are also allowed as variables like `α = 2`.
+In Julia unicode characters are also allowed as variables like `α = 2`.
 Unicode characters can be entered by a backslash followed by their LaTeX-name and then pressing <kbd>tab</kbd> (in this case `\alpha`<kbd>tab</kbd>).
 
 ## REPL-modes

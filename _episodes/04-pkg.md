@@ -19,11 +19,11 @@ keypoints:
 ## The package manager
 
 Now it is time for Melissa and their mates to simulate the launch of the trebuchet.
-The necessary equations are really complicated, but an investigation on [juliahub](https://juliahub.com/) revealed that someone already implemented these and published it as the julia package `Trebuchet.jl`.
+The necessary equations are really complicated, but an investigation on [juliahub](https://juliahub.com/) revealed that someone already implemented these and published it as the Julia package `Trebuchet.jl`.
 That spares some real work.
 
 Melissa enters the package mode by pressing <kbd>]</kbd>.
-The `julia>` prompt becomes a blue prompt that reads the julia version that Melissa is running.
+The `julia>` prompt becomes a blue prompt that reads the Julia version that Melissa is running.
 After consulting the [documentation](https://julialang.github.io/Pkg.jl/v1/) she knows that the prompt is showing the currently activated environment and that this is the global environment that is activated by default.
 
 However, she doesn't want to clutter the global environment when working on her project, so she creates a new environment via

@@ -20,7 +20,7 @@ keypoints:
 Now that Melissa knows which method to add she thinks about the implementation.
 
 If the index is `1` she wants to set `counterweight` while if the index is `2` she wants to set `release_angle` and since these are the only to fields she wants to return an error if anything else comes in.
-In julia the keywords to specify conditions are `if`, `elseif` and `else`.
+In Julia the keywords to specify conditions are `if`, `elseif` and `else`.
 Closed with an `end`.
 
 Thus she writes
@@ -39,9 +39,9 @@ end
 
 ### Interfaces
 
-`setindex!` is actually one function of a widespread _interface_ in the julia language: `AbstractArray`s.
+`setindex!` is actually one function of a widespread _interface_ in the Julia language: `AbstractArray`s.
 An interface is a collection of methods that are all implemented by a certain type.
-For example lists the [julia manual](https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-array) all methods that a subtype of `AbstractArray` need to implement to adhere to the `AbstractArray` interface.
+For example lists the [Julia manual](https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-array) all methods that a subtype of `AbstractArray` need to implement to adhere to the `AbstractArray` interface.
 If Melissa does this then her `Trebuchet` type will work with every function in `Base` that accepts an `AbstractArray`.
 
 She also needs to make `Trebuchet` a proper subtype of `AbstractArray` as she tried in [the types episode]({{ site.baseurl }}{%link _episodes/03-types.md %}).
@@ -91,7 +91,7 @@ But first Melissa needs a way to improve her parameters.
 > Since the `shoot_distance` function has three input parameters, the gradient of `shoot_distance` will return a 3-element `Array`.
 > One direction for each input parameter.
 >
-> Thanks to [automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation) and the julia package `ForwardDiff.jl` gradients can be calculated easily.
+> Thanks to [automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation) and the Julia package `ForwardDiff.jl` gradients can be calculated easily.
 {: .quotation}
 
 Melissa uses the `gradient` function of `ForwardDiff.jl` to get the direction in which she needs to change the parameters to make the largest difference.

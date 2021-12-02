@@ -4,7 +4,7 @@ teaching: 10
 exercises: 30
 questions:
 - "What are unit tests?"
-- "How are tests organized in julia?"
+- "How are tests organized in Julia?"
 objectives:
 - "Learn to create unit tests and test-sets using the `Test` standard library"
 keypoints:
