@@ -13,10 +13,12 @@ keypoints:
 
 ## Unit tests
 
-Now that Melissa has released her first package she fears that future changes will impact the existing functionality of her package.
+Now that Melissa has released her first package she fears that future changes
+will impact the existing functionality of her package.
 This can be prevented by adding tests to her package.
 
-Looking at the structure of other packages Melissa figured out that tests usually go in a separate `test` folder next to the `src` folder.
+Looking at the structure of other packages Melissa figured out that tests
+usually go in a separate `test` folder next to the `src` folder.
 This should contain a `runtests.jl` file.
 
 The standard library `Test` provides the functionality for writing tests:
@@ -49,19 +51,24 @@ With this Melissa can run her test using the pkg mode of the REPL:
 
 ### Test specific dependencies
 
-Melissa needed to add `Test` to her package in order to run the code above, but actually `Test` is not needed for her package other than testing.
-Thus it is possible to move the `Test` entry in the `Project.toml` file from `[deps]` to an `[extras]` section and then add another entry:
+Melissa needed to add `Test` to her package in order to run the code above, but
+actually `Test` is not needed for her package other than testing.
+Thus it is possible to move the `Test` entry in the `Project.toml` file from
+`[deps]` to an `[extras]` section and then add another entry:
 
 ~~~
 [targets]
 test = ["Test"]
 ~~~
 {: .language-julia}
-Check out the [sample project file](../code/Project.toml) for a complete example.
+
+Check out the [sample project file](../code/Project.toml) for a complete
+example.
 
 > ## Create a test for MelissasModule
 >
-> Create a test that ensures that `shoot_distance` returns a value that is between `target - ε` and `target + ε`.
+> Create a test that ensures that `shoot_distance` returns a value that is
+> between `target - ε` and `target + ε`.
 >
 > > ## Solution
 > >

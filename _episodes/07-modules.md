@@ -1,5 +1,5 @@
 ---
-title: "using Modules"
+title: "Using Modules"
 teaching: 15
 exercises: 0
 questions:
@@ -14,10 +14,14 @@ keypoints:
 
 ## Modules
 
-Melissa now has a bunch of definitions in her running Julia session and using the REPL for interactive exploration is great, but it is more and more taxing to keep in mind what is defined, and all the definitions are lost once she closes the REPL.
+Melissa now has a bunch of definitions in her running Julia session and using
+the REPL for interactive exploration is great, but it is more and more taxing
+to keep in mind what is defined, and all the definitions are lost once she
+closes the REPL.
 
 That is why she decides to put her code in a file.
-She opens up her text editor and creates a file called `aim_trebuchet.jl` in the current working directory and pastes the code she got so far in there.
+She opens up her text editor and creates a file called `aim_trebuchet.jl` in
+the current working directory and pastes the code she got so far in there.
 This is what it looks like:
 
 ~~~
@@ -71,18 +75,27 @@ environment = Environment(5, 100)
 precise_trebuchet = aim(imprecise_trebuchet, environment)
 shoot_distance(precise_trebuchet, environment)
 ~~~
-{: .language-julia}
+{: .language-julia title="aim_trebuchet.jl"}
 
 Now Melissa can run `include(aim_trebuchet.jl)` in the REPL to execute her code.
 
-She also recognizes that she has a bunch of definitions at the beginning that she doesn't need to execute more than once in a session and some lines at the end that use these definitions which she might run more often.
-She will split these in two separate files and put the definitions into a _module_.
-The module will put the definitions into their own namespace which is the module name.
-This means Melissa would need to put the module name before each definition if she uses it outside of the module.
-But she remembers from the [pkg episode]({{ page.root }}{% link _episodes/04-pkg.md %}) that she can export names that don't need to be prefixed.
+She also recognizes that she has a bunch of definitions at the beginning that
+she doesn't need to execute more than once in a session and some lines at the
+end that use these definitions which she might run more often.
+She will split these in two separate files and put the definitions into a
+_module_.
+The module will put the definitions into their own namespace which is the
+module name.
+This means Melissa would need to put the module name before each definition if
+she uses it outside of the module.
+But she remembers from the [pkg episode](
+{{ page.root }}{% link _episodes/04-pkg.md %}) that she can export names that
+don't need to be prefixed.
 
-She names her module `MelissasModule` and accordingly the file `MelissasModule.jl`.
-From this module she exports the names `aim`, `shoot_distance`, `Trebuchet` and `Environment`.
+She names her module `MelissasModule` and accordingly the file
+`MelissasModule.jl`.
+From this module she exports the names `aim`, `shoot_distance`, `Trebuchet` and
+`Environment`.
 This way she can leave her other code unchanged.
 
 ~~~
@@ -135,7 +148,7 @@ function aim(trebuchet::Trebuchet, environment::Environment; ε = 1e-1, η = 0.0
 end
 end # MelissasModule
 ~~~
-{: .language-julia}
+{: .language-julia title="MelissasModule.jl"}
 
 The rest of the code goes to a file she calls `MelissasCode.jl`.
 
@@ -147,20 +160,25 @@ environment = Environment(5, 100)
 precise_trebuchet = aim(imprecise_trebuchet, environment)
 shoot_distance(precise_trebuchet, environment)
 ~~~
-{: .language-julia}
+{: .language-julia title="MelissasCode.jl"}
 
-Now she can include `MelissasModule.jl` once, and change and include `MelissasCode.jl` as often as she wants.
+Now she can include `MelissasModule.jl` once, and change and include
+`MelissasCode.jl` as often as she wants.
 But what if she wants to make changes to the module?
-If she changes the code in the module, re-includes the module and runs her code again, she only gets a bunch of warnings, but her changes are not applied.
+If she changes the code in the module, re-includes the module and runs her code
+again, she only gets a bunch of warnings, but her changes are not applied.
 
 ## Revise.jl
 
-`Revise.jl` is a package that can keep track of changes in your files and load these in a running Julia session.
+`Revise.jl` is a package that can keep track of changes in your files and load
+these in a running Julia session.
 
 Melissa needs to take two things into account:
 
-- `using Revise` must come before `using` any Package that she wants to be tracked
-- she should use `includet` instead of `include` for included files (`t` for "tracking")
+- `using Revise` must come before `using` any Package that she wants to be
+  tracked
+- she should use `includet` instead of `include` for included files (`t` for
+  "tracking")
 
 Thus she now runs
 
@@ -174,7 +192,8 @@ julia> include("MelissasCode.jl")
 ~~~
 {: .language-julia}
 
-and any change she makes in `MelissasModule.jl` will be visible in the next run of her code.
+and any change she makes in `MelissasModule.jl` will be visible in the next run
+of her code.
 
 > ## Did I say any changes?
 >

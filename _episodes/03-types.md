@@ -15,7 +15,9 @@ keypoints:
 
 ## Structuring variables
 
-Melissa wants to keep the variables corresponding to the trebuchet (`counterweight`, `release_angle`) separate from the variables coming from the environment (`wind`, `target_distance`).
+Melissa wants to keep the variables corresponding to the trebuchet
+(`counterweight`, `release_angle`) separate from the variables coming from the
+environment (`wind`, `target_distance`).
 That is why she chooses to group them together using _structures_.
 There are two structure types:
 
@@ -24,8 +26,10 @@ There are two structure types:
 - mutable structures, whose fields can change after creation
   - keyword: `mutable struct`
 
-Since Melissa wants to change the parameters of the trebuchet, she uses a `mutable struct` for it.
-But she cannot influence the environment and thus uses a `struct` for those values.
+Since Melissa wants to change the parameters of the trebuchet, she uses a
+`mutable struct` for it.
+But she cannot influence the environment and thus uses a `struct` for those
+values.
 
 ~~~
 mutable struct Trebuchet
@@ -42,10 +46,13 @@ end
 
 ### Types and hierarchy
 
-Here `::Float64` is a type specification, indicating that this variable should be a 64-bit floating point number.
-If Melissa hadn't specified the type, the variables would have the type `Any` by default.
+Here `::Float64` is a type specification, indicating that this variable should
+be a 64-bit floating point number.
+If Melissa hadn't specified the type, the variables would have the type `Any`
+by default.
 
-In Julia every type can have only one supertype, so lets check how many types are between `Float64` and `Any`
+In Julia every type can have only one supertype, so lets check how many types
+are between `Float64` and `Any`
 
 ~~~
 julia> supertype(Float64)
@@ -59,9 +66,11 @@ Any
 ~~~
 {: .language-julia}
 
-So we have the relationship `Float64 <: AbstractFloat <: Real <: Number <: Any`, where `<:` means "subtype of".
+So we have the relationship `Float64 <: AbstractFloat <: Real <: Number <:
+Any`, where `<:` means "subtype of".
 
-`Float64` is a _concrete_ type, which means that you can actually create objects of this type.
+`Float64` is a _concrete_ type, which means that you can actually create
+objects of this type.
 For example `1.0` is a object of type `Float64`.
 We can check this at the REPL:
 
@@ -71,8 +80,10 @@ true
 ~~~
 {: .language-julia}
 
-All the other types are _abstract_ types that are used to address groups of types.
-For example, if we declare a variable as `a::Real` then it can be bound to any value that is a subtype of `Real`.
+All the other types are _abstract_ types that are used to address groups of
+types.
+For example, if we declare a variable as `a::Real` then it can be bound to any
+value that is a subtype of `Real`.
 
 Let's quickly check what are all the subtypes of `Real`:
 
@@ -86,7 +97,8 @@ julia> subtypes(Real)
 ~~~
 {: .language-julia}
 
-This way the types form a tree with abstract types on the nodes and concrete types as leaves.
+This way the types form a tree with abstract types on the nodes and concrete
+types as leaves.
 Have a look at this visualization of all subtypes of `Number`:
 ![Type_tree-Number](https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Type-hierarchy-for-julia-numbers.png/1200px-Type-hierarchy-for-julia-numbers.png)
 
@@ -100,15 +112,19 @@ Have a look at this visualization of all subtypes of `Number`:
 > 4. Integer
 >
 > > ## Solution
-> > The correct answer is 4. While `1.0` represents an integer value it is still a floating point number in contrast to `1`.
+> >
+> > The correct answer is 4:
+> > while `1` is an integer, `1.0` is its floating-point representation.
 > {: .solution}
 {: .challenge}
 
 
 ## Creating a subtype
 
-A concrete type can be made a subtype of an abstract type  with the subtype operator `<:`.
-Since `Trebuchet` contains several fields that are mutable Melissa thinks it is a good idea to make it a subtype of `AbstractVector`.
+A concrete type can be made a subtype of an abstract type with the subtype
+operator `<:`.
+Since `Trebuchet` contains several fields that are mutable Melissa thinks it is
+a good idea to make it a subtype of `AbstractVector`.
 
 ~~~
 julia> mutable struct Trebuchet <: AbstractVector{Float64}
@@ -129,8 +145,8 @@ Stacktrace:
 > ## Caveat: redefining `struct`s
 >
 > In Julia it is not very easy to redefine `struct`s.
-> It is necessary to restart the REPL to define the new definition of `Trebuchet`
-> or take a different name.
+> It is necessary to restart the REPL to define the new definition of
+> `Trebuchet` or take a different name.
 {: .callout}
 
 Melissa decides to keep going and come back to this later.

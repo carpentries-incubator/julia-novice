@@ -15,44 +15,78 @@ keypoints:
 
 ## What is a programming language?
 
-A programming language mediates between the natural language of humans and the machine instructions of a computer.
-The human specifies what the computer should compute on a high level using the programming language.
-This specification will be translated to machine instructions, the so called assembly code, which will be executed by the processor (CPU, GPU, ...).
+A programming language mediates between the natural language of humans and the
+machine instructions of a computer.
+The human specifies what the computer should compute on a high level using the
+programming language.
+This specification will be translated to machine instructions, the so called
+assembly code, which will be executed by the processor (CPU, GPU, ...).
 
 ## Interpreting and compiling
 
-This translation happens differently depending on the programming language you use.
+This translation happens differently depending on the programming language you
+use.
 There are mainly two different techniques: _compiling_ and _interpreting_.
-Interpreted languages such as Python and R translate instructions one at a time, while compiled languages like C and Fortran take whole documents, analyze the structure of the code, and perform optimizations before translating it to machine code.
+Interpreted languages such as Python and R translate instructions one at a
+time, while compiled languages like C and Fortran take whole documents, analyze
+the structure of the code, and perform optimizations before translating it to
+machine code.
 
-This leads to more efficient machine instructions of the compiled code at the cost of less flexibility and more verbose code.
-Most prominently, compiled languages need an explicit type declaration for each variable.
+This leads to more efficient machine instructions of the compiled code at the
+cost of less flexibility and more verbose code.
+Most prominently, compiled languages need an explicit type declaration for each
+variable.
 
 ## Why Julia?
 
-Julia is a programming language that superficially looks like an interpreted language and mostly behaves like one.
+Julia is a programming language that superficially looks like an interpreted
+language and mostly behaves like one.
 But before each function is executed it will be compiled _just in time_.
 
-Thus you get the flexibility of an interpreted language and the execution speed of a compiled language at the cost of waiting a bit longer for the first execution of any function.
+Thus you get the flexibility of an interpreted language and the execution speed
+of a compiled language at the cost of waiting a bit longer for the first
+execution of any function.
 
-There is another aspect of Julia that makes it interesting and that is the way packages compose.
-This is captured the best by an analogy from [Sam Urmy](https://github.com/ElOceanografo):
+There is another aspect of Julia that makes it interesting and that is the way
+packages compose.
+This is captured the best by an analogy from [Sam Urmy](
+https://github.com/ElOceanografo):
 
 > Say you want a toy truck.
 >
-> The Python/R solution is to look for the appropriate package–like buying a Playmobil truck. It comes pre-manufactured, well-engineered and tested, and does 95% of what you would ever want a toy truck to do.
+> The Python/R solution is to look for the appropriate package–like buying a
+> Playmobil truck. It comes pre-manufactured, well-engineered and tested, and
+> does 95% of what you would ever want a toy truck to do.
 >
-> The Fortran/C solution is to build the truck from scratch. This allows total customization and you can optimize the features and performance however you want. The downside is that it takes more time, you need woodworking skills, and might hurt yourself with the power tools.
+> The Fortran/C solution is to build the truck from scratch. This allows total
+> customization and you can optimize the features and performance however you
+> want. The downside is that it takes more time, you need woodworking skills,
+> and might hurt yourself with the power tools.
 >
-> The Julia solution is like Legos. You can get the truck kit if you want–which will require a bit more assembly than the Playmobil, but way less than building it from scratch. Or, you can get the component pieces and assemble the truck to your own specs. There’s no limit to what you can put together, and because the pieces all have the same system of bumps, everything snaps together quickly and easily.
+> The Julia solution is like Legos. You can get the truck kit if you want–which
+> will require a bit more assembly than the Playmobil, but way less than
+> building it from scratch. Or, you can get the component pieces and assemble
+> the truck to your own specs. There’s no limit to what you can put together,
+> and because the pieces all have the same system of bumps, everything snaps
+> together quickly and easily.
 >
-> ![Trucks](https://aws1.discourse-cdn.com/business5/uploads/julialang/original/3X/5/2/52e63856ad9e23876cda4297a04171879fa625b4.jpeg){: height="400px"}
-> OK, sure. Toy trucks are like linear algebra, though, a common request, and every “toy system” will have an implementation that works basically fine. But what if you want a time-traveling sailing/space ship with lasers AND dragon wings? And it should be as easy to build and use as a basic dump truck?
+> ![Trucks][vessel]{: height="400px"}
 >
-> ![Vessel](https://aws1.discourse-cdn.com/business5/uploads/julialang/original/3X/2/8/2865d34fb35c181dc3c5c0f0b71915f31310269c.jpeg){: height="400px"}
-> There’s a reason that only Lego ever made anything like Dr. Cyber’s Flying Time Vessel
+> OK, sure. Toy trucks are like linear algebra, though, a common request, and
+> every “toy system” will have an implementation that works basically fine. But
+> what if you want a time-traveling sailing/space ship with lasers AND dragon
+> wings? And it should be as easy to build and use as a basic dump truck?
+>
+> ![Vessel][vessel]{: height="400px"}
+>
+> There’s a reason that only Lego ever made anything like Dr. Cyber’s Flying
+> Time Vessel!
 {: .quotation}
 
-Originally posted on [Discourse](https://discourse.julialang.org/t/what-is-the-advantage-of-julia-over-fortran/65964/101).
+Originally posted on [Discourse][discourse].
+
+[discourse]: https://discourse.julialang.org/t/what-is-the-advantage-of-julia-over-fortran/65964/101
+[truck]: https://aws1.discourse-cdn.com/business5/uploads/julialang/original/3X/5/2/52e63856ad9e23876cda4297a04171879fa625b4.jpeg
+[vessel]: https://aws1.discourse-cdn.com/business5/uploads/julialang/original/3X/2/8/2865d34fb35c181dc3c5c0f0b71915f31310269c.jpeg
 
 {% include links.md %}

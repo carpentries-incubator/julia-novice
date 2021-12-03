@@ -19,8 +19,11 @@ keypoints:
 
 Now that Melissa knows which method to add she thinks about the implementation.
 
-If the index is `1` she wants to set `counterweight` while if the index is `2` she wants to set `release_angle` and since these are the only two fields she wants to return an error if anything else comes in.
-In Julia the keywords to specify conditions are `if`, `elseif` and `else`, closed with an `end`.
+If the index is `1` she wants to set `counterweight` while if the index is `2`
+she wants to set `release_angle` and since these are the only two fields she
+wants to return an error if anything else comes in.
+In Julia the keywords to specify conditions are `if`, `elseif` and `else`,
+closed with an `end`.
 Thus she writes
 
 ~~~
@@ -38,12 +41,20 @@ end
 
 ### Interfaces
 
-`setindex!` is actually one function of a widespread _interface_ in the Julia language: `AbstractArray`s.
-An interface is a collection of methods that are all implemented by a certain type.
-For example, the [Julia manual](https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-array) lists all methods that a subtype of `AbstractArray` need to implement to adhere to the `AbstractArray` interface.
-If Melissa does this then her `Trebuchet` type will work with every function in `Base` that accepts an `AbstractArray`.
+`setindex!` is actually one function of a widespread _interface_ in the Julia
+language: `AbstractArray`s.
+An interface is a collection of methods that are all implemented by a certain
+type.
+For example, the [Julia
+manual](https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-array)
+lists all methods that a subtype of `AbstractArray` need to implement to adhere
+to the `AbstractArray` interface.
+If Melissa does this then her `Trebuchet` type will work with every function in
+`Base` that accepts an `AbstractArray`.
 
-She also needs to make `Trebuchet` a proper subtype of `AbstractArray` as she tried in [the types episode]({{ site.baseurl }}{%link _episodes/03-types.md %}).
+She also needs to make `Trebuchet` a proper subtype of `AbstractArray` as she
+tried in [the types episode]({{ site.baseurl }}{%link _episodes/03-types.md
+%}).
 Therefore she restarts her REPL.
 
 > ## Implement the `AbstractArray` interface for `Trebuchet`
@@ -75,32 +86,42 @@ Therefore she restarts her REPL.
 
 ## Loops
 
-Now Melissa knows how to shoot the virtual trebuchet and get the distance of the projectile, but in order to aim she needs to take a lot of trial shots in a row.
+Now Melissa knows how to shoot the virtual trebuchet and get the distance of
+the projectile, but in order to aim she needs to take a lot of trial shots in a
+row.
 She wants her trebuchet to only shoot a hundred meters.
 
-She could execute the function several times on the REPL with different parameters, but that gets tiresome quickly.
+She could execute the function several times on the REPL with different
+parameters, but that gets tiresome quickly.
 A better way to do this is to use loops.
 
 But first Melissa needs a way to improve her parameters.
 
 > ## Digression: Gradients
 >
-> The `shoot_distance` function takes three input parameters and returns one value (the distance).
-> Whenever we change one of the input parameters, we will get a different distance.
+> The `shoot_distance` function takes three input parameters and returns one
+> value (the distance).
+> Whenever we change one of the input parameters, we will get a different
+> distance.
 >
-> The [_gradient_](https://en.wikipedia.org/wiki/Gradient) of a function gives the direction in which the return value will change by the largest amount.
+> The [_gradient_][grad] of a function gives the direction in which the return
+> value will change by the largest amount.
 >
-> Since the `shoot_distance` function has three input parameters, the gradient of `shoot_distance` will return a 3-element `Array`:
+> Since the `shoot_distance` function has three input parameters, the gradient
+> of `shoot_distance` will return a 3-element `Array`:
 > one direction for each input parameter.
 >
-> Thanks to [automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation) and the Julia package `ForwardDiff.jl` gradients can be calculated easily.
-{: .quotation}
+> Thanks to [automatic differentiation][autodiff] and the Julia package
+> `ForwardDiff.jl` gradients can be calculated easily.
+{: .callout}
 
-Melissa uses the `gradient` function of `ForwardDiff.jl` to get the direction in which she needs to change the parameters to make the largest difference.
+Melissa uses the `gradient` function of `ForwardDiff.jl` to get the direction
+in which she needs to change the parameters to make the largest difference.
 
 > ## Do you remember?
 >
-> What does Melissa need to write into the REPL to install the package `ForwardDiff`?
+> What does Melissa need to write into the REPL to install the package
+> `ForwardDiff`?
 >
 > 1. `] install ForwardDiff`
 > 2. `add ForwardDiff`
@@ -136,7 +157,8 @@ julia> grad = gradient(x -> (shoot_distance([environment.wind, x[2], x[1]] - env
 ~~~
 {: .language-julia}
 
-Melissa now changes her arguments a little bit in the direction of the gradient and checks the new distance.
+Melissa now changes her arguments a little bit in the direction of the gradient
+and checks the new distance.
 
 <!-- TODO: can we get promotion to Trebuchet here? -->
 
@@ -152,13 +174,16 @@ That got shorter, but also a bit too short.
 
 > ## Experiment
 >
-> How far can you change the parameters in the direction of the gradient, such that it still improves the distance?
+> How far can you change the parameters in the direction of the gradient, such
+> that it still improves the distance?
 {: .discussion}
 
 ### For loops
 
-Now that Melissa knows it is going in the right direction she wants to automate the additional iterations.
-She writes a new function `aim`, that performs the application of the gradient `N` times.
+Now that Melissa knows it is going in the right direction she wants to automate
+the additional iterations.
+She writes a new function `aim`, that performs the application of the gradient
+`N` times.
 
 ~~~
 julia> function aim(trebuchet, environment; N = 10, η = 0.05)
@@ -186,7 +211,9 @@ julia> shoot_distance(better_trebuchet, environment)
 > > ## Reason
 > >
 > > This is a highly non-linear system and thus very sensitive.
-> > The distances across different values for the counterweight and the release angle α look like this
+> > The distances across different values for the counterweight and the release
+> > angle α look like this:
+> >
 > > ![distance-surface](../fig/shoot_surface.png)
 > {: .solution}
 {: .discussion}
@@ -197,9 +224,11 @@ julia> shoot_distance(better_trebuchet, environment)
 
 ### While loops
 
-Melissa finds the output of the above `aim` function too unpredictable to be useful.
+Melissa finds the output of the above `aim` function too unpredictable to be
+useful.
 That's why she decides to change it a bit.
-This time she uses a `while`-loop to run the iterations until she is sufficiently near her target.
+This time she uses a `while`-loop to run the iterations until she is
+sufficiently near her target.
 
 ~~~
 julia> function aim(trebuchet::Trebuchet, environment::Environment; ε = 1e-1, η = 0.05)
@@ -223,5 +252,8 @@ julia> shoot_distance(better_trebuchet, environment)
 {: .language-julia}
 
 That is more what she had in mind.
+
+[autodiff]: https://en.wikipedia.org/wiki/Automatic_differentiation
+[grad]: https://en.wikipedia.org/wiki/Gradient
 
 {% include links.md %}
