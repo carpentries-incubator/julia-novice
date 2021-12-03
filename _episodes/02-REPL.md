@@ -18,13 +18,49 @@ keypoints:
 
 # Entering the REPL
 
+Melissa and her classmates open a terminal and launch `julia`:
+
+~~~
+julia
+~~~
+{: .language-bash}
+~~~
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.7.0 (2021-11-30)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia>
+~~~
+{: .output}
+
+This is the so-called REPL, which stands for
+**r**ead-**e**valuate-**p**rint-**l**oop. The interactive command-line REPL
+allows quick and easy execution of Julia statements.
+
+Like the terminal, the Julia REPL has a prompt, where it awaits input:
+
+~~~
+julia>
+~~~
+{: .language-julia}
+
+> ## Implicit prompt
+>
+> Most of the code boxes that follow *do not show the `julia>` prompt*, even
+> though it's there in the REPL. Why?
+>
+> It's important to delineate input (what you type) and output (how the
+> machine responds). The prompt can be confusing, so it is excluded. You may
+> assume that any **Julia** box prepends the prompt on each line of input.
+{: .callout}
+
 ## Variables
 
-After downloading and executing a Julia binary from
-[julialang.org](https://julialang.org), Melissa and her classmates face the so
-called REPL, which stands for **r**ead-**e**valuate-**p**rint-**l**oop. The
-interactive command-line REPL allows quick and easy execution of Julia
-statements.
 The first thing they try is to perform basic arithmetic operations:
 
 ~~~
@@ -56,7 +92,10 @@ She can also check which variables are defined in the current session by
 running
 
 ~~~
-julia> varinfo()
+varinfo()
+~~~
+{: .language-julia}
+~~~
   name                    size summary
   –––––––––––––––– ––––––––––– –––––––
   Base                         Module
@@ -67,40 +106,94 @@ julia> varinfo()
   distance             8 bytes Float64
   distance_x_2         8 bytes Float64
 ~~~
-{: .language-julia}
+{: .output}
 
 ## Unicode
 
 In Julia, Unicode characters are also allowed as variables like `α = 2`.
-Unicode characters can be entered by a backslash followed by their LaTeX-name
-and then pressing `tab` (in this case `\alpha``tab`).
+Unicode characters can be entered by a backslash followed by their [LaTeX
+name][latex] and then pressing <kbd>tab</kbd> (in this case
+`\alpha`<kbd>tab</kbd>).
 
 ## REPL-modes
 
 Unfortunately Melissa can't remember the LaTeX name of ∂ so she copies the
-character, presses `?` to enter the help mode, pastes the character and gets
+character, presses <kbd>?</kbd> for help mode, pastes the ∂ character, then
+presses enter:
 
 ~~~
+?
 help?> ∂
+~~~
+{: .language-julia}
+~~~
 "∂" can be typed by \partial<tab>
 ~~~
 {: .output}
 
 Great! This way she can easily look up the names she needs.
-She gets back to normal mode by pressing backspace.
+She gets back to normal mode by pressing <kbd>backspace</kbd>.
 
-Another useful mode is the shell mode that can be entered by pressing `;`.
-The prompt has now changed to shell.
-It can be used to issue commands of the underlying shell, but don't confuse it
-with an actual shell: Special shell syntax like piping won't work.
+Another useful mode is the ***shell mode*** that can be entered by pressing
+<kbd>;</kbd>. The prompt has now changed:
 
-> ## Hello shell mode
+~~~
+;
+~~~
+{: .language-julia}
+~~~
+shell>
+~~~
+{: .output}
+
+Shell mode can be used to issue commands to the underlying shell, but don't
+confuse it with an actual shell: special shell syntax like piping won't work.
+Like before, hit <kbd>backspace</kbd> to get back to the Julia prompt.
+
+> ## Hello, **`shell>`**!
 >
 > Use the shell mode to start nano and save your first `.jl` file
+>
+> > ## Solution
+> >
+> > ~~~
+> > ;
+> > ~~~
+> > {: .language-julia}
+> > ~~~
+> > shell> nano hello.jl
+> > shell> cat hello.jl
+> > ~~~
+> > {: .language-bash}
+> > ~~~
+> > print("Hello World")
+> > ~~~
+> > {: .output}
+> > ~~~
+> > shell> julia hello.jl
+> > ~~~
+> > {: .language-bash}
+> > ~~~
+> > Hello World
+> > ~~~
+> > {: .output}
+> > <kbd>backspace</kbd>
 {: .challenge}
 
-Finally there is the package mode that is entered with `]` which is used for
-package management, which will be covered later on.
-To exit the shell or pkg mode use `backspace`.
+Finally there is ***package mode*** that is entered with <kbd>]</kbd> which is
+used for package management, which will be covered later on:
+
+~~~
+]
+~~~
+{: .language-julia}
+~~~
+pkg>
+~~~
+{: .output}
+
+To exit ***shell*** or ***pkg*** mode, hit <kbd>backspace</kbd>.
+
+[latex]: http://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
 
 {% include links.md %}
