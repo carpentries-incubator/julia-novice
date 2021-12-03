@@ -3,13 +3,14 @@ title: "Introduction"
 teaching: 5
 exercises: 0
 questions:
-- "Who is teaching?"
-- "What is the schedule?"
+- "What is Julia?"
+- "Why use Julia?"
 objectives:
-- "Explain the overall content and in more detail the content of todays lesson."
+- "Explain the difference between interpreted and compiled programming languages"
+- "Compare how composing works in Julia and some common programming languages"
 keypoints:
-- "Julia is a just in time compiled language"
-- "Julia code composes well"
+- "Julia is a just-in-time compiled language"
+- "Julia packages compose well"
 ---
 
 ## What is a programming language?
@@ -20,19 +21,19 @@ This specification will be translated to machine instructions, the so called ass
 
 ## Interpreting and compiling
 
-This translation happens differently depending of the programming language you use.
+This translation happens differently depending on the programming language you use.
 There are mainly two different techniques: _compiling_ and _interpreting_.
-Interpreted languages such as python and R translate instructions one at a time, while compiled languages like C and Fortran take whole documents analyze the structure of the code and perform optimizations before translating it to machine code.
+Interpreted languages such as Python and R translate instructions one at a time, while compiled languages like C and Fortran take whole documents, analyze the structure of the code, and perform optimizations before translating it to machine code.
 
 This leads to more efficient machine instructions of the compiled code at the cost of less flexibility and more verbose code.
-Most prominently the need for type declarations in compiled languages.
+Most prominently, compiled languages need an explicit type declaration for each variable.
 
 ## Why Julia?
 
 Julia is a programming language that superficially looks like an interpreted language and mostly behaves like one.
-But before each function is executed it will compile it _just in time_.
+But before each function is executed it will be compiled _just in time_.
 
-Thus you get the flexibility of an interpreted language and the execution speed of the compiled language at the cost of waiting a bit longer for the first execution of any function.
+Thus you get the flexibility of an interpreted language and the execution speed of a compiled language at the cost of waiting a bit longer for the first execution of any function.
 
 There is another aspect of Julia that makes it interesting and that is the way packages compose.
 This is captured the best by an analogy from [Sam Urmy](https://github.com/ElOceanografo):
@@ -46,10 +47,10 @@ This is captured the best by an analogy from [Sam Urmy](https://github.com/ElOce
 > The Julia solution is like Legos. You can get the truck kit if you want–which will require a bit more assembly than the Playmobil, but way less than building it from scratch. Or, you can get the component pieces and assemble the truck to your own specs. There’s no limit to what you can put together, and because the pieces all have the same system of bumps, everything snaps together quickly and easily.
 >
 > ![Trucks](https://aws1.discourse-cdn.com/business5/uploads/julialang/original/3X/5/2/52e63856ad9e23876cda4297a04171879fa625b4.jpeg){: height="400px"}
-> Ok, sure. Toy trucks are like linear algebra, though, a common request, and every “toy system” will have an implementation that works basically fine. But what if you want a time-traveling sailing/space ship with lasers AND dragon wings? And it should be as easy to build and use as a basic dump truck?
+> OK, sure. Toy trucks are like linear algebra, though, a common request, and every “toy system” will have an implementation that works basically fine. But what if you want a time-traveling sailing/space ship with lasers AND dragon wings? And it should be as easy to build and use as a basic dump truck?
 >
 > ![Vessel](https://aws1.discourse-cdn.com/business5/uploads/julialang/original/3X/2/8/2865d34fb35c181dc3c5c0f0b71915f31310269c.jpeg){: height="400px"}
-> There’s a reason that only Lego ever made anything like Dr Cyber’s Flying Time Vessel
+> There’s a reason that only Lego ever made anything like Dr. Cyber’s Flying Time Vessel
 {: .quotation}
 
 Originally posted on [Discourse](https://discourse.julialang.org/t/what-is-the-advantage-of-julia-over-fortran/65964/101).

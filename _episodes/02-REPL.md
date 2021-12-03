@@ -10,9 +10,9 @@ objectives:
 - "Learn about REPL modes."
 keypoints:
 - "The REPL reads the given input, evaluates the given expression and prints the resulting output to the user."
-- "Pressing <kbd>?</kbd> enters help mode."
-- "Pressing <kbd>;</kbd> enters shell mode."
-- "Pressing <kbd>]</kbd> enters pkg mode."
+- "Pressing `?` enters help mode."
+- "Pressing `;` enters shell mode."
+- "Pressing `]` enters pkg mode."
 
 ---
 
@@ -21,8 +21,9 @@ keypoints:
 ## Variables
 
 
-After downloading and executing a Julia binary from https://julialang.org Melissa and her classmates face the so called REPL, which stands for <u>r</u>ead-<u>e</u>valuate-<u>p</u>rint-<u>l</u>oop. The interactive command-line REPL allows quick and easy execution of Julia statements.
-The first thing they try is to perform basic arithmetic operations
+After downloading and executing a Julia binary from [julialang.org](https://julialang.org), Melissa and her classmates face the so called REPL, which stands for **r**ead-**e**valuate-**p**rint-**l**oop. The interactive command-line REPL allows quick and easy execution of Julia statements.
+The first thing they try is to perform basic arithmetic operations:
+
 ~~~
 1 + 4 * 7.3
 ~~~
@@ -33,7 +34,7 @@ The first thing they try is to perform basic arithmetic operations
 {: .output}
 
 That works as expected.
-It is also possible to create a variable by binding a name to a value via the assignment operator `=`, which makes it easier to refer to them later on.
+It is also possible to bind a name to a value via the assignment operator `=`, which makes it easier to refer to the value later on.
 These names are called _variables_.
 
 ~~~
@@ -47,8 +48,8 @@ distance_x_2 = 2 * distance
 {: .output}
 
 Melissa notices that assignment also returns the value.
-
 She can also check which variables are defined in the current session by running
+
 ~~~
 julia> varinfo()
   name                    size summary
@@ -65,12 +66,15 @@ julia> varinfo()
 
 ## Unicode
 
-In Julia unicode characters are also allowed as variables like `α = 2`.
-Unicode characters can be entered by a backslash followed by their LaTeX-name and then pressing <kbd>tab</kbd> (in this case `\alpha`<kbd>tab</kbd>).
+In Julia, Unicode characters are also allowed as variables like `α = 2`.
+Unicode characters can be entered by a backslash followed by their LaTeX-name and then pressing `tab` (in this case `\alpha``tab`).
 
 ## REPL-modes
 
-Unfortunately Melissa can't remember the LaTeX name of ∂ so she copies the character, presses <kbd>?</kbd> to enter the help mode, pastes the character and gets
+Unfortunately Melissa can't remember the LaTeX name of ∂ so she
+copies the character, presses `?` to enter the help mode,
+pastes the character and gets
+
 ~~~
 help?> ∂
 "∂" can be typed by \partial<tab>
@@ -80,7 +84,7 @@ help?> ∂
 Great! This way she can easily look up the names she needs.
 She gets back to normal mode by pressing backspace.
 
-Another useful mode is the shell mode that can be entered by pressing <kbd>;</kbd>.
+Another useful mode is the shell mode that can be entered by pressing `;`.
 The prompt has now changed to shell.
 It can be used to issue commands of the underlying shell, but don't confuse it with an actual shell: Special shell syntax like piping won't work.
 
@@ -88,7 +92,7 @@ It can be used to issue commands of the underlying shell, but don't confuse it w
 > Use the shell mode to start nano and save your first `.jl` file
 {: .challenge}
 
-Finally there is the package mode that is entered with <kbd>]</kbd> which is used for package management, which will be covered later on.
-To exit the shell or pkg mode use <kbd>backspace</kbd>.
+Finally there is the package mode that is entered with `]` which is used for package management, which will be covered later on.
+To exit the shell or pkg mode use `backspace`.
 
 {% include links.md %}
