@@ -4,27 +4,33 @@ teaching: 15
 exercises: 5
 questions:
 - "What is the use of types?"
-- "How are types organized in julia?"
+- "How are types organized in Julia?"
 objectives:
 - "Understand the structure of the type tree."
 - "Know how to traverse the type tree."
 - "Know how to build mutable and immutable types."
 keypoints:
-- "In julia types have only one direct supertype."
+- "In Julia types have only one direct supertype."
 ---
 
 ## Structuring variables
 
-Melissa wants to keep the variables corresponding to the trebuchet (`counterweight`, `release_angle`) separate from the variables coming from the environment (`wind`, `target_distance`).
+Melissa wants to keep the variables corresponding to the trebuchet
+(`counterweight`, `release_angle`) separate from the variables coming from the
+environment (`wind`, `target_distance`).
 That is why she chooses to group them together using _structures_.
-There are two type structures:
- - immutable structures, whose fields can not be changed after creation
-   - keyword: `struct`
- - mutable structures, whose fields can change after creation
-   - keyword: `mutable struct`
+There are two structure types:
 
-Since Melissa wants to change the parameters of the trebuchet and uses a `mutable struct` for this.
-But she cannot influence the environment and thus uses a `struct` for it.
+- immutable structures, whose fields can not be changed after creation
+  - keyword: `struct`
+- mutable structures, whose fields can change after creation
+  - keyword: `mutable struct`
+
+Since Melissa wants to change the parameters of the trebuchet, she uses a
+`mutable struct` for it.
+But she cannot influence the environment and thus uses a `struct` for those
+values.
+
 ~~~
 mutable struct Trebuchet
   counterweight::Float64
@@ -40,10 +46,13 @@ end
 
 ### Types and hierarchy
 
-Here `::Float64` is a type specification, indicating that this variable should be a 64-bit floating point number.
-If Melissa hadn't specified the type, the variables would have the type `Any` by default.
+Here `::Float64` is a type specification, indicating that this variable should
+be a 64-bit floating point number.
+If Melissa hadn't specified the type, the variables would have the type `Any`
+by default.
 
-In julia every type can have only one supertype, so lets check how many types are between `Float64` and `Any`
+In Julia every type can have only one supertype, so lets check how many types
+are between `Float64` and `Any`
 
 ~~~
 julia> supertype(Float64)
@@ -57,21 +66,27 @@ Any
 ~~~
 {: .language-julia}
 
-So we have the relationship `Float64 <: AbstractFloat <: Real <: Number <: Any`, where `<:` means "subtype of".
+So we have the relationship `Float64 <: AbstractFloat <: Real <: Number <:
+Any`, where `<:` means "subtype of".
 
-`Float64` is a _concrete_ type, which means that you can actually create objects of this type.
+`Float64` is a _concrete_ type, which means that you can actually create
+objects of this type.
 For example `1.0` is a object of type `Float64`.
 We can check this at the REPL:
+
 ~~~
 julia> 1.0 isa Float64
 true
 ~~~
 {: .language-julia}
 
-All the other types are _abstract_ types that are used to address groups of types.
-For example, if we declare a variable as `a::Real` then it can be bound to any value that is a subtype of `Real`.
+All the other types are _abstract_ types that are used to address groups of
+types.
+For example, if we declare a variable as `a::Real` then it can be bound to any
+value that is a subtype of `Real`.
 
 Let's quickly check what are all the subtypes of `Real`:
+
 ~~~
 julia> subtypes(Real)
 4-element Array{Any,1}:
@@ -82,13 +97,14 @@ julia> subtypes(Real)
 ~~~
 {: .language-julia}
 
-This way the types form a tree with abstract types on the nodes and concrete types as leafs.
+This way the types form a tree with abstract types on the nodes and concrete
+types as leaves.
 Have a look at this visualization of all subtypes of `Number`:
 ![Type_tree-Number](https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Type-hierarchy-for-julia-numbers.png/1200px-Type-hierarchy-for-julia-numbers.png)
 
 > ## Is it `Real`?
 >
-> For which of these types `T` does not hold `(1.0 isa T) == true`?
+> For which of these types `T` is it false that `(1.0 isa T)`?
 >
 > 1. Real
 > 2. Number
@@ -96,15 +112,20 @@ Have a look at this visualization of all subtypes of `Number`:
 > 4. Integer
 >
 > > ## Solution
-> > The correct answer is 4. While `1.0` represents an integer value it is still a floating point number in contrast to `1`.
->{: .solution}
+> >
+> > The correct answer is 4:
+> > while `1` is an integer, `1.0` is its floating-point representation.
+> {: .solution}
 {: .challenge}
 
 
 ## Creating a subtype
 
-A concrete type can be made a subtype of an abstract type  with the subtype operator `<:`.
-Since `Trebuchet` contains several fields that are mutable Melissa thinks it is a good idea to make it a subtype of `AbstractVector`.
+A concrete type can be made a subtype of an abstract type with the subtype
+operator `<:`.
+Since `Trebuchet` contains several fields that are mutable Melissa thinks it is
+a good idea to make it a subtype of `AbstractVector`.
+
 ~~~
 julia> mutable struct Trebuchet <: AbstractVector{Float64}
   counterweight::Float64
@@ -122,9 +143,10 @@ Stacktrace:
 {: .error}
 
 > ## Caveat: redefining `struct`s
-> In julia it is not very easy to redefine `struct`s.
-> It is necessary to restart the REPL to define the new definition of `Trebuchet`
-> or take a different name.
+>
+> In Julia it is not very easy to redefine `struct`s.
+> It is necessary to restart the REPL to define the new definition of
+> `Trebuchet` or take a different name.
 {: .callout}
 
 Melissa decides to keep going and come back to this later.
