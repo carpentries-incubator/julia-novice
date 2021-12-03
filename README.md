@@ -2,7 +2,7 @@
 
 [![Create a Slack Account with us][slack]](https://swc-slack-invite.herokuapp.com/)
 
-[![Our channel][channel](https://swcarpentry.slack.com/archives/CBJ8C7NE6)
+[![Our channel][channel]](https://swcarpentry.slack.com/archives/CBJ8C7NE6)
 
 This lesson targets people who already have some experience with (scientific)
 programming, but are new to Julia.
