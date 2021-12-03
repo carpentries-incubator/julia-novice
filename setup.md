@@ -2,9 +2,11 @@
 title: Setup
 ---
 
-- Download the latest stable release of Julia from [julialang.org](https://julialang.org/downloads/), make sure that your Julia version is 1.6 or higher.
-- On windows it is recommended to install Julia via the windows store.
-- If you haven't already, install a terminal editor, for example [nano](https://www.nano-editor.org/download.php).
-- For this lesson it is recommended to start Julia by running `julia` from a Bash shell
+This lesson requires a terminal emulator ("shell"), a text editor
+("nano"), and Julia. Please make sure that all three are installed.
+
+{% include install-shell.html %}
+{% include install-editor.html %}
+{% include install-julia.html %}
 
 {% include links.md %}
