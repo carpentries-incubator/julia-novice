@@ -11,7 +11,7 @@ objectives:
 - "Learn to resolve name conflicts"
 - "Learn to activate environments"
 keypoints:
-- "Find packages on juliahub"
+- "Find packages on JuliaHub"
 - "add packages using `pkg> add`"
 - "use many small environments rather than one big environment"
 ---
@@ -21,15 +21,22 @@ keypoints:
 Now it is time for Melissa and their mates to simulate the launch of the
 trebuchet.
 The necessary equations are really complicated, but an investigation on
-[juliahub](https://juliahub.com/) revealed that someone already implemented
-these and published it as the Julia package `Trebuchet.jl`.
-That spares some real work.
+[JuliaHub](https://juliahub.com/) revealed that someone already implemented
+these and published it as the Julia package [`Trebuchet.jl`][trebuchet].
+That saves some real work.
 
-Melissa enters the package mode by pressing `]`.
-The `julia>` prompt becomes a blue prompt that reads the Julia version that
-Melissa is running.
+Melissa enters the package mode by pressing <kbd>]</kbd>:
+
+~~~
+]
+~~~
+{: .language-julia}
+
+The `julia>` prompt becomes a blue `pkg>` prompt that reads the Julia version
+that Melissa is running.
+
 After consulting the [documentation](https://julialang.github.io/Pkg.jl/v1/)
-she knows that the prompt is showing the currently activated environment and
+she knows that the prompt is showing the *currently activated environment* and
 that this is the global environment that is activated by default.
 
 However, she doesn't want to clutter the global environment when working on her
@@ -80,6 +87,11 @@ environment.
 (trebuchet) pkg> status
 ~~~
 {: .language-julia}
+~~~
+      Status `projects/trebuchet/Project.toml`
+  [98b73d46] Trebuchet v0.2.1
+~~~
+{: .output}
 
 ## Using and importing packages
 
@@ -87,9 +99,11 @@ Now that Melissa added the package to her environment, she needs to load it.
 Julia provides two keywords for loading packages: `using` and `import`.
 
 The difference is that `import` brings only the name of the package into the
-namespace and then all functions in that package need the name in front.
-But packages can also define an export list for function names that should be
-brought into the user's namespace when he loads the package with `using`.
+namespace and then all functions in that package need the name in front
+(prefixed).
+But packages can define a list of function names to export, which means the
+functions should be brought into the user's namespace when he loads the package
+with `using`.
 This makes working at the REPL more convenient.
 
 ### Name conflicts
@@ -98,11 +112,14 @@ It may happen that name conflicts arise.
 For example Melissa defined a structure named `Trebuchet`, but the package she
 added to the environment is also named `Trebuchet`.
 Now she would get an error if she tried to `import`/`using` it directly.
-One solution is to rename the package upon `import` with `as`:
+One solution is to assign a nickname or alias to the package upon `import`
+using the keyword ***`as`***:
 
 ~~~
 import Trebuchet as Trebuchets
 ~~~
 {: .language-julia}
+
+[trebuchet]: https://juliahub.com/ui/Search?q=trebuchet&type=packages
 
 {% include links.md %}
