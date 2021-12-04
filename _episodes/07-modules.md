@@ -32,9 +32,13 @@ mutable struct Trebuchet <: AbstractVector{Float64}
   counterweight::Float64
   release_angle::Float64
 end
+
 Base.copy(trebuchet::Trebuchet) = Trebuchet(trebuchet.counterweight, trebuchet.release_angle)
+
 Base.size(trebuchet::Trebuchet) = tuple(2)
+
 Base.getindex(trebuchet::Trebuchet, i::Int) = getfield(trebuchet, i)
+
 function Base.setindex!(trebuchet::Trebuchet, v, i::Int)
     if i === 1
         trebuchet.counterweight = v
@@ -53,9 +57,11 @@ end
 function shoot_distance(windspeed, angle, weight)
     Trebuchets.shoot(windspeed, angle, weight)[2]
 end
+
 function shoot_distance(args...)
     Trebuchets.shoot(args...)[2]
 end
+
 function shoot_distance(trebuchet::Trebuchet, env::Environment)
     shoot_distance(env.wind, trebuchet.release_angle, trebuchet.counterweight)
 end
@@ -71,8 +77,11 @@ function aim(trebuchet::Trebuchet, environment::Environment; ε = 1e-1, η = 0.0
 end
 
 imprecise_trebuchet = Trebuchet(500.0, 0.25pi)
+
 environment = Environment(5, 100)
+
 precise_trebuchet = aim(imprecise_trebuchet, environment)
+
 shoot_distance(precise_trebuchet, environment)
 ~~~
 {: .language-julia title="aim_trebuchet.jl"}
@@ -109,9 +118,13 @@ mutable struct Trebuchet <: AbstractVecor{Float64}
   counterweight::Float64
   release_angle::Float64
 end
+
 Base.copy(trebuchet::Trebuchet) = Trebuchet(trebuchet.counterweight, trebuchet.release_angle)
+
 Base.size(trebuchet::Trebuchet) = tuple(2)
+
 Base.getindex(trebuchet::Trebuchet, i::Int) = getfield(trebuchet, i)
+
 function Base.setindex!(trebuchet::Trebuchet, v, i::Int)
     if i === 1
         trebuchet.counterweight = v
@@ -130,9 +143,11 @@ end
 function shoot_distance(windspeed, angle, weight)
     Trebuchets.shoot(windspeed, angle, weight)[2]
 end
+
 function shoot_distance(args...)
     Trebuchets.shoot(args...)[2]
 end
+
 function shoot_distance(trebuchet::Trebuchet, env::Environment)
     shoot_distance(env.wind, trebuchet.release_angle, trebuchet.counterweight)
 end
@@ -183,14 +198,17 @@ Melissa needs to take two things into account:
 Thus she now runs
 
 ~~~
-julia> using Revise
+using Revise
 
-julia> includet("MelissasModule.jl")
+includet("MelissasModule.jl")
 
-julia> include("MelissasCode.jl")
-100.0975848073789
+include("MelissasCode.jl")
 ~~~
 {: .language-julia}
+~~~
+100.0975848073789
+~~~
+{: .output}
 
 and any change she makes in `MelissasModule.jl` will be visible in the next run
 of her code.
