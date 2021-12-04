@@ -47,10 +47,11 @@ project, so she creates a new environment via
 ~~~
 {: .language-julia}
 
-In this environment she adds the `Trebuchet` package by typing
+In this environment she adds the `Trebuchet` package from its
+open source code [repository on GitHub][ghtreb] by typing
 
 ~~~
-(trebuchet) pkg> add Trebuchet
+(trebuchet) pkg> add https://github.com/FluxML/Trebuchet.jl
 ~~~
 {: .language-julia}
 
@@ -89,9 +90,30 @@ environment.
 {: .language-julia}
 ~~~
       Status `projects/trebuchet/Project.toml`
-  [98b73d46] Trebuchet v0.2.1
+  [98b73d46] Trebuchet v0.2.1 `https://github.com/FluxML/Trebuchet.jl#master`
 ~~~
 {: .output}
+
+> ## Why use GitHub?
+>
+> Melissa could have added the JuliaHub version of Trebuchet.jl by
+> typing
+>
+> ~~~
+> (trebuchet) pkg> add Trebuchet
+> ~~~
+> {: .language-julia)
+>
+> However, that "release" version of the code is missing some
+> important features and, more important for learning, it has very
+> little documentation. The "development" version, represented by the
+> "main" branch on the GitHub repository, provides a function *and
+> its documentation* that Melissa needs to use later on.
+>
+> If you know a package is stable, go ahead and install the JuliaHub
+> version. Otherwise, it's good to check how different the archived
+> version is from the current state. Click through the link under
+> "Repository" on the JuliaHub package page.
 
 ## Using and importing packages
 
@@ -120,6 +142,8 @@ import Trebuchet as Trebuchets
 ~~~
 {: .language-julia}
 
+[ghtreb]: https://github.com/FluxML/Trebuchet.jl
+[jhtreb]: https://juliahub.com/ui/Packages/Trebuchet
 [trebuchet]: https://juliahub.com/ui/Search?q=trebuchet&type=packages
 
 {% include links.md %}
