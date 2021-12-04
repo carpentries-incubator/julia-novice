@@ -51,7 +51,7 @@ In this environment she adds the `Trebuchet` package from its
 open source code [repository on GitHub][ghtreb] by typing
 
 ~~~
-(trebuchet) pkg> add https://github.com/FluxML/Trebuchet.jl
+(trebuchet) pkg> add Trebuchet#master
 ~~~
 {: .language-julia}
 
