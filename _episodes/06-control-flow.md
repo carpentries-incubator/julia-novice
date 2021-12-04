@@ -131,7 +131,7 @@ in which she needs to change the parameters to make the largest difference.
 > > ## Solution
 > >
 > > The correct solution is 4:
-> > `]` to enter pkg mode, then
+> > <kbd>]</kbd> to enter pkg mode, then
 > >
 > > ~~~
 > > pkg> add ForwardDiff

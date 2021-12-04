@@ -10,9 +10,9 @@ objectives:
 - "Learn about REPL modes."
 keypoints:
 - "The REPL reads the given input, evaluates the given expression and prints the resulting output to the user."
-- "Pressing `?` enters help mode."
-- "Pressing `;` enters shell mode."
-- "Pressing `]` enters pkg mode."
+- "Pressing <kbd>?</kbd> enters help mode."
+- "Pressing <kbd>;</kbd> enters shell mode."
+- "Pressing <kbd>]</kbd> enters pkg mode."
 
 ---
 
