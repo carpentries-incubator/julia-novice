@@ -80,8 +80,8 @@ example.
 > >     imprecise_trebuchet = Trebuchet(500.0, 0.25pi)
 > >     environment = Environment(5, 100)
 > >     precise_trebuchet = aim(imprecise_trebuchet, environment)
-> >     @test 100 - 1e-1 <= shoot_distance(precise_trebuchet, environment) <= 100 + 1e-1
-> >     # default ε is 1e-1
+> >     @test 100 - 0.1 <= shoot_distance(precise_trebuchet, environment) <= 100 + 0.1
+> >     # default ε is 0.1
 > > end
 > > ~~~
 > > {: .language-julia}
