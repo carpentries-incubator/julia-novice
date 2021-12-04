@@ -47,8 +47,8 @@ end
 ### Types and hierarchy
 
 Here `::Float64` is a type specification, indicating that this variable should
-be a 64-bit floating point number, and ***`::` is an operator*** that
-is read as "is an instance of."
+be a 64-bit floating point number, and __`::`__ is an ***operator*** that
+is read "is an instance of."
 If Melissa hadn't specified the type, the variables would have the type `Any`
 by default.
 
@@ -88,14 +88,8 @@ are between `Float64` and `Any`:
    ~~~
    {: .output}
 
-So we have the relationship
-
-~~~
-Float64 <: AbstractFloat <: Real <: Number <: Any
-~~~
-{: .language-julia}
-
-where ***`<:` is the subtype operator***, used here to mean the item
+So we have the relationship `Float64 <: AbstractFloat <: Real <: Number <: Any`
+where __`<:`__ is the ***subtype operator***, used here to mean the item
 on the left "is a subtype of" the item on the right.
 
 `Float64` is a _concrete_ type, which means that you can actually create
@@ -165,11 +159,11 @@ Have a look at this visualization of all subtypes of `Number`:
 ## Creating a subtype
 
 A concrete type can be made a subtype of an abstract type with the
-***subtype operator `<:`***.
+subtype operator __`<:`__.
 Since `Trebuchet` contains several fields that are mutable Melissa thinks it is
 a good idea to make it a subtype of `AbstractVector`.
 
-> ## Caveat: redefining `struct`s
+> ## Caveat: Redefining Structs
 >
 > ~~~
 > mutable struct Trebuchet <: AbstractVector{Float64}
@@ -187,11 +181,14 @@ a good idea to make it a subtype of `AbstractVector`.
 > ~~~
 > {: .error}
 >
+> This error message is clear: you're not allowed to define a `struct`
+> using a name that's already in use.
+>
 > > ## Restart the REPL
 > >
 > > In Julia it is not very easy to redefine `struct`s.
 > > It is necessary to restart the REPL to define the new definition of
-> > `Trebuchet` or take a different name.
+> > `Trebuchet`, or take a different name instead.
 > {: .discussion}
 {: .callout}
 

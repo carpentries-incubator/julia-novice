@@ -13,7 +13,6 @@ keypoints:
 - "Pressing <kbd>?</kbd> enters help mode."
 - "Pressing <kbd>;</kbd> enters shell mode."
 - "Pressing <kbd>]</kbd> enters pkg mode."
-
 ---
 
 # Entering the REPL
@@ -118,11 +117,16 @@ name][latex] and then pressing <kbd>tab</kbd> (in this case
 ## REPL-modes
 
 Unfortunately Melissa can't remember the LaTeX name of ∂ so she copies the
-character, presses <kbd>?</kbd> for help mode, pastes the ∂ character, then
-presses enter:
+character, presses <kbd>?</kbd> for help mode,
 
 ~~~
 ?
+~~~
+{: .language-julia}
+
+pastes the ∂ character, then presses enter:
+
+~~~
 help?> ∂
 ~~~
 {: .language-julia}
@@ -144,7 +148,7 @@ Another useful mode is the ***shell mode*** that can be entered by pressing
 ~~~
 shell>
 ~~~
-{: .output}
+{: .language-julia}
 
 Shell mode can be used to issue commands to the underlying shell, but don't
 confuse it with an actual shell: special shell syntax like piping won't work.
@@ -164,7 +168,7 @@ Like before, hit <kbd>backspace</kbd> to get back to the Julia prompt.
 > > shell> nano hello.jl
 > > shell> cat hello.jl
 > > ~~~
-> > {: .language-bash}
+> > {: .language-julia}
 > > ~~~
 > > print("Hello World")
 > > ~~~
@@ -172,7 +176,7 @@ Like before, hit <kbd>backspace</kbd> to get back to the Julia prompt.
 > > ~~~
 > > shell> julia hello.jl
 > > ~~~
-> > {: .language-bash}
+> > {: .language-julia}
 > > ~~~
 > > Hello World
 > > ~~~
@@ -190,7 +194,7 @@ used for package management, which will be covered later on:
 ~~~
 pkg>
 ~~~
-{: .output}
+{: .language-julia}
 
 To exit ***shell*** or ***pkg*** mode, hit <kbd>backspace</kbd>.
 

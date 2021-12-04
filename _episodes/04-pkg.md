@@ -25,18 +25,18 @@ The necessary equations are really complicated, but an investigation on
 these and published it as the Julia package [`Trebuchet.jl`][trebuchet].
 That saves some real work.
 
-Melissa enters the package mode by pressing <kbd>]</kbd>:
+Melissa enters package mode by pressing <kbd>]</kbd>:
 
 ~~~
 ]
 ~~~
 {: .language-julia}
 
-The `julia>` prompt becomes a blue `pkg>` prompt that reads the Julia version
+The `julia>` prompt becomes a blue `pkg>` prompt that shows the Julia version
 that Melissa is running.
 
 After consulting the [documentation](https://julialang.github.io/Pkg.jl/v1/)
-she knows that the prompt is showing the *currently activated environment* and
+she knows that the prompt is showing the _currently activated environment_ and
 that this is the global environment that is activated by default.
 
 However, she doesn't want to clutter the global environment when working on her
@@ -107,8 +107,8 @@ environment.
 > However, that "release" version of the code is missing some
 > important features and, more important for learning, it has very
 > little documentation. The "development" version, represented by the
-> "main" branch on the GitHub repository, provides a function *and
-> its documentation* that Melissa needs to use later on.
+> "main" branch on the GitHub repository, provides a function _and
+> its documentation_ that Melissa needs to use later on.
 >
 > If you know a package is stable, go ahead and install the JuliaHub
 > version. Otherwise, it's good to check how different the archived
