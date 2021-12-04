@@ -68,8 +68,8 @@ instead of needing to `includet MelissasModule.jl`, and she can write
 
 In order for her friends to be able to get the package, Melissa registers the
 package in the _general registry_.
-This can be done either via [juliahub][jh] or by making a pull request on
-[GitHub][gh] which can also be automated by the [Julia registrator][jr].
+This can be done either via [JuliaHub][jh] or by making a pull request on
+[GitHub][gh] which can also be automated by the [Julia Registrator][jr].
 
 ## Creating a new package
 
