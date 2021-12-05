@@ -239,6 +239,7 @@ Great! That didn't shoot past the target, but instead it landed a bit too short.
 > >   shoot_distance([environment.wind, better_trebuchet[2], better_trebuchet[1]])
 > >   107.80646596787481
 > >   ~~~
+> >   {: .language-julia}
 > > * ~~~
 > >   better_trebuchet = imprecise_trebuchet - 0.02 * grad
 > >   shoot_distance([environment.wind, better_trebuchet[2], better_trebuchet[1]])

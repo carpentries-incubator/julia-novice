@@ -182,6 +182,7 @@ Like before, hit <kbd>backspace</kbd> to get back to the Julia prompt.
 > > ~~~
 > > {: .output}
 > > <kbd>backspace</kbd>
+> {: .solution}
 {: .challenge}
 
 Finally there is ***package mode*** that is entered with <kbd>]</kbd> which is

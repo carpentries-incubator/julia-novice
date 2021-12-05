@@ -102,7 +102,7 @@ environment.
 > ~~~
 > (trebuchet) pkg> add Trebuchet
 > ~~~
-> {: .language-julia)
+> {: .language-julia}
 >
 > However, that "release" version of the code is missing some
 > important features and, more important for learning, it has very
@@ -114,6 +114,7 @@ environment.
 > version. Otherwise, it's good to check how different the archived
 > version is from the current state. Click through the link under
 > "Repository" on the JuliaHub package page.
+{: .callout}
 
 ## Using and importing packages
 
