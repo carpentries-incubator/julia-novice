@@ -292,7 +292,8 @@ function is defined.
 > Macro names begin with `@` and they don't need parentheses or commas to
 > delimit their arguments.
 > Macros can transform any valid Julia expression and are quite powerful.
-> They can be expanded by first calling `@macroexpand`.
+> They can be expanded by prepending `@macroexpand` to the macro call of
+> interest.
 {: .callout}
 
 ~~~

@@ -110,10 +110,10 @@ environment.
 > "main" branch on the GitHub repository, provides a function _and
 > its documentation_ that Melissa needs to use later on.
 >
-> If you know a package is stable, go ahead and install the JuliaHub
-> version. Otherwise, it's good to check how different the archived
-> version is from the current state. Click through the link under
-> "Repository" on the JuliaHub package page.
+> If you know a package is stable, go ahead and install the default version
+> registered on JuliaHub. Otherwise, it's good to check how different that
+> version is from the current state of the software project. Click through the
+> link under "Repository" on the JuliaHub package page.
 {: .callout}
 
 ## Using and importing packages
