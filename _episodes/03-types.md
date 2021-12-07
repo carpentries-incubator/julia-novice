@@ -89,14 +89,14 @@ are between `Float64` and `Any`:
    {: .output}
 
 So we have the relationship `Float64 <: AbstractFloat <: Real <: Number <: Any`
-where __`<:`__ is the ***subtype operator***, used here to mean the item
+where [__`<:`__ is the ***subtype operator***][subtype], used here to mean the item
 on the left "is a subtype of" the item on the right.
 
 `Float64` is a _concrete_ type, which means that you can actually create
 objects of this type.
 For example `1.0` is an object of type `Float64`.
 We can check this at the REPL using either (or both) the
-`typeof` function or the `isa` operator:
+`typeof` function or the [`isa` operator][isa]:
 
 ~~~
 typeof(1.0)
@@ -195,5 +195,7 @@ a good idea to make it a subtype of `AbstractVector`.
 ***Melissa decides to keep going and come back to this later.***
 
 [hierarchy]: https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Type-hierarchy-for-julia-numbers.png/1200px-Type-hierarchy-for-julia-numbers.png
+[isa]: https://docs.julialang.org/en/v1/base/base/#Core.isa
+[subtype]: https://docs.julialang.org/en/v1/base/base/#Core.:%3C:
 
 {% include links.md %}

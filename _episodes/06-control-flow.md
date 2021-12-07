@@ -113,15 +113,27 @@ Melissa tries again to modify a counterweight by index:
 
 ~~~
 trebuchet = Trebuchet(500, 0.25pi)
-trebuchet[1] = 2
-print(trebuchet)
 ~~~
 {: .language-julia}
 ~~~
 2-element Trebuchet:
  500.0
    0.7853981633974483
+~~~
+{: .output}
+~~~
+trebuchet[1] = 2
+~~~
+{: .language-julia}
+~~~
 2
+~~~
+{: .output}
+~~~
+print(trebuchet)
+~~~
+{: .language-julia}
+~~~
 [2.0, 0.7853981633974483]
 ~~~
 {: .output}
