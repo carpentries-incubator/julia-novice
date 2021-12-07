@@ -130,11 +130,13 @@ trebuchet[1] = 2
 ~~~
 {: .output}
 ~~~
-print(trebuchet)
+trebuchet
 ~~~
 {: .language-julia}
 ~~~
-[2.0, 0.7853981633974483]
+2-element Trebuchet:
+   2.0
+   0.7853981633974483
 ~~~
 {: .output}
 
