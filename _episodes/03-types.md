@@ -47,38 +47,67 @@ end
 ### Types and hierarchy
 
 Here `::Float64` is a type specification, indicating that this variable should
-be a 64-bit floating point number.
+be a 64-bit floating point number, and __`::`__ is an ***operator*** that
+is read "is an instance of."
 If Melissa hadn't specified the type, the variables would have the type `Any`
 by default.
 
-In Julia every type can have only one supertype, so lets check how many types
-are between `Float64` and `Any`
+In Julia every type can have only one supertype, so let's count how many types
+are between `Float64` and `Any`:
 
-~~~
-julia> supertype(Float64)
-AbstractFloat
-julia> supertype(AbstractFloat)
-Real
-julia> supertype(Real)
-Number
-julia> supertype(Number)
-Any
-~~~
-{: .language-julia}
+1. ~~~
+   supertype(Float64)
+   ~~~
+   {: .language-julia}
+   ~~~
+   AbstractFloat
+   ~~~
+   {: .output}
+2. ~~~
+   supertype(AbstractFloat)
+   ~~~
+   {: .language-julia}
+   ~~~
+   Real
+   ~~~
+   {: .output}
+3. ~~~
+   supertype(Real)
+   ~~~
+   {: .language-julia}
+   ~~~
+   Number
+   ~~~
+   {: .output}
+4. ~~~
+   supertype(Number)
+   ~~~
+   {: .language-julia}
+   ~~~
+   Any
+   ~~~
+   {: .output}
 
-So we have the relationship `Float64 <: AbstractFloat <: Real <: Number <:
-Any`, where `<:` means "subtype of".
+So we have the relationship `Float64 <: AbstractFloat <: Real <: Number <: Any`
+where [__`<:`__ is the ***subtype operator***][subtype], used here to mean the item
+on the left "is a subtype of" the item on the right.
 
 `Float64` is a _concrete_ type, which means that you can actually create
 objects of this type.
-For example `1.0` is a object of type `Float64`.
-We can check this at the REPL:
+For example `1.0` is an object of type `Float64`.
+We can check this at the REPL using either (or both) the
+`typeof` function or the [`isa` operator][isa]:
 
 ~~~
-julia> 1.0 isa Float64
-true
+typeof(1.0)
+1.0 isa Float64
 ~~~
 {: .language-julia}
+~~~
+Float64
+true
+~~~
+{: .output}
 
 All the other types are _abstract_ types that are used to address groups of
 types.
@@ -88,23 +117,32 @@ value that is a subtype of `Real`.
 Let's quickly check what are all the subtypes of `Real`:
 
 ~~~
-julia> subtypes(Real)
+subtypes(Real)
+~~~
+{: .language-julia}
+~~~
 4-element Array{Any,1}:
  AbstractFloat
  AbstractIrrational
  Integer
  Rational
 ~~~
-{: .language-julia}
+{: .output}
 
 This way the types form a tree with abstract types on the nodes and concrete
 types as leaves.
 Have a look at this visualization of all subtypes of `Number`:
-![Type_tree-Number](https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Type-hierarchy-for-julia-numbers.png/1200px-Type-hierarchy-for-julia-numbers.png)
+![Type_tree-Number][hierarchy]
 
-> ## Is it `Real`?
+> ## Is it **Real**?
 >
-> For which of these types `T` is it false that `(1.0 isa T)`?
+> For which of the following types `T` would the following return
+> `false`?
+>
+> ~~~
+> 1.0 isa T
+> ~~~
+> {: .language-julia}
 >
 > 1. Real
 > 2. Number
@@ -114,41 +152,50 @@ Have a look at this visualization of all subtypes of `Number`:
 > > ## Solution
 > >
 > > The correct answer is 4:
-> > while `1` is an integer, `1.0` is its floating-point representation.
+> > while `1` is an integer, `1.0` is a floating-point value.
 > {: .solution}
 {: .challenge}
 
-
 ## Creating a subtype
 
-A concrete type can be made a subtype of an abstract type with the subtype
-operator `<:`.
+A concrete type can be made a subtype of an abstract type with the
+subtype operator __`<:`__.
 Since `Trebuchet` contains several fields that are mutable Melissa thinks it is
 a good idea to make it a subtype of `AbstractVector`.
 
-~~~
-julia> mutable struct Trebuchet <: AbstractVector{Float64}
-  counterweight::Float64
-  release_angle::Float64
-end
-~~~
-{: .language-julia}
-
-~~~
-ERROR: invalid redefinition of constant Trebuchet
-Stacktrace:
- [1] top-level scope
-   @ REPL[9]:1
-~~~
-{: .error}
-
-> ## Caveat: redefining `struct`s
+> ## Caveat: Redefining Structs
 >
-> In Julia it is not very easy to redefine `struct`s.
-> It is necessary to restart the REPL to define the new definition of
-> `Trebuchet` or take a different name.
+> ~~~
+> mutable struct Trebuchet <: AbstractVector{Float64}
+>   counterweight::Float64
+>   release_angle::Float64
+> end
+> ~~~
+> {: .language-julia}
+> 
+> ~~~
+> ERROR: invalid redefinition of constant Trebuchet
+> Stacktrace:
+>  [1] top-level scope
+>    @ REPL[9]:1
+> ~~~
+> {: .error}
+>
+> This error message is clear: you're not allowed to define a `struct`
+> using a name that's already in use.
+>
+> > ## Restart the REPL
+> >
+> > In Julia it is not very easy to redefine `struct`s.
+> > It is necessary to restart the REPL to define the new definition of
+> > `Trebuchet`, or take a different name instead.
+> {: .discussion}
 {: .callout}
 
-Melissa decides to keep going and come back to this later.
+***Melissa decides to keep going and come back to this later.***
+
+[hierarchy]: https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Type-hierarchy-for-julia-numbers.png/1200px-Type-hierarchy-for-julia-numbers.png
+[isa]: https://docs.julialang.org/en/v1/base/base/#Core.isa
+[subtype]: https://docs.julialang.org/en/v1/base/base/#Core.:%3C:
 
 {% include links.md %}

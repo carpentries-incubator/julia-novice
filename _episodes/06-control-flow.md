@@ -45,17 +45,42 @@ end
 language: `AbstractArray`s.
 An interface is a collection of methods that are all implemented by a certain
 type.
-For example, the [Julia
-manual](https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-array)
-lists all methods that a subtype of `AbstractArray` need to implement to adhere
-to the `AbstractArray` interface.
-If Melissa does this then her `Trebuchet` type will work with every function in
-`Base` that accepts an `AbstractArray`.
+For example, the [Julia manual][manual] lists all methods that a subtype of
+`AbstractArray` need to implement to adhere to the `AbstractArray` interface:
+
+- `size(A)` returns a tuple containing the dimensions of `A`
+- `getindex(A, i::Int)` returns the value associated with index `i`
+- `setindex!(A, v, i::Int)` writes a new value `v` at the index `i`
+
+If Melissa implements this interface for the `Trebuchet` type, it will work
+with every function in `Base` that accepts an `AbstractArray`.
 
 She also needs to make `Trebuchet` a proper subtype of `AbstractArray` as she
 tried in [the types episode]({{ site.baseurl }}{%link _episodes/03-types.md
 %}).
-Therefore she restarts her REPL.
+Therefore she _restarts her REPL_ and redefines `Trebuchet` and `Environment`,
+as well as the slurp-and-splat `shoot_distance` function:
+
+~~~
+import Trebuchet as Trebuchets
+
+mutable struct Trebuchet <: AbstractVector{Float64}
+  counterweight::Float64
+  release_angle::Float64
+end
+
+struct Environment
+    wind::Float64
+    target_distance::Float64
+end
+
+function shoot_distance(args...)
+    Trebuchets.shoot(args...)[2]
+end
+~~~
+{: .language-julia}
+
+Then she goes about implementing the `AbstractArray` interface.
 
 > ## Implement the `AbstractArray` interface for `Trebuchet`
 >
@@ -83,6 +108,37 @@ Therefore she restarts her REPL.
 > {: .solution}
 {: .challenge}
 
+With the new `Trebuchet` defined with a complete `AbstractArray` interface,
+Melissa tries again to modify a counterweight by index:
+
+~~~
+trebuchet = Trebuchet(500, 0.25pi)
+~~~
+{: .language-julia}
+~~~
+2-element Trebuchet:
+ 500.0
+   0.7853981633974483
+~~~
+{: .output}
+~~~
+trebuchet[1] = 2
+~~~
+{: .language-julia}
+~~~
+2
+~~~
+{: .output}
+~~~
+trebuchet
+~~~
+{: .language-julia}
+~~~
+2-element Trebuchet:
+   2.0
+   0.7853981633974483
+~~~
+{: .output}
 
 ## Loops
 
@@ -105,7 +161,7 @@ But first Melissa needs a way to improve her parameters.
 > distance.
 >
 > The [_gradient_][grad] of a function gives the direction in which the return
-> value will change by the largest amount.
+> value will change when each input value changes.
 >
 > Since the `shoot_distance` function has three input parameters, the gradient
 > of `shoot_distance` will return a 3-element `Array`:
@@ -131,7 +187,7 @@ in which she needs to change the parameters to make the largest difference.
 > > ## Solution
 > >
 > > The correct solution is 4:
-> > `]` to enter pkg mode, then
+> > <kbd>]</kbd> to enter pkg mode, then
 > >
 > > ~~~
 > > pkg> add ForwardDiff
@@ -145,17 +201,22 @@ julia> grad = gradient(x -> (shoot_distance(x, environment) - environment.target
 -->
 
 ~~~
-julia> using ForwardDiff: gradient
+using ForwardDiff: gradient
 
-julia> imprecise_trebuchet = Trebuchet(500.0, 0.25pi);
-julia> environment = Environment(5.0, 100.0);
+imprecise_trebuchet = Trebuchet(500.0, 0.25pi);
+environment = Environment(5.0, 100.0);
 
-julia> grad = gradient(x -> (shoot_distance([environment.wind, x[2], x[1]] - environment.target_distance), imprecise_trebuchet)
-2-element Vector{Float64}:
- -47.1917378801788
-  -0.022101014146311698
+grad = gradient(x -> (shoot_distance([environment.wind, x[2], x[1]])
+                      - environment.target_distance),
+                imprecise_trebuchet)
 ~~~
 {: .language-julia}
+~~~
+2-element Vector{Float64}:
+  -0.02210101414630771
+ -47.191737880211264
+~~~
+{: .output}
 
 Melissa now changes her arguments a little bit in the direction of the gradient
 and checks the new distance.
@@ -165,17 +226,50 @@ and checks the new distance.
 ~~~
 julia> better_trebuchet = imprecise_trebuchet - 0.05 * grad;
 
-julia> shoot_distance([5, new_arguments...])
+julia> shoot_distance([5, better_trebuchet[2], better_trebuchet[1]])
 58.871526223121755
 ~~~
 {: .language-julia}
 
-That got shorter, but also a bit too short.
+Great! That didn't shoot past the target, but instead it landed a bit too short.
 
 > ## Experiment
 >
 > How far can you change the parameters in the direction of the gradient, such
 > that it still improves the distance?
+>
+> > ## Evaluation
+> >
+> > Try a bunch of values!
+> >
+> > * ~~~
+> >   better_trebuchet = imprecise_trebuchet - 0.04 * grad
+> >   shoot_distance([environment.wind, better_trebuchet[2], better_trebuchet[1]])
+> >   120.48753521261001
+> >   ~~~
+> >   {: .language-julia}
+> > * ~~~
+> >   better_trebuchet = imprecise_trebuchet - 0.03 * grad
+> >   shoot_distance([environment.wind, better_trebuchet[2], better_trebuchet[1]])
+> >   107.80646596787481
+> >   ~~~
+> >   {: .language-julia}
+> > * ~~~
+> >   better_trebuchet = imprecise_trebuchet - 0.02 * grad
+> >   shoot_distance([environment.wind, better_trebuchet[2], better_trebuchet[1]])
+> >   33.90699307740854
+> >   ~~~
+> >   {: .language-julia}
+> > * ~~~
+> >   better_trebuchet = imprecise_trebuchet - 0.025 * grad
+> >   shoot_distance([environment.wind, better_trebuchet[2], better_trebuchet[1]])
+> >   75.87613276409223
+> >   ~~~
+> >   {: .language-julia}
+> >
+> > Looks like the "best" trebuchet for a target 100 m away will be between
+> > 2.5% and 3% down the gradient from the imprecise trebuchet.
+> {: .solution}
 {: .discussion}
 
 ### For loops
@@ -186,22 +280,27 @@ She writes a new function `aim`, that performs the application of the gradient
 `N` times.
 
 ~~~
-julia> function aim(trebuchet, environment; N = 10, η = 0.05)
+function aim(trebuchet, environment; N = 10, η = 0.05)
            better_trebuchet = copy(trebuchet)
            for _ in 1:N
-               grad = gradient(x -> (shoot_distance([environment.wind, x[2], x[1]]) - environment.target_distance), better_trebuchet)
+               grad = gradient(x -> (shoot_distance([environment.wind, x[2], x[1]]) 
+                                     - environment.target_distance),
+                               better_trebuchet)
                better_trebuchet -= η * grad
                # short form of `better_trebuchet = better_trebuchet - η * grad`
            end
            return Trebuchet(better_trebuchet[1], better_trebuchet[2])
        end
 
-julia> better_trebuchet  = aim(imprecise_trebuchet, environment);
+better_trebuchet  = aim(imprecise_trebuchet, environment);
 
-julia> shoot_distance(better_trebuchet, environment)
-92.90796744088856
+shoot_distance(environment.wind, better_trebuchet[2], better_trebuchet[1])
 ~~~
 {: .language-julia}
+~~~
+90.14788588648652
+~~~
+{: .output}
 
 > ## Explore
 >
@@ -230,10 +329,13 @@ That's why she decides to change it a bit.
 This time she uses a `while`-loop to run the iterations until she is
 sufficiently near her target.
 
+(_Hint:_ __ε__ is `\epsilon`<kbd>tab</kbd>, and __η__ is `\eta`<kbd>tab</kbd>.)
+
 ~~~
-julia> function aim(trebuchet::Trebuchet, environment::Environment; ε = 1e-1, η = 0.05)
-            better_trebuchet = copy(trebuchet)
-            hit = x -> (shoot_distance([environment.wind, x[2], x[1]]) - environment.target_distance)
+function aim(trebuchet::Trebuchet, environment::Environment; ε = 0.1, η = 0.05)
+    better_trebuchet = copy(trebuchet)
+    hit = x -> (shoot_distance([environment.wind, x[2], x[1]])
+                - environment.target_distance)
             while abs(hit(better_trebuchet)) > ε
                 grad = gradient(hit, better_trebuchet)
                 better_trebuchet -= η * grad
@@ -241,19 +343,21 @@ julia> function aim(trebuchet::Trebuchet, environment::Environment; ε = 1e-1, �
             return Trebuchet(better_trebuchet[1], better_trebuchet[2])
         end
 
-julia> better_trebuchet = aim(imprecise_trebuchet, environment)
-2-element Trebuchet:
- 499.9498970976752
- 119.59293257732767
+better_trebuchet = aim(imprecise_trebuchet, environment);
 
-julia> shoot_distance(better_trebuchet, environment)
-100.0975848073789
+shoot_distance(better_trebuchet, environment)
 ~~~
 {: .language-julia}
+~~~
+100.0975848073789
+~~~
+{: .output}
 
-That is more what she had in mind.
+That is more what she had in mind. Your trebuchet may be tuned differently,
+but it should hit just as close as hers.
 
 [autodiff]: https://en.wikipedia.org/wiki/Automatic_differentiation
 [grad]: https://en.wikipedia.org/wiki/Gradient
+[manual]: https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-array
 
 {% include links.md %}

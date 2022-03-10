@@ -11,7 +11,7 @@ objectives:
 - "Learn to resolve name conflicts"
 - "Learn to activate environments"
 keypoints:
-- "Find packages on juliahub"
+- "Find packages on JuliaHub"
 - "add packages using `pkg> add`"
 - "use many small environments rather than one big environment"
 ---
@@ -21,15 +21,22 @@ keypoints:
 Now it is time for Melissa and their mates to simulate the launch of the
 trebuchet.
 The necessary equations are really complicated, but an investigation on
-[juliahub](https://juliahub.com/) revealed that someone already implemented
-these and published it as the Julia package `Trebuchet.jl`.
-That spares some real work.
+[JuliaHub](https://juliahub.com/) revealed that someone already implemented
+these and published it as the Julia package [`Trebuchet.jl`][trebuchet].
+That saves some real work.
 
-Melissa enters the package mode by pressing `]`.
-The `julia>` prompt becomes a blue prompt that reads the Julia version that
-Melissa is running.
+Melissa enters package mode by pressing <kbd>]</kbd>:
+
+~~~
+]
+~~~
+{: .language-julia}
+
+The `julia>` prompt becomes a blue `pkg>` prompt that shows the Julia version
+that Melissa is running.
+
 After consulting the [documentation](https://julialang.github.io/Pkg.jl/v1/)
-she knows that the prompt is showing the currently activated environment and
+she knows that the prompt is showing the _currently activated environment_ and
 that this is the global environment that is activated by default.
 
 However, she doesn't want to clutter the global environment when working on her
@@ -40,10 +47,11 @@ project, so she creates a new environment via
 ~~~
 {: .language-julia}
 
-In this environment she adds the `Trebuchet` package by typing
+In this environment she adds the `Trebuchet` package from its
+open source code [repository on GitHub][ghtreb] by typing
 
 ~~~
-(trebuchet) pkg> add Trebuchet
+(trebuchet) pkg> add Trebuchet#master
 ~~~
 {: .language-julia}
 
@@ -80,6 +88,33 @@ environment.
 (trebuchet) pkg> status
 ~~~
 {: .language-julia}
+~~~
+      Status `projects/trebuchet/Project.toml`
+  [98b73d46] Trebuchet v0.2.1 `https://github.com/FluxML/Trebuchet.jl#master`
+~~~
+{: .output}
+
+> ## Why use GitHub?
+>
+> Melissa could have added the JuliaHub version of Trebuchet.jl by
+> typing
+>
+> ~~~
+> (trebuchet) pkg> add Trebuchet
+> ~~~
+> {: .language-julia}
+>
+> However, that "release" version of the code is missing some
+> important features and, more important for learning, it has very
+> little documentation. The "development" version, represented by the
+> "main" branch on the GitHub repository, provides a function _and
+> its documentation_ that Melissa needs to use later on.
+>
+> If you know a package is stable, go ahead and install the default version
+> registered on JuliaHub. Otherwise, it's good to check how different that
+> version is from the current state of the software project. Click through the
+> link under "Repository" on the JuliaHub package page.
+{: .callout}
 
 ## Using and importing packages
 
@@ -87,9 +122,11 @@ Now that Melissa added the package to her environment, she needs to load it.
 Julia provides two keywords for loading packages: `using` and `import`.
 
 The difference is that `import` brings only the name of the package into the
-namespace and then all functions in that package need the name in front.
-But packages can also define an export list for function names that should be
-brought into the user's namespace when he loads the package with `using`.
+namespace and then all functions in that package need the name in front
+(prefixed).
+But packages can define a list of function names to export, which means the
+functions should be brought into the user's namespace when he loads the package
+with `using`.
 This makes working at the REPL more convenient.
 
 ### Name conflicts
@@ -98,11 +135,16 @@ It may happen that name conflicts arise.
 For example Melissa defined a structure named `Trebuchet`, but the package she
 added to the environment is also named `Trebuchet`.
 Now she would get an error if she tried to `import`/`using` it directly.
-One solution is to rename the package upon `import` with `as`:
+One solution is to assign a nickname or alias to the package upon `import`
+using the keyword ***`as`***:
 
 ~~~
 import Trebuchet as Trebuchets
 ~~~
 {: .language-julia}
+
+[ghtreb]: https://github.com/FluxML/Trebuchet.jl
+[jhtreb]: https://juliahub.com/ui/Packages/Trebuchet
+[trebuchet]: https://juliahub.com/ui/Search?q=trebuchet&type=packages
 
 {% include links.md %}

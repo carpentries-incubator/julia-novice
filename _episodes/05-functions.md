@@ -23,11 +23,14 @@ what she can do with it.
 
 Julia's `Base` module offers a handy function for inspecting other modules
 called `names`.
-Let's look at its docstring:
+Let's look at its docstring; remember that pressing <kbd>?</kbd>
+opens the __help?>__ prompt:
 
 ~~~
 help?> names
-
+~~~
+{: .language-julia}
+~~~
     names(x::Module; all::Bool = false, imported::Bool = false)
 
     Get an array of the names exported by a Module, excluding deprecated names.
@@ -38,29 +41,37 @@ help?> names
     As a special case, all names defined in Main are considered "exported", 
     since it is not idiomatic to explicitly export names from Main.
 ~~~
-{: .language-julia}
+{: .output}
+
+In Julia we have two types of arguments: _positional_ and _keyword_, separated
+by a semi-colon.
+
+1. _Positional arguments_ are determined by their position and thus the order
+   in which arguments are given to the function matters.
+2. _Keyword arguments_ are passed as a combination of the keyword and the
+   value to the function. They can be given in any order, but they need to
+   have a default value.
 
 > ## Positional and keyword arguments
 >
-> Let's take a closer look at the signature of the `names` function.
-> In Julia we have two types of arguments:
+> Let's take a closer look at the signature of the `names` function:
+> 
+> ~~~
+> names(x::Module; all::Bool = false, imported::Bool = false)
+> ~~~
+> {: .language-julia}
 >
-> 1. _Positional arguments_ are determined by their position and thus the order
->    in which arguments are given to the function matters. The `names` function
->    has one positional argument `x` of type `Module`.
-> 2. _Keyword arguments_ are passed as a combination of the keyword and the
->    value to the function. They can be given in any order, but they need to
->    have a default value. The `names` function has two keyword arguments
->    (`all` and `imported`) which are both of type `Bool` and default to
->    `false`.
+> It takes three arguments:
 >
-> Positional and keyword arguments are separated by a semi-colon.
-{: .callout}
-
-> ## Calling with keyword arguments
+> 1. `x`, a positional argument of type `Module`,  
+>    followed by a __`;`__ <!-- note: trailing spaces are deliberate-->
+> 2. `all`, a keyword argument of type `Bool` with a default value of
+>    `false`
+> 3. `imported`, another `Bool` keyword argument that defaults
+>    to `false`
 >
-> Suppose Melissa wanted to get `all` names of the `Trebuchets` module, what
-> would the call look like?
+> Suppose Melissa wanted to get all names of the `Trebuchets` module, including
+> those that are not exported. What would the function call look like?
 >
 > 1. `names(Trebuchets, true)`
 > 2. `names(Trebuchets, all = true)`
@@ -70,14 +81,25 @@ help?> names
 >
 > > ## Solution
 > >
-> > Option 5 is correct.
+> > 1. Both arguments are present, but `true` is presented without a keyword.
+> >    This throws a `MethodError: no method matching names(::Module, ::Bool)`
+> > 2. This is a __correct__ call.
+> > 3. This is also __correct__: you _can_ specify where the positional arguments
+> >    end with the `;`, but you do not have to.
+> > 4. Two arguments are present, but the keyword `all` is not assigned a
+>      value. This throws a
+> >    `MethodError: no method matching names(::Module, ::typeof(all))`
+> > 5. This is the __most correct__ answer.
 > {: .solution}
 {: .challenge}
 
-Thus Melissa executes
+Melissa goes ahead and executes
 
 ~~~
-julia> names(Trebuchets)
+names(Trebuchets)
+~~~
+{: .language-julia}
+~~~
 6-element Vector{Symbol}:
  :Trebuchet
  :TrebuchetState
@@ -86,25 +108,27 @@ julia> names(Trebuchets)
  :simulate
  :visualise
 ~~~
-{: .language-julia}
+{: .output}
 
 which yields the exported names of the `Trebuchets` module.
-By convention types are named with *CamelCase* while functions typically have
+By convention types are named with _CamelCase_ while functions typically have
 *snake_case*.
 Since Melissa is interested in simulating shots, she looks at the
-`Trebuchets.shoot` function
+`shoot` function from `Trebuchets` (again, using <kbd>?</kbd>):
 
 ~~~
 help?> Trebuchets.shoot
-
+~~~
+{: .language-julia}
+~~~
   shoot(ws, angle, w)
   shoot((ws, angle, w))
 
-  Shoots a Trebuchet with weight w. Releases the weight at the release angle 
-  angle in radians. The current wind speed is ws. Returns (t, dist), with 
-  travel time t and traveled distance dist.
+  Shoots a Trebuchet with weight w in kg. Releases the weight at the release
+  angle angle in radians. The current wind speed is ws in m/s. 
+  Returns (t, dist), with travel time t in s and travelled distance dist in m.
 ~~~
-{: .language-julia}
+{: .output}
 
 > ## Methods
 >
@@ -116,7 +140,10 @@ help?> Trebuchets.shoot
 Now she is ready to fire the first shot.
 
 ~~~
-julia> Trebuchets.shoot(5, 0.25pi, 500)
+Trebuchets.shoot(5, 0.25pi, 500)
+~~~
+{: .language-julia}
+~~~
 (TrebuchetState(Trebuchet.Lengths{Float64}(1.52, 2.07, 0.533, 0.607, 2.08, 0.831, 0.0379),
                 Trebuchet.Masses{Float64}(226.0, 0.149, 4.83),
                 Trebuchet.Angles{Float64}(-0.503, 1.32, 1.46),
@@ -134,17 +161,20 @@ julia> Trebuchets.shoot(5, 0.25pi, 500)
  117.8
 )
 ~~~
-{: .language-julia}
+{: .output}
 
 That is a lot of output, but Melissa is actually only interested in the
 distance, which is the second element of the tuple that was returned.
 So she tries again and grabs the second element this time:
 
 ~~~
-julia> Trebuchets.shoot(5, 0.25pi, 500)[2]
-117.8
+Trebuchets.shoot(5, 0.25pi, 500)[2]
 ~~~
 {: .language-julia}
+~~~
+117.8
+~~~
+{: .output}
 
 which means the shot traveled approximately 118 m.
 
@@ -155,9 +185,9 @@ take the second element.
 That's why she puts it together in a _function_ like this:
 
 ~~~
-julia> function shoot_distance(windspeed, angle, weight)
-           Trebuchets.shoot(windspeed, angle, weight)[2]
-       end
+function shoot_distance(windspeed, angle, weight)
+    Trebuchets.shoot(windspeed, angle, weight)[2]
+end
 ~~~
 {: .language-julia}
 
@@ -169,15 +199,26 @@ julia> function shoot_distance(windspeed, angle, weight)
 > same.
 {: .callout}
 
-### Adding methods
-
-Since Melissa wants to work with the structs `Trebuchet` and `Environment` she
-adds another convenience method for those
+Now Melissa can just call her wrapper function:
 
 ~~~
-julia> function shoot_distance(trebuchet::Trebuchet, env::Environment)
-           shoot_distance(env.wind, trebuchet.release_angle, trebuchet.counterweight)
-       end
+shoot_distance(5, 0.25pi, 500)
+~~~
+{: .language-julia}
+~~~
+117.8
+~~~
+{: .output}
+
+### Adding methods
+
+Since Melissa wants to work with the structs `Trebuchet` and `Environment`, she
+adds another convenience method for those:
+
+~~~
+function shoot_distance(trebuchet::Trebuchet, env::Environment)
+    shoot_distance(env.wind, trebuchet.release_angle, trebuchet.counterweight)
+end
 ~~~
 {: .language-julia}
 
@@ -192,12 +233,11 @@ Instead she can _slurp_ the arguments in the function definition and _splat_
 them in the function body using three dots (`...`) like this:
 
 ~~~
-julia> function shoot_distance(args...) # slurping
-           Trebuchets.shoot(args...)[2] # splatting
-       end
+function shoot_distance(args...) # slurping
+    Trebuchets.shoot(args...)[2] # splatting
+end
 ~~~
 {: .language-julia}
-
 
 ### Anonymous functions
 
@@ -207,16 +247,16 @@ These are _anonymous functions_.
 They can be defined with either the so-called stabby lambda notation,
 
 ~~~
-julia> (windspeed, angle, weight) -> Trebuchets.shoot(windspeed, angle, weight)[2]
+(windspeed, angle, weight) -> Trebuchets.shoot(windspeed, angle, weight)[2]
 ~~~
 {: .language-julia}
 
 or in long form, by omitting the name:
 
 ~~~
-julia> function (windspeed, angle, weight)
-           Trebuchets.shoot(windspeed, angle, weight)[2]
-       end
+function (windspeed, angle, weight)
+    Trebuchets.shoot(windspeed, angle, weight)[2]
+end
 ~~~
 {: .language-julia}
 
@@ -226,15 +266,18 @@ Melissa would like to set the fields of a `Trebuchet` using an index.
 She writes
 
 ~~~
-julia> trebuchet[1] = 2
+trebuchet[1] = 2
+~~~
+{: .language-julia}
+~~~
 ERROR: MethodError: no method matching setindex!(::Trebuchet, ::Int64, ::Int64)
 Stacktrace:
  [1] top-level scope
    @ REPL[4]:1
 ~~~
-{: .language-julia}
+{: .error}
 
-which tells her two things:
+The error tells her two things:
 
 1. a function named `setindex!` was called
 2. it didn't have a method for `Trebuchet`
@@ -244,19 +287,23 @@ where it is defined.
 There is a handy _macro_ named `@which` that obtains the module where the
 function is defined.
 
-~~~
-julia> @which setindex!
-Base
-~~~
-{: .language-julia}
-
 > ## Macros
 >
 > Macro names begin with `@` and they don't need parentheses or commas to
 > delimit their arguments.
 > Macros can transform any valid Julia expression and are quite powerful.
-> They can be expanded using `@macroexpand`.
+> They can be expanded by prepending `@macroexpand` to the macro call of
+> interest.
 {: .callout}
+
+~~~
+@which setindex!
+~~~
+{: .language-julia}
+~~~
+Base
+~~~
+{: .output}
 
 Now Melissa knows she needs to add a method to `Base.setindex!` with the
 signature `(::Trebuchet, ::Int64, ::Int64)`.
