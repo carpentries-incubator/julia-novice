@@ -77,7 +77,7 @@ shoot_distance(precise_trebuchet, environment)
 ~~~
 {: .language-julia title="aim_trebuchet.jl"}
 
-Now Melissa can run `include(aim_trebuchet.jl)` in the REPL to execute her code.
+Now Melissa can run `include("aim_trebuchet.jl")` in the REPL to execute her code.
 
 She also recognizes that she has a bunch of definitions at the beginning that
 she doesn't need to execute more than once in a session and some lines at the
