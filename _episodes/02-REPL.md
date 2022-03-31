@@ -200,7 +200,7 @@ pkg>
 ~~~
 {: .language-julia}
 
-To exit ***shell*** or ***pkg*** mode, hit <kbd>backspace</kbd>.
+To exit ***shell***, ***help*** or ***pkg*** mode, hit <kbd>backspace</kbd>.
 
 [latex]: http://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
 
