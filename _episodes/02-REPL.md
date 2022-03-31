@@ -156,7 +156,10 @@ Like before, hit <kbd>backspace</kbd> to get back to the Julia prompt.
 
 > ## Hello, **`shell>`**!
 >
-> Use the shell mode to start nano and save your first `.jl` file
+> Use the shell mode to create a file called `hello.jl` with the nano terminal text editor.
+> Inside that file write the simple hello world program `print("Hello World")`.
+>
+> Check the content of the file using `cat hello.jl` and then run the program using `julia hello.jl`.
 >
 > > ## Solution
 > >
