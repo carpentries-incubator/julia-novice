@@ -96,6 +96,8 @@ environment.
 ~~~
 {: .output}
 
+Melissa can get back to the global environment using `activate` without any parameters.
+
 > ## Why use GitHub?
 >
 > Melissa could have added the JuliaHub version of Trebuchet.jl by
