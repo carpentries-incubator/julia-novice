@@ -40,10 +40,12 @@ she knows that the prompt is showing the _currently activated environment_ and
 that this is the global environment that is activated by default.
 
 However, she doesn't want to clutter the global environment when working on her
-project, so she creates a new environment via
+project.
+The default global environment is indicated with `(@v1.x)` before the `pkg>` prompt, where `x` is the minor version number of julia, so on julia 1.7 it will look like `(@v1.7)`.
+To create a new environment she uses the `activate` function of the package manager:
 
 ~~~
-(v1.x) pkg> activate projects/trebuchet
+(@v1.x) pkg> activate projects/trebuchet
 ~~~
 {: .language-julia}
 
