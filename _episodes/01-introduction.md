@@ -70,7 +70,7 @@ https://github.com/ElOceanografo):
 > and because the pieces all have the same system of bumps, everything snaps
 > together quickly and easily.
 >
-> ![Trucks][vessel]{: height="400px"}
+> ![Trucks][truck]{: height="400px"}
 >
 > OK, sure. Toy trucks are like linear algebra, though, a common request, and
 > every “toy system” will have an implementation that works basically fine. But
