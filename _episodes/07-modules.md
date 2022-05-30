@@ -114,7 +114,7 @@ using ForwardDiff: gradient
 
 export aim, shoot_distance, Trebuchet, Environment
 
-mutable struct Trebuchet <: AbstractVecor{Float64}
+mutable struct Trebuchet <: AbstractVector{Float64}
   counterweight::Float64
   release_angle::Float64
 end
