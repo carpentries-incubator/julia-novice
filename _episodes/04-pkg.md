@@ -111,7 +111,7 @@ Melissa can get back to the global environment using `activate` without any para
 > However, that "release" version of the code is missing some
 > important features and, more important for learning, it has very
 > little documentation. The "development" version, represented by the
-> "main" branch on the GitHub repository, provides a function _and
+> "master" branch on the GitHub repository, provides a function _and
 > its documentation_ that Melissa needs to use later on.
 >
 > If you know a package is stable, go ahead and install the default version
