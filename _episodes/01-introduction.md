@@ -86,7 +86,7 @@ https://github.com/ElOceanografo):
 Originally posted on [Discourse][discourse].
 
 [discourse]: https://discourse.julialang.org/t/what-is-the-advantage-of-julia-over-fortran/65964/101
-[truck]: https://aws1.discourse-cdn.com/business5/uploads/julialang/original/3X/5/2/52e63856ad9e23876cda4297a04171879fa625b4.jpeg
-[vessel]: https://aws1.discourse-cdn.com/business5/uploads/julialang/original/3X/2/8/2865d34fb35c181dc3c5c0f0b71915f31310269c.jpeg
+[truck]: https://global.discourse-cdn.com/business5/uploads/julialang/original/3X/5/2/52e63856ad9e23876cda4297a04171879fa625b4.jpeg
+[vessel]: https://global.discourse-cdn.com/business5/uploads/julialang/original/3X/2/8/2865d34fb35c181dc3c5c0f0b71915f31310269c.jpeg
 
 {% include links.md %}
