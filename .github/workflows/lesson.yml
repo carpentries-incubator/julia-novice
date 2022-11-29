@@ -39,7 +39,7 @@ jobs:
 
       - name: Set up R
         if: steps.check-rmd.outputs.count != 0
-        uses: r-lib/actions/setup-r@master
+        uses: r-lib/actions/setup-r@v3
         with:
           r-version: 'release'
 
