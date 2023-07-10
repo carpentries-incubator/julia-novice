@@ -251,7 +251,7 @@ They can be defined with either the so-called stabby lambda notation,
 ~~~
 {: .language-julia}
 
-or in long form, by omitting the name:
+For completeness, this is how to define them in long form by omitting the name:
 
 ~~~
 function (windspeed, angle, weight)
@@ -259,6 +259,20 @@ function (windspeed, angle, weight)
 end
 ~~~
 {: .language-julia}
+
+Anonymous functions can be very helpful as temporary objects or shorthands. For example, the above code could be used to shorten the call syntax by assigning an anonymous function to the variable `throw`:
+
+~~~
+throw = (windspeed, angle, weight) -> Trebuchets.shoot(windspeed, angle, weight)[2]
+throw(5, 0.25pi, 500)
+~~~
+{: .language-julia}
+
+~~~
+117.8
+~~~
+{: .output}
+
 
 ### Errors and macros
 
