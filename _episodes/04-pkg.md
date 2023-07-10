@@ -96,7 +96,37 @@ environment.
 ~~~
 {: .output}
 
-Melissa can get back to the global environment using `activate` without any parameters.
+### `deactivate` does not exist, instead ...
+
+Melissa can get back to the global environment using `activate` without any parameters. This will deactivate the `projects/trebuchet` environment. 
+
+~~~
+(trebuchet) pkg> activate
+~~~
+{: .language-julia}
+
+~~~
+  Activating project at `~/.julia/environments/v1.8`
+~~~
+{: .output}
+
+Melissa can test that she is back into the global environment by trying to import the `Trebuchets` package. She expects that this will fail, because the package is not available globally. It was only installed in the local environment `projects/trebuchet`.
+
+~~~
+julia> import Trebuchet as Trebuchets
+~~~
+{: .language-julia}
+
+~~~
+ │ Package Trebuchet not found, but a package named Trebuchet is available from a registry. 
+ │ Install package?
+ │   (@v1.9) pkg> add Trebuchet 
+ └ (y/n/o) [y]: n
+ERROR: ArgumentError: Package Trebuchet not found in current path.
+- Run `import Pkg; Pkg.add("Trebuchet")` to install the Trebuchet package.
+~~~
+{: .output}
+
 
 > ## Why use GitHub?
 >
