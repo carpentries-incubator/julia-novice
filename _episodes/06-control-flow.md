@@ -82,6 +82,75 @@ end
 
 Then she goes about implementing the `AbstractArray` interface.
 
+> ## Did if subtyping work?
+>
+> Now `Trebuchet` was made a subtype of the `AbstractArray` interface. We should be able to check this in the julia REPL.
+> How would you do that?
+>
+> 1. `Trebuchet` appears in the output of `subtypes(AbstractArray)`
+> 2. `AbstractArray` appears in the output of `supertype(Trebuchet)`
+> 3. `Trebuchet` appears in the output of `subtype(AbstractArray)`
+> 4. `AbstractArray` appears in the output of `supertypes(Trebuchet`
+>
+> > ## Solution
+> >
+> > Answers 1, 2 and 4 are correct.
+> > 1.
+> > ~~~
+> > subtypes(AbstractArray)
+> > ~~~
+> > {: .language-julia}
+> > 
+> > ~~~
+> > 57-element Vector{Any}:
+> > AbstractRange
+> > AbstractSlices
+> > Base.ExceptionStack
+> > #..
+> > Tables.EmptyVector
+> > Test.GenericArray
+> > Trebuchet
+> > ~~~
+> > {: .output}
+> >
+> > 2.
+> > ~~~
+> > supertype(Trebuchet)
+> > ~~~
+> > {: .language-julia}
+> >
+> > ~~~
+> > AbstractVector{Float64} (alias for AbstractArray{Float64, 1})
+> > ~~~
+> > {: .output}
+> >
+> > 3.
+> > ~~~
+> > subtype(AbstractArray)
+> > ~~~
+> > {: .language-julia}
+> >
+> > ~~~
+> > ERROR: UndefVarError: `subtype` not defined
+> > Stacktrace:
+> >  [1] top-level scope
+> >    @ REPL[9]:1
+> > ~~~
+> > {: .output}
+> >
+> > 4.
+> > ~~~
+> > supertypes(Trebuchet)
+> > ~~~
+> > {: .language-julia}
+> >
+> > ~~~
+> > (Trebuchet, AbstractVector{Float64}, Any)
+> > ~~~
+> > {: .output}
+> {: .solution}
+{: .challenge}
+
 > ## Implement the `AbstractArray` interface for `Trebuchet`
 >
 > Now we know enough to actually implement the `AbstractArray` interface.
