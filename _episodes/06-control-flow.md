@@ -90,7 +90,7 @@ Then she goes about implementing the `AbstractArray` interface.
 > 1. `Trebuchet` appears in the output of `subtypes(AbstractArray)`
 > 2. `AbstractArray` appears in the output of `supertype(Trebuchet)`
 > 3. `Trebuchet` appears in the output of `subtype(AbstractArray)`
-> 4. `AbstractArray` appears in the output of `supertypes(Trebuchet`
+> 4. `AbstractArray` appears in the output of `supertypes(Trebuchet)`
 >
 > > ## Solution
 > >
