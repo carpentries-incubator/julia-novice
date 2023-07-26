@@ -82,7 +82,7 @@ end
 
 Then she goes about implementing the `AbstractArray` interface.
 
-> ## Did if subtyping work?
+> ## Double check subtyping
 >
 > Now `Trebuchet` was made a subtype of the `AbstractArray` interface. We should be able to check this in the julia REPL.
 > How would you do that?
