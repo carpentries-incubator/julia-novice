@@ -1,0 +1,10 @@
+Package: lesson
+Title: Programming with Julia
+Version: 1.0.0
+Authors@R: 
+    person("Jo", "Carpenter", , "team@carpentries.org", role = c("aut", "cre"))
+Maintainer: {{ Maintainer }}
+Description: Lesson Template (not a real package).
+License: CC-BY 4.0
+URL: {{ URL }}
+Encoding: UTF-8
