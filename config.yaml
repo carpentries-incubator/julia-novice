@@ -14,7 +14,7 @@ carpentry: 'incubator'
 title: 'Programming with Julia'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 
+created:
 
 # Comma-separated list of keywords for the lesson
 keywords: 'software, data, lesson, The Carpentries'
@@ -58,25 +58,25 @@ contact: 'SimonChrist@gmx.de'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
-- 01-introduction.md
-- 02-REPL.md
-- 03-types.md
-- 04-pkg.md
-- 05-functions.md
-- 06-control-flow.md
-- 07-modules.md
-- 08-packages.md
-- 09-tests.md
+episodes:
+# - 01-introduction.md
+# - 02-REPL.md
+# - 03-types.md
+# - 04-pkg.md
+# - 05-functions.md
+# - 06-control-flow.md
+# - 07-modules.md
+# - 08-packages.md
+# - 09-tests.md
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #
