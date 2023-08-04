@@ -1,14 +1,10 @@
 ---
-
 title: "Control flow"
-
 teaching: 60
-
 exercises: 60
-
 ---
 
-:::::: questions:
+:::::: questions
 
   * "What are for and while loops?"
   * "How to use conditionals?"
@@ -16,11 +12,12 @@ exercises: 60
 
 ::::::
 
-:::::: objectives:
+:::::: objectives
 
 ::::::
 
 ## Conditionals
+
 -----------------
 
 Before starting to work in a new document, Melissa has to:
@@ -96,7 +93,6 @@ If Melissa implements this interface for the `Trebuchet` type, it will work
 with every function in `Base` that accepts an `AbstractArray`.
 
 She also needs to make `Trebuchet` a proper subtype of `AbstractArray` as she
-<!-- tried in [the types episode](3_Julia_type_system.ipynb). -->
 Therefore she _restarts her REPL_ and redefines `Trebuchet` and `Environment`,
 as well as the slurp-and-splat `shoot_distance` function:
 
@@ -426,8 +422,6 @@ This is a highly non-linear system and thus very sensitive.
 The distances across different values for the counterweight and the release
 
 angle α look like this:
-
-<!-- <img src="https://raw.githubusercontent.com/carpentries-incubator/julia-novice/f5431d8b6645a7083755879cf28c862e9e4115e9/fig/shoot_surface.png" width="600" height="400"> -->
 
 ::::::::
 
