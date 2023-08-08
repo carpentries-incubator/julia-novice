@@ -59,15 +59,6 @@ contact: 'SimonChrist@gmx.de'
 
 # Order of episodes in your lesson
 episodes:
-# - 01-introduction.md
-# - 02-REPL.md
-# - 03-types.md
-# - 04-pkg.md
-# - 05-functions.md
-# - 06-control-flow.md
-# - 07-modules.md
-# - 08-packages.md
-# - 09-tests.md
 
 # Information for Learners
 learners:

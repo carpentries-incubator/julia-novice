@@ -1,22 +1,26 @@
 ---
-title: Introduction
+title: "Introduction"
 teaching: 5
 exercises: 0
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
+:::::: questions
 
-- Explain the difference between interpreted and compiled programming languages
-- Compare how composing works in Julia and some common programming languages
+## Questions
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+  - "What is Julia?"
+  - "Why use Julia?"
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::
 
-- What is Julia?
-- Why use Julia?
+:::::: objectives
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+## Objectives
+
+  - "Explain the difference between interpreted and compiled programming languages"
+  - "Compare how composing works in Julia and some common programming languages"
+
+::::::
 
 ## What is a programming language?
 
@@ -27,7 +31,7 @@ programming language.
 This specification will be translated to machine instructions, the so called
 assembly code, which will be executed by the processor (CPU, GPU, ...).
 
-## Interpreting and compiling
+### Interpreting and compiling
 
 This translation happens differently depending on the programming language you
 use.
@@ -57,50 +61,47 @@ packages compose.
 This is captured the best by an analogy from [Sam Urmy](https://github.com/ElOceanografo):
 
 > Say you want a toy truck.
-> 
+>
 > The Python/R solution is to look for the appropriate package–like buying a
 > Playmobil truck. It comes pre-manufactured, well-engineered and tested, and
 > does 95% of what you would ever want a toy truck to do.
-> 
+>
 > The Fortran/C solution is to build the truck from scratch. This allows total
 > customization and you can optimize the features and performance however you
 > want. The downside is that it takes more time, you need woodworking skills,
 > and might hurt yourself with the power tools.
-> 
+>
 > The Julia solution is like Legos. You can get the truck kit if you want–which
 > will require a bit more assembly than the Playmobil, but way less than
 > building it from scratch. Or, you can get the component pieces and assemble
-> the truck to your own specs. There's no limit to what you can put together,
+> the truck to your own specs. There’s no limit to what you can put together,
 > and because the pieces all have the same system of bumps, everything snaps
 > together quickly and easily.
-> 
-> ![][truck]{alt='Trucks' height="400px"}
-> 
+>
+> <p align="center">
+> ![](https://global.discourse-cdn.com/business5/uploads/julialang/original/3X/5/2/52e63856ad9e23876cda4297a04171879fa625b4.jpeg){width="600" height="400" alt=""}
+> </p>
+>
 > OK, sure. Toy trucks are like linear algebra, though, a common request, and
-> every "toy system" will have an implementation that works basically fine. But
+> every “toy system” will have an implementation that works basically fine. But
 > what if you want a time-traveling sailing/space ship with lasers AND dragon
 > wings? And it should be as easy to build and use as a basic dump truck?
-> 
-> ![][vessel]{alt='Vessel' height="400px"}
-> 
-> There's a reason that only Lego ever made anything like Dr. Cyber's Flying
+>
+> <p align="center">
+> ![](https://global.discourse-cdn.com/business5/uploads/julialang/original/3X/2/8/2865d34fb35c181dc3c5c0f0b71915f31310269c.jpeg){ width="600" height="400" alt=""}
+> </p>
+>
+> There’s a reason that only Lego ever made anything like Dr. Cyber’s Flying
 > Time Vessel!
-> {: .quotation}
 
-Originally posted on [Discourse][discourse].
+Originally posted on [Discourse](https://discourse.julialang.org/t/what-is-the-advantage-of-julia-over-fortran/65964/101).
 
+:::::: keypoints
 
+## Keypoints
 
-[truck]: https://global.discourse-cdn.com/business5/uploads/julialang/original/3X/5/2/52e63856ad9e23876cda4297a04171879fa625b4.jpeg
-[vessel]: https://global.discourse-cdn.com/business5/uploads/julialang/original/3X/2/8/2865d34fb35c181dc3c5c0f0b71915f31310269c.jpeg
-[discourse]: https://discourse.julialang.org/t/what-is-the-advantage-of-julia-over-fortran/65964/101
+  - "Julia is a just-in-time compiled language"
+  - "Julia packages compose well"
 
-
-:::::::::::::::::::::::::::::::::::::::: keypoints
-
-- Julia is a just-in-time compiled language
-- Julia packages compose well
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
+::::::
 

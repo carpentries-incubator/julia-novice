@@ -1,24 +1,28 @@
 ---
-title: Creating Packages
+title: "Creating Packages"
 teaching: 15
 exercises: 15
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
+:::::: questions
 
-- Learn setting up a project using modules.
-- Learn common package structure.
-- Learn to browse GitHub or juliahub for packages and find documentation.
+## Questions
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+  - "How to create a package?"
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::
 
-- How to create a package?
+:::::: objectives
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+## Objectives
 
-Melissa is now confident that her module fine and she wants to make it
+  - "Learn setting up a project using modules."
+  - "Learn common package structure."
+  - "Learn to browse GitHub or juliahub for packages and find documentation."
+
+::::::
+
+Melissa is now confident that her module is fine and she wants to make it
 available for the rest of her physics club.
 She decides to put it in a package.
 This way she can also locally use Julia's package manager for managing her
@@ -34,10 +38,10 @@ Thankfully Julia comes with the `UUIDs` package, that can generate `uuid`s for
 Melissa via `UUIDs.uuid4()`.
 
 In addition Melissa needs to have a specific directory structure.
-She looks at the example package [`Example.jl`][ex] which has the following
+She looks at the example package [`Example.jl`](https://github.com/JuliaLang/Example.jl) which has the following
 structure:
 
-```output
+```
 ├── docs
 │   ├── make.jl
 │   ├── Project.toml
@@ -52,15 +56,14 @@ structure:
     └── runtests.jl
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::: callout
 
 ## Make it a package
 
 Open your `Project.toml` and add `name = <your name>`, `uuid = <your uuid>`
 and optionally an `authors` field, each on a separate line.
 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::
 
 Now Melissa can use
 
@@ -74,42 +77,32 @@ instead of needing to `includet MelissasModule.jl`, and she can write
 ## Register a package
 
 In order for her friends to be able to get the package, Melissa registers the
-package in the *general registry*.
-This can be done either via [JuliaHub][jh] or by making a pull request on
-[GitHub][gh] which can also be automated by the [Julia Registrator][jr].
+package in the _general registry_.
+This can be done either via [JuliaHub](https://juliahub.com/ui/Registrator) or by making a pull request on
+[GitHub](https://github.com/JuliaRegistries/General/pulls) which can also be automated by the [Julia Registrator](https://github.com/JuliaRegistries/Registrator.jl).
 
 ## Creating a new package
 
 Melissa thinks next time she will start with a package right away.
 
-Browsing the packages she found [PkgTemplates.jl][pt] and [PkgSkeleton.jl][ps]
+Browsing the packages she found [PkgTemplates.jl](https://invenia.github.io/PkgTemplates.jl/stable/) and [PkgSkeleton.jl](https://github.com/tpapp/PkgSkeleton.jl)
 which makes setting up the typical folder structure very easy.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::: callout
 
 ## Create your own package
 
 Look at the documentation of the package creation helper packages and create
 a new package using `generate`.
 
+::::::
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::: keypoints
 
+## Keypoints
 
+  - "The general registry is hosted on GitHub."
+  - "Packaging is easy"
 
-[ex]: https://github.com/JuliaLang/Example.jl
-[jh]: https://juliahub.com/ui/Registrator
-[gh]: https://github.com/JuliaRegistries/General/pulls
-[jr]: https://github.com/JuliaRegistries/Registrator.jl
-[pt]: https://invenia.github.io/PkgTemplates.jl/stable/
-[ps]: https://github.com/tpapp/PkgSkeleton.jl
-
-
-:::::::::::::::::::::::::::::::::::::::: keypoints
-
-- The general registry is hosted on GitHub.
-- Packaging is easy
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
+::::::
 

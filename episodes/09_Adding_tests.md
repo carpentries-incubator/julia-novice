@@ -1,21 +1,25 @@
 ---
-title: Adding tests
+title: "Adding tests"
 teaching: 10
 exercises: 30
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
+:::::: questions
 
-- Learn to create unit tests and test-sets using the `Test` standard library
+## Questions
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+  - "What are unit tests?"
+  - "How are tests organized in Julia?"
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::
 
-- What are unit tests?
-- How are tests organized in Julia?
+:::::: objectives
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+## Objectives
+
+  - "Learn to create unit tests and test-sets using the `Test` standard library"
+
+::::::
 
 ## Unit tests
 
@@ -32,19 +36,27 @@ namely, the macros `@test` and `@testset`.
 
 `@test` can be used to test a single equality, such as
 
-```julia
+````julia
 using Test
 @test 1 + 1 == 2
-```
+````
+
+````output
+Test Passed
+````
 
 Several tests can be grouped in a test-set with a descriptive name
 
-```julia
+````julia
 using Test
 @testset "Test arithmetic equalities" begin
     @test 1 + 1 == 2
 end
-```
+````
+
+````output
+Test.DefaultTestSet("Test arithmetic equalities", Any[], 1, false, false, true, 1.691508902607711e9, 1.69150890263447e9, false)
+````
 
 With this Melissa can run her test using the pkg mode of the REPL:
 
@@ -64,17 +76,18 @@ Thus it is possible to move the `Test` entry in the `Project.toml` file from
 test = ["Test"]
 ```
 
-Check out the [sample project file](code/Project.toml) for a complete
+Check out the [sample project file](../code/Project.toml) for a complete
 example.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::: challenge
 
-## Create a test for MelissasModule
+## Challenge
 
+Create a test for MelissasModule
 Create a test that ensures that `shoot_distance` returns a value that is
 between `target - ε` and `target + ε`.
 
-:::::::::::::::  solution
+:::::: solution
 
 ## Solution
 
@@ -83,24 +96,24 @@ using MelissasModule
 using Test
 
 @testset "Test hitting target" begin
-    imprecise_trebuchet = Trebuchet(500.0, 0.25pi)
-    environment = Environment(5, 100)
-    precise_trebuchet = aim(imprecise_trebuchet, environment)
-    @test 100 - 0.1 <= shoot_distance(precise_trebuchet, environment) <= 100 + 0.1
-    # default ε is 0.1
+   imprecise_trebuchet = Trebuchet(500.0, 0.25pi)
+   environment = Environment(5, 100)
+   precise_trebuchet = aim(imprecise_trebuchet, environment)
+   @test 100 - 0.1 <= shoot_distance(precise_trebuchet, environment) <= 100 + 0.1
+   # default ε is 0.1
 end
 ```
 
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::
 
 
+::::::
 
-:::::::::::::::::::::::::::::::::::::::: keypoints
+:::::: keypoints
 
-- Tests are important
+## Keypoints
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+  - "Tests are important"
 
+::::::
 

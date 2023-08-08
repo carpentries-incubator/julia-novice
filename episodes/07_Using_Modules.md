@@ -1,21 +1,25 @@
 ---
-title: Using Modules
+title: "Using Modules"
 teaching: 15
 exercises: 0
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
+:::::: questions
 
-- Structure your code using modules
-- Use Revise.jl to track changes
+## Questions
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+  - "What's the purpose of modules?"
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::
 
-- What's the purpose of modules?
+:::::: objectives
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+## Objectives
+
+  - "Structure your code using modules"
+  - "Use Revise.jl to track changes"
+
+::::::
 
 ## Modules
 
@@ -29,7 +33,9 @@ She opens up her text editor and creates a file called `aim_trebuchet.jl` in
 the current working directory and pastes the code she got so far in there.
 This is what it looks like:
 
-```julia title="aim_trebuchet.jl"
+````julia
+using Pkg
+Pkg.activate("projects/trebuchet")
 import Trebuchet as Trebuchets
 using ForwardDiff: gradient
 
@@ -88,7 +94,8 @@ environment = Environment(5, 100)
 precise_trebuchet = aim(imprecise_trebuchet, environment)
 
 shoot_distance(precise_trebuchet, environment)
-```
+
+````
 
 Now Melissa can run `include("aim_trebuchet.jl")` in the REPL to execute her code.
 
@@ -96,13 +103,14 @@ She also recognizes that she has a bunch of definitions at the beginning that
 she doesn't need to execute more than once in a session and some lines at the
 end that use these definitions which she might run more often.
 She will split these in two separate files and put the definitions into a
-*module*.
+_module_.
 The module will put the definitions into their own namespace which is the
 module name.
 This means Melissa would need to put the module name before each definition if
 she uses it outside of the module.
-But she remembers from the [pkg episode](
-{{ page.root }}{% link \_episodes/04-pkg.md %}) that she can export names that
+But she remembers from the
+[Using the package manager Episode](4_Using_the_package_manager.md)
+that she can export names that
 don't need to be prefixed.
 
 She names her module `MelissasModule` and accordingly the file
@@ -111,8 +119,11 @@ From this module she exports the names `aim`, `shoot_distance`, `Trebuchet` and
 `Environment`.
 This way she can leave her other code unchanged.
 
-```julia title="MelissasModule.jl"
+````julia
 module MelissasModule
+
+using Pkg
+Pkg.activate("projects/trebuchet")
 import Trebuchet as Trebuchets
 using ForwardDiff: gradient
 
@@ -166,18 +177,20 @@ function aim(trebuchet::Trebuchet, environment::Environment; ε = 1e-1, η = 0.0
     return Trebuchet(better_trebuchet[1], better_trebuchet[2])
 end
 end # MelissasModule
-```
+
+````
 
 The rest of the code goes to a file she calls `MelissasCode.jl`.
 
-```julia title="MelissasCode.jl"
+````julia
 using .MelissasModule
 
 imprecise_trebuchet = Trebuchet(500.0, 0.25pi)
 environment = Environment(5, 100)
 precise_trebuchet = aim(imprecise_trebuchet, environment)
 shoot_distance(precise_trebuchet, environment)
-```
+
+````
 
 Now she can include `MelissasModule.jl` once, and change and include
 `MelissasCode.jl` as often as she wants.
@@ -199,37 +212,35 @@ Melissa needs to take two things into account:
 
 Thus she now runs
 
-```julia
+````julia
 using Revise
 
-includet("MelissasModule.jl")
 
-include("MelissasCode.jl")
-```
+includet(joinpath(@__DIR__,"MelissasModule.jl"))
+include(joinpath(@__DIR__,"MelissasCode.jl"))
+````
 
-```output
-100.0975848073789
-```
+````output
+100.05601729579894
+````
 
 and any change she makes in `MelissasModule.jl` will be visible in the next run
 of her code.
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+:::::: callout
 
 ## Did I say any changes?
 
 Well, almost any. Revise can't track changes to structures.
 
+::::::
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::: keypoints
 
+## Keypoints
 
+  - "Modules introduce namespaces"
+  - "Public API has to be documented and can be exported"
 
-:::::::::::::::::::::::::::::::::::::::: keypoints
-
-- Modules introduce namespaces
-- Public API has to be documented and can be exported
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
+::::::
 
