@@ -3,11 +3,6 @@ permalink: index.html
 site: sandpaper::sandpaper_site
 ---
 
-> **ATTENTION** This is an experimental test of [The Carpentries Workbench](https://carpentries.github.io/workbench) lesson infrastructure.
-> It was automatically converted from the source lesson via [the lesson transition script](https://github.com/carpentries/lesson-transition/).
-> 
-> If anything seems off, please contact Zhian Kamvar [zkamvar@carpentries.org](mailto:zkamvar@carpentries.org)
-
 ![][trebuchet]{alt='Trebuchet' height="400px"}
 
 Melissa and her schoolmates built a trebuchet in their physics club.
@@ -19,10 +14,6 @@ As for the programming language, they chose Julia since it has state-of-the-art
 packages for this task and they also read it composes very well.
 Unfortunately nobody knows this language already, so they have to learn it from
 scratch.
-
-<!-- this is an html comment -->
-
-{% comment %} This is a comment in Liquid {% endcomment %}
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
