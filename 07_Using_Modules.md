@@ -109,7 +109,7 @@ module name.
 This means Melissa would need to put the module name before each definition if
 she uses it outside of the module.
 But she remembers from the
-[Using the package manager Episode](4_Using_the_package_manager.md)
+[Using the package manager Episode](04_Using_the_package_manager.md)
 that she can export names that
 don't need to be prefixed.
 

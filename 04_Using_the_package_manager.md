@@ -39,7 +39,7 @@ using Pkg
 Pkg.add("Example")
 ```
 
-If you prefer to use that method and want to know more, remember how to get [help](2_Getting_started.md).
+If you prefer to use that method and want to know more, remember how to get [help](02_Getting_started.md).
 
 _(for exp. <kbd>?Pkg.add</kbd>)_
 
