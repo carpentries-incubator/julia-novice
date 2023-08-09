@@ -96,7 +96,7 @@ If Melissa implements this interface for the `Trebuchet` type, it will work
 with every function in `Base` that accepts an `AbstractArray`.
 
 She also needs to make `Trebuchet` a proper subtype of `AbstractArray` as she
-tried in [the types episode](3_Julia_type_system.md).
+tried in [the types episode](03_Julia_type_system.md).
 Therefore she _restarts her REPL_ and redefines `Trebuchet` and `Environment`,
 as well as the slurp-and-splat `shoot_distance` function:
 
