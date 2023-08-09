@@ -15,10 +15,6 @@ packages for this task and they also read it composes very well.
 Unfortunately nobody knows this language already, so they have to learn it from
 scratch.
 
-<!-- this is an html comment -->
-
-{% comment %} This is a comment in Liquid {% endcomment %}
-
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
 ## Prerequisites
