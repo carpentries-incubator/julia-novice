@@ -1,6 +1,6 @@
 > **ATTENTION** This is an experimental test of [The Carpentries Workbench](https://carpentries.github.io/workbench) lesson infrastructure.
 > It was automatically converted from the source lesson via [the lesson transition script](https://github.com/carpentries/lesson-transition/).
-> 
+>
 > If anything seems off, please contact Zhian Kamvar [zkamvar@carpentries.org](mailto:zkamvar@carpentries.org)
 
 # Programming with Julia
@@ -13,6 +13,9 @@ This lesson targets people who already have some experience with (scientific)
 programming, but are new to Julia.
 
 ## Contributing
+
+Note: This lessons content is generated from [Literate.jl](https://fredrikekre.github.io/Literate.jl/v2/) files living on the `literate` branch.
+Please edit these for contributing to this lesson.
 
 We welcome all contributions to improve the lesson! Maintainers will do their
 best to help you if you have any questions, concerns, or experience any
