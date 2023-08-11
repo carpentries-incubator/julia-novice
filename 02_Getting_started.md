@@ -69,13 +69,13 @@ assume that any **Julia** box prepends the prompt on each line of input.
 ## Visual Studio Code
 
 An alternative to using the REPL through a terminal is
-to work with <b>V</b>isual <b>S</b>tudio <b>C</b>ode.
+to work with <b>V</b>isual <b>S</b>tudio <b>C</b>ode or its open source altenative VSCodium.
 VSC is a source code editor for which a `julia` extension is available.
 After installing the application, simply click on the <kbd>"Extension"</kbd> symbol on the left side and
 search for `julia`.
 Once installt `julia` remains usable and can be selected as a programming language in new documents.
 
-For further guidance and visual aid, check out the provided [video]()!
+For further guidance and visual aid, check out the provided [video](https://av.tib.eu/media/62060)!
 
 ::::::
 
