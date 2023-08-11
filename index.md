@@ -3,7 +3,7 @@ permalink: index.html
 site: sandpaper::sandpaper_site
 ---
 
-![][trebuchet]{alt='Trebuchet' height="400px"}
+![trebuchet]{alt='Trebuchet' height="400px"}
 
 Melissa and her schoolmates built a trebuchet in their physics club.
 In their first tests they experienced that aiming it is not that easy and
