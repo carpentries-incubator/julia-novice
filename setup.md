@@ -108,6 +108,7 @@ To see if your default shell is Bash type `echo $SHELL` in Terminal and press th
 If the message printed does not end with '/bash' then your default is something else and you can run Bash by typing `bash`.
 
 If you want to change your default shell, see this [Apple Support article](https://support.apple.com/en-au/HT208050) and follow the instructions on "How to change your default shell".
+
 #### Git
 
 **For macOS**, install Git for Mac by downloading and running the most recent "mavericks" installer from [this list](http://sourceforge.net/projects/git-osx-installer/files/).
@@ -124,9 +125,11 @@ It should be pre-installed.
 #### Julia
 
 **juliaup**:
+
 - Run `curl -fsSL https://install.julialang.org | sh` or `brew install juliaup` if you want to use homebrew.
 
 **Manual**:
+
 - Download the current stable release from the [Julia download
               page](https://julialang.org/downloads/) and follow the installation instructions.
 
@@ -174,9 +177,11 @@ It should be pre-installed.
 #### Julia
 
 **juliaup**:
+
 - Run `curl -fsSL https://install.julialang.org | sh`.
 
 **Manual**:
+
 - Download the current stable release from the [Julia download
               page](https://julialang.org/downloads/) and unpack the folder to any location that is in your `PATH` or link the binary in the `bin` folder to such a location.
 
