@@ -414,16 +414,298 @@ Finish
 </tr></tbody></table><p>
       The actual schedule may vary slightly depending on the topics and exercises chosen by the instructor.
       </p>
-      </section><section id="setup"><p>This lesson requires installation of the following three
+      </section><section id="setup"><section id="software-setup"><h2 class="section-heading">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a>
+</h2>
+<hr class="half-width"><div id="details" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="details" class="callout-inner">
+<h3 class="callout-title">Details<a class="anchor" aria-label="anchor" href="#details"></a>
+</h3>
+<div class="callout-content">
+<p>This lesson requires installation of the following three
 components:</p>
 <ol style="list-style-type: decimal"><li>terminal emulator (“shell”);</li>
-<li>a text editor (either “Visual Studio Code” or “nano”), and;</li>
+<li>a text editor (either “VSCodium” or “nano”), and;</li>
 <li>Julia.</li>
-</ol><p>{% include install-shell.html %} {% include install-julia.html %} {%
-include install-vscode.html %} {% include install-editor.html %}</p>
-
-
-      </section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
+</ol></div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Windows
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="section level3 accordion-body">
+<h3 id="git-and-bash">Git and Bash<a class="anchor" aria-label="anchor" href="#git-and-bash"></a></h3>
+<ol style="list-style-type: decimal"><li>Download the <a href="https://gitforwindows.org/" class="external-link">Git for Windows
+installer</a>.</li>
+<li>Run the installer and follow the steps below:
+<ol style="list-style-type: decimal"><li>Click on “Next” four times (two times if you’ve previously installed
+Git). You don’t need to change anything in the Information, location,
+components, and start menu screens.</li>
+<li><strong>From the dropdown menu, “Choosing the default editor used by
+Git”, select “Use the Nano editor by default” (NOTE: you will need to
+scroll up to find it) and click on “Next”.</strong></li>
+<li>On the page that says “Adjusting the name of the initial branch in
+new repositories”, ensure that “Let Git decide” is selected. This will
+ensure the highest level of compatibility for our lessons.</li>
+<li>Ensure that “Git from the command line and also from 3rd-party
+software” is selected and click on “Next”. (If you don’t do this Git
+Bash will not work properly, requiring you to remove the Git Bash
+installation, re-run the installer and to select the “Git from the
+command line and also from 3rd-party software” option.)</li>
+<li>Select “Use bundled OpenSSH”.</li>
+<li>Ensure that “Use the native Windows Secure Channel Library” is
+selected and click on “Next”.</li>
+<li>Ensure that “Checkout Windows-style, commit Unix-style line endings”
+is selected and click on “Next”.</li>
+<li><strong>Ensure that “Use Windows’ default console window” is
+selected and click on “Next”.</strong></li>
+<li>Ensure that “Default (fast-forward or merge) is selected and
+click”Next”</li>
+<li>Ensure that “Git Credential Manager” is selected and click on
+“Next”.</li>
+<li>Ensure that “Enable file system caching” is selected and click on
+“Next”.</li>
+<li>Click on “Install”.</li>
+<li>Click on “Finish” or “Next”.</li>
+</ol></li>
+<li>If your “HOME” environment variable is not set (or you don’t know
+what this is):
+<ol style="list-style-type: decimal"><li><p>Open command prompt (Open Start Menu then type <code>cmd</code>
+and press <kbd>Enter</kbd>)</p></li>
+<li><p>Type the following line into the command prompt window exactly as
+shown: <code>setx HOME "%USERPROFILE%"</code></p></li>
+<li><p>Press <kbd>Enter</kbd>, you should see
+<code>SUCCESS: Specified value was saved.</code></p></li>
+<li><p>Quit command prompt by typing <code>exit</code> then pressing
+<kbd>Enter</kbd> This will provide you with both Git and Bash in the Git
+Bash program.</p></li>
+</ol></li>
+</ol><p><a href="https://youtu.be/339AEqk9c-8" class="external-link">Video Tutorial</a></p>
+<div class="section level4">
+<h4 id="nano">Nano<a class="anchor" aria-label="anchor" href="#nano"></a></h4>
+<p>nano is a basic editor and the default that instructors use in the
+workshop. It is installed along with Git.</p>
+</div>
+<div class="section level4">
+<h4 id="julia">Julia<a class="anchor" aria-label="anchor" href="#julia"></a></h4>
+<ul><li>Open a web browser and visit the <a href="https://julialang.org/downloads/" class="external-link">Julia download page</a>
+</li>
+<li>Download the <strong>Current stable release</strong> for Windows by
+clicking the <strong>64-bit (installer)</strong> link.</li>
+<li>Run the installer once it finishes downloading.</li>
+<li>Click on Next to accept the default directory (or after specifying
+your preferred installation location).</li>
+<li>On the <em>Select Additional Tasks</em> screen under <em>Other</em>,
+<strong>check the box to Add Julia to PATH</strong>.</li>
+<li>Click Next.</li>
+<li>Click on Finish.</li>
+</ul><p>We will run Julia through the Git-Bash interface. Once you have it
+installed:</p>
+<ul><li>Open the Start menu and click on the <strong>Git</strong>
+folder.</li>
+<li>Click on <strong>Git Bash</strong> – <em>not Git Cmd!</em>
+</li>
+<li>A warning message might pop up about a missing icon: click “I see,”
+and continue.</li>
+<li>Once the terminal window loads, type <kbd>julia</kbd> and enjoy the
+lesson!</li>
+</ul></div>
+<div class="section level4">
+<h4 id="vscodium">VSCodium<a class="anchor" aria-label="anchor" href="#vscodium"></a></h4>
+<ul><li>Install <a href="https://vscodium.com/#install" class="external-link">VSCodium</a> for
+your platform</li>
+<li>Start VSCodium</li>
+<li>Inside VSCodium, go to the Extensions view by clicking View on the
+top menu bar and then selecting Extensions.</li>
+<li>In the Extensions view, search for the term “julia” in the
+Marketplace search box, then select the Julia extension
+(julialang.language-julia) and select the Install button. This will add
+Julia to your VSCodium and automatically link the text editor to your
+copy of Julia you installed earlier.</li>
+<li>Restart VSCodium.</li>
+</ul><p>Then, test that everything works:</p>
+<ul><li>In VSCodium, create a new file by clicking File on the top menu bar
+and selecting New File.</li>
+<li>Inside the file, type <code>println("Hello World!")</code>
+</li>
+<li>Save your file by clicking File on the top menu bar and selecting
+Save. Name your file <code>hello.jl</code>.</li>
+<li>Run your file by first pressing
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> to bring up a command
+palette for search all commands available in VSCodium. Then type
+<code>Julia: Execute active file in REPL</code> in the command palette
+and press <kbd>Return</kbd>.</li>
+<li>If everything works, you should see a message “Hello World!”
+appear.</li>
+</ul><p><a href="https://av.tib.eu/media/62060" class="external-link">Video tutorial</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
+  MacOS
+  </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<div class="section level4">
+<h4 id="bash">Bash<a class="anchor" aria-label="anchor" href="#bash"></a></h4>
+<p>The default shell in some versions of macOS is Bash, and Bash is
+available in all versions, so no need to install anything. You access
+Bash from the Terminal (found in /Applications/Utilities). See the Git
+installation <a href="https://youtu.be/9LQhwETCdwY" class="external-link">video tutorial</a>
+for an example on how to open the Terminal. You may want to keep
+Terminal in your dock for this workshop.</p>
+<p>To see if your default shell is Bash type <code>echo $SHELL</code> in
+Terminal and press the <kbd>Enter</kbd> key. If the message printed does
+not end with ‘/bash’ then your default is something else and you can run
+Bash by typing <code>bash</code>.</p>
+<p>If you want to change your default shell, see this <a href="https://support.apple.com/en-au/HT208050" class="external-link">Apple Support
+article</a> and follow the instructions on “How to change your default
+shell”. #### Git</p>
+<p><strong>For macOS</strong>, install Git for Mac by downloading and
+running the most recent “mavericks” installer from <a href="http://sourceforge.net/projects/git-osx-installer/files/" class="external-link">this
+list</a>. Because this installer is not signed by the developer, you may
+have to right click (control click) on the .pkg file, click Open, and
+click Open on the pop up window. After installing Git, there will not be
+anything in your <code>/Applications</code> folder, as Git is a command
+line program. <strong>For older versions of OS X (10.5-10.8)</strong>
+use the most recent available installer labelled “snow-leopard” <a href="http://sourceforge.net/projects/git-osx-installer/files/" class="external-link">available
+here</a>.</p>
+</div>
+<div class="section level4">
+<h4 id="nano-1">Nano<a class="anchor" aria-label="anchor" href="#nano-1"></a></h4>
+<p>nano is a basic editor and the default that instructors use in the
+workshop. See the Git installation <a href="https://youtu.be/9LQhwETCdwY" class="external-link">video tutorial</a> for an example on
+how to open nano. It should be pre-installed.</p>
+</div>
+<div class="section level4">
+<h4 id="julia-1">Julia<a class="anchor" aria-label="anchor" href="#julia-1"></a></h4>
+<p><strong>juliaup</strong>: - Run
+<code>curl -fsSL https://install.julialang.org | sh</code> or
+<code>brew install juliaup</code> if you want to use homebrew.</p>
+<p><strong>Manual</strong>: - Download the current stable release from
+the <a href="https://julialang.org/downloads/" class="external-link">Julia download page</a>
+and follow the installation instructions.</p>
+</div>
+<div class="section level4">
+<h4 id="vscodium-1">VSCodium<a class="anchor" aria-label="anchor" href="#vscodium-1"></a></h4>
+<ul><li>Install <a href="https://vscodium.com/#install" class="external-link">VSCodium</a> for
+your platform</li>
+<li>Start VSCodium</li>
+<li>Inside VSCodium, go to the Extensions view by clicking View on the
+top menu bar and then selecting Extensions.</li>
+<li>In the Extensions view, search for the term “julia” in the
+Marketplace search box, then select the Julia extension
+(julialang.language-julia) and select the Install button. This will add
+Julia to your VSCodium and automatically link the text editor to your
+copy of Julia you installed earlier.</li>
+<li>Restart VSCodium.</li>
+</ul><p>Then, test that everything works:</p>
+<ul><li>In VSCodium, create a new file by clicking File on the top menu bar
+and selecting New File.</li>
+<li>Inside the file, type <code>println("Hello World!")</code>
+</li>
+<li>Save your file by clicking File on the top menu bar and selecting
+Save. Name your file <code>hello.jl</code>.</li>
+<li>Run your file by first pressing
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> to bring up a command
+palette for search all commands available in VSCodium. Then type
+<code>Julia: Execute active file in REPL</code> in the command palette
+and press <kbd>Return</kbd>.</li>
+<li>If everything works, you should see a message “Hello World!”
+appear.</li>
+</ul><p><a href="https://av.tib.eu/media/62060" class="external-link">Video tutorial</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">
+  Linux
+  </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<div class="section level4">
+<h4 id="bash-1">Bash<a class="anchor" aria-label="anchor" href="#bash-1"></a></h4>
+<p>The default shell is usually Bash and there is usually no need to
+install anything.</p>
+<p>To see if your default shell is Bash type <code>echo $SHELL</code> in
+a terminal and press the <kbd>Enter</kbd> key. If the message printed
+does not end with ‘/bash’ then your default is something else and you
+can run Bash by typing <code>bash</code>.</p>
+</div>
+<div class="section level4">
+<h4 id="git">Git<a class="anchor" aria-label="anchor" href="#git"></a></h4>
+<p>If Git is not already available on your machine you can try to
+install it via your distro’s package manager. For Debian/Ubuntu run
+s<code>udo apt-get install git</code> and for Fedora
+<code>run sudo dnf install git</code>.</p>
+</div>
+<div class="section level4">
+<h4 id="nano-2">Nano<a class="anchor" aria-label="anchor" href="#nano-2"></a></h4>
+<p>nano is a basic editor and the default that instructors use in the
+workshop. It should be pre-installed.</p>
+</div>
+<div class="section level4">
+<h4 id="julia-2">Julia<a class="anchor" aria-label="anchor" href="#julia-2"></a></h4>
+<p><strong>juliaup</strong>: - Run
+<code>curl -fsSL https://install.julialang.org | sh</code>.</p>
+<p><strong>Manual</strong>: - Download the current stable release from
+the <a href="https://julialang.org/downloads/" class="external-link">Julia download page</a>
+and unpack the folder to any location that is in your <code>PATH</code>
+or link the binary in the <code>bin</code> folder to such a
+location.</p>
+</div>
+<div class="section level4">
+<h4 id="vscodium-2">VSCodium<a class="anchor" aria-label="anchor" href="#vscodium-2"></a></h4>
+<ul><li>Install <a href="https://vscodium.com/#install" class="external-link">VSCodium</a> for
+your platform</li>
+<li>Start VSCodium</li>
+<li>Inside VSCodium, go to the Extensions view by clicking View on the
+top menu bar and then selecting Extensions.</li>
+<li>In the Extensions view, search for the term “julia” in the
+Marketplace search box, then select the Julia extension
+(julialang.language-julia) and select the Install button. This will add
+Julia to your VSCodium and automatically link the text editor to your
+copy of Julia you installed earlier.</li>
+<li>Restart VSCodium.</li>
+</ul><p>Then, test that everything works:</p>
+<ul><li>In VSCodium, create a new file by clicking File on the top menu bar
+and selecting New File.</li>
+<li>Inside the file, type <code>println("Hello World!")</code>
+</li>
+<li>Save your file by clicking File on the top menu bar and selecting
+Save. Name your file <code>hello.jl</code>.</li>
+<li>Run your file by first pressing
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> to bring up a command
+palette for search all commands available in VSCodium. Then type
+<code>Julia: Execute active file in REPL</code> in the command palette
+and press <kbd>Return</kbd>.</li>
+<li>If everything works, you should see a message “Hello World!”
+appear.</li>
+</ul><p><a href="https://av.tib.eu/media/62060" class="external-link">Video tutorial</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link float-end" href="../instructor/01_Introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
