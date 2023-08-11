@@ -37,7 +37,13 @@
     <loc>https://preview.carpentries.org/julia-novice/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/julia-novice/aio.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/julia-novice/discuss.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/julia-novice/images.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/julia-novice/index.html</loc>
@@ -79,16 +85,34 @@
     <loc>https://preview.carpentries.org/julia-novice/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/julia-novice/instructor/aio.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/julia-novice/instructor/discuss.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/julia-novice/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/julia-novice/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/julia-novice/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/julia-novice/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/julia-novice/instructor/profiles.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/julia-novice/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/julia-novice/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/julia-novice/key-points.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/julia-novice/profiles.html</loc>
