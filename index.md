@@ -1,9 +1,9 @@
 ---
-layout: lesson
-root: .  # Is the only page that doesn't follow the pattern /:path/index.html
-permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
+permalink: index.html
+site: sandpaper::sandpaper_site
 ---
-![Trebuchet][trebuchet]{: height="400px"}
+
+![][trebuchet]{alt='Trebuchet' height="400px"}
 
 Melissa and her schoolmates built a trebuchet in their physics club.
 In their first tests they experienced that aiming it is not that easy and
@@ -15,20 +15,23 @@ packages for this task and they also read it composes very well.
 Unfortunately nobody knows this language already, so they have to learn it from
 scratch.
 
-<!-- this is an html comment -->
+::::::::::::::::::::::::::::::::::::::::::  prereq
 
-{% comment %} This is a comment in Liquid {% endcomment %}
+## Prerequisites
 
-> ## Prerequisites
->
-> You need to understand the concepts of **files** and **directories** as well
-> as **arrays** and **indices**.
->
-> It is beneficial to have some programming experience in another language.
->
-> This lesson requires Julia 1.6 or greater
-{: .prereq}
+You need to understand the concepts of **files** and **directories** as well
+as **arrays** and **indices**.
+
+It is beneficial to have some programming experience in another language.
+
+This lesson requires Julia 1.6 or greater
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 [trebuchet]: https://upload.wikimedia.org/wikipedia/commons/e/ee/Trebuchet_Scheme.svg
 
-{% include links.md %}
+
+
