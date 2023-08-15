@@ -22,7 +22,7 @@ jobs:
               run: |
                 @show pwd()
                 @show readdir("..")
-                include(joinpath(@__DIR__, "generate.jl"))
+                include(joinpath(pwd(), "generate.jl"))
             - name: Create Pull Request
               uses: peter-evans/create-pull-request@v5
               with:
