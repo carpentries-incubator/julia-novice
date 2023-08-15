@@ -1,0 +1,29 @@
+name: "Update episodes"
+
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - literate
+
+jobs:
+    generate-md-files:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: julia-actions/setup-julia@latest
+              with:
+                version: '1.7'
+            - uses: julia-actions/cache@v1
+            - name: Run the generate script
+              shell: julia --project=@. --color=yes {0}
+              run: |
+                include(\"generate.jl\")
+            - name: Create Pull Request
+              uses: peter-evans/create-pull-request@v5
+              with:
+                add-paths: output/carpentries
+                delete-branch: true
+                base: main
+                title: Update episodes from Literate.jl source files
+
