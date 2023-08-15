@@ -21,10 +21,18 @@ jobs:
               shell: julia --project=@. --color=yes {0}
               run: |
                 include(joinpath(pwd(), "generate.jl"))
+            - name: Stash changes
+              run: git stash
+            - uses: actions/checkout@v3
+              with:
+                ref: 'main'
+            - name: Pop stash
+              run: |
+                git stash pop
+                mv output/carpentries/*.md episodes/
             - name: Create Pull Request
               uses: peter-evans/create-pull-request@v5
               with:
-                add-paths: output/carpentries
                 delete-branch: true
                 base: main
                 title: Update episodes from Literate.jl source files
