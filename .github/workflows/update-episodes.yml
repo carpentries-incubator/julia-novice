@@ -20,7 +20,7 @@ jobs:
             - name: Run the generate script
               shell: julia --project=@. --color=yes {0}
               run: |
-                include("generate.jl")
+                include(joinpath(@__DIR__, "generate.jl"))
             - name: Create Pull Request
               uses: peter-evans/create-pull-request@v5
               with:
