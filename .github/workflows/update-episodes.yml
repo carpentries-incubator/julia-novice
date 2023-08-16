@@ -28,6 +28,7 @@ jobs:
                 path: output
     move-files-to-main:
         runs-on: ubuntu-latest
+        needs: generate-md-files
         steps:
             - uses: actions/checkout@v3
               with:
