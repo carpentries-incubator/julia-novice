@@ -117,7 +117,7 @@ Pkg.instantiate()
 ````
 
 ````output
-  Activating project at `~/projects/julia-trebuchet/output/carpentries/projects/trebuchet`
+  Activating project at `~/work/julia-novice/julia-novice/output/carpentries/projects/trebuchet`
 
 ````
 
