@@ -7,7 +7,6 @@ end
 @everywhere Pkg.activate(@__DIR__)
 Pkg.instantiate()
 Pkg.precompile()
-@everywhere Pkg.instantiate()
 # Defining a function that will replace "import("...")" with the content of the imported file
 
 @everywhere function replace_includes(str)

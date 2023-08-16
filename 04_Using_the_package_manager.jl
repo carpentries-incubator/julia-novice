@@ -67,6 +67,7 @@
 
 #md using Pkg #hide
 #md Pkg.activate("projects/trebuchet") #hide
+#md Pkg.instantiate() #hide
 
 
 # In this environment she adds the `Trebuchet` package from its
