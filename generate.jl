@@ -53,6 +53,12 @@ end
     return str
 end
 
+@everywhere function fix_activation_output(str)
+    str = replace(str, r"~/.*/projects/trebuchet" => "~/projects/trebuchet")
+    str = replace(str, r"^.*Updating registry .*````" => "````")
+    return str
+end
+
 function copy_project(output)
     out_proj = joinpath(@__DIR__, "output", output, "projects", "trebuchet")
     mkpath(out_proj)
@@ -80,7 +86,7 @@ pmap(files) do file
     # Literate.notebook(file, notebook_out; execute=false, preprocess = replace_includes)
     # Literate.markdown(file, markdown_out; credit = false, execute=true, preprocess = replace_includes, postprocess = md_print∘setup_link_replace)
     if contains(file, "Overview") return end
-    Literate.markdown(file, lesson_out; credit = false, execute=true, flavor=Literate.CarpentriesFlavor(), preprocess = replace_includes∘carpentries_div_names, postprocess = setup_link_replace∘remove_sandbox_output∘handle_repl)
+    Literate.markdown(file, lesson_out; credit = false, execute=true, flavor=Literate.CarpentriesFlavor(), preprocess = replace_includes∘carpentries_div_names, postprocess = setup_link_replace∘remove_sandbox_output∘handle_repl∘fix_activation_output)
 end
 
 @everywhere Pkg.activate(@__DIR__)
