@@ -55,7 +55,7 @@ end
 
 @everywhere function fix_activation_output(str)
     str = replace(str, r"~/.*/projects/trebuchet" => "~/projects/trebuchet")
-    str = replace(str, r".*Updating registry (?:\n|.)*````" => "````")
+    str = replace(str, r".*Updating registry ((?:\n|.)*?)````" => "````")
     return str
 end
 
