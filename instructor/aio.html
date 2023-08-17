@@ -967,7 +967,7 @@ return <code>false</code>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The correct answer is 4: while <code>1</code> is an integer,
 <code>1.0</code> is a floating-point value.</p>
@@ -1038,7 +1038,7 @@ later.</em></p>
 </div>
 </section></section><section id="aio-04_Using_the_package_manager"><p>Content from <a href="04_Using_the_package_manager.html">Using the package manager</a></p>
 <hr>
-<p> Last updated on 2023-08-09 | 
+<p> Last updated on 2023-08-17 | 
         
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/04_Using_the_package_manager.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 20 minutes </p>
@@ -1132,8 +1132,7 @@ uses the <code>activate</code> function of the package manager:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>  Activating project at `~/projects/julia-trebuchet/output/carpentries/projects/trebuchet`
-</code></pre>
+<pre class="output" tabindex="0"><code>  Activating project at `~/projects/trebuchet`</code></pre>
 </div>
 <p>In this environment she adds the <code>Trebuchet</code> package from
 its open source code <a href="https://github.com/FluxML/Trebuchet.jl" class="external-link">repository on GitHub</a>
@@ -1175,8 +1174,8 @@ her environment.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Status `~/projects/julia-trebuchet/output/carpentries/projects/trebuchet/Project.toml`
-  [f6369f11] ForwardDiff v0.10.35
+<pre class="output" tabindex="0"><code>Status `~/projects/trebuchet/Project.toml`
+  [f6369f11] ForwardDiff v0.10.36
   [295af30f] Revise v3.5.3
   [98b73d46] Trebuchet v0.2.2
 </code></pre>
@@ -1253,7 +1252,7 @@ upon <code>import</code> using the keyword <em><code>as</code></em>:</p>
 </div>
 </section></section><section id="aio-05_Write_functions"><p>Content from <a href="05_Write_functions.html">Write functions!</a></p>
 <hr>
-<p> Last updated on 2023-08-09 | 
+<p> Last updated on 2023-08-17 | 
         
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/05_Write_functions.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 20 minutes </p>
@@ -1384,7 +1383,7 @@ What would the function call look like?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Both arguments are present, but <code>true</code> is presented
@@ -1417,7 +1416,7 @@ assigned a value. This throws a
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>  Activating project at `~/projects/julia-trebuchet/output/carpentries/projects/trebuchet`
+<pre class="output" tabindex="0"><code>  Activating project at `~/projects/trebuchet`
 </code></pre>
 </div>
 <p>Importing the package under its modified name</p>
@@ -1685,7 +1684,7 @@ prepending <code>@macroexpand</code> to the macro call of interest.</p>
 </div>
 </section></section><section id="aio-06_Control_flow"><p>Content from <a href="06_Control_flow.html">Control flow</a></p>
 <hr>
-<p> Last updated on 2023-08-09 | 
+<p> Last updated on 2023-08-17 | 
         
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/06_Control_flow.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 120 minutes </p>
@@ -1731,7 +1730,7 @@ prepending <code>@macroexpand</code> to the macro call of interest.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>  Activating project at `~/projects/julia-trebuchet/output/carpentries/projects/trebuchet`
+<pre class="output" tabindex="0"><code>  Activating project at `~/projects/trebuchet`
 </code></pre>
 </div>
 <p>Importing the package under its modified name</p>
@@ -1865,7 +1864,7 @@ optional methods.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1990,7 +1989,7 @@ change the parameters to make the largest difference.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The correct solution is 4: <kbd>]</kbd> to enter pkg mode, then</p>
 <div class="codewrapper sourceCode" id="cb15">
@@ -2058,7 +2057,7 @@ gradient, such that it still improves the distance?</p>
   Try a bunch of values!
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2144,7 +2143,7 @@ to automate the additional iterations. She writes a new function
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>This is a highly non-linear system and thus very sensitive. The
 distances across different values for the counterweight and the release
@@ -2619,7 +2618,7 @@ create a new package using <code>generate</code>.</p>
 </div>
 </section></section><section id="aio-09_Adding_tests"><p>Content from <a href="09_Adding_tests.html">Adding tests</a></p>
 <hr>
-<p> Last updated on 2023-08-09 | 
+<p> Last updated on 2023-08-17 | 
         
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/09_Adding_tests.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 40 minutes </p>
@@ -2691,7 +2690,7 @@ name</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span><span class="fu">Test.DefaultTestSet</span><span class="op">(</span><span class="st">"Test arithmetic equalities"</span>, <span class="va">Any</span><span class="op">[</span><span class="op">]</span>, <span class="fl">1</span>, <span class="va">false</span>, <span class="va">false</span>, <span class="va">true</span>, <span class="fl">1.691580564130388e9</span>, <span class="fl">1.691580564159508e9</span>, <span class="va">false</span><span class="op">)</span></span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="fu">Test.DefaultTestSet</span><span class="op">(</span><span class="st">"Test arithmetic equalities"</span>, <span class="va">Any</span><span class="op">[</span><span class="op">]</span>, <span class="fl">1</span>, <span class="va">false</span>, <span class="va">false</span>, <span class="va">true</span>, <span class="fl">1.692283843203536e9</span>, <span class="fl">1.692283843252886e9</span>, <span class="va">false</span><span class="op">)</span></span></code></pre>
 </div>
 <p>With this Melissa can run her test using the pkg mode of the
 REPL:</p>
@@ -2738,7 +2737,7 @@ a complete example.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2821,9 +2820,9 @@ a complete example.</p>
   "creativeWorkStatus": "active",
   "url": "https://preview.carpentries.org/julia-novice/instructor/aio.html",
   "identifier": "https://preview.carpentries.org/julia-novice/instructor/aio.html",
-  "dateCreated": "2023-08-16",
-  "dateModified": "2023-08-16",
-  "datePublished": "2023-08-16"
+  "dateCreated": "2023-08-17",
+  "dateModified": "2023-08-17",
+  "datePublished": "2023-08-17"
 }
 
   </script><script>
