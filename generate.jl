@@ -70,7 +70,7 @@ end
 
 copy_project("markdown")
 copy_project("notebooks")
-copy_project("carpentries")JO
+copy_project("carpentries")
 
 # Defining the functions to automatically generate the notebooks and markdowns with literate.jl
 @everywhere begin
