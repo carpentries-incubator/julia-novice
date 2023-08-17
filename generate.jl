@@ -55,7 +55,7 @@ end
 
 @everywhere function fix_activation_output(str)
     str = replace(str, r"~/.*/projects/trebuchet" => "~/projects/trebuchet")
-    str = replace(str, r"^.*Updating registry (?:\n|.)*````" => "````")
+    str = replace(str, r".*Updating registry (?:\n|.)*````" => "````")
     return str
 end
 
@@ -70,7 +70,7 @@ end
 
 copy_project("markdown")
 copy_project("notebooks")
-copy_project("carpentries")
+copy_project("carpentries")JO
 
 # Defining the functions to automatically generate the notebooks and markdowns with literate.jl
 @everywhere begin
