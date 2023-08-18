@@ -9,10 +9,14 @@ on:
 jobs:
     generate-md-files:
         runs-on: ubuntu-latest
+        outputs:
+          author: ${{ steps.author.outputs.author }}
         steps:
             - uses: actions/checkout@v3
               with:
                 ref: 'literate'
+            - id: author
+              run: echo "author=$(git log -1 --pretty=format:'%aN <%aE>')" >> $GITHUB_OUTPUT
             - uses: julia-actions/setup-julia@latest
               with:
                 version: '1.9'
@@ -49,4 +53,5 @@ jobs:
                 base: main
                 title: Update episodes from Literate.jl source files
                 add-paths: episodes
+                author: ${{ needs.generate-md-files.outputs.author }}
 
