@@ -8,7 +8,7 @@
 # !!! questions
 #     - "What have I accomplished in this tutorial?"
 #     - "Where can I continue to learn Julia?"
-#     - "Whoe else is using Julia in my field?"
+#     - "Who else is using Julia in my field?"
 
 # !!! objectives
 #     - "Review the progress you have made"
