@@ -33,6 +33,8 @@
 # - [The JuliaLang Discourse forum](https://discourse.julialang.org/) is a great place to ask Julia-specific questions, read about new Julia packages, and stay up-to-date on community events
 # 
 # - [The Julia Slack](https://julialang.org/slack/) is very active, and people will often respond to questions within minutes
+# - Likewise you can connect via the [Julia Zulip](https://julialang.zulipchat.com) or [discord](https://discord.com/invite/C5h9D4j).
+# - It is a good idea to look out for channels called \#helpdesk or similar.
 # 
 # - [The official Julia Documentation](https://docs.julialang.org/en/v1/) is a more comprehensive overview of programming in Julia, and a good next step to continue learning
 # 
