@@ -116,7 +116,19 @@
 #md using Pkg #hide
 #md Pkg.status() #hide
 
+# ### `deactivate` does not exist, instead ...
+#
 # Melissa can get back to the global environment using `activate` without any parameters.
+# Note, that any packages that were loaded in the old environment are still loaded in the new environment.
+#
+#nb ] activate
+
+#md # ```julia
+#md # (trebuchet) pkg> activate
+#md # ```
+
+#md using Pkg #hide
+#md Pkg.activate() #hide
 
 # !!! note "Why use GitHub?"
 #     Melissa could have added the GitHub version of Trebuchet.jl by typing
