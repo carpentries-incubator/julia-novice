@@ -130,6 +130,8 @@
 #md using Pkg #hide
 #md Pkg.activate() #hide
 
+#md Pkg.activate("projects/trebuchet") #src
+
 # !!! note "Why use GitHub?"
 #     Melissa could have added the GitHub version of Trebuchet.jl by typing
 #
