@@ -135,10 +135,10 @@
 # Melissa can get back to the global environment using `activate` without any parameters.
 # Note, that any packages that were loaded in the old environment are still loaded in the new environment.
 #
-#nb ] activate projects/trebuchet
+#nb ] activate
 
 #md # ```julia
-#md # (trebuchet) pkg> activate projects/trebuchet
+#md # (trebuchet) pkg> activate
 #md # ```
 
 # ### Environments stack
@@ -148,10 +148,10 @@
 #
 # Melissa now returns to her project environment.
 #
-#nb ] activate
+#nb ] activate projects/trebuchet
 
 #md # ```julia
-#md # (trebuchet) pkg> activate
+#md # (trebuchet) pkg> activate projects/trebuchet
 #md # ```
 
 # ## Using and importing packages
