@@ -126,8 +126,6 @@ Status `~/projects/trebuchet/Project.toml`
 
 ````
 
-Melissa can get back to the global environment using `activate` without any parameters.
-
 :::::: callout
 
 ## Why use GitHub?
@@ -146,6 +144,26 @@ Otherwise, it’s good to check how different that version is from the current s
 Click through the link under “Repository” on the JuliaHub package page.
 
 ::::::
+
+### `deactivate` does not exist, instead ...
+
+Melissa can get back to the global environment using `activate` without any parameters.
+Note, that any packages that were loaded in the old environment are still loaded in the new environment.
+
+```julia
+(trebuchet) pkg> activate
+```
+
+### Environments stack
+
+What is installed in the default environment can also be loaded in other environments.
+That is useful for development time convenience packages like `BenchmarkTools` or `JuliaFormatter`.
+
+Melissa now returns to her project environment.
+
+```julia
+(trebuchet) pkg> activate projects/trebuchet
+```
 
 ## Using and importing packages
 
