@@ -116,22 +116,6 @@
 #md using Pkg #hide
 #md Pkg.status() #hide
 
-# ### `deactivate` does not exist, instead ...
-#
-# Melissa can get back to the global environment using `activate` without any parameters.
-# Note, that any packages that were loaded in the old environment are still loaded in the new environment.
-#
-#nb ] activate
-
-#md # ```julia
-#md # (trebuchet) pkg> activate
-#md # ```
-
-#md using Pkg #hide
-#md Pkg.activate() #hide
-
-#md Pkg.activate("projects/trebuchet") #src
-
 # !!! note "Why use GitHub?"
 #     Melissa could have added the GitHub version of Trebuchet.jl by typing
 #
@@ -146,6 +130,29 @@
 #     Otherwise, it’s good to check how different that version is from the current state of the software project.
 #     Click through the link under “Repository” on the JuliaHub package page.
 
+# ### `deactivate` does not exist, instead ...
+#
+# Melissa can get back to the global environment using `activate` without any parameters.
+# Note, that any packages that were loaded in the old environment are still loaded in the new environment.
+#
+#nb ] activate projects/trebuchet
+
+#md # ```julia
+#md # (trebuchet) pkg> activate projects/trebuchet
+#md # ```
+
+# ### Environments stack
+#
+# What is installed in the default environment can also be loaded in other environments.
+# That is useful for development time convenience packages like `BenchmarkTools` or `JuliaFormatter`.
+#
+# Melissa now returns to her project environment.
+#
+#nb ] activate
+
+#md # ```julia
+#md # (trebuchet) pkg> activate
+#md # ```
 
 # ## Using and importing packages
 
