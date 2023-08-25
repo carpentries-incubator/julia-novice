@@ -307,7 +307,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Using the package manager</h1>
-        <p> Last updated on 2023-08-17 | 
+        <p> Last updated on 2023-08-25 | 
         
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/04_Using_the_package_manager.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -449,8 +449,6 @@ her environment.</p>
   [98b73d46] Trebuchet v0.2.2
 </code></pre>
 </div>
-<p>Melissa can get back to the global environment using
-<code>activate</code> without any parameters.</p>
 <div id="why-use-github" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -476,6 +474,32 @@ package page.</p>
 </div>
 </div>
 </div>
+<div class="section level3">
+<h3 id="deactivate-does-not-exist-instead">
+<code>deactivate</code> does not exist, instead …<a class="anchor" aria-label="anchor" href="#deactivate-does-not-exist-instead"></a></h3>
+<p>Melissa can get back to the global environment using
+<code>activate</code> without any parameters. Note, that any packages
+that were loaded in the old environment are still loaded in the new
+environment.</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(trebuchet) pkg<span class="op">&gt;</span> activate</span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="environments-stack">Environments stack<a class="anchor" aria-label="anchor" href="#environments-stack"></a></h3>
+<p>What is installed in the default environment can also be loaded in
+other environments. That is useful for development time convenience
+packages like <code>BenchmarkTools</code> or
+<code>JuliaFormatter</code>.</p>
+<p>Melissa now returns to her project environment.</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>(trebuchet) pkg<span class="op">&gt;</span> activate projects<span class="op">/</span>trebuchet</span></code></pre>
+</div>
+</div>
 </section><section id="using-and-importing-packages"><h2 class="section-heading">Using and importing packages<a class="anchor" aria-label="anchor" href="#using-and-importing-packages"></a>
 </h2>
 <hr class="half-width"><p>Now that Melissa added the package to her environment, she needs to
@@ -495,10 +519,10 @@ the environment is also named <code>Trebuchet</code>. Now she would get
 an error if she tried to <code>import</code>/<code>using</code> it
 directly. One solution is to assign a nickname or alias to the package
 upon <code>import</code> using the keyword <em><code>as</code></em>:</p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Trebuchet </span>as Trebuchets</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Trebuchet </span>as Trebuchets</span></code></pre>
 </div>
 <div id="keypoints" class="callout keypoints">
 <div class="callout-square">
@@ -567,9 +591,9 @@ upon <code>import</code> using the keyword <em><code>as</code></em>:</p>
   "creativeWorkStatus": "active",
   "url": "https://preview.carpentries.org/julia-novice/04_Using_the_package_manager.html",
   "identifier": "https://preview.carpentries.org/julia-novice/04_Using_the_package_manager.html",
-  "dateCreated": "2023-08-18",
-  "dateModified": "2023-08-17",
-  "datePublished": "2023-08-22"
+  "dateCreated": "2023-08-25",
+  "dateModified": "2023-08-25",
+  "datePublished": "2023-08-25"
 }
 
   </script><script>
