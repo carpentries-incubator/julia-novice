@@ -161,8 +161,7 @@ shoot_distance(5, 0.25pi, 500)
 
 function shoot_distance(trebuchet::Trebuchet, env::Environment)
      shoot_distance(env.wind, trebuchet.release_angle, trebuchet.counterweight)
-#md end ;
-#nb end
+end
 
 # This method will call the former method and pass the correct fields from the
 # `Trebuchet` and `Environment` structures.
@@ -176,8 +175,7 @@ function shoot_distance(trebuchet::Trebuchet, env::Environment)
 
 function shoot_distance(args...) # slurping
      Trebuchets.shoot(args...)[2] # splatting
-#md end ;
-#nb end
+end
 
 # ### Anonymous functions
 
@@ -192,8 +190,7 @@ function shoot_distance(args...) # slurping
 
 function (windspeed, angle, weight)
       Trebuchets.shoot(windspeed, angle, weight)[2]
-#md end ;
-#nb end
+end
 
 # ### Errors and macros
 
