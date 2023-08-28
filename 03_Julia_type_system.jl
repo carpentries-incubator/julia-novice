@@ -119,6 +119,19 @@ subtypes(Real)
 #         The correct answer is 4:
 #         while `1` is an integer, `1.0` is a floating-point value.
 
+# ## Instances
+
+# So far Melissa only defined the layout of her new types `Trebuchet` and `Environment`.
+# To actually create a value of this type she has to call the so called _constructor_, which is a function with the same name as the corresponding type and as many arguments as there are fields.
+
+trebuchet = Trebuchet(500, 0.25pi)
+
+# Note, how the values will get converted to the specified field type.
+
+environment = Environment(5, 100)
+
+# `trebuchet` is being called an _instance_ or _object_ of the type `Trebuchet`.
+# There can only ever be one definition of the type `Trebuchet` but you can create many instances of that type with different values for its fields.
 
 
 # ## Creating a subtype
