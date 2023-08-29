@@ -703,7 +703,7 @@ then run the program using <code>julia hello.jl</code>.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -772,7 +772,7 @@ prints the resulting output to the user.”</li>
 </div>
 </section></section><section id="aio-03_Julia_type_system"><p>Content from <a href="03_Julia_type_system.html">Julia type system</a></p>
 <hr>
-<p> Last updated on 2023-08-09 | 
+<p> Last updated on 2023-08-29 | 
         
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/03_Julia_type_system.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -980,7 +980,7 @@ return <code>false</code>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The correct answer is 4: while <code>1</code> is an integer,
 <code>1.0</code> is a floating-point value.</p>
@@ -989,6 +989,40 @@ return <code>false</code>?</p>
 </div>
 </div>
 </div>
+</section><section id="instances"><h2 class="section-heading">Instances<a class="anchor" aria-label="anchor" href="#instances"></a>
+</h2>
+<hr class="half-width">
+<p>So far Melissa only defined the layout of her new types
+<code>Trebuchet</code> and <code>Environment</code>. To actually create
+a value of this type she has to call the so called <em>constructor</em>,
+which is a function with the same name as the corresponding type and as
+many arguments as there are fields.</p>
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>trebuchet <span class="op">=</span> <span class="fu">Trebuchet</span>(<span class="fl">500</span>, <span class="fl">0.25</span>pi)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="fu">Trebuchet</span><span class="op">(</span><span class="fl">500.0</span>, <span class="fl">0.7853981633974483</span><span class="op">)</span></span></code></pre>
+</div>
+<p>Note, how the values will get converted to the specified field
+type.</p>
+<div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>environment <span class="op">=</span> <span class="fu">Environment</span>(<span class="fl">5</span>, <span class="fl">100</span>)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="fu">Environment</span><span class="op">(</span><span class="fl">5.0</span>, <span class="fl">100.0</span><span class="op">)</span></span></code></pre>
+</div>
+<p><code>trebuchet</code> is being called an <em>instance</em> or
+<em>object</em> of the type <code>Trebuchet</code>. There can only ever
+be one definition of the type <code>Trebuchet</code> but you can create
+many instances of that type with different values for its fields.</p>
 </section><section id="creating-a-subtype"><h2 class="section-heading">Creating a subtype<a class="anchor" aria-label="anchor" href="#creating-a-subtype"></a>
 </h2>
 <hr class="half-width">
@@ -1005,13 +1039,13 @@ thinks it is a good idea to make it a subtype of
 <h3 class="callout-title">Caveat: Redefining Structs<a class="anchor" aria-label="anchor" href="#caveat-redefining-structs"></a>
 </h3>
 <div class="callout-content">
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">mutable struct</span> Trebuchet <span class="op">&lt;:</span><span class="dt"> AbstractVector{Float64}</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  counterweight<span class="op">::</span><span class="dt">Float64</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  release_angle<span class="op">::</span><span class="dt">Float64</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">mutable struct</span> Trebuchet <span class="op">&lt;:</span><span class="dt"> AbstractVector{Float64}</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  counterweight<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  release_angle<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1900,7 +1934,7 @@ optional methods.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2025,7 +2059,7 @@ change the parameters to make the largest difference.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The correct solution is 4: <kbd>]</kbd> to enter pkg mode, then</p>
 <div class="codewrapper sourceCode" id="cb15">
@@ -2093,7 +2127,7 @@ gradient, such that it still improves the distance?</p>
   Try a bunch of values!
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2179,7 +2213,7 @@ to automate the additional iterations. She writes a new function
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>This is a highly non-linear system and thus very sensitive. The
 distances across different values for the counterweight and the release
@@ -2652,7 +2686,7 @@ create a new package using <code>generate</code>.</p>
 </div>
 </section></section><section id="aio-09_Adding_tests"><p>Content from <a href="09_Adding_tests.html">Adding tests</a></p>
 <hr>
-<p> Last updated on 2023-08-25 | 
+<p> Last updated on 2023-08-29 | 
         
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/09_Adding_tests.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2723,7 +2757,7 @@ name</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span><span class="fu">Test.DefaultTestSet</span><span class="op">(</span><span class="st">"Test arithmetic equalities"</span>, <span class="va">Any</span><span class="op">[</span><span class="op">]</span>, <span class="fl">1</span>, <span class="va">false</span>, <span class="va">false</span>, <span class="va">true</span>, <span class="fl">1.692950061602463e9</span>, <span class="fl">1.692950061642568e9</span>, <span class="va">false</span><span class="op">)</span></span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="fu">Test.DefaultTestSet</span><span class="op">(</span><span class="st">"Test arithmetic equalities"</span>, <span class="va">Any</span><span class="op">[</span><span class="op">]</span>, <span class="fl">1</span>, <span class="va">false</span>, <span class="va">false</span>, <span class="va">true</span>, <span class="fl">1.693315094394791e9</span>, <span class="fl">1.69331509443387e9</span>, <span class="va">false</span><span class="op">)</span></span></code></pre>
 </div>
 <p>With this Melissa can run her test using the pkg mode of the
 REPL:</p>
@@ -2770,7 +2804,7 @@ a complete example.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2965,7 +2999,7 @@ learning</li>
   "creativeWorkStatus": "active",
   "url": "https://preview.carpentries.org/julia-novice/aio.html",
   "identifier": "https://preview.carpentries.org/julia-novice/aio.html",
-  "dateCreated": "2023-08-25",
+  "dateCreated": "2023-08-29",
   "dateModified": "2023-08-29",
   "datePublished": "2023-08-29"
 }
