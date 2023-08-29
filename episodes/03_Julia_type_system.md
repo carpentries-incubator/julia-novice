@@ -185,6 +185,32 @@ while `1` is an integer, `1.0` is a floating-point value.
 
 ::::::
 
+## Instances
+
+So far Melissa only defined the layout of her new types `Trebuchet` and `Environment`.
+To actually create a value of this type she has to call the so called _constructor_, which is a function with the same name as the corresponding type and as many arguments as there are fields.
+
+````julia
+trebuchet = Trebuchet(500, 0.25pi)
+````
+
+````output
+Trebuchet(500.0, 0.7853981633974483)
+````
+
+Note, how the values will get converted to the specified field type.
+
+````julia
+environment = Environment(5, 100)
+````
+
+````output
+Environment(5.0, 100.0)
+````
+
+`trebuchet` is being called an _instance_ or _object_ of the type `Trebuchet`.
+There can only ever be one definition of the type `Trebuchet` but you can create many instances of that type with different values for its fields.
+
 ## Creating a subtype
 
 A concrete type can be made a subtype of an abstract type with the
