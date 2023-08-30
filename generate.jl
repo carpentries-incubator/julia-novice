@@ -1,4 +1,3 @@
-cd(@__DIR__)
 using Distributed
 while nprocs() < min(4, length(Sys.cpu_info()))
     addprocs(1)

@@ -141,8 +141,7 @@ Trebuchets.shoot(5, 0.25pi, 500)[2]
 
 function shoot_distance(windspeed, angle, weight)
        Trebuchets.shoot(windspeed, angle, weight)[2]
-#md end ;
-#nb end
+end
 
 # !!! note "Implicit return"
 #     Note that Melissa didn't have to use the `return` keyword, since in Julia the
@@ -184,7 +183,7 @@ end
 # These are _anonymous functions_.
 # They can be defined with either the so-called stabby lambda notation,
 
-(windspeed, angle, weight) -> Trebuchets.shoot(windspeed, angle, weight)[2] ;
+(windspeed, angle, weight) -> Trebuchets.shoot(windspeed, angle, weight)[2]
 
 # or in long form, by omitting the name:
 
@@ -192,31 +191,32 @@ function (windspeed, angle, weight)
       Trebuchets.shoot(windspeed, angle, weight)[2]
 end
 
+# ### Calling methods
+#
+# Now, that she defined all these methods she tests calling a few
+
+shoot_distance(5, 0.25pi, 500)
+
+#
+
+shoot_distance([5, 0.25pi, 500])
+
+# For the other method she needs to construct `Trebuchet` and `Environment` objects first
+
+env = Environment(5, 100)
+
+#
+
+trebuchet = Trebuchet(500, 0.25pi)
+
 # ### Errors and macros
 
-# Melissa would like to set the fields of a `Trebuchet` using an index.
-# She writes
+# This error tells her two things:
 
-#md # ```julia
-#md # Trebuchets[1] = 2
-#md # ```
-
-#nb Trebuchets[1] = 2
-
-#md # ```error
-#md # ERROR: MethodError: no method matching setindex!(::Trebuchet, ::Int64, ::Int64)
-#md # Stacktrace:
-#md #  [1] top-level scope
-#md #    @ REPL[4]:1
-#md # ```
-
-
-# The error tells her two things:
-
-# 1. a function named `setindex!` was called
+# 1. a function named `size` was called
 # 2. it didn't have a method for `Trebuchet`
 
-# Melissa wants to add the missing method to `setindex!` but she doesn't know
+# Melissa wants to add the missing method to `size` but she doesn't know
 # where it is defined.
 # There is a handy _macro_ named `@which` that obtains the module where the
 # function is defined.
@@ -228,22 +228,22 @@ end
 #     They can be expanded by prepending `@macroexpand` to the macro call of
 #     interest.
 
-#md # ```julia
-#md # @which setindex!
-#md # ```
+@which size
 
-#nb @which setindex!
+# Now Melissa knows she needs to add a method to `Base.size` with the
+# signature `(::Trebuchet)`.
+# She can also lookup the docstring using the `@doc` macro
 
-#md # ```output
-#md # Base
-#md # ```
+@doc size
 
+# With that information she can now implement this method:
 
-# Now Melissa knows she needs to add a method to `Base.setindex!` with the
-# signature `(::Trebuchet, ::Int64, ::Int64)`.
+Base.size(::Trebuchet) = tuple(2)
 
 
 # !!! keypoints
 #     - "You can think of functions being a collection of methods"
+#     - "Methods are defined by their signature"
+#     - "The signature is defined by the number of arguments, their order and their type"
 #     - "Keep the number of positional arguments low"
 #     - "Macros transform Julia expressions"
