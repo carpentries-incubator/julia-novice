@@ -1,12 +1,11 @@
 # !!! yaml
 #     ---
-#     title: "Control flow"
-#     teaching: 60
-#     exercises: 60
+#     title: "Interfaces & conditionals"
+#     teaching: 30
+#     exercises: 30
 #     ---
 #
 # !!! questions
-#       - "What are for and while loops?"
 #       - "How to use conditionals?"
 #       - "What is an interface?"
 #
@@ -16,6 +15,7 @@
 # ## Conditionals
 
 include("definition.jl")
+Base.size(::Trebuchet) = tuple(2)
 
 # Now that Melissa knows that she has to add a method for
 # ````
@@ -68,12 +68,14 @@ trebuchet + trebuchet
 
 #
 
-using LineaAlgebra
+using LinearAlgebra
 dot(trebuchet, trebuchet)
 
 #
 
 trebuchet * transpose(trebuchet)
+
+# That is, it now behaves like you would expect from an ordinary matrix.
 
 # Now she goes about implementing the missing optional method for `setindex!` of the `AbstractArray` interface.
 

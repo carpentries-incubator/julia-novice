@@ -227,6 +227,7 @@ trebuchet = Trebuchet(500, 0.25pi)
 #     Macros can transform any valid Julia expression and are quite powerful.
 #     They can be expanded by prepending `@macroexpand` to the macro call of
 #     interest.
+using InteractiveUtils #hide
 
 @which size
 

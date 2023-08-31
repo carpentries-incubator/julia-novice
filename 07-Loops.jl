@@ -7,6 +7,7 @@
 #
 # !!! questions
 #       - "What are for and while loops?"
+#       - "What is a comprehension?"
 #
 # !!! objectives
 #
@@ -20,6 +21,24 @@
 # parameters, but that gets tiresome quickly.
 # A better way to do this is to use loops.
 
+# ### Random search
+#
+# The first thing that comes to her mind is to randomly sample points of the parameter space of the trebuchet.
+# The function `rand()` will give her a random number between 0 and 1 that is uniformly distributed.
+# So
+
+Trebuchet( rand() * 500, rand() * pi/2 )
+
+# will give her a Trebuchet with a weight between 0 and 500 and a release angle between 0 and pi/2 radians at random.
+
+# Now she can store the results of 3 random trebuchets in an array like this
+
+distances = [shoot_distance(Trebuchet(rand() * 500, rand() * pi / 2), env) for _ in 1:3]
+
+# This is called an _array comprehension_.
+
+# ### Gradient descent
+#
 # But first Melissa needs a way to improve her parameters.
 
 # !!! note "Digression: Gradients"
