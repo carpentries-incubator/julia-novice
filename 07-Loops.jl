@@ -1,4 +1,15 @@
-# ## Loops
+# !!! yaml
+#     ---
+#     title: "Loops"
+#     teaching: 30
+#     exercises: 30
+#     ---
+#
+# !!! questions
+#       - "What are for and while loops?"
+#
+# !!! objectives
+#
 
 # Now Melissa knows how to shoot the virtual trebuchet and get the distance of
 # the projectile, but in order to aim she needs to take a lot of trial shots in a
