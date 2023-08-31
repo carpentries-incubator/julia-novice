@@ -118,5 +118,5 @@ trebuchet
 
 # !!! keypoints
 #     - "Interfaces are informal"
-#     - "Use for loops for a known number of iterations and while loops for an unknown number of iterations."
-#     - "Julia packages compose nicely."
+#     - "Interfaces facilitate code reuse"
+#     - "Conditions use `if`, `elseif`, `else` and `end`"

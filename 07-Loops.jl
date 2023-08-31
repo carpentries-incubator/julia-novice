@@ -165,3 +165,5 @@ shoot_distance(better_trebuchet, environment)
 
 # That is more what she had in mind. Your trebuchet may be tuned differently,
 # but it should hit just as close as hers.
+# !!! keypoints
+#     - "Use for loops for a known number of iterations and while loops for an unknown number of iterations."
