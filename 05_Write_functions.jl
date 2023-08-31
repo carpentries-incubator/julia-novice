@@ -240,6 +240,33 @@ trebuchet = Trebuchet(500, 0.25pi)
 
 Base.size(::Trebuchet) = tuple(2)
 
+# Now she can try again
+
+trebuchet = Trebuchet(500, 0.25pi)
+
+# Again, there is an error but this time the error message is different:
+# It's no longer a method for `size` that is missing but for `getindex`.
+# She looks up the documentation for that function
+
+@doc getindex
+
+# Note that the documentation for all methods gets shown and Melissa needs to look for the relevant method first.
+# In this case its the paragraph starting with
+# ````
+# getindex(A, inds...)
+# ````
+# After a bit of pondering the figures it should be enough to add a method for `getindex` with a single number.
+# ````
+# getindex(trebuchet::Trebuchet, i::Int)
+# ````
+#
+# !!! note "Syntactic sugar"
+#     In Julia `a[1]` is equivalent to `getindex(a, 1)`
+#     and `a[2] = 3` to `setindex!(a, 3, 2)`
+#     Likewise `a.b` is equivalent to `getproperty(a, :b)`
+#     and `a.b = 4` to `setproperty!(a, :b, 4)`.
+
+
 
 # !!! keypoints
 #     - "You can think of functions being a collection of methods"
