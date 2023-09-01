@@ -12,6 +12,33 @@
 # !!! objectives
 #
 
+include("definition.jl")
+Base.size(::Trebuchet) = tuple(2)
+function Base.getindex(trebuchet::Trebuchet, i::Int)
+    if i === 1
+        return trebuchet.counterweight
+    elseif i === 2
+        return trebuchet.release_angle
+    else
+        error("Trebuchet only accepts indices 1 and 2, yours is $i")
+    end
+end
+function Base.setindex!(trebuchet::Trebuchet, v, i::Int)
+     if i === 1
+         trebuchet.counterweight = v
+    elseif i === 2
+        trebuchet.release_angle = v
+    else
+        error("Trebuchet only accepts indices 1 and 2, yours is $i")
+    end
+end
+function shoot_distance(trebuchet::Trebuchet, env::Environment)
+     shoot_distance(env.wind, trebuchet.release_angle, trebuchet.counterweight)
+end
+function shoot_distance(args...) # slurping
+     Trebuchets.shoot(args...)[2] # splatting
+end
+
 # Now Melissa knows how to shoot the virtual trebuchet and get the distance of
 # the projectile, but in order to aim she needs to take a lot of trial shots in a
 # row.
@@ -32,14 +59,19 @@ Trebuchet( rand() * 500, rand() * pi/2 )
 # will give her a Trebuchet with a weight between 0 and 500 and a release angle between 0 and pi/2 radians at random.
 
 # Now she can store the results of 3 random trebuchets in an array like this
-
+env = Environment(5, 100)
 distances = [shoot_distance(Trebuchet(rand() * 500, rand() * pi / 2), env) for _ in 1:3]
 
 # This is called an _array comprehension_.
+# To get the information of the parameters and the results in one place she writes that again a bit differently
+N = 10
+weights = [rand() * 500 for _ in 1:N]
+angles = [rand() * pi/2 for _ in 1:N]
+distances = [(w,a) => shoot_distance(Trebuchet(w, a), env) for (w, a) in zip(weights, angles)]
 
 # ### Gradient descent
 #
-# But first Melissa needs a way to improve her parameters.
+# That is working out so far, but Melissa wonders if she can improve her parameters more systematically.
 
 # !!! note "Digression: Gradients"
 #     The `shoot_distance` function takes three input parameters and returns one
