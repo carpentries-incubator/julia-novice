@@ -62,6 +62,7 @@
 #md         write(io, replace(line, "MelissasModule" =>  #hide"MelissasPackage"))
 #md     end #hide
 #md end #hide
+#md cd(old) #hide
 
 
 # Now Melissa can use
