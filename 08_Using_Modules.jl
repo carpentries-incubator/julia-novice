@@ -25,7 +25,8 @@
 # the current working directory and pastes the code she got so far in there.
 # This is what it looks like:
 
-#md open(joinpath(@__DIR__, "output", "code", "aim_trebuchet.jl"),"w") do io #hide
+#md path = mkpath(joinpath(@__DIR__, "code")) #hide
+#md open(joinpath(path, "aim_trebuchet.jl"),"w") do io #hide
 #md print(io, raw""" #hide
 using Pkg
 Pkg.activate("projects/trebuchet")
@@ -112,7 +113,7 @@ shoot_distance(precise_trebuchet, environment)
 # `Environment`.
 # This way she can leave her other code unchanged.
 
-#md open(joinpath(@__DIR__, "output", "code", "MelissasModule.jl"),"w") do io #hide
+#md open(joinpath(path, "MelissasModule.jl")),"w") do io #hide
 #md print(io, raw""" #hide
 module MelissasModule
 
@@ -175,7 +176,7 @@ end # MelissasModule
 
 # The rest of the code goes to a file she calls `MelissasCode.jl`.
 
-#md open(joinpath(@__DIR__, "output", "code", "MelissasCode.jl"),"w") do io #hide
+#md open(joinpath(path, "MelissasCode.jl"),"w") do io #hide
 #md print(io, raw""" #hide
 using .MelissasModule
 
@@ -216,7 +217,6 @@ using Revise
 #nb includet("MelissasModule.jl")
 #nb include("MelissasCode.jl")
 
-#md path = mkpath(joinpath(@__DIR__, "output", "code")) #hide
 #md includet(joinpath(path,"MelissasModule.jl"))
 #md include(joinpath(path,"MelissasCode.jl"))
 #md # where `path` is the path to her files.
