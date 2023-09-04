@@ -216,9 +216,10 @@ using Revise
 #nb includet("MelissasModule.jl")
 #nb include("MelissasCode.jl")
 
-#md include(joinpath(@__DIR__,"MelissasModule.jl")) #hide
-#md includet(joinpath(@__DIR__,"MelissasModule.jl"))
-#md include(joinpath(@__DIR__,"MelissasCode.jl"))
+#md path = mkpath(joinpath(@__DIR__, "output", "code")) #hide
+#md includet(joinpath(path,"MelissasModule.jl"))
+#md include(joinpath(path,"MelissasCode.jl"))
+#md # where `path` is the path to her files.
 
 
 # and any change she makes in `MelissasModule.jl` will be visible in the next run
