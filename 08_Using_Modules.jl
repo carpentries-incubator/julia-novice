@@ -25,7 +25,7 @@
 # the current working directory and pastes the code she got so far in there.
 # This is what it looks like:
 
-#md open("aim_trebuchet.jl","w") do io #hide
+#md open(joinpath(@__DIR__, "output", "code", "aim_trebuchet.jl"),"w") do io #hide
 #md print(io, raw""" #hide
 using Pkg
 Pkg.activate("projects/trebuchet")
@@ -36,8 +36,6 @@ mutable struct Trebuchet <: AbstractVector{Float64}
   counterweight::Float64
   release_angle::Float64
 end
-
-Base.copy(trebuchet::Trebuchet) = Trebuchet(trebuchet.counterweight, trebuchet.release_angle)
 
 Base.size(trebuchet::Trebuchet) = tuple(2)
 
@@ -56,10 +54,6 @@ end
 struct Environment
   wind::Float64
   target_distance::Float64
-end
-
-function shoot_distance(windspeed, angle, weight)
-    Trebuchets.shoot(windspeed, angle, weight)[2]
 end
 
 function shoot_distance(args...)
@@ -118,7 +112,7 @@ shoot_distance(precise_trebuchet, environment)
 # `Environment`.
 # This way she can leave her other code unchanged.
 
-#md open("MelissasModule.jl","w") do io #hide
+#md open(joinpath(@__DIR__, "output", "code", "MelissasModule.jl"),"w") do io #hide
 #md print(io, raw""" #hide
 module MelissasModule
 
@@ -133,8 +127,6 @@ mutable struct Trebuchet <: AbstractVector{Float64}
   counterweight::Float64
   release_angle::Float64
 end
-
-Base.copy(trebuchet::Trebuchet) = Trebuchet(trebuchet.counterweight, trebuchet.release_angle)
 
 Base.size(trebuchet::Trebuchet) = tuple(2)
 
@@ -153,10 +145,6 @@ end
 struct Environment
   wind::Float64
   target_distance::Float64
-end
-
-function shoot_distance(windspeed, angle, weight)
-    Trebuchets.shoot(windspeed, angle, weight)[2]
 end
 
 function shoot_distance(args...)
@@ -187,7 +175,7 @@ end # MelissasModule
 
 # The rest of the code goes to a file she calls `MelissasCode.jl`.
 
-#md open("MelissasCode.jl","w") do io #hide
+#md open(joinpath(@__DIR__, "output", "code", "MelissasCode.jl"),"w") do io #hide
 #md print(io, raw""" #hide
 using .MelissasModule
 
