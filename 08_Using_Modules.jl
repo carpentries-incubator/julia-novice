@@ -113,7 +113,7 @@ shoot_distance(precise_trebuchet, environment)
 # `Environment`.
 # This way she can leave her other code unchanged.
 
-#md open(joinpath(path, "MelissasModule.jl")),"w") do io #hide
+#md open(joinpath(path, "MelissasModule.jl"),"w") do io #hide
 #md print(io, raw""" #hide
 module MelissasModule
 
@@ -217,6 +217,7 @@ using Revise
 #nb includet("MelissasModule.jl")
 #nb include("MelissasCode.jl")
 
+#md include(joinpath(path,"MelissasModule.jl")) #hide
 #md includet(joinpath(path,"MelissasModule.jl"))
 #md include(joinpath(path,"MelissasCode.jl"))
 #md # where `path` is the path to her files.
