@@ -46,6 +46,7 @@ jobs:
               run: |
                 ls -RF
                 mv output/carpentries/*.md episodes
+                mv output/code/* code
             - name: Create Pull Request
               uses: peter-evans/create-pull-request@v5
               with:

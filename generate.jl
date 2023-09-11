@@ -1,4 +1,3 @@
-cd(@__DIR__)
 using Distributed
 while nprocs() < min(4, length(Sys.cpu_info()))
     addprocs(1)
@@ -85,8 +84,8 @@ end
 pmap(files) do file
     # Literate.notebook(file, notebook_out; execute=false, preprocess = replace_includes)
     # Literate.markdown(file, markdown_out; credit = false, execute=true, preprocess = replace_includes, postprocess = md_print∘setup_link_replace)
-    if contains(file, "Overview") return end
+    if contains(file, "Overview") || contains(file, "Creating_Packages") return end
     Literate.markdown(file, lesson_out; credit = false, execute=true, flavor=Literate.CarpentriesFlavor(), preprocess = replace_includes∘carpentries_div_names, postprocess = setup_link_replace∘remove_sandbox_output∘handle_repl∘fix_activation_output)
 end
-
+Literate.markdown(only(filter(contains("Creating_Packages"), files)), lesson_out; credit = false, execute=true, flavor=Literate.CarpentriesFlavor(), preprocess = replace_includes∘carpentries_div_names, postprocess = setup_link_replace∘remove_sandbox_output∘handle_repl∘fix_activation_output)
 @everywhere Pkg.activate(@__DIR__)

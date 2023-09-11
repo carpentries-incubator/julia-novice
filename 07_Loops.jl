@@ -1,137 +1,43 @@
 # !!! yaml
 #     ---
-#     title: "Control flow"
-#     teaching: 60
-#     exercises: 60
+#     title: "Loops"
+#     teaching: 30
+#     exercises: 30
 #     ---
 #
 # !!! questions
 #       - "What are for and while loops?"
-#       - "How to use conditionals?"
-#       - "What is an interface?"
+#       - "What is a comprehension?"
 #
 # !!! objectives
 #
 
-# ## Conditionals
-
 include("definition.jl")
-
-# Now that Melissa knows which method to add she thinks about the implementation.
-
-# If the index is `1` she wants to set `counterweight` while if the index is `2`
-# she wants to set `release_angle` and since these are the only two fields she
-# wants to return an error if anything else comes in.
-# In Julia the keywords to specify conditions are `if`, `elseif` and `else`,
-# closed with an `end`.
-# Thus she writes
-
-#-
-
-function Base.setindex!(trebuchet::Trebuchet, v, i::Int)
+Base.size(::Trebuchet) = tuple(2)
+function Base.getindex(trebuchet::Trebuchet, i::Int)
     if i === 1
-        trebuchet.counterweight = v
+        return trebuchet.counterweight
+    elseif i === 2
+        return trebuchet.release_angle
+    else
+        error("Trebuchet only accepts indices 1 and 2, yours is $i")
+    end
+end
+function Base.setindex!(trebuchet::Trebuchet, v, i::Int)
+     if i === 1
+         trebuchet.counterweight = v
     elseif i === 2
         trebuchet.release_angle = v
     else
         error("Trebuchet only accepts indices 1 and 2, yours is $i")
     end
 end
-
-# ### Interfaces
-
-# `setindex!` is actually one function of a widespread _interface_ in the Julia
-# language: `AbstractArray`s.
-# An interface is a collection of methods that are all implemented by a certain
-# type.
-# For example, the [Julia manual](https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-array) lists all methods that a subtype of
-# `AbstractArray` need to implement to adhere to the `AbstractArray` interface:
-
-# - `size(A)` returns a tuple containing the dimensions of `A`
-# - `getindex(A, i::Int)` returns the value associated with index `i`
-# - `setindex!(A, v, i::Int)` writes a new value `v` at the index `i`
-
-# If Melissa implements this interface for the `Trebuchet` type, it will work
-# with every function in `Base` that accepts an `AbstractArray`.
-
-# She also needs to make `Trebuchet` a proper subtype of `AbstractArray` as she
-# tried in [the types episode](03_Julia_type_system.ipynb).
-# Therefore she _restarts her REPL_ and redefines `Trebuchet` and `Environment`,
-# as well as the slurp-and-splat `shoot_distance` function:
-
-using Pkg
-Pkg.activate("projects/trebuchet")
-
-import Trebuchet as Trebuchets
-
-mutable struct Trebuchet <: AbstractVector{Float64}
-  counterweight::Float64
-  release_angle::Float64
-end
-
-struct Environment
-    wind::Float64
-    target_distance::Float64
-end
-
-function shoot_distance(args...)
-    Trebuchets.shoot(args...)[2]
-end
-
 function shoot_distance(trebuchet::Trebuchet, env::Environment)
      shoot_distance(env.wind, trebuchet.release_angle, trebuchet.counterweight)
 end
-
-# Then she goes about implementing the `AbstractArray` interface.
-
-# !!! freecode "Implement the `AbstractArray` interface for `Trebuchet`"
-#
-#     Now we know enough to actually implement the `AbstractArray` interface.
-#     You don't need to implement the optional methods.
-#
-#     Hint: Take a look at the docstrings of `getfield` and `tuple`.
-#
-#     !!! solution
-#
-#         ```julia
-#         Base.size(trebuchet::Trebuchet) = tuple(2)
-#         Base.getindex(trebuchet::Trebuchet, i::Int) = getfield(trebuchet, i)
-#         function Base.setindex!(trebuchet::Trebuchet, v, i::Int)
-#              if i === 1
-#                  trebuchet.counterweight = v
-#             elseif i === 2
-#                 trebuchet.release_angle = v
-#             else
-#                 error("Trebuchet only accepts indices 1 and 2, yours is $i")
-#             end
-#         end
-#         ```
-
-#md Base.size(trebuchet::Trebuchet) = tuple(2) #hide
-#md Base.getindex(trebuchet::Trebuchet, i::Int) = getfield(trebuchet, i) #hide
-#md function Base.setindex!(trebuchet::Trebuchet, v, i::Int) #hide
-#md     if i === 1 #hide
-#md         trebuchet.counterweight = v #hide
-#md     elseif i === 2 #hide
-#md         trebuchet.release_angle = v #hide
-#md     else #hide
-#md        error("Trebuchet only accepts indices 1 and 2, yours is $i") #hide
-#md     end #hide
-#md end #hide
-
-# With the new `Trebuchet` defined with a complete `AbstractArray` interface,
-# Melissa tries again to modify a counterweight by index:
-
-trebuchet = Trebuchet(500, 0.25pi)
-#-
-
-trebuchet[1] = 2
-#-
-
-trebuchet
-
-
-# ## Loops
+function shoot_distance(args...) # slurping
+     Trebuchets.shoot(args...)[2] # splatting
+end
 
 # Now Melissa knows how to shoot the virtual trebuchet and get the distance of
 # the projectile, but in order to aim she needs to take a lot of trial shots in a
@@ -142,7 +48,30 @@ trebuchet
 # parameters, but that gets tiresome quickly.
 # A better way to do this is to use loops.
 
-# But first Melissa needs a way to improve her parameters.
+# ### Random search
+#
+# The first thing that comes to her mind is to randomly sample points of the parameter space of the trebuchet.
+# The function `rand()` will give her a random number between 0 and 1 that is uniformly distributed.
+# So
+
+Trebuchet( rand() * 500, rand() * pi/2 )
+
+# will give her a Trebuchet with a weight between 0 and 500 and a release angle between 0 and pi/2 radians at random.
+
+# Now she can store the results of 3 random trebuchets in an array like this
+env = Environment(5, 100)
+distances = [shoot_distance(Trebuchet(rand() * 500, rand() * pi / 2), env) for _ in 1:3]
+
+# This is called an _array comprehension_.
+# To get the information of the parameters and the results in one place she writes that again a bit differently
+N = 10
+weights = [rand() * 500 for _ in 1:N]
+angles = [rand() * pi/2 for _ in 1:N]
+distances = [(w,a) => shoot_distance(Trebuchet(w, a), env) for (w, a) in zip(weights, angles)]
+
+# ### Gradient descent
+#
+# That is working out so far, but Melissa wonders if she can improve her parameters more systematically.
 
 # !!! note "Digression: Gradients"
 #     The `shoot_distance` function takes three input parameters and returns one
@@ -298,8 +227,5 @@ shoot_distance(better_trebuchet, environment)
 
 # That is more what she had in mind. Your trebuchet may be tuned differently,
 # but it should hit just as close as hers.
-
 # !!! keypoints
-#     - "Interfaces are informal"
 #     - "Use for loops for a known number of iterations and while loops for an unknown number of iterations."
-#     - "Julia packages compose nicely."

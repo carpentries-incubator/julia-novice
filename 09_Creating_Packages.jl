@@ -51,6 +51,20 @@
 #     Open your `Project.toml` and add `name = <your name>`, `uuid = <your uuid>`
 #     and optionally an `authors` field, each on a separate line.
 
+#md path = mkpath(joinpath(@__DIR__, "code")) #hide
+#md rm(joinpath(path, "MelissasPackage"), recursive = true, force = true) #hide
+#md old = pwd() #hide
+#md cd(path) #hide
+#md using Pkg #hide
+#md Pkg.generate("MelissasPackage") #hide
+#md open(joinpath(path, "MelissasPackage", "src", "MelissasPackage.jl"),  "w") do io #hide
+#md     for line in eachline(joinpath(path, "MelissasModule.jl")) #hide
+#md         write(io, replace(line, "MelissasModule" =>  "MelissasPackage")) #hide
+#md     end #hide
+#md end #hide
+#md cd(old) #hide
+
+
 # Now Melissa can use
 
 #md # ```julia
