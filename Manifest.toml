@@ -522,12 +522,12 @@ version = "2.4.2"
     Pardiso = "46dd5b70-b6fb-5a00-ae2d-e8fea33afaf2"
 
 [[deps.Literate]]
-deps = ["Base64", "CommonMark", "IOCapture", "JSON", "REPL"]
-git-tree-sha1 = "38bfe567ead13e80b8f9613631345cdd11c57129"
+deps = ["Base64", "CommonMark", "IOCapture", "JSON", "Markdown", "REPL", "Test"]
+git-tree-sha1 = "1293a6d8094f73c3ca7ff2655369d8030cf7f8bd"
 repo-rev = "master"
 repo-url = "https://github.com/BeastyBlacksmith/Literate.jl"
 uuid = "98b081ad-f1c9-55d3-8b20-4c87d4299306"
-version = "2.14.0"
+version = "2.14.1"
 
 [[deps.LogExpFunctions]]
 deps = ["DocStringExtensions", "IrrationalConstants", "LinearAlgebra"]
