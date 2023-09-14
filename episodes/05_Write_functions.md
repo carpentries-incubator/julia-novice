@@ -116,7 +116,7 @@ Pkg.activate(joinpath(@__DIR__, "projects", "trebuchet"))
 Pkg.instantiate()
 ````
 
-````output
+````
   Activating project at `~/projects/trebuchet`
 
 ````
@@ -220,7 +220,11 @@ That's why she puts it together in a _function_ like this:
 ````julia
 function shoot_distance(windspeed, angle, weight)
        Trebuchets.shoot(windspeed, angle, weight)[2]
-end ;
+end
+````
+
+````output
+shoot_distance (generic function with 1 method)
 ````
 
 :::::: callout
@@ -252,7 +256,11 @@ adds another convenience method for those:
 ````julia
 function shoot_distance(trebuchet::Trebuchet, env::Environment)
      shoot_distance(env.wind, trebuchet.release_angle, trebuchet.counterweight)
-end ;
+end
+````
+
+````output
+shoot_distance (generic function with 2 methods)
 ````
 
 This method will call the former method and pass the correct fields from the
@@ -268,7 +276,11 @@ them in the function body using three dots (`...`) like this:
 ````julia
 function shoot_distance(args...) # slurping
      Trebuchets.shoot(args...)[2] # splatting
-end ;
+end
+````
+
+````output
+shoot_distance (generic function with 3 methods)
 ````
 
 ### Anonymous functions
@@ -279,7 +291,11 @@ These are _anonymous functions_.
 They can be defined with either the so-called stabby lambda notation,
 
 ````julia
-(windspeed, angle, weight) -> Trebuchets.shoot(windspeed, angle, weight)[2] ;
+(windspeed, angle, weight) -> Trebuchets.shoot(windspeed, angle, weight)[2]
+````
+
+````output
+#1 (generic function with 1 method)
 ````
 
 or in long form, by omitting the name:
@@ -287,31 +303,69 @@ or in long form, by omitting the name:
 ````julia
 function (windspeed, angle, weight)
       Trebuchets.shoot(windspeed, angle, weight)[2]
-end ;
+end
+````
+
+````output
+#3 (generic function with 1 method)
+````
+
+### Calling methods
+
+Now, that she defined all these methods she tests calling a few
+
+````julia
+shoot_distance(5, 0.25pi, 500)
+````
+
+````output
+114.88494815382731
+````
+
+````julia
+shoot_distance([5, 0.25pi, 500])
+````
+
+````output
+114.88494815382731
+````
+
+For the other method she needs to construct `Trebuchet` and `Environment` objects first
+
+````julia
+env = Environment(5, 100)
+````
+
+````output
+Environment(5.0, 100.0)
+````
+
+````julia
+trebuchet = Trebuchet(500, 0.25pi)
+````
+
+````error
+MethodError: no method matching size(::Trebuchet)
+
+Closest candidates are:
+  size(::AbstractArray{T, N}, !Matched::Any) where {T, N}
+   @ Base abstractarray.jl:42
+  size(!Matched::Union{LinearAlgebra.QR, LinearAlgebra.QRCompactWY, LinearAlgebra.QRPivoted})
+   @ LinearAlgebra /opt/hostedtoolcache/julia/1.9.3/x64/share/julia/stdlib/v1.9/LinearAlgebra/src/qr.jl:582
+  size(!Matched::Union{LinearAlgebra.QR, LinearAlgebra.QRCompactWY, LinearAlgebra.QRPivoted}, !Matched::Integer)
+   @ LinearAlgebra /opt/hostedtoolcache/julia/1.9.3/x64/share/julia/stdlib/v1.9/LinearAlgebra/src/qr.jl:581
+  ...
+
 ````
 
 ### Errors and macros
 
-Melissa would like to set the fields of a `Trebuchet` using an index.
-She writes
+This error tells her two things:
 
-```julia
-Trebuchets[1] = 2
-```
-
-```error
-ERROR: MethodError: no method matching setindex!(::Trebuchet, ::Int64, ::Int64)
-Stacktrace:
- [1] top-level scope
-   @ REPL[4]:1
-```
-
-The error tells her two things:
-
-1. a function named `setindex!` was called
+1. a function named `size` was called
 2. it didn't have a method for `Trebuchet`
 
-Melissa wants to add the missing method to `setindex!` but she doesn't know
+Melissa wants to add the missing method to `size` but she doesn't know
 where it is defined.
 There is a handy _macro_ named `@which` that obtains the module where the
 function is defined.
@@ -328,22 +382,250 @@ interest.
 
 ::::::
 
-```julia
-@which setindex!
-```
+````julia
 
-```output
+@which size
+````
+
+````output
 Base
-```
+````
 
-Now Melissa knows she needs to add a method to `Base.setindex!` with the
-signature `(::Trebuchet, ::Int64, ::Int64)`.
+Now Melissa knows she needs to add a method to `Base.size` with the
+signature `(::Trebuchet)`.
+She can also lookup the docstring using the `@doc` macro
+
+````julia
+@doc size
+````
+
+````output
+  size(A::AbstractArray, [dim])
+
+  Return a tuple containing the dimensions of A. Optionally you can specify a
+  dimension to just get the length of that dimension.
+
+  Note that size may not be defined for arrays with non-standard indices, in
+  which case axes may be useful. See the manual chapter on arrays with custom
+  indices.
+
+  See also: length, ndims, eachindex, sizeof.
+
+  Examples
+  ≡≡≡≡≡≡≡≡≡≡
+
+  julia> A = fill(1, (2,3,4));
+  
+  julia> size(A)
+  (2, 3, 4)
+  
+  julia> size(A, 2)
+  3
+
+  size(cb::CircularBuffer)
+
+  Return a tuple with the size of the buffer.
+
+  size(g, i)
+
+  Return the number of vertices in g if i=1 or i=2, or 1 otherwise.
+
+  Examples
+  ≡≡≡≡≡≡≡≡≡≡
+
+  julia> using Graphs
+  
+  julia> g = cycle_graph(4);
+  
+  julia> size(g, 1)
+  4
+  
+  julia> size(g, 2)
+  4
+  
+  julia> size(g, 3)
+  1
+````
+
+With that information she can now implement this method:
+
+````julia
+Base.size(::Trebuchet) = tuple(2)
+````
+
+Now she can try again
+
+````julia
+trebuchet = Trebuchet(500, 0.25pi)
+````
+
+````error
+CanonicalIndexError: getindex not defined for Trebuchet
+````
+
+Again, there is an error but this time the error message is different:
+It's no longer a method for `size` that is missing but for `getindex`.
+She looks up the documentation for that function
+
+````julia
+@doc getindex
+````
+
+````output
+  getindex(type[, elements...])
+
+  Construct a 1-d array of the specified type. This is usually called with the
+  syntax Type[]. Element values can be specified using Type[a,b,c,...].
+
+  Examples
+  ≡≡≡≡≡≡≡≡≡≡
+
+  julia> Int8[1, 2, 3]
+  3-element Vector{Int8}:
+   1
+   2
+   3
+  
+  julia> getindex(Int8, 1, 2, 3)
+  3-element Vector{Int8}:
+   1
+   2
+   3
+
+  getindex(collection, key...)
+
+  Retrieve the value(s) stored at the given key or index within a collection.
+  The syntax a[i,j,...] is converted by the compiler to getindex(a, i, j,
+  ...).
+
+  See also get, keys, eachindex.
+
+  Examples
+  ≡≡≡≡≡≡≡≡≡≡
+
+  julia> A = Dict("a" => 1, "b" => 2)
+  Dict{String, Int64} with 2 entries:
+    "b" => 2
+    "a" => 1
+  
+  julia> getindex(A, "a")
+  1
+
+  getindex(A, inds...)
+
+  Return a subset of array A as specified by inds, where each ind may be, for
+  example, an Int, an AbstractRange, or a Vector. See the manual section on
+  array indexing for details.
+
+  Examples
+  ≡≡≡≡≡≡≡≡≡≡
+
+  julia> A = [1 2; 3 4]
+  2×2 Matrix{Int64}:
+   1  2
+   3  4
+  
+  julia> getindex(A, 1)
+  1
+  
+  julia> getindex(A, [2, 1])
+  2-element Vector{Int64}:
+   3
+   1
+  
+  julia> getindex(A, 2:4)
+  3-element Vector{Int64}:
+   3
+   2
+   4
+
+  getindex(tree::GitTree, target::AbstractString) -> GitObject
+
+  Look up target path in the tree, returning a GitObject (a GitBlob in the
+  case of a file, or another GitTree if looking up a directory).
+
+  Examples
+  ≡≡≡≡≡≡≡≡≡≡
+
+  tree = LibGit2.GitTree(repo, "HEAD^{tree}")
+  readme = tree["README.md"]
+  subtree = tree["test"]
+  runtests = subtree["runtests.jl"]
+
+  observable[]
+
+  Returns the current value of observable.
+
+  getindex(A::ArrayPartition, i::Int, j...)
+
+  Returns the entry at index j... of the ith partition of A.
+
+  getindex(A::ArrayPartition, i::Colon, j...)
+
+  Returns the entry at index j... of every partition of A.
+
+  getindex(A::ArrayPartition, ::Colon)
+
+  Returns a vector with all elements of array partition A.
+
+  v = sd[k]
+
+  Argument sd is a SortedDict and k is a key. In an expression, this retrieves
+  the value (v) associated with the key (or KeyError if none). On the
+  left-hand side of an assignment, this assigns or reassigns the value
+  associated with the key. (For assigning and reassigning, see also insert!
+  below.) Time: O(c log n)
+
+  cb[i]
+
+  Get the i-th element of CircularBuffer.
+
+    •  cb[1] to get the element at the front
+
+    •  cb[end] to get the element at the back
+
+  getindex(tree, ind)
+
+  Gets the key present at index ind of the tree. Indexing is done in
+  increasing order of key.
+
+  g[iter]
+
+  Return the subgraph induced by iter. Equivalent to induced_subgraph(g,
+  iter)[1].
+````
+
+Note that the documentation for all methods gets shown and Melissa needs to look for the relevant method first.
+In this case its the paragraph starting with
+
+````
+getindex(A, inds...)
+````
+
+After a bit of pondering the figures it should be enough to add a method for `getindex` with a single number.
+
+````
+getindex(trebuchet::Trebuchet, i::Int)
+````
+
+:::::: callout
+
+## Syntactic sugar
+
+In Julia `a[1]` is equivalent to `getindex(a, 1)`
+and `a[2] = 3` to `setindex!(a, 3, 2)`
+Likewise `a.b` is equivalent to `getproperty(a, :b)`
+and `a.b = 4` to `setproperty!(a, :b, 4)`.
+
+::::::
 
 :::::: keypoints
 
 ## Keypoints
 
   - "You can think of functions being a collection of methods"
+  - "Methods are defined by their signature"
+  - "The signature is defined by the number of arguments, their order and their type"
   - "Keep the number of positional arguments low"
   - "Macros transform Julia expressions"
 
