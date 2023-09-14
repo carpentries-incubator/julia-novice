@@ -81,7 +81,7 @@ markdown_out = joinpath(@__DIR__, "output", "markdown")
 lesson_out = joinpath(@__DIR__, "output", "carpentries")
 end
 
-pmap(files) do file
+map(files) do file
     # Literate.notebook(file, notebook_out; execute=false, preprocess = replace_includes)
     # Literate.markdown(file, markdown_out; credit = false, execute=true, preprocess = replace_includes, postprocess = md_print∘setup_link_replace)
     if contains(file, "Overview") || contains(file, "Creating_Packages") return end
