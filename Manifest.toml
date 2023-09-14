@@ -524,7 +524,7 @@ version = "2.4.2"
 [[deps.Literate]]
 deps = ["Base64", "CommonMark", "IOCapture", "JSON", "REPL"]
 git-tree-sha1 = "38bfe567ead13e80b8f9613631345cdd11c57129"
-repo-rev = "carpentries"
+repo-rev = "master"
 repo-url = "https://github.com/BeastyBlacksmith/Literate.jl"
 uuid = "98b081ad-f1c9-55d3-8b20-4c87d4299306"
 version = "2.14.0"
