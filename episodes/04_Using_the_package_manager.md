@@ -75,7 +75,7 @@ To create a new environment she uses the `activate` function of the package mana
 ```
 
 
-````output
+````
   Activating project at `~/projects/trebuchet`
 ````
 
@@ -118,10 +118,10 @@ environment.
 ```
 
 
-````output
+````
 Status `~/projects/trebuchet/Project.toml`
   [f6369f11] ForwardDiff v0.10.36
-  [295af30f] Revise v3.5.3
+  [295af30f] Revise v3.5.5
   [98b73d46] Trebuchet v0.2.2
 
 ````
