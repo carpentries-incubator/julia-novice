@@ -19,16 +19,34 @@
     <loc>https://preview.carpentries.org/julia-novice/06_Control_flow.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/julia-novice/06_Interfacing_conditions.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/julia-novice/07_Loops.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/julia-novice/07_Using_Modules.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/julia-novice/08_Creating_Packages.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/julia-novice/08_Using_Modules.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/julia-novice/09_Adding_tests.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/julia-novice/09_Creating_Packages.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/julia-novice/10_Adding_tests.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/julia-novice/10_Wrapping_Up.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/julia-novice/11_Wrapping_Up.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/julia-novice/404.html</loc>
@@ -70,16 +88,34 @@
     <loc>https://preview.carpentries.org/julia-novice/instructor/06_Control_flow.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/julia-novice/instructor/06_Interfacing_conditions.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/julia-novice/instructor/07_Loops.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/julia-novice/instructor/07_Using_Modules.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/julia-novice/instructor/08_Creating_Packages.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/julia-novice/instructor/08_Using_Modules.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/julia-novice/instructor/09_Adding_tests.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/julia-novice/instructor/09_Creating_Packages.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/julia-novice/instructor/10_Adding_tests.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/julia-novice/instructor/10_Wrapping_Up.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/julia-novice/instructor/11_Wrapping_Up.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/julia-novice/instructor/404.html</loc>

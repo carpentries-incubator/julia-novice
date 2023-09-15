@@ -263,7 +263,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="07_Using_Modules.html">7. Using Modules</a>
+        <a href="06_Interfacing_conditions.html">7. Interfaces &amp; conditionals</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -275,7 +275,7 @@
 <div class="accordion accordion-flush" id="accordionFlush9">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading9">
-        <a href="08_Creating_Packages.html">8. Creating Packages</a>
+        <a href="07_Loops.html">8. Loops</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -287,7 +287,7 @@
 <div class="accordion accordion-flush" id="accordionFlush10">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading10">
-        <a href="09_Adding_tests.html">9. Adding tests</a>
+        <a href="07_Using_Modules.html">9. Using Modules</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -299,7 +299,79 @@
 <div class="accordion accordion-flush" id="accordionFlush11">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading11">
-        <a href="10_Wrapping_Up.html">10. Wrapping Up and Moving Forward</a>
+        <a href="08_Creating_Packages.html">10. Creating Packages</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush12">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading12">
+        <a href="08_Using_Modules.html">11. Using Modules</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush13">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading13">
+        <a href="09_Adding_tests.html">12. Adding tests</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush14">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading14">
+        <a href="09_Creating_Packages.html">13. Creating Packages</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush15">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading15">
+        <a href="10_Adding_tests.html">14. Adding tests</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush16">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading16">
+        <a href="10_Wrapping_Up.html">15. Wrapping Up and Moving Forward</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush17">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading17">
+        <a href="11_Wrapping_Up.html">16. Wrapping Up and Moving Forward</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -982,7 +1054,7 @@ return <code>false</code>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The correct answer is 4: while <code>1</code> is an integer,
 <code>1.0</code> is a floating-point value.</p>
@@ -1087,7 +1159,7 @@ later.</em></p>
 </div>
 </section></section><section id="aio-04_Using_the_package_manager"><p>Content from <a href="04_Using_the_package_manager.html">Using the package manager</a></p>
 <hr>
-<p> Last updated on 2023-08-25 | 
+<p> Last updated on 2023-09-15 | 
         
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/04_Using_the_package_manager.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 20 minutes </p>
@@ -1178,11 +1250,7 @@ uses the <code>activate</code> function of the package manager:</p>
 </h3>
 <pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="pp">@v1</span>.x) pkg<span class="op">&gt;</span> activate projects<span class="op">/</span>trebuchet</span></code></pre>
 </div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>  Activating project at `~/projects/trebuchet`</code></pre>
-</div>
+<pre><code>  Activating project at `~/projects/trebuchet`</code></pre>
 <p>In this environment she adds the <code>Trebuchet</code> package from
 its open source code <a href="https://github.com/FluxML/Trebuchet.jl" class="external-link">repository on GitHub</a>
 by typing</p>
@@ -1220,15 +1288,11 @@ her environment.</p>
 </h3>
 <pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(trebuchet) pkg<span class="op">&gt;</span> status</span></code></pre>
 </div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>Status `~/projects/trebuchet/Project.toml`
+<pre><code>Status `~/projects/trebuchet/Project.toml`
   [f6369f11] ForwardDiff v0.10.36
-  [295af30f] Revise v3.5.3
+  [295af30f] Revise v3.5.5
   [98b73d46] Trebuchet v0.2.2
 </code></pre>
-</div>
 <div id="why-use-github" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -1327,7 +1391,7 @@ upon <code>import</code> using the keyword <em><code>as</code></em>:</p>
 </div>
 </section></section><section id="aio-05_Write_functions"><p>Content from <a href="05_Write_functions.html">Write functions!</a></p>
 <hr>
-<p> Last updated on 2023-08-17 | 
+<p> Last updated on 2023-09-15 | 
         
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/05_Write_functions.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 20 minutes </p>
@@ -1488,12 +1552,8 @@ assigned a value. This throws a
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="fu">joinpath</span>(<span class="pp">@__DIR__</span>, <span class="st">"projects"</span>, <span class="st">"trebuchet"</span>))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code></pre>
 </div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>  Activating project at `~/projects/trebuchet`
+<pre><code>  Activating project at `~/projects/trebuchet`
 </code></pre>
-</div>
 <p>Importing the package under its modified name</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1602,7 +1662,12 @@ forget to take the second element. That’s why she puts it together in a
 </h3>
 <pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(windspeed, angle, weight)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>       Trebuchets.<span class="fu">shoot</span>(windspeed, angle, weight)[<span class="fl">2</span>]</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span> ;</span></code></pre>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>shoot_distance (generic function with 1 method)</code></pre>
 </div>
 <div id="implicit-return" class="callout callout">
 <div class="callout-square">
@@ -1620,10 +1685,10 @@ the same.</p>
 </div>
 </div>
 <p>Now Melissa can just call her wrapper function:</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shoot_distance</span>(<span class="fl">5</span>, <span class="fl">0.25</span>pi, <span class="fl">500</span>)</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shoot_distance</span>(<span class="fl">5</span>, <span class="fl">0.25</span>pi, <span class="fl">500</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1637,12 +1702,17 @@ the same.</p>
 <p>Since Melissa wants to work with the structs <code>Trebuchet</code>
 and <code>Environment</code>, she adds another convenience method for
 those:</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, env<span class="op">::</span><span class="dt">Environment</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">shoot_distance</span>(env.wind, trebuchet.release_angle, trebuchet.counterweight)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span> ;</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, env<span class="op">::</span><span class="dt">Environment</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">shoot_distance</span>(env.wind, trebuchet.release_angle, trebuchet.counterweight)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>shoot_distance (generic function with 2 methods)</code></pre>
 </div>
 <p>This method will call the former method and pass the correct fields
 from the <code>Trebuchet</code> and <code>Environment</code>
@@ -1656,12 +1726,17 @@ Melissa discovers that she doesn’t need to explicitly declare all the
 input arguments. Instead she can <em>slurp</em> the arguments in the
 function definition and <em>splat</em> them in the function body using
 three dots (<code>...</code>) like this:</p>
-<div class="codewrapper sourceCode" id="cb20">
+<div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(args<span class="op">...</span>) <span class="co"># slurping</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>     Trebuchets.<span class="fu">shoot</span>(args<span class="op">...</span>)[<span class="fl">2</span>] <span class="co"># splatting</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span> ;</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(args<span class="op">...</span>) <span class="co"># slurping</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>     Trebuchets.<span class="fu">shoot</span>(args<span class="op">...</span>)[<span class="fl">2</span>] <span class="co"># splatting</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>shoot_distance (generic function with 3 methods)</code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -1670,47 +1745,99 @@ three dots (<code>...</code>) like this:</p>
 <p>Sometimes it is useful to have a new function and not have to come up
 with a new name. These are <em>anonymous functions</em>. They can be
 defined with either the so-called stabby lambda notation,</p>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>(windspeed, angle, weight) <span class="op">-&gt;</span> Trebuchets.<span class="fu">shoot</span>(windspeed, angle, weight)[<span class="fl">2</span>] ;</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>(windspeed, angle, weight) <span class="op">-&gt;</span> Trebuchets.<span class="fu">shoot</span>(windspeed, angle, weight)[<span class="fl">2</span>]</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="co">#1 (generic function with 1 method)</span></span></code></pre>
 </div>
 <p>or in long form, by omitting the name:</p>
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> (windspeed, angle, weight)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>      Trebuchets.<span class="fu">shoot</span>(windspeed, angle, weight)[<span class="fl">2</span>]</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span> ;</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> (windspeed, angle, weight)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>      Trebuchets.<span class="fu">shoot</span>(windspeed, angle, weight)[<span class="fl">2</span>]</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="co">#3 (generic function with 1 method)</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="calling-methods">Calling methods<a class="anchor" aria-label="anchor" href="#calling-methods"></a>
+</h3>
+<p>Now, that she defined all these methods she tests calling a few</p>
+<div class="codewrapper sourceCode" id="cb28">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shoot_distance</span>(<span class="fl">5</span>, <span class="fl">0.25</span>pi, <span class="fl">500</span>)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="fl">114.88494815382731</span></span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb30">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shoot_distance</span>([<span class="fl">5</span>, <span class="fl">0.25</span>pi, <span class="fl">500</span>])</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="fl">114.88494815382731</span></span></code></pre>
+</div>
+<p>For the other method she needs to construct <code>Trebuchet</code>
+and <code>Environment</code> objects first</p>
+<div class="codewrapper sourceCode" id="cb32">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> <span class="fu">Environment</span>(<span class="fl">5</span>, <span class="fl">100</span>)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="fu">Environment</span><span class="op">(</span><span class="fl">5.0</span>, <span class="fl">100.0</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb34">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>trebuchet <span class="op">=</span> <span class="fu">Trebuchet</span>(<span class="fl">500</span>, <span class="fl">0.25</span>pi)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>MethodError: no method matching size(::Trebuchet)
+
+Closest candidates are:
+  size(::AbstractArray{T, N}, !Matched::Any) where {T, N}
+   @ Base abstractarray.jl:42
+  size(!Matched::Union{LinearAlgebra.QR, LinearAlgebra.QRCompactWY, LinearAlgebra.QRPivoted})
+   @ LinearAlgebra /opt/hostedtoolcache/julia/1.9.3/x64/share/julia/stdlib/v1.9/LinearAlgebra/src/qr.jl:582
+  size(!Matched::Union{LinearAlgebra.QR, LinearAlgebra.QRCompactWY, LinearAlgebra.QRPivoted}, !Matched::Integer)
+   @ LinearAlgebra /opt/hostedtoolcache/julia/1.9.3/x64/share/julia/stdlib/v1.9/LinearAlgebra/src/qr.jl:581
+  ...
+</code></pre>
 </div>
 </div>
 <div class="section level3">
 <h3 id="errors-and-macros">Errors and macros<a class="anchor" aria-label="anchor" href="#errors-and-macros"></a>
 </h3>
-<p>Melissa would like to set the fields of a <code>Trebuchet</code>
-using an index. She writes</p>
-<div class="codewrapper sourceCode" id="cb23">
-<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>Trebuchets[<span class="fl">1</span>] <span class="op">=</span> <span class="fl">2</span></span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="error" tabindex="0"><code>ERROR: MethodError: no method matching setindex!(::Trebuchet, ::Int64, ::Int64)
-Stacktrace:
- [1] top-level scope
-   @ REPL[4]:1</code></pre>
-</div>
-<p>The error tells her two things:</p>
+<p>This error tells her two things:</p>
 <ol style="list-style-type: decimal">
-<li>a function named <code>setindex!</code> was called</li>
+<li>a function named <code>size</code> was called</li>
 <li>it didn’t have a method for <code>Trebuchet</code>
 </li>
 </ol>
-<p>Melissa wants to add the missing method to <code>setindex!</code> but
-she doesn’t know where it is defined. There is a handy <em>macro</em>
-named <code>@which</code> that obtains the module where the function is
+<p>Melissa wants to add the missing method to <code>size</code> but she
+doesn’t know where it is defined. There is a handy <em>macro</em> named
+<code>@which</code> that obtains the module where the function is
 defined.</p>
 <div id="macros" class="callout callout">
 <div class="callout-square">
@@ -1727,19 +1854,248 @@ prepending <code>@macroexpand</code> to the macro call of interest.</p>
 </div>
 </div>
 </div>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@which</span> setindex!</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@which</span> size</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="va">Base</span></span></code></pre>
 </div>
-<p>Now Melissa knows she needs to add a method to
-<code>Base.setindex!</code> with the signature
-<code>(::Trebuchet, ::Int64, ::Int64)</code>.</p>
+<p>Now Melissa knows she needs to add a method to <code>Base.size</code>
+with the signature <code>(::Trebuchet)</code>. She can also lookup the
+docstring using the <code>@doc</code> macro</p>
+<div class="codewrapper sourceCode" id="cb38">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@doc</span> size</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>  size(A::AbstractArray, [dim])
+
+  Return a tuple containing the dimensions of A. Optionally you can specify a
+  dimension to just get the length of that dimension.
+
+  Note that size may not be defined for arrays with non-standard indices, in
+  which case axes may be useful. See the manual chapter on arrays with custom
+  indices.
+
+  See also: length, ndims, eachindex, sizeof.
+
+  Examples
+  ≡≡≡≡≡≡≡≡≡≡
+
+  julia&gt; A = fill(1, (2,3,4));
+  
+  julia&gt; size(A)
+  (2, 3, 4)
+  
+  julia&gt; size(A, 2)
+  3
+
+  size(cb::CircularBuffer)
+
+  Return a tuple with the size of the buffer.
+
+  size(g, i)
+
+  Return the number of vertices in g if i=1 or i=2, or 1 otherwise.
+
+  Examples
+  ≡≡≡≡≡≡≡≡≡≡
+
+  julia&gt; using Graphs
+  
+  julia&gt; g = cycle_graph(4);
+  
+  julia&gt; size(g, 1)
+  4
+  
+  julia&gt; size(g, 2)
+  4
+  
+  julia&gt; size(g, 3)
+  1</code></pre>
+</div>
+<p>With that information she can now implement this method:</p>
+<div class="codewrapper sourceCode" id="cb40">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Base</span>.<span class="fu">size</span>(<span class="op">::</span><span class="dt">Trebuchet</span>) <span class="op">=</span> <span class="fu">tuple</span>(<span class="fl">2</span>)</span></code></pre>
+</div>
+<p>Now she can try again</p>
+<div class="codewrapper sourceCode" id="cb41">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>trebuchet <span class="op">=</span> <span class="fu">Trebuchet</span>(<span class="fl">500</span>, <span class="fl">0.25</span>pi)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>CanonicalIndexError: getindex not defined for Trebuchet</code></pre>
+</div>
+<p>Again, there is an error but this time the error message is
+different: It’s no longer a method for <code>size</code> that is missing
+but for <code>getindex</code>. She looks up the documentation for that
+function</p>
+<div class="codewrapper sourceCode" id="cb43">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@doc</span> getindex</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>  getindex(type[, elements...])
+
+  Construct a 1-d array of the specified type. This is usually called with the
+  syntax Type[]. Element values can be specified using Type[a,b,c,...].
+
+  Examples
+  ≡≡≡≡≡≡≡≡≡≡
+
+  julia&gt; Int8[1, 2, 3]
+  3-element Vector{Int8}:
+   1
+   2
+   3
+  
+  julia&gt; getindex(Int8, 1, 2, 3)
+  3-element Vector{Int8}:
+   1
+   2
+   3
+
+  getindex(collection, key...)
+
+  Retrieve the value(s) stored at the given key or index within a collection.
+  The syntax a[i,j,...] is converted by the compiler to getindex(a, i, j,
+  ...).
+
+  See also get, keys, eachindex.
+
+  Examples
+  ≡≡≡≡≡≡≡≡≡≡
+
+  julia&gt; A = Dict("a" =&gt; 1, "b" =&gt; 2)
+  Dict{String, Int64} with 2 entries:
+    "b" =&gt; 2
+    "a" =&gt; 1
+  
+  julia&gt; getindex(A, "a")
+  1
+
+  getindex(A, inds...)
+
+  Return a subset of array A as specified by inds, where each ind may be, for
+  example, an Int, an AbstractRange, or a Vector. See the manual section on
+  array indexing for details.
+
+  Examples
+  ≡≡≡≡≡≡≡≡≡≡
+
+  julia&gt; A = [1 2; 3 4]
+  2×2 Matrix{Int64}:
+   1  2
+   3  4
+  
+  julia&gt; getindex(A, 1)
+  1
+  
+  julia&gt; getindex(A, [2, 1])
+  2-element Vector{Int64}:
+   3
+   1
+  
+  julia&gt; getindex(A, 2:4)
+  3-element Vector{Int64}:
+   3
+   2
+   4
+
+  getindex(tree::GitTree, target::AbstractString) -&gt; GitObject
+
+  Look up target path in the tree, returning a GitObject (a GitBlob in the
+  case of a file, or another GitTree if looking up a directory).
+
+  Examples
+  ≡≡≡≡≡≡≡≡≡≡
+
+  tree = LibGit2.GitTree(repo, "HEAD^{tree}")
+  readme = tree["README.md"]
+  subtree = tree["test"]
+  runtests = subtree["runtests.jl"]
+
+  observable[]
+
+  Returns the current value of observable.
+
+  getindex(A::ArrayPartition, i::Int, j...)
+
+  Returns the entry at index j... of the ith partition of A.
+
+  getindex(A::ArrayPartition, i::Colon, j...)
+
+  Returns the entry at index j... of every partition of A.
+
+  getindex(A::ArrayPartition, ::Colon)
+
+  Returns a vector with all elements of array partition A.
+
+  v = sd[k]
+
+  Argument sd is a SortedDict and k is a key. In an expression, this retrieves
+  the value (v) associated with the key (or KeyError if none). On the
+  left-hand side of an assignment, this assigns or reassigns the value
+  associated with the key. (For assigning and reassigning, see also insert!
+  below.) Time: O(c log n)
+
+  cb[i]
+
+  Get the i-th element of CircularBuffer.
+
+    •  cb[1] to get the element at the front
+
+    •  cb[end] to get the element at the back
+
+  getindex(tree, ind)
+
+  Gets the key present at index ind of the tree. Indexing is done in
+  increasing order of key.
+
+  g[iter]
+
+  Return the subgraph induced by iter. Equivalent to induced_subgraph(g,
+  iter)[1].</code></pre>
+</div>
+<p>Note that the documentation for all methods gets shown and Melissa
+needs to look for the relevant method first. In this case its the
+paragraph starting with</p>
+<pre><code><span><span class="fu">getindex</span><span class="op">(</span><span class="va">A</span>, <span class="va">inds...</span><span class="op">)</span></span></code></pre>
+<p>After a bit of pondering the figures it should be enough to add a
+method for <code>getindex</code> with a single number.</p>
+<pre><code><span><span class="fu">getindex</span><span class="op">(</span><span class="fu">trebuchet</span><span class="fu">::</span><span class="va">Trebuchet</span>, <span class="fu">i</span><span class="fu">::</span><span class="va">Int</span><span class="op">)</span></span></code></pre>
+<div id="syntactic-sugar" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="syntactic-sugar" class="callout-inner">
+<h3 class="callout-title">Syntactic sugar<a class="anchor" aria-label="anchor" href="#syntactic-sugar"></a>
+</h3>
+<div class="callout-content">
+<p>In Julia <code>a[1]</code> is equivalent to
+<code>getindex(a, 1)</code> and <code>a[2] = 3</code> to
+<code>setindex!(a, 3, 2)</code> Likewise <code>a.b</code> is equivalent
+to <code>getproperty(a, :b)</code> and <code>a.b = 4</code> to
+<code>setproperty!(a, :b, 4)</code>.</p>
+</div>
+</div>
+</div>
 <div id="keypoints" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1750,6 +2106,9 @@ prepending <code>@macroexpand</code> to the macro call of interest.</p>
 <div class="callout-content">
 <ul>
 <li>“You can think of functions being a collection of methods”</li>
+<li>“Methods are defined by their signature”</li>
+<li>“The signature is defined by the number of arguments, their order
+and their type”</li>
 <li>“Keep the number of positional arguments low”</li>
 <li>“Macros transform Julia expressions”</li>
 </ul>
@@ -1939,7 +2298,7 @@ optional methods.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2064,7 +2423,7 @@ change the parameters to make the largest difference.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The correct solution is 4: <kbd>]</kbd> to enter pkg mode, then</p>
 <div class="codewrapper sourceCode" id="cb15">
@@ -2132,7 +2491,7 @@ gradient, such that it still improves the distance?</p>
   Try a bunch of values!
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2218,7 +2577,7 @@ to automate the additional iterations. She writes a new function
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>This is a highly non-linear system and thus very sensitive. The
 distances across different values for the counterweight and the release
@@ -2294,7 +2653,719 @@ an unknown number of iterations.”</li>
 </div>
 </div>
 </div>
-</section></section><section id="aio-07_Using_Modules"><p>Content from <a href="07_Using_Modules.html">Using Modules</a></p>
+</section></section><section id="aio-06_Interfacing_conditions"><p>Content from <a href="06_Interfacing_conditions.html">Interfaces &amp; conditionals</a></p>
+<hr>
+<p> Last updated on 2023-09-15 | 
+        
+        <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/06_Interfacing_conditions.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 60 minutes </p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>“How to use conditionals?”</li>
+<li>“What is an interface?”</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="conditionals"><h2 class="section-heading">Conditionals<a class="anchor" aria-label="anchor" href="#conditionals"></a>
+</h2>
+<hr class="half-width">
+<p>Before starting to work in a new document, Melissa has to:</p>
+<p>Activate her environment</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="fu">joinpath</span>(<span class="pp">@__DIR__</span>, <span class="st">"projects"</span>, <span class="st">"trebuchet"</span>))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code></pre>
+</div>
+<pre><code>  Activating project at `~/projects/trebuchet`
+</code></pre>
+<p>Importing the package under its modified name</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Trebuchet </span>as Trebuchets</span></code></pre>
+</div>
+<p>Defining the structures</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">mutable struct</span> Trebuchet <span class="op">&lt;:</span><span class="dt"> AbstractVector{Float64}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  counterweight<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  release_angle<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Environment</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  wind<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  target_distance<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="bu">Base</span>.<span class="fu">size</span>(<span class="op">::</span><span class="dt">Trebuchet</span>) <span class="op">=</span> <span class="fu">tuple</span>(<span class="fl">2</span>)</span></code></pre>
+</div>
+<p>Now that Melissa knows that she has to add a method for</p>
+<pre><code><span><span class="fu">getindex</span><span class="op">(</span><span class="fu">trebuchet</span><span class="fu">::</span><span class="va">Trebuchet</span>, <span class="fu">i</span><span class="fu">::</span><span class="va">Int</span><span class="op">)</span></span></code></pre>
+<p>she thinks about the implementation.</p>
+<p>If the index is <code>1</code> she wants to get the
+<code>counterweight</code> field and if the index is <code>2</code> she
+wants to get <code>release_angle</code> and since these are the only two
+fields she wants to return an error if anything else comes in. In Julia
+the keywords to specify conditions are <code>if</code>,
+<code>elseif</code> and <code>else</code>, closed with an
+<code>end</code>. Thus she writes</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="bu">Base</span>.<span class="fu">getindex</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, i<span class="op">::</span><span class="dt">Int</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">===</span> <span class="fl">1</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> trebuchet.counterweight</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elseif</span> i <span class="op">===</span> <span class="fl">2</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> trebuchet.release_angle</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">error</span>(<span class="st">"Trebuchet only accepts indices 1 and 2, yours is </span><span class="sc">$</span>i<span class="st">"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre>
+</div>
+<p>And tries again:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>trebuchet <span class="op">=</span> <span class="fu">Trebuchet</span>(<span class="fl">500</span>, <span class="fl">0.25</span>pi)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>2-element Trebuchet:
+ 500.0
+   0.7853981633974483</code></pre>
+</div>
+<p>Notice, that the printing is different from our
+<code>trebuchet</code> in <a href="03_Julia_type_system.html">the former
+episode</a>.</p>
+<div class="section level3">
+<h3 id="interfaces">Interfaces<a class="anchor" aria-label="anchor" href="#interfaces"></a>
+</h3>
+<p>Why is that? By subtyping <code>Trebuchet</code> as
+<code>AbstractVector</code> we implicitly opted into a widespread
+<em>interface</em> in the Julia language: <code>AbstractArray</code>s.
+An interface is a collection of methods that should be implemented by
+all subtypes of the interface type in order for generic code to work.
+For example, the <a href="https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-array" class="external-link">Julia
+manual</a> lists all methods that a subtype of
+<code>AbstractArray</code> need to implement to adhere to the
+<code>AbstractArray</code> interface:</p>
+<ul>
+<li>
+<code>size(A)</code> returns a tuple containing the dimensions of
+<code>A</code>
+</li>
+<li>
+<code>getindex(A, i::Int)</code> returns the value associated with
+index <code>i</code>
+</li>
+<li>
+<code>setindex!(A, v, i::Int)</code> writes a new value
+<code>v</code> at the index <code>i</code> (optional)</li>
+</ul>
+<p>Now, that Melissa implemented the mandatory methods for this
+interface for the <code>Trebuchet</code> type, it will work with every
+function in <code>Base</code> that accepts an
+<code>AbstractArray</code>. She tries a few things that now work without
+her writing explicit code for it:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>trebuchet <span class="op">+</span> trebuchet</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>2-element Vector{Float64}:
+ 1000.0
+    1.5707963267948966</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LinearAlgebra</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dot</span>(trebuchet, trebuchet)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="fl">250000.61685027508</span></span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>trebuchet <span class="op">*</span> <span class="fu">transpose</span>(trebuchet)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>2×2 Matrix{Float64}:
+ 250000.0    392.699
+    392.699    0.61685</code></pre>
+</div>
+<p>That is, it now behaves like you would expect from an ordinary
+matrix.</p>
+<p>Now she goes about implementing the missing optional method for
+<code>setindex!</code> of the <code>AbstractArray</code> interface.</p>
+<div id="implement-setindex" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="implement-setindex" class="callout-inner">
+<h3 class="callout-title">Implement <code>setindex!</code><a class="anchor" aria-label="anchor" href="#implement-setindex"></a>
+</h3>
+<div class="callout-content">
+<p>Write the missing method for
+<code>setindex(trebuchet::Trebuchet, v, i::Int)</code> similar to
+Melissas <code>getindex</code> function.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Show me the solution
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="bu">Base</span>.<span class="fu">setindex!</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, v, i<span class="op">::</span><span class="dt">Int</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> i <span class="op">===</span> <span class="fl">1</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>         trebuchet.counterweight <span class="op">=</span> v</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elseif</span> i <span class="op">===</span> <span class="fl">2</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        trebuchet.release_angle <span class="op">=</span> v</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">error</span>(<span class="st">"Trebuchet only accepts indices 1 and 2, yours is </span><span class="sc">$</span>i<span class="st">"</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>With the new <code>Trebuchet</code> defined with a complete
+<code>AbstractArray</code> interface, Melissa tries her new method to
+modify a counterweight by index:</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>trebuchet[<span class="fl">1</span>] <span class="op">=</span> <span class="fl">2</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="fl">2</span></span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>trebuchet</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>2-element Trebuchet:
+ 2.0
+ 0.7853981633974483</code></pre>
+</div>
+<div id="keypoints" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div id="keypoints" class="callout-inner">
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>“Interfaces are informal”</li>
+<li>“Interfaces facilitate code reuse”</li>
+<li>“Conditions use <code>if</code>, <code>elseif</code>,
+<code>else</code> and <code>end</code>”</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section></section><section id="aio-07_Loops"><p>Content from <a href="07_Loops.html">Loops</a></p>
+<hr>
+<p> Last updated on 2023-09-15 | 
+        
+        <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/07_Loops.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 60 minutes </p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>“What are for and while loops?”</li>
+<li>“What is a comprehension?”</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Before starting to work in a new document, Melissa has to:</p>
+<p>Activate her environment</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="fu">joinpath</span>(<span class="pp">@__DIR__</span>, <span class="st">"projects"</span>, <span class="st">"trebuchet"</span>))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code></pre>
+</div>
+<pre><code>  Activating project at `~/projects/trebuchet`
+</code></pre>
+<p>Importing the package under its modified name</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Trebuchet </span>as Trebuchets</span></code></pre>
+</div>
+<p>Defining the structures</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">mutable struct</span> Trebuchet <span class="op">&lt;:</span><span class="dt"> AbstractVector{Float64}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  counterweight<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  release_angle<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Environment</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  wind<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  target_distance<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="bu">Base</span>.<span class="fu">size</span>(<span class="op">::</span><span class="dt">Trebuchet</span>) <span class="op">=</span> <span class="fu">tuple</span>(<span class="fl">2</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="bu">Base</span>.<span class="fu">getindex</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, i<span class="op">::</span><span class="dt">Int</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">===</span> <span class="fl">1</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> trebuchet.counterweight</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elseif</span> i <span class="op">===</span> <span class="fl">2</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> trebuchet.release_angle</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="fu">error</span>(<span class="st">"Trebuchet only accepts indices 1 and 2, yours is </span><span class="sc">$</span>i<span class="st">"</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="bu">Base</span>.<span class="fu">setindex!</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, v, i<span class="op">::</span><span class="dt">Int</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> i <span class="op">===</span> <span class="fl">1</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>         trebuchet.counterweight <span class="op">=</span> v</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elseif</span> i <span class="op">===</span> <span class="fl">2</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>        trebuchet.release_angle <span class="op">=</span> v</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>        <span class="fu">error</span>(<span class="st">"Trebuchet only accepts indices 1 and 2, yours is </span><span class="sc">$</span>i<span class="st">"</span>)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, env<span class="op">::</span><span class="dt">Environment</span>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>     <span class="fu">shoot_distance</span>(env.wind, trebuchet.release_angle, trebuchet.counterweight)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(args<span class="op">...</span>) <span class="co"># slurping</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>     Trebuchets.<span class="fu">shoot</span>(args<span class="op">...</span>)[<span class="fl">2</span>] <span class="co"># splatting</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>shoot_distance (generic function with 2 methods)</code></pre>
+</div>
+<p>Now Melissa knows how to shoot the virtual trebuchet and get the
+distance of the projectile, but in order to aim she needs to take a lot
+of trial shots in a row. She wants her trebuchet to only shoot a hundred
+meters.</p>
+<p>She could execute the function several times on the REPL with
+different parameters, but that gets tiresome quickly. A better way to do
+this is to use loops.</p>
+<div class="section level3">
+<h3 id="random-search">Random search<a class="anchor" aria-label="anchor" href="#random-search"></a>
+</h3>
+<p>The first thing that comes to her mind is to randomly sample points
+of the parameter space of the trebuchet. The function
+<code>rand()</code> will give her a random number between 0 and 1 that
+is uniformly distributed. So</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Trebuchet</span>( <span class="fu">rand</span>() <span class="op">*</span> <span class="fl">500</span>, <span class="fu">rand</span>() <span class="op">*</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span> )</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>2-element Trebuchet:
+ 325.16857513243514
+   1.4214156882736535</code></pre>
+</div>
+<p>will give her a Trebuchet with a weight between 0 and 500 and a
+release angle between 0 and pi/2 radians at random.</p>
+<p>Now she can store the results of 3 random trebuchets in an array like
+this</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> <span class="fu">Environment</span>(<span class="fl">5</span>, <span class="fl">100</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>distances <span class="op">=</span> [<span class="fu">shoot_distance</span>(<span class="fu">Trebuchet</span>(<span class="fu">rand</span>() <span class="op">*</span> <span class="fl">500</span>, <span class="fu">rand</span>() <span class="op">*</span> <span class="cn">pi</span> <span class="op">/</span> <span class="fl">2</span>), env) for _ <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>]</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>3-element Vector{Float64}:
+  95.34228401250319
+ 116.82589218537548
+   0.6815707596179541</code></pre>
+</div>
+<p>This is called an <em>array comprehension</em>. To get the
+information of the parameters and the results in one place she writes
+that again a bit differently</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="fl">10</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>weights <span class="op">=</span> [<span class="fu">rand</span>() <span class="op">*</span> <span class="fl">500</span> for _ <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>N]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>angles <span class="op">=</span> [<span class="fu">rand</span>() <span class="op">*</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span> for _ <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>N]</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>distances <span class="op">=</span> [(w,a) <span class="op">=&gt;</span> <span class="fu">shoot_distance</span>(<span class="fu">Trebuchet</span>(w, a), env) for (w, a) <span class="kw">in</span> <span class="fu">zip</span>(weights, angles)]</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>10-element Vector{Pair{Tuple{Float64, Float64}, Float64}}:
+   (39.64972003383499, 1.4356297441010255) =&gt; 11.866149878931637
+  (164.42881179322788, 1.4640276154421406) =&gt; 22.174678100790018
+   (367.9434185012257, 1.4375026271475015) =&gt; 29.142976299251053
+  (137.99390039219506, 0.9643884432619938) =&gt; 84.81262654249787
+   (222.0515164410986, 0.4063767373305969) =&gt; 104.28193737621544
+   (436.7263816265339, 1.2139595368028047) =&gt; 68.51245438747303
+   (180.62981502392094, 0.966166690591184) =&gt; 90.05903638111702
+ (7.5342147342188355, 0.13669385275895293) =&gt; 0.6815707596179541
+   (317.4431655220148, 1.2250401309666004) =&gt; 64.69560256895292
+  (396.6491533236719, 0.12154258149162844) =&gt; 82.50509163157764</code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="gradient-descent">Gradient descent<a class="anchor" aria-label="anchor" href="#gradient-descent"></a>
+</h3>
+<p>That is working out so far, but Melissa wonders if she can improve
+her parameters more systematically.</p>
+<div id="digression-gradients" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="digression-gradients" class="callout-inner">
+<h3 class="callout-title">Digression: Gradients<a class="anchor" aria-label="anchor" href="#digression-gradients"></a>
+</h3>
+<div class="callout-content">
+<p>The <code>shoot_distance</code> function takes three input parameters
+and returns one value (the distance). Whenever we change one of the
+input parameters, we will get a different distance.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Gradient" class="external-link"><em>gradient</em></a> of a
+function gives the direction in which the return value will change when
+each input value changes.</p>
+<p>Since the <code>shoot_distance</code> function has three input
+parameters, the gradient of <code>shoot_distance</code> will return a
+3-element <code>Array</code>: one direction for each input
+parameter.</p>
+<p>Thanks to <a href="https://en.wikipedia.org/wiki/Automatic_differentiation" class="external-link">automatic
+differentiation</a> and the Julia package <code>ForwardDiff.jl</code>
+gradients can be calculated easily.</p>
+</div>
+</div>
+</div>
+<p>Melissa uses the <code>gradient</code> function of
+<code>ForwardDiff.jl</code> to get the direction in which she needs to
+change the parameters to make the largest difference.</p>
+<div id="do-you-remember" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="do-you-remember" class="callout-inner">
+<h3 class="callout-title">Do you remember?<a class="anchor" aria-label="anchor" href="#do-you-remember"></a>
+</h3>
+<div class="callout-content">
+<p>What does Melissa need to write into the REPL to install the package
+<code>ForwardDiff</code>?</p>
+<ol style="list-style-type: decimal">
+<li><code>] install ForwardDiff</code></li>
+<li><code>add ForwardDiff</code></li>
+<li><code>] add ForwardDiff.jl</code></li>
+<li>
+<code>] add ForwardDiff</code> <!---correct-->
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Show me the solution
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>The correct solution is 4: <kbd>]</kbd> to enter pkg mode, then</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pkg<span class="op">&gt;</span> add ForwardDiff</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">ForwardDiff</span>: gradient</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>imprecise_trebuchet <span class="op">=</span> <span class="fu">Trebuchet</span>(<span class="fl">500.0</span>, <span class="fl">0.25</span>pi);</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>environment <span class="op">=</span> <span class="fu">Environment</span>(<span class="fl">5.0</span>, <span class="fl">100.0</span>);</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>grad <span class="op">=</span> <span class="fu">gradient</span>(x <span class="fu">-&gt;</span>(<span class="fu">shoot_distance</span>([environment.wind, x[<span class="fl">2</span>], x[<span class="fl">1</span>]])</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>                      <span class="op">-</span> environment.target_distance),</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>                imprecise_trebuchet)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>2-element Vector{Float64}:
+  -0.12516519503998055
+ -49.443442438172205</code></pre>
+</div>
+<p>Melissa now changes her arguments a little bit in the direction of
+the gradient and checks the new distance.</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>better_trebuchet <span class="op">=</span> imprecise_trebuchet <span class="op">-</span> <span class="fl">0.05</span> <span class="op">*</span> grad;</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">shoot_distance</span>([<span class="fl">5</span>, better_trebuchet[<span class="fl">2</span>], better_trebuchet[<span class="fl">1</span>]])</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="op">-</span><span class="fl">2.785549535224487</span></span></code></pre>
+</div>
+<p>Great! That didn’t shoot past the target, but instead it landed a bit
+too short.</p>
+<div id="experiment" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="experiment" class="callout-inner">
+<h3 class="callout-title">Experiment<a class="anchor" aria-label="anchor" href="#experiment"></a>
+</h3>
+<div class="callout-content">
+<p>How far can you change the parameters in the direction of the
+gradient, such that it still improves the distance?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
+  Try a bunch of values!
+  </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>better_trebuchet <span class="op">=</span> imprecise_trebuchet <span class="op">-</span> <span class="fl">0.04</span> <span class="op">*</span> grad</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shoot_distance</span>([environment.wind, better_trebuchet[<span class="fl">2</span>], better_trebuchet[<span class="fl">1</span>]])</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fl">120.48753521261001</span></span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>better_trebuchet <span class="op">=</span> imprecise_trebuchet <span class="op">-</span> <span class="fl">0.03</span> <span class="op">*</span> grad</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shoot_distance</span>([environment.wind, better_trebuchet[<span class="fl">2</span>], better_trebuchet[<span class="fl">1</span>]])</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fl">107.80646596787481</span></span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>better_trebuchet <span class="op">=</span> imprecise_trebuchet <span class="op">-</span> <span class="fl">0.02</span> <span class="op">*</span> grad</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shoot_distance</span>([environment.wind, better_trebuchet[<span class="fl">2</span>], better_trebuchet[<span class="fl">1</span>]])</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fl">33.90699307740854</span></span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb20">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>better_trebuchet <span class="op">=</span> imprecise_trebuchet <span class="op">-</span> <span class="fl">0.025</span> <span class="op">*</span> grad</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shoot_distance</span>([environment.wind, better_trebuchet[<span class="fl">2</span>], better_trebuchet[<span class="fl">1</span>]])</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fl">75.87613276409223</span></span></code></pre>
+</div>
+<p>Looks like the “best” trebuchet for a target 100 m away will be
+between 2.5% and 3% down the gradient from the imprecise trebuchet.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="for-loops">For loops<a class="anchor" aria-label="anchor" href="#for-loops"></a>
+</h3>
+<p>Now that Melissa knows it is going in the right direction she wants
+to automate the additional iterations. She writes a new function
+<code>aim</code>, that performs the application of the gradient
+<code>N</code> times.</p>
+<div class="codewrapper sourceCode" id="cb21">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">aim</span>(trebuchet, environment; N <span class="op">=</span> <span class="fl">5</span>, η <span class="op">=</span> <span class="fl">0.05</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>           better_trebuchet <span class="op">=</span> <span class="fu">copy</span>(trebuchet)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>           <span class="cf">for</span> _ <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>N</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>               grad <span class="op">=</span> <span class="fu">gradient</span>(x <span class="op">-&gt;</span> (<span class="fu">shoot_distance</span>([environment.wind, x[<span class="fl">2</span>], x[<span class="fl">1</span>]])</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                                     <span class="op">-</span> environment.target_distance),</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>                               better_trebuchet)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>               better_trebuchet <span class="op">-=</span> η <span class="op">*</span> grad</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>           <span class="cf">end</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>           <span class="cf">return</span> <span class="fu">Trebuchet</span>(better_trebuchet[<span class="fl">1</span>], better_trebuchet[<span class="fl">2</span>])</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>       <span class="kw">end</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>better_trebuchet  <span class="op">=</span> <span class="fu">aim</span>(imprecise_trebuchet, environment);</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="fu">shoot_distance</span>(environment.wind, better_trebuchet[<span class="fl">2</span>], better_trebuchet[<span class="fl">1</span>])</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="op">-</span><span class="fl">2.2195176928658915</span></span></code></pre>
+</div>
+<div id="explore" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="explore" class="callout-inner">
+<h3 class="callout-title">Explore<a class="anchor" aria-label="anchor" href="#explore"></a>
+</h3>
+<div class="callout-content">
+<p>Play around with different inputs of <code>N</code> and
+<code>η</code>. How close can you come?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">
+  Show me the solution
+  </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<p>This is a highly non-linear system and thus very sensitive. The
+distances across different values for the counterweight and the release
+angle α look like this: <img src="../fig/shoot_surface.png" alt="" width="600" height="400" class="figure"></p>
+</div>
+</div>
+</div>
+</div>
+<div id="aborting-programs" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="aborting-programs" class="callout-inner">
+<h3 class="callout-title">Aborting programs<a class="anchor" aria-label="anchor" href="#aborting-programs"></a>
+</h3>
+<div class="callout-content">
+<p>If a call takes too long, you can abort it with
+<code>Ctrl-c</code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="while-loops">While loops<a class="anchor" aria-label="anchor" href="#while-loops"></a>
+</h3>
+<p>Melissa finds the output of the above <code>aim</code> function too
+unpredictable to be useful. That’s why she decides to change it a bit.
+This time she uses a <code>while</code>-loop to run the iterations until
+she is sufficiently near her target.</p>
+<p>(<em>Hint:</em> <strong>ε</strong> is
+<code>\epsilon</code><kbd>tab</kbd>, and <strong>η</strong> is
+<code>\eta</code><kbd>tab</kbd>.)</p>
+<div class="codewrapper sourceCode" id="cb23">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">aim</span>(trebuchet, environment; ε <span class="op">=</span> <span class="fl">0.1</span>, η <span class="op">=</span> <span class="fl">0.05</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    better_trebuchet <span class="op">=</span> <span class="fu">copy</span>(trebuchet)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    hit <span class="op">=</span> x <span class="op">-&gt;</span> (<span class="fu">shoot_distance</span>([environment.wind, x[<span class="fl">2</span>], x[<span class="fl">1</span>]])</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>                          <span class="op">-</span> environment.target_distance)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">while</span> <span class="fu">abs</span>(<span class="fu">hit</span>(better_trebuchet)) <span class="op">&gt;</span> ε</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>                grad <span class="op">=</span> <span class="fu">gradient</span>(hit, better_trebuchet)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>                better_trebuchet <span class="op">-=</span> η <span class="op">*</span> grad</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="fu">Trebuchet</span>(better_trebuchet[<span class="fl">1</span>], better_trebuchet[<span class="fl">2</span>])</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">end</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>better_trebuchet <span class="op">=</span> <span class="fu">aim</span>(imprecise_trebuchet, environment);</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="fu">shoot_distance</span>(better_trebuchet, environment)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="fl">100.05601729579894</span></span></code></pre>
+</div>
+<p>That is more what she had in mind. Your trebuchet may be tuned
+differently, but it should hit just as close as hers.</p>
+<div id="keypoints" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div id="keypoints" class="callout-inner">
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>“Use for loops for a known number of iterations and while loops for
+an unknown number of iterations.”</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section><section id="aio-07_Using_Modules"><p>Content from <a href="07_Using_Modules.html">Using Modules</a></p>
 <hr>
 <p> Last updated on 2023-08-09 | 
         
@@ -2691,6 +3762,257 @@ create a new package using <code>generate</code>.</p>
 </div>
 </div>
 </div>
+</section></section><section id="aio-08_Using_Modules"><p>Content from <a href="08_Using_Modules.html">Using Modules</a></p>
+<hr>
+<p> Last updated on 2023-09-15 | 
+        
+        <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/08_Using_Modules.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 15 minutes </p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>“What’s the purpose of modules?”</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>“Structure your code using modules”</li>
+<li>“Use Revise.jl to track changes”</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="modules"><h2 class="section-heading">Modules<a class="anchor" aria-label="anchor" href="#modules"></a>
+</h2>
+<hr class="half-width">
+<p>Melissa now has a bunch of definitions in her running Julia session
+and using the REPL for interactive exploration is great, but it is more
+and more taxing to keep in mind what is defined, and all the definitions
+are lost once she closes the REPL.</p>
+<p>That is why she decides to put her code in a file. She opens up her
+text editor and creates a file called <code>aim_trebuchet.jl</code> in
+the current working directory and pastes the code she got so far in
+there. This is what it looks like:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"projects/trebuchet"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Trebuchet </span>as Trebuchets</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">ForwardDiff</span>: gradient</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">mutable struct</span> Trebuchet <span class="op">&lt;:</span><span class="dt"> AbstractVector{Float64}</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  counterweight<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  release_angle<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">Base</span>.<span class="fu">size</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>) <span class="op">=</span> <span class="fu">tuple</span>(<span class="fl">2</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">Base</span>.<span class="fu">getindex</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, i<span class="op">::</span><span class="dt">Int</span>) <span class="op">=</span> <span class="fu">getfield</span>(trebuchet, i)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="bu">Base</span>.<span class="fu">setindex!</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, v, i<span class="op">::</span><span class="dt">Int</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">===</span> <span class="fl">1</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        trebuchet.counterweight <span class="op">=</span> v</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elseif</span> i <span class="op">===</span> <span class="fl">2</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        trebuchet.release_angle <span class="op">=</span> v</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="fu">error</span>(<span class="st">"Trebuchet only accepts indices 1 and 2, yours is </span><span class="sc">$</span>i<span class="st">"</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Environment</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  wind<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  target_distance<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(args<span class="op">...</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    Trebuchets.<span class="fu">shoot</span>(args<span class="op">...</span>)[<span class="fl">2</span>]</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, env<span class="op">::</span><span class="dt">Environment</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">shoot_distance</span>(env.wind, trebuchet.release_angle, trebuchet.counterweight)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">aim</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, environment<span class="op">::</span><span class="dt">Environment</span>; ε <span class="op">=</span> <span class="fl">1e-1</span>, η <span class="op">=</span> <span class="fl">0.05</span>)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    better_trebuchet <span class="op">=</span> <span class="fu">copy</span>(trebuchet)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    hit <span class="op">=</span> x <span class="op">-&gt;</span> (<span class="fu">shoot_distance</span>([environment.wind, x[<span class="fl">2</span>], x[<span class="fl">1</span>]]) <span class="op">-</span> environment.target_distance)</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="fu">abs</span>(<span class="fu">hit</span>(better_trebuchet)) <span class="op">&gt;</span> ε</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>        grad <span class="op">=</span> <span class="fu">gradient</span>(hit, better_trebuchet)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>        better_trebuchet <span class="op">-=</span> η <span class="op">*</span> grad</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">Trebuchet</span>(better_trebuchet[<span class="fl">1</span>], better_trebuchet[<span class="fl">2</span>])</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>imprecise_trebuchet <span class="op">=</span> <span class="fu">Trebuchet</span>(<span class="fl">500.0</span>, <span class="fl">0.25</span>pi)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>environment <span class="op">=</span> <span class="fu">Environment</span>(<span class="fl">5</span>, <span class="fl">100</span>)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>precise_trebuchet <span class="op">=</span> <span class="fu">aim</span>(imprecise_trebuchet, environment)</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">shoot_distance</span>(precise_trebuchet, environment)</span></code></pre>
+</div>
+<p>Now Melissa can run <code>include("aim_trebuchet.jl")</code> in the
+REPL to execute her code.</p>
+<p>She also recognizes that she has a bunch of definitions at the
+beginning that she doesn’t need to execute more than once in a session
+and some lines at the end that use these definitions which she might run
+more often. She will split these in two separate files and put the
+definitions into a <em>module</em>. The module will put the definitions
+into their own namespace which is the module name. This means Melissa
+would need to put the module name before each definition if she uses it
+outside of the module. But she remembers from the <a href="04_Using_the_package_manager.html">Using the package manager
+Episode</a> that she can export names that don’t need to be
+prefixed.</p>
+<p>She names her module <code>MelissasModule</code> and accordingly the
+file <code>MelissasModule.jl</code>. From this module she exports the
+names <code>aim</code>, <code>shoot_distance</code>,
+<code>Trebuchet</code> and <code>Environment</code>. This way she can
+leave her other code unchanged.</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">module</span> MelissasModule</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"projects/trebuchet"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Trebuchet </span>as Trebuchets</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">ForwardDiff</span>: gradient</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">export</span> aim, shoot_distance, Trebuchet, Environment</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="kw">mutable struct</span> Trebuchet <span class="op">&lt;:</span><span class="dt"> AbstractVector{Float64}</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  counterweight<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  release_angle<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">Base</span>.<span class="fu">size</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>) <span class="op">=</span> <span class="fu">tuple</span>(<span class="fl">2</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="bu">Base</span>.<span class="fu">getindex</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, i<span class="op">::</span><span class="dt">Int</span>) <span class="op">=</span> <span class="fu">getfield</span>(trebuchet, i)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="bu">Base</span>.<span class="fu">setindex!</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, v, i<span class="op">::</span><span class="dt">Int</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">===</span> <span class="fl">1</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        trebuchet.counterweight <span class="op">=</span> v</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elseif</span> i <span class="op">===</span> <span class="fl">2</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        trebuchet.release_angle <span class="op">=</span> v</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        <span class="fu">error</span>(<span class="st">"Trebuchet only accepts indices 1 and 2, yours is </span><span class="sc">$</span>i<span class="st">"</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Environment</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  wind<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  target_distance<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(args<span class="op">...</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    Trebuchets.<span class="fu">shoot</span>(args<span class="op">...</span>)[<span class="fl">2</span>]</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, env<span class="op">::</span><span class="dt">Environment</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">shoot_distance</span>(env.wind, trebuchet.release_angle, trebuchet.counterweight)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">aim</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, environment<span class="op">::</span><span class="dt">Environment</span>; ε <span class="op">=</span> <span class="fl">1e-1</span>, η <span class="op">=</span> <span class="fl">0.05</span>)</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    better_trebuchet <span class="op">=</span> <span class="fu">copy</span>(trebuchet)</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    hit <span class="op">=</span> x <span class="op">-&gt;</span> (<span class="fu">shoot_distance</span>([environment.wind, x[<span class="fl">2</span>], x[<span class="fl">1</span>]]) <span class="op">-</span> environment.target_distance)</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="fu">abs</span>(<span class="fu">hit</span>(better_trebuchet)) <span class="op">&gt;</span> ε</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>        grad <span class="op">=</span> <span class="fu">gradient</span>(hit, better_trebuchet)</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>        better_trebuchet <span class="op">-=</span> η <span class="op">*</span> grad</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">Trebuchet</span>(better_trebuchet[<span class="fl">1</span>], better_trebuchet[<span class="fl">2</span>])</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span> <span class="co"># MelissasModule</span></span></code></pre>
+</div>
+<p>The rest of the code goes to a file she calls
+<code>MelissasCode.jl</code>.</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">.MelissasModule</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>imprecise_trebuchet <span class="op">=</span> <span class="fu">Trebuchet</span>(<span class="fl">500.0</span>, <span class="fl">0.25</span>pi)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>environment <span class="op">=</span> <span class="fu">Environment</span>(<span class="fl">5</span>, <span class="fl">100</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>precise_trebuchet <span class="op">=</span> <span class="fu">aim</span>(imprecise_trebuchet, environment)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">shoot_distance</span>(precise_trebuchet, environment)</span></code></pre>
+</div>
+<p>Now she can include <code>MelissasModule.jl</code> once, and change
+and include <code>MelissasCode.jl</code> as often as she wants. But what
+if she wants to make changes to the module? If she changes the code in
+the module, re-includes the module and runs her code again, she only
+gets a bunch of warnings, but her changes are not applied.</p>
+</section><section id="revise.jl"><h2 class="section-heading">Revise.jl<a class="anchor" aria-label="anchor" href="#revise.jl"></a>
+</h2>
+<hr class="half-width">
+<p><code>Revise.jl</code> is a package that can keep track of changes in
+your files and load these in a running Julia session.</p>
+<p>Melissa needs to take two things into account:</p>
+<ul>
+<li>
+<code>using Revise</code> must come before <code>using</code> any
+Package that she wants to be tracked</li>
+<li>she should use <code>includet</code> instead of <code>include</code>
+for included files (<code>t</code> for “tracking”)</li>
+</ul>
+<p>Thus she now runs</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Revise</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">includet</span>(<span class="fu">joinpath</span>(path,<span class="st">"MelissasModule.jl"</span>))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">include</span>(<span class="fu">joinpath</span>(path,<span class="st">"MelissasCode.jl"</span>))</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="fl">100.05601729579894</span></span></code></pre>
+</div>
+<p>where <code>path</code> is the path to her files.</p>
+<p>and any change she makes in <code>MelissasModule.jl</code> will be
+visible in the next run of her code.</p>
+<div id="did-i-say-any-changes" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="did-i-say-any-changes" class="callout-inner">
+<h3 class="callout-title">Did I say any changes?<a class="anchor" aria-label="anchor" href="#did-i-say-any-changes"></a>
+</h3>
+<div class="callout-content">
+<p>Well, almost any. Revise can’t track changes to structures.</p>
+</div>
+</div>
+</div>
+<div id="keypoints" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div id="keypoints" class="callout-inner">
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>“Modules introduce namespaces”</li>
+<li>“Public API has to be documented and can be exported”</li>
+</ul>
+</div>
+</div>
+</div>
 </section></section><section id="aio-09_Adding_tests"><p>Content from <a href="09_Adding_tests.html">Adding tests</a></p>
 <hr>
 <p> Last updated on 2023-08-29 | 
@@ -2847,11 +4169,419 @@ a complete example.</p>
 </div>
 </div>
 </div>
+</section></section><section id="aio-09_Creating_Packages"><p>Content from <a href="09_Creating_Packages.html">Creating Packages</a></p>
+<hr>
+<p> Last updated on 2023-09-15 | 
+        
+        <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/09_Creating_Packages.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 30 minutes </p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>“How to create a package?”</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>“Learn setting up a project using modules.”</li>
+<li>“Learn common package structure.”</li>
+<li>“Learn to browse GitHub or juliahub for packages and find
+documentation.”</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Melissa is now confident that her module is fine and she wants to
+make it available for the rest of her physics club. She decides to put
+it in a package. This way she can also locally use Julia’s package
+manager for managing her module.</p>
+<section id="from-project-to-package"><h2 class="section-heading">From project to package<a class="anchor" aria-label="anchor" href="#from-project-to-package"></a>
+</h2>
+<hr class="half-width">
+<p>The path from having a module to having a package is actually very
+short: Packages need a <code>name</code> and a <code>uuid</code> field
+in their <code>Project.toml</code>.</p>
+<p>A UUID is a <strong>u</strong>niversally <strong>u</strong>nique
+<strong>id</strong>entifier. Thankfully Julia comes with the
+<code>UUIDs</code> package, that can generate <code>uuid</code>s for
+Melissa via <code>UUIDs.uuid4()</code>.</p>
+<p>In addition Melissa needs to have a specific directory structure. She
+looks at the example package <a href="https://github.com/JuliaLang/Example.jl" class="external-link"><code>Example.jl</code></a>
+which has the following structure:</p>
+<pre><code>├── docs
+│   ├── make.jl
+│   ├── Project.toml
+│   └── src
+│       └── index.md
+├── LICENSE.md
+├── Project.toml
+├── README.md
+├── src
+│   └── Example.jl
+└── test
+    └── runtests.jl</code></pre>
+<div id="make-it-a-package" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="make-it-a-package" class="callout-inner">
+<h3 class="callout-title">Make it a package<a class="anchor" aria-label="anchor" href="#make-it-a-package"></a>
+</h3>
+<div class="callout-content">
+<p>Open your <code>Project.toml</code> and add
+<code>name = &lt;your name&gt;</code>,
+<code>uuid = &lt;your uuid&gt;</code> and optionally an
+<code>authors</code> field, each on a separate line.</p>
+</div>
+</div>
+</div>
+<pre><code>  Generating  project MelissasPackage:
+    MelissasPackage/Project.toml
+    MelissasPackage/src/MelissasPackage.jl
+</code></pre>
+<p>Now Melissa can use</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pkg<span class="op">&gt;</span> dev . <span class="co"># or path to package instead of `.`</span></span></code></pre>
+</div>
+<p>instead of needing to <code>includet MelissasModule.jl</code>, and
+she can write <code>using MelissasModule</code> instead of
+<code>.using MelissasModule</code>.</p>
+</section><section id="register-a-package"><h2 class="section-heading">Register a package<a class="anchor" aria-label="anchor" href="#register-a-package"></a>
+</h2>
+<hr class="half-width">
+<p>In order for her friends to be able to get the package, Melissa
+registers the package in the <em>general registry</em>. This can be done
+either via <a href="https://juliahub.com/ui/Registrator" class="external-link">JuliaHub</a> or
+by making a pull request on <a href="https://github.com/JuliaRegistries/General/pulls" class="external-link">GitHub</a> which
+can also be automated by the <a href="https://github.com/JuliaRegistries/Registrator.jl" class="external-link">Julia
+Registrator</a>.</p>
+</section><section id="creating-a-new-package"><h2 class="section-heading">Creating a new package<a class="anchor" aria-label="anchor" href="#creating-a-new-package"></a>
+</h2>
+<hr class="half-width">
+<p>Melissa thinks next time she will start with a package right
+away.</p>
+<p>Browsing the packages she found <a href="https://invenia.github.io/PkgTemplates.jl/stable/" class="external-link">PkgTemplates.jl</a>
+and <a href="https://github.com/tpapp/PkgSkeleton.jl" class="external-link">PkgSkeleton.jl</a>
+which makes setting up the typical folder structure very easy.</p>
+<div id="create-your-own-package" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="create-your-own-package" class="callout-inner">
+<h3 class="callout-title">Create your own package<a class="anchor" aria-label="anchor" href="#create-your-own-package"></a>
+</h3>
+<div class="callout-content">
+<p>Look at the documentation of the package creation helper packages and
+create a new package using <code>generate</code>.</p>
+</div>
+</div>
+</div>
+<div id="keypoints" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div id="keypoints" class="callout-inner">
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>“The general registry is hosted on GitHub.”</li>
+<li>“Packaging is easy”</li>
+</ul>
+</div>
+</div>
+</div>
+</section></section><section id="aio-10_Adding_tests"><p>Content from <a href="10_Adding_tests.html">Adding tests</a></p>
+<hr>
+<p> Last updated on 2023-09-15 | 
+        
+        <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/10_Adding_tests.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 40 minutes </p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>“What are unit tests?”</li>
+<li>“How are tests organized in Julia?”</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>“Learn to create unit tests and test-sets using the
+<code>Test</code> standard library”</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="unit-tests"><h2 class="section-heading">Unit tests<a class="anchor" aria-label="anchor" href="#unit-tests"></a>
+</h2>
+<hr class="half-width">
+<p>Now that Melissa has released her first package she fears that future
+changes will impact the existing functionality of her package. This can
+be prevented by adding tests to her package.</p>
+<p>Looking at the structure of other packages Melissa figured out that
+tests usually go in a separate <code>test</code> folder next to the
+<code>src</code> folder. This should contain a <code>runtests.jl</code>
+file.</p>
+<p>The standard library <code>Test</code> provides the functionality for
+writing tests: namely, the macros <code>@test</code> and
+<code>@testset</code>.</p>
+<p><code>@test</code> can be used to test a single equality, such as</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Test</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@test</span> <span class="fl">1</span> <span class="op">+</span> <span class="fl">1</span> <span class="op">==</span> <span class="fl">2</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Test Passed</code></pre>
+</div>
+<p>Several tests can be grouped in a test-set with a descriptive
+name</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Test</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@testset</span> <span class="st">"Test arithmetic equalities"</span> <span class="cf">begin</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="pp">@test</span> <span class="fl">1</span> <span class="op">+</span> <span class="fl">1</span> <span class="op">==</span> <span class="fl">2</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="fu">Test.DefaultTestSet</span><span class="op">(</span><span class="st">"Test arithmetic equalities"</span>, <span class="va">Any</span><span class="op">[</span><span class="op">]</span>, <span class="fl">1</span>, <span class="va">false</span>, <span class="va">false</span>, <span class="va">true</span>, <span class="fl">1.694703469038899e9</span>, <span class="fl">1.694703469081385e9</span>, <span class="va">false</span><span class="op">)</span></span></code></pre>
+</div>
+<p>With this Melissa can run her test using the pkg mode of the
+REPL:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(MelissasModule) pkg<span class="op">&gt;</span> test</span></code></pre>
+</div>
+<div class="section level3">
+<h3 id="test-specific-dependencies">Test specific dependencies<a class="anchor" aria-label="anchor" href="#test-specific-dependencies"></a>
+</h3>
+<p>Melissa needed to add <code>Test</code> to her package in order to
+run the code above, but actually <code>Test</code> is not needed for her
+package other than testing. Thus it is possible to move the
+<code>Test</code> entry in the <code>Project.toml</code> file from
+<code>[deps]</code> to an <code>[extras]</code> section and then add
+another entry:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>[targets]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>test <span class="op">=</span> [<span class="st">"Test"</span>]</span></code></pre>
+</div>
+<p>Check out the <a href="../code/Project.toml">sample project file</a> for
+a complete example.</p>
+<div id="challenge" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="challenge" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
+</h3>
+<div class="callout-content">
+<p>Create a test for MelissasModule Create a test that ensures that
+<code>shoot_distance</code> returns a value that is between
+<code>target - ε</code> and <code>target + ε</code>.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Show me the solution
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">MelissasModule</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Test</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="pp">@testset</span> <span class="st">"Test hitting target"</span> <span class="cf">begin</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>   imprecise_trebuchet <span class="op">=</span> <span class="fu">Trebuchet</span>(<span class="fl">500.0</span>, <span class="fl">0.25</span>pi)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>   environment <span class="op">=</span> <span class="fu">Environment</span>(<span class="fl">5</span>, <span class="fl">100</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>   precise_trebuchet <span class="op">=</span> <span class="fu">aim</span>(imprecise_trebuchet, environment)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>   <span class="pp">@test</span> <span class="fl">100</span> <span class="op">-</span> <span class="fl">0.1</span> <span class="op">&lt;=</span> <span class="fu">shoot_distance</span>(precise_trebuchet, environment) <span class="op">&lt;=</span> <span class="fl">100</span> <span class="op">+</span> <span class="fl">0.1</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>   <span class="co"># default ε is 0.1</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="keypoints" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div id="keypoints" class="callout-inner">
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>“Tests are important”</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </section></section><section id="aio-10_Wrapping_Up"><p>Content from <a href="10_Wrapping_Up.html">Wrapping Up and Moving Forward</a></p>
 <hr>
 <p> Last updated on 2023-08-18 | 
         
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/10_Wrapping_Up.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 5 minutes </p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>“What have I accomplished in this tutorial?”</li>
+<li>“Where can I continue to learn Julia?”</li>
+<li>“Who else is using Julia in my field?”</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>“Review the progress you have made”</li>
+<li>“Find other Julia resources to use in your own work”</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="congratulations-you-have-taken-your-first-steps-in-the-julia-language"><h2 class="section-heading">Congratulations! You have taken your first steps in the Julia
+language<a class="anchor" aria-label="anchor" href="#congratulations-you-have-taken-your-first-steps-in-the-julia-language"></a>
+</h2>
+<hr class="half-width">
+<p>Learning any new programming language can be intimidating, and the
+learning process is never over. However, finishing this workshop is
+worth celebrating! To review, you have learned:</p>
+<ul>
+<li>How to write and run Julia code</li>
+<li>How to install packages from Julia’s repository</li>
+<li>How important Types are in Julia and how to handle them</li>
+<li>How to write if statements, for loops, and functions</li>
+<li>How to organize code into modules and make sure that code is robust
+to tests</li>
+</ul>
+<p>We hope this is just the beginning of your journey in Julia. Below,
+we detail some ways you can stay connected with the Julia community,
+connect with other Julia-users in your field, and find resources for
+writing your own Julia code.</p>
+</section><section id="the-julia-community"><h2 class="section-heading">The Julia Community<a class="anchor" aria-label="anchor" href="#the-julia-community"></a>
+</h2>
+<hr class="half-width">
+<p>As you learn Julia, we encourage you to connect with other users,
+share questions, and stay involved. Here are a few places you can
+participate:</p>
+<ul>
+<li><p><a href="https://discourse.julialang.org/" class="external-link">The JuliaLang
+Discourse forum</a> is a great place to ask Julia-specific questions,
+read about new Julia packages, and stay up-to-date on community
+events</p></li>
+<li><p><a href="https://julialang.org/slack/" class="external-link">The Julia Slack</a> is
+very active, and people will often respond to questions within
+minutes</p></li>
+<li><p>Likewise you can connect via the <a href="https://julialang.zulipchat.com" class="external-link">Julia Zulip</a> or <a href="https://discord.com/invite/C5h9D4j" class="external-link">discord</a>.</p></li>
+<li><p>It is a good idea to look out for channels called #helpdesk or
+similar.</p></li>
+<li><p><a href="https://docs.julialang.org/en/v1/" class="external-link">The official Julia
+Documentation</a> is a more comprehensive overview of programming in
+Julia, and a good next step to continue learning</p></li>
+<li><p><a href="https://juliacon.org/2023/" class="external-link">JuliaCon</a> is an annual
+in-person conference of Julia users, but talks are also streamed
+online</p></li>
+</ul>
+<p>You can also get Julia help on Stack Overflow, as with other coding
+languages.</p>
+</section><section id="domain-specific-julia-organizations"><h2 class="section-heading">Domain-specific Julia Organizations<a class="anchor" aria-label="anchor" href="#domain-specific-julia-organizations"></a>
+</h2>
+<hr class="half-width">
+<p>Julia users have also created domain-specific organizations, to
+better develop packages for specific fields. These can be a great place
+to go to learn more about the specific Julia packages available for your
+work. As just a sample:</p>
+<ul>
+<li>
+<a href="https://juliaactuary.org/" class="external-link">JuliaActuary</a> for actuarial
+science</li>
+<li>
+<a href="http://juliaastro.org/dev/index.html" class="external-link">JuliaAstro</a> for
+astronomy</li>
+<li>
+<a href="https://ecojulia.org/" class="external-link">EcoJulia</a> for ecological
+research</li>
+<li>
+<a href="https://juliarobotics.org/" class="external-link">JuliaRobotics</a> for robotics
+control</li>
+<li>
+<a href="https://biojulia.dev/" class="external-link">BioJulia</a> for biological and
+genetic research</li>
+<li>
+<a href="https://juliageo.org/" class="external-link">JuliaGeo</a> for geospatial
+data</li>
+<li>
+<a href="https://juliapackages.com/p/mlj" class="external-link">MLJ</a> for machine
+learning</li>
+</ul>
+<p>And many more that you can explore <a href="https://julialang.org/community/organizations/" class="external-link">here!</a></p>
+</section></section><section id="aio-11_Wrapping_Up"><p>Content from <a href="11_Wrapping_Up.html">Wrapping Up and Moving Forward</a></p>
+<hr>
+<p> Last updated on 2023-09-15 | 
+        
+        <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/11_Wrapping_Up.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 5 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -3008,9 +4738,9 @@ learning</li>
   "creativeWorkStatus": "active",
   "url": "https://preview.carpentries.org/julia-novice/instructor/aio.html",
   "identifier": "https://preview.carpentries.org/julia-novice/instructor/aio.html",
-  "dateCreated": "2023-08-29",
-  "dateModified": "2023-09-12",
-  "datePublished": "2023-09-12"
+  "dateCreated": "2023-09-15",
+  "dateModified": "2023-09-15",
+  "datePublished": "2023-09-15"
 }
 
   </script><script>
