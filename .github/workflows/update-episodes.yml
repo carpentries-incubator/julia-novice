@@ -41,7 +41,8 @@ jobs:
             - name: Move files
               run: |
                 ls -RF
-                mv output/carpentries/*.md episodes
+                rsync -t --delete output/carpentries/*.md episodes
+                rsync -t --delete output/carpentries/code/ ./code
             - name: Create Pull Request
               uses: peter-evans/create-pull-request@v5
               with:
