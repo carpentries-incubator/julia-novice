@@ -81,11 +81,11 @@
 #         1. Both arguments are present, but `true` is presented without a keyword.
 #            This throws a `MethodError: no method matching names(::Module, ::Bool)`
 #         2. This is a __correct__ call.
-#         3. This is also __correct__: you _can_ specify where the positional arguments
-#            end with the `;`, but you do not have to.
-#         4. Two arguments are present, but the keyword `all` is not assigned a
+#         3. Two arguments are present, but the keyword `all` is not assigned a
 #            value. This throws a
 #           `MethodError: no method matching names(::Module, ::typeof(all))`
+#         4. This is also __correct__: you _can_ specify where the positional arguments
+#            end with the `;`, but you do not have to.
 #         5. This is the __most correct__ answer.
 
 
