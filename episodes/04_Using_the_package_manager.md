@@ -121,7 +121,7 @@ environment.
 ````
 Status `~/projects/trebuchet/Project.toml`
   [f6369f11] ForwardDiff v0.10.36
-  [295af30f] Revise v3.5.5
+  [295af30f] Revise v3.5.7
   [98b73d46] Trebuchet v0.2.2
 
 ````

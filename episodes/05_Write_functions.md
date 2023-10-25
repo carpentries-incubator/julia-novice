@@ -94,11 +94,11 @@ those that are not exported. What would the function call look like?
  1. Both arguments are present, but `true` is presented without a keyword.
     This throws a `MethodError: no method matching names(::Module, ::Bool)`
  2. This is a __correct__ call.
- 3. This is also __correct__: you _can_ specify where the positional arguments
-    end with the `;`, but you do not have to.
- 4. Two arguments are present, but the keyword `all` is not assigned a
+ 3. Two arguments are present, but the keyword `all` is not assigned a
     value. This throws a
     `MethodError: no method matching names(::Module, ::typeof(all))`
+ 4. This is also __correct__: you _can_ specify where the positional arguments
+    end with the `;`, but you do not have to.
  5. This is the __most correct__ answer.
 
 ::::::
@@ -118,6 +118,16 @@ Pkg.instantiate()
 
 ````
   Activating project at `~/projects/trebuchet`
+Precompiling project...
+[32m  ✓ [39m[90mOpenSSL_jll[39m
+[32m  ✓ [39m[90mOpenSSL[39m
+[32m  ✓ [39m[90mHTTP[39m
+[32m  ✓ [39m[90mWebSockets[39m
+[33m  ✓ [39m[90mWebIO[39m
+[33m  ✓ [39m[90mJSExpr[39m
+[33m  ✓ [39mTrebuchet
+  7 dependencies successfully precompiled in 416 seconds. 160 already precompiled.
+  [33m3[39m dependencies precompiled but different versions are currently loaded. Restart julia to access the new versions
 
 ````
 
