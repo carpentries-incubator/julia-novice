@@ -55,7 +55,7 @@ end
 ````
 
 ````output
-Test.DefaultTestSet("Test arithmetic equalities", Any[], 1, false, false, true, 1.698245666140703e9, 1.698245666189045e9, false)
+Test.DefaultTestSet("Test arithmetic equalities", Any[], 1, false, false, true, 1.698515973154304e9, 1.698515973191453e9, false)
 ````
 
 With this Melissa can run her test using the pkg mode of the REPL:

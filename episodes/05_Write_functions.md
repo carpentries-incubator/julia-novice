@@ -118,17 +118,6 @@ Pkg.instantiate()
 
 ````
   Activating project at `~/projects/trebuchet`
-Precompiling project...
-[32m  ✓ [39m[90mOpenSSL_jll[39m
-[32m  ✓ [39m[90mOpenSSL[39m
-[32m  ✓ [39m[90mHTTP[39m
-[32m  ✓ [39m[90mWebSockets[39m
-[33m  ✓ [39m[90mWebIO[39m
-[33m  ✓ [39m[90mJSExpr[39m
-[33m  ✓ [39mTrebuchet
-  7 dependencies successfully precompiled in 416 seconds. 160 already precompiled.
-  [33m3[39m dependencies precompiled but different versions are currently loaded. Restart julia to access the new versions
-
 ````
 
 Importing the package under its modified name
