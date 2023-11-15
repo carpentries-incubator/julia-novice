@@ -59,7 +59,7 @@ end
 # test = ["Test"]
 # ```
 
-# Check out the [sample project file](../code/Project.toml) for a complete
+# Check out the [sample project file](https://github.com/carpentries-incubator/julia-novice/blob/main/code/Project.toml) for a complete
 # example.
 
 # !!! freecode
