@@ -350,9 +350,9 @@ Closest candidates are:
   size(::AbstractArray{T, N}, !Matched::Any) where {T, N}
    @ Base abstractarray.jl:42
   size(!Matched::Union{LinearAlgebra.QR, LinearAlgebra.QRCompactWY, LinearAlgebra.QRPivoted})
-   @ LinearAlgebra /opt/hostedtoolcache/julia/1.9.3/x64/share/julia/stdlib/v1.9/LinearAlgebra/src/qr.jl:582
+   @ LinearAlgebra /opt/hostedtoolcache/julia/1.9.4/x64/share/julia/stdlib/v1.9/LinearAlgebra/src/qr.jl:582
   size(!Matched::Union{LinearAlgebra.QR, LinearAlgebra.QRCompactWY, LinearAlgebra.QRPivoted}, !Matched::Integer)
-   @ LinearAlgebra /opt/hostedtoolcache/julia/1.9.3/x64/share/julia/stdlib/v1.9/LinearAlgebra/src/qr.jl:581
+   @ LinearAlgebra /opt/hostedtoolcache/julia/1.9.4/x64/share/julia/stdlib/v1.9/LinearAlgebra/src/qr.jl:581
   ...
 
 ````
@@ -424,6 +424,19 @@ She can also lookup the docstring using the `@doc` macro
   size(cb::CircularBuffer)
 
   Return a tuple with the size of the buffer.
+
+  size(s::Sampleable)
+
+  The size (i.e. shape) of each sample. Always returns () when s is
+  univariate, and (length(s),) when s is multivariate.
+
+  size(d::MultivariateDistribution)
+
+  Return the sample size of distribution d, i.e (length(d),).
+
+  size(d::MatrixDistribution)
+
+  Return the size of each sample from distribution d.
 
   size(g, i)
 
