@@ -55,7 +55,7 @@ end
 ````
 
 ````output
-Test.DefaultTestSet("Test arithmetic equalities", Any[], 1, false, false, true, 1.698515973154304e9, 1.698515973191453e9, false)
+Test.DefaultTestSet("Test arithmetic equalities", Any[], 1, false, false, true, 1.700042192846853e9, 1.70004219287704e9, false)
 ````
 
 With this Melissa can run her test using the pkg mode of the REPL:
@@ -76,7 +76,7 @@ Thus it is possible to move the `Test` entry in the `Project.toml` file from
 test = ["Test"]
 ```
 
-Check out the [sample project file](../code/Project.toml) for a complete
+Check out the [sample project file](https://github.com/carpentries-incubator/julia-novice/blob/main/code/Project.toml) for a complete
 example.
 
 :::::: challenge
