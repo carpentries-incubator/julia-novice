@@ -323,7 +323,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Write functions!</h1>
-        <p> Last updated on 2023-10-28 | 
+        <p> Last updated on 2023-11-15 | 
         
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/05_Write_functions.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -450,7 +450,7 @@ What would the function call look like?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Both arguments are present, but <code>true</code> is presented
 without a keyword. This throws a
@@ -739,9 +739,9 @@ Closest candidates are:
   size(::AbstractArray{T, N}, !Matched::Any) where {T, N}
    @ Base abstractarray.jl:42
   size(!Matched::Union{LinearAlgebra.QR, LinearAlgebra.QRCompactWY, LinearAlgebra.QRPivoted})
-   @ LinearAlgebra /opt/hostedtoolcache/julia/1.9.3/x64/share/julia/stdlib/v1.9/LinearAlgebra/src/qr.jl:582
+   @ LinearAlgebra /opt/hostedtoolcache/julia/1.9.4/x64/share/julia/stdlib/v1.9/LinearAlgebra/src/qr.jl:582
   size(!Matched::Union{LinearAlgebra.QR, LinearAlgebra.QRCompactWY, LinearAlgebra.QRPivoted}, !Matched::Integer)
-   @ LinearAlgebra /opt/hostedtoolcache/julia/1.9.3/x64/share/julia/stdlib/v1.9/LinearAlgebra/src/qr.jl:581
+   @ LinearAlgebra /opt/hostedtoolcache/julia/1.9.4/x64/share/julia/stdlib/v1.9/LinearAlgebra/src/qr.jl:581
   ...
 </code></pre>
 </div>
@@ -818,6 +818,19 @@ docstring using the <code>@doc</code> macro</p>
   size(cb::CircularBuffer)
 
   Return a tuple with the size of the buffer.
+
+  size(s::Sampleable)
+
+  The size (i.e. shape) of each sample. Always returns () when s is
+  univariate, and (length(s),) when s is multivariate.
+
+  size(d::MultivariateDistribution)
+
+  Return the sample size of distribution d, i.e (length(d),).
+
+  size(d::MatrixDistribution)
+
+  Return the size of each sample from distribution d.
 
   size(g, i)
 
@@ -1089,9 +1102,9 @@ and their type”</li>
   "creativeWorkStatus": "active",
   "url": "https://preview.carpentries.org/julia-novice/instructor/05_Write_functions.html",
   "identifier": "https://preview.carpentries.org/julia-novice/instructor/05_Write_functions.html",
-  "dateCreated": "2023-10-28",
-  "dateModified": "2023-10-28",
-  "datePublished": "2023-11-14"
+  "dateCreated": "2023-11-15",
+  "dateModified": "2023-11-15",
+  "datePublished": "2023-11-15"
 }
 
   </script><script>
