@@ -9,9 +9,10 @@ title: Setup
 
 ### Details
 
-This lesson requires installation of the following three components:
+This lesson requires installation of the following components:
 
 1. terminal emulator ("shell");
+2. the version control software "git";
 2. a text editor (either "VSCodium" or "nano"), and;
 3. Julia.
 
