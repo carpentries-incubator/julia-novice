@@ -364,13 +364,12 @@
 </div>
 <section id="the-package-manager"><h2 class="section-heading">The package manager<a class="anchor" aria-label="anchor" href="#the-package-manager"></a>
 </h2>
-<hr class="half-width"><div id="the-package-manager-1" class="callout callout">
+<hr class="half-width"><div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="the-package-manager-1" class="callout-inner">
-<h3 class="callout-title">The package Manager<a class="anchor" aria-label="anchor" href="#the-package-manager-1"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="the-package-manager-1">The package Manager<a class="anchor" aria-label="anchor" href="#the-package-manager-1"></a></h3>
 <div class="callout-content">
 <p>This chapter focuses on the package mode available within the
 REPL.</p>
@@ -378,8 +377,8 @@ REPL.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">add</span>(<span class="st">"Example"</span>)</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">add</span>(<span class="st">"Example"</span>)</span></code></pre>
 </div>
 <p>If you prefer to use that method and want to know more, remember how
 to get <a href="02_Getting_started.html">help</a>.</p>
@@ -397,7 +396,7 @@ That saves some real work.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>]</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>]</span></code></pre>
 </div>
 <p>The <code>julia&gt;</code> prompt becomes a blue <code>pkg&gt;</code>
 prompt that shows the Julia version that Melissa is running.</p>
@@ -414,7 +413,7 @@ uses the <code>activate</code> function of the package manager:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="pp">@v1</span>.x) pkg<span class="op">&gt;</span> activate projects<span class="op">/</span>trebuchet</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>(<span class="pp">@v1</span>.x) pkg<span class="op">&gt;</span> activate projects<span class="op">/</span>trebuchet</span></code></pre>
 </div>
 <pre><code>  Activating project at `~/projects/trebuchet`</code></pre>
 <p>In this environment she adds the <code>Trebuchet</code> package from
@@ -423,7 +422,7 @@ by typing</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(trebuchet) pkg<span class="op">&gt;</span> add Trebuchet</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>(trebuchet) pkg<span class="op">&gt;</span> add Trebuchet</span></code></pre>
 </div>
 <p>Melissa quickly recognizes that far more packages are being installed
 than just <code>Trebuchet</code>. These are the dependencies of
@@ -452,27 +451,26 @@ her environment.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(trebuchet) pkg<span class="op">&gt;</span> status</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>(trebuchet) pkg<span class="op">&gt;</span> status</span></code></pre>
 </div>
 <pre><code>Status `~/projects/trebuchet/Project.toml`
   [f6369f11] ForwardDiff v0.10.36
   [295af30f] Revise v3.5.9
   [98b73d46] Trebuchet v0.2.2
 </code></pre>
-<div id="why-use-github" class="callout callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="why-use-github" class="callout-inner">
-<h3 class="callout-title">Why use GitHub?<a class="anchor" aria-label="anchor" href="#why-use-github"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="why-use-github">Why use GitHub?<a class="anchor" aria-label="anchor" href="#why-use-github"></a></h3>
 <div class="callout-content">
 <p>Melissa could have added the GitHub version of Trebuchet.jl by
 typing</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(trebuchet) pkg<span class="op">&gt;</span> add Trebuchet<span class="co">#master</span></span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>(trebuchet) pkg<span class="op">&gt;</span> add Trebuchet<span class="co">#master</span></span></code></pre>
 </div>
 <p>In this case the JuliaHub version is the same as the GitHub version,
 so Melissa does not need to specify the installation.</p>
@@ -494,7 +492,7 @@ environment.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(trebuchet) pkg<span class="op">&gt;</span> activate</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>(trebuchet) pkg<span class="op">&gt;</span> activate</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -507,7 +505,7 @@ packages like <code>BenchmarkTools</code> or
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>(trebuchet) pkg<span class="op">&gt;</span> activate projects<span class="op">/</span>trebuchet</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>(trebuchet) pkg<span class="op">&gt;</span> activate projects<span class="op">/</span>trebuchet</span></code></pre>
 </div>
 </div>
 </section><section id="using-and-importing-packages"><h2 class="section-heading">Using and importing packages<a class="anchor" aria-label="anchor" href="#using-and-importing-packages"></a>
@@ -532,7 +530,7 @@ upon <code>import</code> using the keyword <em><code>as</code></em>:</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Trebuchet </span>as Trebuchets</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="im">import</span> <span class="bu">Trebuchet</span> as Trebuchets</span></code></pre>
 </div>
 <div id="keypoints" class="callout keypoints">
 <div class="callout-square">
@@ -608,7 +606,7 @@ upon <code>import</code> using the keyword <em><code>as</code></em>:</p>
   "identifier": "https://preview.carpentries.org/julia-novice/04_Using_the_package_manager.html",
   "dateCreated": "2023-12-19",
   "dateModified": "2023-11-15",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>
