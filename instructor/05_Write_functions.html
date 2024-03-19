@@ -535,12 +535,13 @@ function from <code>Trebuchets</code> (again, using <kbd>?</kbd>):</p>
   angle angle in radians. The current wind speed is ws in m/s.
   Returns (t, dist), with travel time t in s and travelled distance dist in m.</code></pre>
 </div>
-<div id="callout1" class="callout">
+<div id="methods" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="methods">Methods<a class="anchor" aria-label="anchor" href="#methods"></a></h3>
+<div id="methods" class="callout-inner">
+<h3 class="callout-title">Methods<a class="anchor" aria-label="anchor" href="#methods"></a>
+</h3>
 <div class="callout-content">
 <p>Here we see that the <code>shoot</code> function has two different
 <em>methods</em>. The first one takes three arguments, while the second
@@ -591,12 +592,13 @@ forget to take the second element. That’s why she puts it together in a
 </h3>
 <pre class="output" tabindex="0"><code>shoot_distance (generic function with 1 method)</code></pre>
 </div>
-<div id="callout2" class="callout">
+<div id="implicit-return" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="implicit-return">Implicit return<a class="anchor" aria-label="anchor" href="#implicit-return"></a></h3>
+<div id="implicit-return" class="callout-inner">
+<h3 class="callout-title">Implicit return<a class="anchor" aria-label="anchor" href="#implicit-return"></a>
+</h3>
 <div class="callout-content">
 <p>Note that Melissa didn’t have to use the <code>return</code> keyword,
 since in Julia the value of the last line will be returned by default.
@@ -753,12 +755,13 @@ Closest candidates are:
 doesn’t know where it is defined. There is a handy <em>macro</em> named
 <code>@which</code> that obtains the module where the function is
 defined.</p>
-<div id="callout3" class="callout">
+<div id="macros" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="macros">Macros<a class="anchor" aria-label="anchor" href="#macros"></a></h3>
+<div id="macros" class="callout-inner">
+<h3 class="callout-title">Macros<a class="anchor" aria-label="anchor" href="#macros"></a>
+</h3>
 <div class="callout-content">
 <p>Macro names begin with <code>@</code> and they don’t need parentheses
 or commas to delimit their arguments. Macros can transform any valid
@@ -1006,12 +1009,13 @@ paragraph starting with</p>
 <p>After a bit of pondering the figures it should be enough to add a
 method for <code>getindex</code> with a single number.</p>
 <pre><code><span><span class="fu">getindex</span><span class="op">(</span><span class="fu">trebuchet</span><span class="fu">::</span><span class="va">Trebuchet</span>, <span class="fu">i</span><span class="fu">::</span><span class="va">Int</span><span class="op">)</span></span></code></pre>
-<div id="callout4" class="callout">
+<div id="syntactic-sugar" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3 callout-title callout-inner">
-<h3 class="callout-title" id="syntactic-sugar">Syntactic sugar<a class="anchor" aria-label="anchor" href="#syntactic-sugar"></a></h3>
+<div id="syntactic-sugar" class="callout-inner">
+<h3 class="callout-title">Syntactic sugar<a class="anchor" aria-label="anchor" href="#syntactic-sugar"></a>
+</h3>
 <div class="callout-content">
 <p>In Julia <code>a[1]</code> is equivalent to
 <code>getindex(a, 1)</code> and <code>a[2] = 3</code> to
@@ -1075,7 +1079,7 @@ and their type”</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.2" class="external-link">sandpaper (0.16.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.4" class="external-link">pegboard (0.7.4)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.1" class="external-link">varnish (1.0.1)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.3" class="external-link">sandpaper (0.16.3)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.4" class="external-link">pegboard (0.7.4)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.1" class="external-link">varnish (1.0.1)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1098,7 +1102,7 @@ and their type”</li>
   "identifier": "https://preview.carpentries.org/julia-novice/instructor/05_Write_functions.html",
   "dateCreated": "2023-12-19",
   "dateModified": "2023-11-15",
-  "datePublished": "2024-03-12"
+  "datePublished": "2024-03-19"
 }
 
   </script><script>
