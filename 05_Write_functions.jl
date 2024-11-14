@@ -126,7 +126,7 @@ names(Trebuchets)
 #     *methods* of a *generic function* of that name. In our example we have
 #     two methods of the `shoot` generic function.
 #
-#     Almost all function in Julia are generic functions. An example with
+#     Almost all function in Julia are generic functions and in particular all user defined functions. An example with
 #     particularly many methods is `+`. You can list its methods by executing
 #     `methods(+)`, for example.
 #
