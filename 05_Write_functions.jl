@@ -116,10 +116,23 @@ names(Trebuchets)
 
 #nb ?Trebuchets.shoot
 
-# !!! note "Methods"
-#     Here we see that the `shoot` function has two different _methods_.
-#     The first one takes three arguments, while the second takes a `Tuple` with
-#     three elements.
+# !!! note "Generic functions and methods"
+#     In the output we see that `shoot` has two different argument signatures: one with
+#     three arguments and one with a `Tuple` of three elements as its single
+#     argument. Behind these two signatures lie two implementations, one
+#     probably calling the other.
+#
+#     Functions of the same name with different argument signatures are called
+#     *methods* of a *generic function* of that name. In our example we have
+#     two methods of the `shoot` generic function.
+#
+#     Almost all function in Julia are generic functions. An example with
+#     particularly many methods is `+`. You can list its methods by executing
+#     `methods(+)`, for example.
+#
+#     Julia determines which method to apply to a tuple of arguments according
+#     to set of rules, which are documented in the [Julia Manual’s Methods
+#     section](https://docs.julialang.org/en/v1/manual/methods/).
 
 # Now she is ready to fire the first shot.
 
