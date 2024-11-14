@@ -370,7 +370,7 @@ Closest candidates are:
 
 ````
 
-### Errors and macros
+### Errors and finding documentation
 
 This error tells her two things:
 
@@ -405,6 +405,7 @@ Base
 
 Now Melissa knows she needs to add a method to `Base.size` with the
 signature `(::Trebuchet)`.
+
 She can also lookup the docstring using the `@doc` macro
 
 ````julia
@@ -462,9 +463,23 @@ She can also lookup the docstring using the `@doc` macro
 With that information she can now implement this method:
 
 ````julia
+function Base.size(::Trebuchet)
+     return tuple(2)
+end
+````
+
+But that is a 3 lines of text for a very short definition.
+Melissa can also using the short form notation to fit this in a single line:
+
+````julia
 Base.size(::Trebuchet) = tuple(2)
 ````
 
+!!! callout Omitting unneeded arguments
+Melissa could also name the argument in the signature.
+Like this: `(trebuchet::Trebuchet)`, but since the argument is not needed to compute
+the output of the function she can omit it.
+The argument is in this case only used to dispatch to the correct method.
 Now she can try again
 
 ````julia
