@@ -1138,7 +1138,7 @@ later.</em></p>
 </div>
 </section></section><section id="aio-04_Using_the_package_manager"><p>Content from <a href="04_Using_the_package_manager.html">Using the package manager</a></p>
 <hr>
-<p>Last updated on 2023-11-15 |
+<p>Last updated on 2024-11-14 |
 
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/04_Using_the_package_manager.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1266,8 +1266,8 @@ her environment.</p>
 <pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>(trebuchet) pkg<span class="op">&gt;</span> status</span></code></pre>
 </div>
 <pre><code>Status `~/projects/trebuchet/Project.toml`
-  [f6369f11] ForwardDiff v0.10.36
-  [295af30f] Revise v3.5.9
+  [f6369f11] ForwardDiff v0.10.38
+  [295af30f] Revise v3.6.2
   [98b73d46] Trebuchet v0.2.2
 </code></pre>
 <div id="why-use-github" class="callout">
@@ -1366,7 +1366,7 @@ upon <code>import</code> using the keyword <em><code>as</code></em>:</p>
 </div>
 </section></section><section id="aio-05_Write_functions"><p>Content from <a href="05_Write_functions.html">Write functions!</a></p>
 <hr>
-<p>Last updated on 2023-11-15 |
+<p>Last updated on 2024-11-14 |
 
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/05_Write_functions.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1493,7 +1493,7 @@ What would the function call look like?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Both arguments are present, but <code>true</code> is presented
@@ -1581,16 +1581,29 @@ function from <code>Trebuchets</code> (again, using <kbd>?</kbd>):</p>
   angle angle in radians. The current wind speed is ws in m/s.
   Returns (t, dist), with travel time t in s and travelled distance dist in m.</code></pre>
 </div>
-<div id="methods" class="callout">
+<div id="generic-functions-and-methods" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="methods" class="callout-inner">
-<h3 class="callout-title">Methods</h3>
+<div id="generic-functions-and-methods" class="callout-inner">
+<h3 class="callout-title">Generic functions and methods</h3>
 <div class="callout-content">
-<p>Here we see that the <code>shoot</code> function has two different
-<em>methods</em>. The first one takes three arguments, while the second
-takes a <code>Tuple</code> with three elements.</p>
+<p>In the output we see that <code>shoot</code> has two different
+argument signatures: one with three arguments and one with a
+<code>Tuple</code> of three elements as its single argument. These two
+signatures correspond to two different implementations. In our case one
+is calling the other.</p>
+<p>Functions of the same name with different argument signatures are
+called <em>methods</em> of a <em>generic function</em> of that name. In
+our example we have two methods of the <code>shoot</code> generic
+function.</p>
+<p>Almost all function in Julia are generic functions and in particular
+all user defined functions. An example with particularly many methods is
+<code>+</code>. You can list its methods by executing
+<code>methods(+)</code>, for example.</p>
+<p>Julia determines which method to apply to a tuple of arguments
+according to set of rules, which are documented in the <a href="https://docs.julialang.org/en/v1/manual/methods/" class="external-link">Julia Manual’s
+Methods section</a>.</p>
 </div>
 </div>
 </div>
@@ -1869,19 +1882,6 @@ docstring using the <code>@doc</code> macro</p>
 
   Return a tuple with the size of the buffer.
 
-  size(s::Sampleable)
-
-  The size (i.e. shape) of each sample. Always returns () when s is
-  univariate, and (length(s),) when s is multivariate.
-
-  size(d::MultivariateDistribution)
-
-  Return the sample size of distribution d, i.e (length(d),).
-
-  size(d::MatrixDistribution)
-
-  Return the size of each sample from distribution d.
-
   size(g, i)
 
   Return the number of vertices in g if i=1 or i=2, or 1 otherwise.
@@ -2014,10 +2014,6 @@ function</p>
   observable[]
 
   Returns the current value of observable.
-
-  getindex(A::ArrayPartition, i::Int, j...)
-
-  Returns the entry at index j... of the ith partition of A.
 
   getindex(A::ArrayPartition, i::Colon, j...)
 
@@ -2288,7 +2284,7 @@ Melissas <code>getindex</code> function.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2351,7 +2347,7 @@ modify a counterweight by index:</p>
 </div>
 </section></section><section id="aio-07_Loops"><p>Content from <a href="07_Loops.html">Loops</a></p>
 <hr>
-<p>Last updated on 2023-11-15 |
+<p>Last updated on 2024-11-14 |
 
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/07_Loops.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2465,8 +2461,8 @@ is uniformly distributed. So</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>2-element Trebuchet:
- 19.92126761754809
-  1.1758129035479739</code></pre>
+ 353.42697829091327
+   1.5481002998262625</code></pre>
 </div>
 <p>will give her a Trebuchet with a weight between 0 and 500 and a
 release angle between 0 and pi/2 radians at random.</p>
@@ -2482,9 +2478,9 @@ this</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>3-element Vector{Float64}:
- 106.68417294212176
- 116.21335516132379
-  73.730294183957</code></pre>
+ 118.13337827163429
+  82.95579691187152
+ 117.13566809575129</code></pre>
 </div>
 <p>This is called an <em>array comprehension</em>. To get the
 information of the parameters and the results in one place she writes
@@ -2501,16 +2497,16 @@ that again a bit differently</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>10-element Vector{Pair{Tuple{Float64, Float64}, Float64}}:
-     (181.72785884820692, 0.397146829944134) =&gt; 101.73108411880898
- (63.630046905466806, 0.0007390075864837765) =&gt; 38.578677436450356
-   (381.07768051820875, 0.14798050038431537) =&gt; 87.06414198100867
-     (282.3416703597322, 1.1918686477537617) =&gt; 69.0089195197084
- (368.30808129827875, 0.0067941316204262366) =&gt; 59.34525074762748
-     (344.7882424260206, 0.3851870910679704) =&gt; 111.70986370160507
-    (372.4460093501431, 0.06855206373789495) =&gt; 72.63633120284015
-     (360.2628661185558, 1.4172206158209621) =&gt; 32.342739435405775
-      (43.15599567794415, 0.631090875891836) =&gt; 59.136515031317124
-     (483.7790756755326, 0.8497073005978015) =&gt; 110.42731071869284</code></pre>
+     (324.2732442832362, 0.71302644795678) =&gt; 114.55947796494196
+  (335.37667874032854, 0.6341110514590834) =&gt; 116.68767139752573
+ (103.60031609976255, 0.03878975933920561) =&gt; 51.650885425681984
+ (482.63166698166805, 0.11246399230891459) =&gt; 81.89097177495029
+  (300.6724895776015, 0.25573753399679877) =&gt; 97.56213345772589
+   (471.0242182881435, 1.1388331155474132) =&gt; 82.73493540156431
+ (253.00933394709475, 0.36203702332969495) =&gt; 102.38374906456522
+   (156.7643321929057, 0.5764919513105045) =&gt; 103.44235911682252
+   (32.41843752500701, 1.3341566788703363) =&gt; 15.176619860993625
+  (53.610542563477026, 1.4033289299752423) =&gt; 19.162338180404383</code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -2569,7 +2565,7 @@ change the parameters to make the largest difference.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The correct solution is 4: <kbd>]</kbd> to enter pkg mode, then</p>
 <div class="codewrapper sourceCode" id="cb12">
@@ -2634,7 +2630,7 @@ gradient, such that it still improves the distance?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Try a bunch of values! </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2718,7 +2714,7 @@ to automate the additional iterations. She writes a new function
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>This is a highly non-linear system and thus very sensitive. The
 distances across different values for the counterweight and the release
@@ -3174,7 +3170,7 @@ create a new package using <code>generate</code>.</p>
 </div>
 </section></section><section id="aio-10_Adding_tests"><p>Content from <a href="10_Adding_tests.html">Adding tests</a></p>
 <hr>
-<p>Last updated on 2023-11-15 |
+<p>Last updated on 2024-11-14 |
 
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/10_Adding_tests.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3245,7 +3241,7 @@ name</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span><span class="fu">Test.DefaultTestSet</span><span class="op">(</span><span class="st">"Test arithmetic equalities"</span>, <span class="va">Any</span><span class="op">[</span><span class="op">]</span>, <span class="fl">1</span>, <span class="va">false</span>, <span class="va">false</span>, <span class="va">true</span>, <span class="fl">1.700042192846853e9</span>, <span class="fl">1.70004219287704e9</span>, <span class="va">false</span><span class="op">)</span></span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="fu">Test.DefaultTestSet</span><span class="op">(</span><span class="st">"Test arithmetic equalities"</span>, <span class="va">Any</span><span class="op">[</span><span class="op">]</span>, <span class="fl">1</span>, <span class="va">false</span>, <span class="va">false</span>, <span class="va">true</span>, <span class="fl">1.731578522519902e9</span>, <span class="fl">1.731578522550699e9</span>, <span class="va">false</span><span class="op">)</span></span></code></pre>
 </div>
 <p>With this Melissa can run her test using the pkg mode of the
 REPL:</p>

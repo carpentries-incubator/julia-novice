@@ -371,7 +371,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Write functions!</h1>
-        <p>Last updated on 2023-11-15 |
+        <p>Last updated on 2024-11-14 |
 
         <a href="https://github.com/fishtree-attempt/julia-novice/edit/main/episodes/05_Write_functions.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -492,7 +492,7 @@ What would the function call look like?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Both arguments are present, but <code>true</code> is presented
 without a keyword. This throws a
@@ -578,16 +578,29 @@ function from <code>Trebuchets</code> (again, using <kbd>?</kbd>):</p>
   angle angle in radians. The current wind speed is ws in m/s.
   Returns (t, dist), with travel time t in s and travelled distance dist in m.</code></pre>
 </div>
-<div id="methods" class="callout">
+<div id="generic-functions-and-methods" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="methods" class="callout-inner">
-<h3 class="callout-title">Methods</h3>
+<div id="generic-functions-and-methods" class="callout-inner">
+<h3 class="callout-title">Generic functions and methods</h3>
 <div class="callout-content">
-<p>Here we see that the <code>shoot</code> function has two different
-<em>methods</em>. The first one takes three arguments, while the second
-takes a <code>Tuple</code> with three elements.</p>
+<p>In the output we see that <code>shoot</code> has two different
+argument signatures: one with three arguments and one with a
+<code>Tuple</code> of three elements as its single argument. These two
+signatures correspond to two different implementations. In our case one
+is calling the other.</p>
+<p>Functions of the same name with different argument signatures are
+called <em>methods</em> of a <em>generic function</em> of that name. In
+our example we have two methods of the <code>shoot</code> generic
+function.</p>
+<p>Almost all function in Julia are generic functions and in particular
+all user defined functions. An example with particularly many methods is
+<code>+</code>. You can list its methods by executing
+<code>methods(+)</code>, for example.</p>
+<p>Julia determines which method to apply to a tuple of arguments
+according to set of rules, which are documented in the <a href="https://docs.julialang.org/en/v1/manual/methods/" class="external-link">Julia Manual’s
+Methods section</a>.</p>
 </div>
 </div>
 </div>
@@ -858,19 +871,6 @@ docstring using the <code>@doc</code> macro</p>
 
   Return a tuple with the size of the buffer.
 
-  size(s::Sampleable)
-
-  The size (i.e. shape) of each sample. Always returns () when s is
-  univariate, and (length(s),) when s is multivariate.
-
-  size(d::MultivariateDistribution)
-
-  Return the sample size of distribution d, i.e (length(d),).
-
-  size(d::MatrixDistribution)
-
-  Return the size of each sample from distribution d.
-
   size(g, i)
 
   Return the number of vertices in g if i=1 or i=2, or 1 otherwise.
@@ -1004,10 +1004,6 @@ function</p>
 
   Returns the current value of observable.
 
-  getindex(A::ArrayPartition, i::Int, j...)
-
-  Returns the entry at index j... of the ith partition of A.
-
   getindex(A::ArrayPartition, i::Colon, j...)
 
   Returns the entry at index j... of every partition of A.
@@ -1139,7 +1135,7 @@ and their type”</li>
   "url": "https://preview.carpentries.org/julia-novice/05_Write_functions.html",
   "identifier": "https://preview.carpentries.org/julia-novice/05_Write_functions.html",
   "dateCreated": "2024-11-14",
-  "dateModified": "2023-11-15",
+  "dateModified": "2024-11-14",
   "datePublished": "2024-11-14"
 }
 
