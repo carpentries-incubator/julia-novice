@@ -492,7 +492,7 @@ What would the function call look like?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Both arguments are present, but <code>true</code> is presented
 without a keyword. This throws a
@@ -800,7 +800,7 @@ Closest candidates are:
 </div>
 </div>
 <div class="section level3">
-<h3 id="errors-and-macros">Errors and macros<a class="anchor" aria-label="anchor" href="#errors-and-macros"></a></h3>
+<h3 id="errors-and-finding-documentation">Errors and finding documentation<a class="anchor" aria-label="anchor" href="#errors-and-finding-documentation"></a></h3>
 <p>This error tells her two things:</p>
 <ol style="list-style-type: decimal"><li>a function named <code>size</code> was called</li>
 <li>it didn’t have a method for <code>Trebuchet</code>
@@ -835,8 +835,9 @@ prepending <code>@macroexpand</code> to the macro call of interest.</p>
 <pre class="output" tabindex="0"><code><span><span class="va">Base</span></span></code></pre>
 </div>
 <p>Now Melissa knows she needs to add a method to <code>Base.size</code>
-with the signature <code>(::Trebuchet)</code>. She can also lookup the
-docstring using the <code>@doc</code> macro</p>
+with the signature <code>(::Trebuchet)</code>.</p>
+<p>She can also lookup the docstring using the <code>@doc</code>
+macro</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -895,13 +896,27 @@ docstring using the <code>@doc</code> macro</p>
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="bu">Base</span>.<span class="fu">size</span>(<span class="op">::</span><span class="dt">Trebuchet</span>) <span class="op">=</span> <span class="fu">tuple</span>(<span class="fl">2</span>)</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="kw">function</span> <span class="bu">Base</span>.<span class="fu">size</span>(<span class="op">::</span><span class="dt">Trebuchet</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a>     <span class="cf">return</span> <span class="fu">tuple</span>(<span class="fl">2</span>)</span>
+<span id="cb40-3"><a href="#cb40-3" tabindex="-1"></a><span class="kw">end</span></span></code></pre>
 </div>
-<p>Now she can try again</p>
+<p>But that is a 3 lines of text for a very short definition. Melissa
+can also using the short form notation to fit this in a single line:</p>
 <div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a>trebuchet <span class="op">=</span> <span class="fu">Trebuchet</span>(<span class="fl">500</span>, <span class="fl">0.25</span>pi)</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="bu">Base</span>.<span class="fu">size</span>(<span class="op">::</span><span class="dt">Trebuchet</span>) <span class="op">=</span> <span class="fu">tuple</span>(<span class="fl">2</span>)</span></code></pre>
+</div>
+<p>!!! callout Omitting unneeded arguments Melissa could also name the
+argument in the signature. Like this:
+<code>(trebuchet::Trebuchet)</code>, but since the argument is not
+needed to compute the output of the function she can omit it. The
+argument is in this case only used to dispatch to the correct method.
+Now she can try again</p>
+<div class="codewrapper sourceCode" id="cb42">
+<h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a>trebuchet <span class="op">=</span> <span class="fu">Trebuchet</span>(<span class="fl">500</span>, <span class="fl">0.25</span>pi)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -912,10 +927,10 @@ docstring using the <code>@doc</code> macro</p>
 different: It’s no longer a method for <code>size</code> that is missing
 but for <code>getindex</code>. She looks up the documentation for that
 function</p>
-<div class="codewrapper sourceCode" id="cb43">
+<div class="codewrapper sourceCode" id="cb44">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a><span class="pp">@doc</span> getindex</span></code></pre>
+<pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a><span class="pp">@doc</span> getindex</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>

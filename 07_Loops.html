@@ -481,8 +481,8 @@ is uniformly distributed. So</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>2-element Trebuchet:
- 353.42697829091327
-   1.5481002998262625</code></pre>
+ 301.45863866265444
+   0.5147801124901857</code></pre>
 </div>
 <p>will give her a Trebuchet with a weight between 0 and 500 and a
 release angle between 0 and pi/2 radians at random.</p>
@@ -498,9 +498,9 @@ this</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>3-element Vector{Float64}:
- 118.13337827163429
-  82.95579691187152
- 117.13566809575129</code></pre>
+ 107.31486215571258
+ 116.5961233156913
+   3.006112235174449</code></pre>
 </div>
 <p>This is called an <em>array comprehension</em>. To get the
 information of the parameters and the results in one place she writes
@@ -517,16 +517,16 @@ that again a bit differently</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>10-element Vector{Pair{Tuple{Float64, Float64}, Float64}}:
-     (324.2732442832362, 0.71302644795678) =&gt; 114.55947796494196
-  (335.37667874032854, 0.6341110514590834) =&gt; 116.68767139752573
- (103.60031609976255, 0.03878975933920561) =&gt; 51.650885425681984
- (482.63166698166805, 0.11246399230891459) =&gt; 81.89097177495029
-  (300.6724895776015, 0.25573753399679877) =&gt; 97.56213345772589
-   (471.0242182881435, 1.1388331155474132) =&gt; 82.73493540156431
- (253.00933394709475, 0.36203702332969495) =&gt; 102.38374906456522
-   (156.7643321929057, 0.5764919513105045) =&gt; 103.44235911682252
-   (32.41843752500701, 1.3341566788703363) =&gt; 15.176619860993625
-  (53.610542563477026, 1.4033289299752423) =&gt; 19.162338180404383</code></pre>
+   (316.3006668666567, 0.2763285950708336) =&gt; 101.94306047739477
+ (184.81067380921974, 0.21663020097625554) =&gt; 87.01600131363767
+ (118.28342636599143, 0.16251023948500737) =&gt; 71.41041926553547
+   (495.4627412106457, 0.2337213045007839) =&gt; 100.84254397856022
+  (121.54718006057836, 1.2933538749770221) =&gt; 44.31450096256152
+   (50.49083319279707, 1.3999293689100087) =&gt; 18.58057814648708
+  (463.0506320312314, 0.32643937336190937) =&gt; 108.22484752113716
+ (296.1556297915833, 0.035353940515857406) =&gt; 62.1859221237384
+    (134.340007097649, 1.2511802453356395) =&gt; 51.71612933008983
+   (493.7526856775179, 0.5068383250394274) =&gt; 118.81200975980546</code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -582,7 +582,7 @@ change the parameters to make the largest difference.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The correct solution is 4: <kbd>]</kbd> to enter pkg mode, then</p>
 <div class="codewrapper sourceCode" id="cb12">
@@ -647,7 +647,7 @@ gradient, such that it still improves the distance?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Try a bunch of values! </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -730,7 +730,7 @@ to automate the additional iterations. She writes a new function
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>This is a highly non-linear system and thus very sensitive. The
 distances across different values for the counterweight and the release
