@@ -177,11 +177,24 @@ help?> Trebuchets.shoot
 
 :::::: callout
 
-## Methods
+## Generic functions and methods
 
-Here we see that the `shoot` function has two different _methods_.
-The first one takes three arguments, while the second takes a `Tuple` with
-three elements.
+In the output we see that `shoot` has two different argument signatures: one with
+three arguments and one with a `Tuple` of three elements as its single
+argument. These two signatures correspond to two different implementations.
+In our case one is calling the other.
+
+Functions of the same name with different argument signatures are called
+*methods* of a *generic function* of that name. In our example we have
+two methods of the `shoot` generic function.
+
+Almost all function in Julia are generic functions and in particular all user defined functions. An example with
+particularly many methods is `+`. You can list its methods by executing
+`methods(+)`, for example.
+
+Julia determines which method to apply to a tuple of arguments according
+to set of rules, which are documented in the [Julia Manual’s Methods
+section](https://docs.julialang.org/en/v1/manual/methods/).
 
 ::::::
 
@@ -425,19 +438,6 @@ She can also lookup the docstring using the `@doc` macro
 
   Return a tuple with the size of the buffer.
 
-  size(s::Sampleable)
-
-  The size (i.e. shape) of each sample. Always returns () when s is
-  univariate, and (length(s),) when s is multivariate.
-
-  size(d::MultivariateDistribution)
-
-  Return the sample size of distribution d, i.e (length(d),).
-
-  size(d::MatrixDistribution)
-
-  Return the size of each sample from distribution d.
-
   size(g, i)
 
   Return the number of vertices in g if i=1 or i=2, or 1 otherwise.
@@ -567,10 +567,6 @@ She looks up the documentation for that function
   observable[]
 
   Returns the current value of observable.
-
-  getindex(A::ArrayPartition, i::Int, j...)
-
-  Returns the entry at index j... of the ith partition of A.
 
   getindex(A::ArrayPartition, i::Colon, j...)
 
