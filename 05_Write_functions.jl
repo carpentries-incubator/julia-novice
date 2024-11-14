@@ -119,8 +119,8 @@ names(Trebuchets)
 # !!! note "Generic functions and methods"
 #     In the output we see that `shoot` has two different argument signatures: one with
 #     three arguments and one with a `Tuple` of three elements as its single
-#     argument. Behind these two signatures lie two implementations, one
-#     probably calling the other.
+#     argument. These two signatures correspond to two different implementations.
+#     In our case one is calling the other.
 #
 #     Functions of the same name with different argument signatures are called
 #     *methods* of a *generic function* of that name. In our example we have
