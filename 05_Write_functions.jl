@@ -209,7 +209,7 @@ env = Environment(5, 100)
 
 trebuchet = Trebuchet(500, 0.25pi)
 
-# ### Errors and macros
+# ### Errors and finding documentation
 
 # This error tells her two things:
 
@@ -233,13 +233,27 @@ using InteractiveUtils #hide
 
 # Now Melissa knows she needs to add a method to `Base.size` with the
 # signature `(::Trebuchet)`.
+ 
 # She can also lookup the docstring using the `@doc` macro
 
 @doc size
 
 # With that information she can now implement this method:
 
+function Base.size(::Trebuchet)
+     return tuple(2)
+end
+
+# But that is a 3 lines of text for a very short definition.
+# Melissa can also using the short form notation to fit this in a single line:
+
 Base.size(::Trebuchet) = tuple(2)
+
+# !!! note Omitting unneeded arguments
+#     Melissa could also name the argument in the signature.
+#     Like this: `(trebuchet::Trebuchet)`, but since the argument is not needed to compute
+#     the output of the function she can omit it.
+#     The argument is in this case only used to dispatch to the correct method.
 
 # Now she can try again
 
