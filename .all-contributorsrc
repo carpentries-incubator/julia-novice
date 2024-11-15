@@ -1,5 +1,5 @@
 {
-  "projectName": "Programming with Julia",
+  "projectName": "julia-novice",
   "projectOwner": "carpentries-incubator",
   "files": [
     "README.md"
@@ -16,6 +16,15 @@
       "profile": "https://snotskie.com/bio",
       "contributions": [
         "ideas"
+      ]
+    },
+    {
+      "login": "fmarotta",
+      "name": "Federico Marotta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26001460?v=4",
+      "profile": "https://github.com/fmarotta",
+      "contributions": [
+        "content"
       ]
     }
   ]
