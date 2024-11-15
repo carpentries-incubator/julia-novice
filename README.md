@@ -61,9 +61,16 @@ Current maintainers of this lesson are
 <table>
   <tbody>
     <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/amanmdesai"><img src="https://avatars.githubusercontent.com/u/98302868?v=4?s=100" width="100px;" alt="Aman Desai"/><br /><sub><b>Aman Desai</b></sub></a><br /><a href="#userTesting-amanmdesai" title="User Testing">📓</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/fmarotta"><img src="https://avatars.githubusercontent.com/u/26001460?v=4?s=100" width="100px;" alt="Federico Marotta"/><br /><sub><b>Federico Marotta</b></sub></a><br /><a href="#content-fmarotta" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://francoismichonneau.net/"><img src="https://avatars.githubusercontent.com/u/5502922?v=4?s=100" width="100px;" alt="François Michonneau"/><br /><sub><b>François Michonneau</b></sub></a><br /><a href="#infra-fmichonneau" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://blog.bonham.ch"><img src="https://avatars.githubusercontent.com/u/3502975?v=4?s=100" width="100px;" alt="Kevin Bonham"/><br /><sub><b>Kevin Bonham</b></sub></a><br /><a href="#review-kescobo" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/lokamani"><img src="https://avatars.githubusercontent.com/u/64150921?v=4?s=100" width="100px;" alt="lokamani"/><br /><sub><b>lokamani</b></sub></a><br /><a href="#content-lokamani" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/lucaferranti"><img src="https://avatars.githubusercontent.com/u/49938764?v=4?s=100" width="100px;" alt="Luca Ferranti"/><br /><sub><b>Luca Ferranti</b></sub></a><br /><a href="#content-lucaferranti" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://giordano.github.io"><img src="https://avatars.githubusercontent.com/u/765740?v=4?s=100" width="100px;" alt="Mosè Giordano"/><br /><sub><b>Mosè Giordano</b></sub></a><br /><a href="#userTesting-giordano" title="User Testing">📓</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://tbyhdgs.info"><img src="https://avatars.githubusercontent.com/u/9694524?v=4?s=100" width="100px;" alt="Toby Hodges"/><br /><sub><b>Toby Hodges</b></sub></a><br /><a href="#infra-tobyhodges" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://snotskie.com/bio"><img src="https://avatars.githubusercontent.com/u/2658495?v=4?s=100" width="100px;" alt="snotskie"/><br /><sub><b>snotskie</b></sub></a><br /><a href="#ideas-snotskie" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
   </tbody>

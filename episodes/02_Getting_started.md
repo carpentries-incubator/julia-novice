@@ -154,6 +154,28 @@ help?> ∂
 Great! This way she can easily look up the names she needs.
 She gets back to normal mode by pressing <kbd>backspace</kbd>.
 
+:::::: challenge
+
+## Exploring Julia's Help Mode
+
+Help mode can also be used to look up the documentation for Julia functions.
+Use Julia's help mode to read the documentation for the `varinfo()` function.
+
+:::::: solution
+
+## Solution
+
+
+::::::
+
+If you are not already in help mode, type `?` to enter it. Then write `varinfo` and press enter.
+
+    ```julia
+    ?varinfo
+    ```
+
+::::::
+
 Another useful mode is the *shell mode* that can be
 entered by pressing <kbd>;</kbd>. The prompt has now changed:
 
@@ -167,7 +189,69 @@ Like before, hit <kbd>backspace</kbd> to get back to the Julia prompt.
 
 :::::: challenge
 
-## Hello, `shell>` !
+## Hello, `shell>` (`pwd` and `cd`) !
+
+Two commonly used shell commands are `pwd` (**p**rint **w**orking **d**irectory) and `cd` (**c**hange **d**irectory).
+
+ 1. Use `pwd` to find out what is your current working directory.
+ 2. Type the command `cd` in shell mode, which by default will bring you to your "home directory".
+ 3. Use `pwd` again. Did you get a different result from before? Why or why not?
+
+:::::: solution
+
+## Solution
+
+```julia
+shell> pwd
+```
+
+```julia
+shell> cd
+```
+
+```julia
+shell> pwd
+```
+
+::::::
+
+The working directory is the location from which you launched Julia.
+To navigate to a different directory, you can use the `cd` command by entering: `cd <directory>`. By default, this command will return you to your home directory if a specific directory is not given.
+If you initially launched Julia from your home directory, the working directory remains unchanged, so the output of the second `pwd` command will be identical to the first.
+Conversely, if you were in a different directory when you started Julia, the results of the two `pwd` commands will differ.
+You can use `cd -` to go back to your previous location.
+
+::::::
+
+:::::: challenge
+
+## Hello, `shell>` (`ls`)!
+
+Another useful shell command is `ls` (*list files*).
+Use it to show the contents of your home directory.
+
+:::::: solution
+
+## Solution
+
+```julia
+shell> cd
+```
+
+```julia
+shell> ls
+```
+
+::::::
+
+The first `cd` command will bring you to your home directory.
+`ls` will print a list of the files and directorys in your current location.
+
+::::::
+
+:::::: challenge
+
+## Hello, `shell>` (`nano` and `cat`)!
 
 Use the shell mode to create a file called `hello.jl` with the nano terminal text editor.
 Inside that file write the simple hello world program `print("Hello World!")`.
