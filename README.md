@@ -63,6 +63,7 @@ Current maintainers of this lesson are
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/fmarotta"><img src="https://avatars.githubusercontent.com/u/26001460?v=4?s=100" width="100px;" alt="Federico Marotta"/><br /><sub><b>Federico Marotta</b></sub></a><br /><a href="#content-fmarotta" title="Content">🖋</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://blog.bonham.ch"><img src="https://avatars.githubusercontent.com/u/3502975?v=4?s=100" width="100px;" alt="Kevin Bonham"/><br /><sub><b>Kevin Bonham</b></sub></a><br /><a href="#review-kescobo" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ocaisa"><img src="https://avatars.githubusercontent.com/u/3840437?v=4?s=100" width="100px;" alt="ocaisa"/><br /><sub><b>ocaisa</b></sub></a><br /><a href="#infra-ocaisa" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://snotskie.com/bio"><img src="https://avatars.githubusercontent.com/u/2658495?v=4?s=100" width="100px;" alt="snotskie"/><br /><sub><b>snotskie</b></sub></a><br /><a href="#ideas-snotskie" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
   </tbody>
