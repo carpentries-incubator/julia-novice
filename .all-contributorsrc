@@ -1,5 +1,5 @@
 {
-  "projectName": "julia-novice",
+  "projectName": "Programming with Julia",
   "projectOwner": "carpentries-incubator",
   "files": [
     "README.md"
@@ -7,6 +7,7 @@
   "commitType": "docs",
   "commitConvention": "angular",
   "contributorsPerLine": 7,
+  "contributorsSortAlphabetically": true,
   "contributors": [
     {
       "login": "snotskie",
