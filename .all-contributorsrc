@@ -35,6 +35,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "ocaisa",
+      "name": "ocaisa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3840437?v=4",
+      "profile": "https://github.com/ocaisa",
+      "contributions": [
+        "infra"
+      ]
     }
   ]
 }
