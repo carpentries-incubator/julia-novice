@@ -72,6 +72,7 @@ Current maintainers of this lesson are
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://giordano.github.io"><img src="https://avatars.githubusercontent.com/u/765740?v=4?s=100" width="100px;" alt="Mosè Giordano"/><br /><sub><b>Mosè Giordano</b></sub></a><br /><a href="#userTesting-giordano" title="User Testing">📓</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://tbyhdgs.info"><img src="https://avatars.githubusercontent.com/u/9694524?v=4?s=100" width="100px;" alt="Toby Hodges"/><br /><sub><b>Toby Hodges</b></sub></a><br /><a href="#infra-tobyhodges" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.trevorkeller.com"><img src="https://avatars.githubusercontent.com/u/2179347?v=4?s=100" width="100px;" alt="Trevor Keller"/><br /><sub><b>Trevor Keller</b></sub></a><br /><a href="#content-tkphd" title="Content">🖋</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://snotskie.com/bio"><img src="https://avatars.githubusercontent.com/u/2658495?v=4?s=100" width="100px;" alt="snotskie"/><br /><sub><b>snotskie</b></sub></a><br /><a href="#ideas-snotskie" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
   </tbody>
