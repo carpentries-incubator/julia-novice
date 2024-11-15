@@ -1,4 +1,22 @@
 {
   "projectName": "Programming with Julia",
-  "projectOwner": "Carpentries Incubator"
+  "projectOwner": "carpentries-incubator",
+  "files": [
+    "README.md"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributorsSortAlphabetically": true,
+  "contributors": [
+    {
+      "login": "snotskie",
+      "name": "snotskie",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2658495?v=4",
+      "profile": "https://snotskie.com/bio",
+      "contributions": [
+        "ideas"
+      ]
+    }
+  ]
 }
