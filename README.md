@@ -58,6 +58,13 @@ Current maintainers of this lesson are
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://snotskie.com/bio"><img src="https://avatars.githubusercontent.com/u/2658495?v=4?s=100" width="100px;" alt="snotskie"/><br /><sub><b>snotskie</b></sub></a><br /><a href="#ideas-snotskie" title="Ideas, Planning, & Feedback">🤔</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
