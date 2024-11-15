@@ -34,6 +34,9 @@ nicely explained in the chapter [Contributing to a Project][start] in *Pro Git*
 by Scott Chacon. Look for the tag ![good\_first\_issue][first]. This indicates
 that the maintainers will welcome a pull request fixing this issue.
 
+We use the all-contributors bot to track contributions.
+[Documentation for usage of the bot](https://allcontributors.org/docs/en/bot/usage)
+
 ## Where to start
 
 [slack]: https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg
