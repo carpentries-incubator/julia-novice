@@ -61,6 +61,7 @@ Current maintainers of this lesson are
 <table>
   <tbody>
     <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/amanmdesai"><img src="https://avatars.githubusercontent.com/u/98302868?v=4?s=100" width="100px;" alt="Aman Desai"/><br /><sub><b>Aman Desai</b></sub></a><br /><a href="#userTesting-amanmdesai" title="User Testing">📓</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/fmarotta"><img src="https://avatars.githubusercontent.com/u/26001460?v=4?s=100" width="100px;" alt="Federico Marotta"/><br /><sub><b>Federico Marotta</b></sub></a><br /><a href="#content-fmarotta" title="Content">🖋</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://blog.bonham.ch"><img src="https://avatars.githubusercontent.com/u/3502975?v=4?s=100" width="100px;" alt="Kevin Bonham"/><br /><sub><b>Kevin Bonham</b></sub></a><br /><a href="#review-kescobo" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://giordano.github.io"><img src="https://avatars.githubusercontent.com/u/765740?v=4?s=100" width="100px;" alt="Mosè Giordano"/><br /><sub><b>Mosè Giordano</b></sub></a><br /><a href="#userTesting-giordano" title="User Testing">📓</a></td>
