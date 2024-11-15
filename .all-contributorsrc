@@ -35,6 +35,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "MCMaurer",
+      "name": "Michael Culshaw-Maurer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/15881370?v=4",
+      "profile": "http://michaelc-m.com",
+      "contributions": [
+        "content"
+      ]
     }
   ]
 }
