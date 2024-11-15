@@ -43,6 +43,78 @@
       "profile": "https://github.com/Myrkwid",
       "contributions": [
         "code"
+        ]
+    },
+    {
+      "login": "tkphd",
+      "name": "Trevor Keller",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2179347?v=4",
+      "profile": "http://www.trevorkeller.com",
+      "contributions": [
+        "content"
+        ]
+    },
+    {
+      "login": "sstevens2",
+      "name": "Sarah Stevens",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5558419?v=4",
+      "profile": "https://sarahlrstevens.info",
+      "contributions": [
+        "design"
+        ]
+    },
+    {
+      "login": "lokamani",
+      "name": "lokamani",
+      "avatar_url": "https://avatars.githubusercontent.com/u/64150921?v=4",
+      "profile": "https://github.com/lokamani",
+      "contributions": [
+        "content"
+        ]
+    },
+    {
+      "login": "lucaferranti",
+      "name": "Luca Ferranti",
+      "avatar_url": "https://avatars.githubusercontent.com/u/49938764?v=4",
+      "profile": "https://github.com/lucaferranti",
+      "contributions": [
+        "content"
+        ]
+    },
+    {
+      "login": "fmichonneau",
+      "name": "François Michonneau",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5502922?v=4",
+      "profile": "https://francoismichonneau.net/",
+      "contributions": [
+        "infra"
+      ]
+    },
+    {
+      "login": "amanmdesai",
+      "name": "Aman Desai",
+      "avatar_url": "https://avatars.githubusercontent.com/u/98302868?v=4",
+      "profile": "https://github.com/amanmdesai",
+      "contributions": [
+        "userTesting"
+      ]
+    },
+    {
+      "login": "giordano",
+      "name": "Mosè Giordano",
+      "avatar_url": "https://avatars.githubusercontent.com/u/765740?v=4",
+      "profile": "https://giordano.github.io",
+      "contributions": [
+        "userTesting"
+      ]
+    },
+    {
+      "login": "tobyhodges",
+      "name": "Toby Hodges",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9694524?v=4",
+      "profile": "https://tbyhdgs.info",
+      "contributions": [
+        "infra"
       ]
     }
   ]
