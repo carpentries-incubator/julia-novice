@@ -58,6 +58,13 @@ Current maintainers of this lesson are
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://blog.bonham.ch"><img src="https://avatars.githubusercontent.com/u/3502975?v=4?s=100" width="100px;" alt="Kevin Bonham"/><br /><sub><b>Kevin Bonham</b></sub></a><br /><a href="#review-kescobo" title="Reviewed Pull Requests">👀</a> <a href="#content-kescobo" title="Content">🖋</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
