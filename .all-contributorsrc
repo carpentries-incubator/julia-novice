@@ -35,6 +35,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "fmichonneau",
+      "name": "François Michonneau",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5502922?v=4",
+      "profile": "https://francoismichonneau.net/",
+      "contributions": [
+        "infra"
+      ]
     }
   ]
 }
