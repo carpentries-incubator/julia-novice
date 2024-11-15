@@ -9,6 +9,8 @@
 
 [![Our channel][channel]](https://swcarpentry.slack.com/archives/CBJ8C7NE6)
 
+[![All Contributors](https://img.shields.io/github/all-contributors/projectOwner/projectName?color=ee8449&style=flat-square)](#contributors)
+
 This lesson targets people who already have some experience with (scientific)
 programming, but are new to Julia.
 
@@ -32,20 +34,7 @@ nicely explained in the chapter [Contributing to a Project][start] in *Pro Git*
 by Scott Chacon. Look for the tag ![good\_first\_issue][first]. This indicates
 that the maintainers will welcome a pull request fixing this issue.
 
-## Maintainer(s)
-
-Current maintainers of this lesson are
-
-- [Simon](https://carpentries.org/instructors/#beastyblacksmith):
-  [@BeastyBlacksmith](https://github.com/BeastyBlacksmith)
-
-## Authors
-
-A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
-
-## Citation
-
-To cite this lesson, please consult [CITATION](CITATION)
+## Where to start
 
 [slack]: https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg
 [channel]: https://img.shields.io/badge/juliaswc-slack_channel-orange
@@ -54,5 +43,21 @@ To cite this lesson, please consult [CITATION](CITATION)
 [start]: https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project
 [first]: https://img.shields.io/badge/-good%20first%20issue-gold.svg
 
+## Maintainer(s)
 
+Current maintainers of this lesson are
+
+- [Simon](https://carpentries.org/instructors/#beastyblacksmith):
+  [@BeastyBlacksmith](https://github.com/BeastyBlacksmith)
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
