@@ -26,6 +26,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "kescobo",
+      "name": "Kevin Bonham",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3502975?v=4",
+      "profile": "http://blog.bonham.ch",
+      "contributions": [
+        "review"
+      ]
     }
   ]
 }
