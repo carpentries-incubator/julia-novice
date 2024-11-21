@@ -44,7 +44,7 @@
       "contributions": [
         "content",
         "code"
-        ]
+      ]
     },
     {
       "login": "fiveop",
@@ -53,7 +53,7 @@
       "profile": "https://gitlab.com/fiveop",
       "contributions": [
         "content"
-        ]
+      ]
     },
     {
       "login": "gus-pendleton",
@@ -62,7 +62,7 @@
       "profile": "https://gus-pendleton.github.io/",
       "contributions": [
         "content"
-        ]
+      ]
     },
     {
       "login": "ocaisa",
@@ -80,7 +80,7 @@
       "profile": "http://michaelc-m.com",
       "contributions": [
         "content"
-        ]
+      ]
     },
     {
       "login": "Myrkwid",
@@ -89,7 +89,7 @@
       "profile": "https://github.com/Myrkwid",
       "contributions": [
         "code"
-        ]
+      ]
     },
     {
       "login": "tkphd",
@@ -98,7 +98,7 @@
       "profile": "http://www.trevorkeller.com",
       "contributions": [
         "content"
-        ]
+      ]
     },
     {
       "login": "sstevens2",
@@ -107,7 +107,7 @@
       "profile": "https://sarahlrstevens.info",
       "contributions": [
         "design"
-        ]
+      ]
     },
     {
       "login": "lokamani",
@@ -116,7 +116,7 @@
       "profile": "https://github.com/lokamani",
       "contributions": [
         "content"
-        ]
+      ]
     },
     {
       "login": "lucaferranti",
@@ -125,7 +125,7 @@
       "profile": "https://github.com/lucaferranti",
       "contributions": [
         "content"
-        ]
+      ]
     },
     {
       "login": "fmichonneau",
@@ -161,6 +161,15 @@
       "profile": "https://tbyhdgs.info",
       "contributions": [
         "infra"
+      ]
+    },
+    {
+      "login": "cekees",
+      "name": "Chris Kees",
+      "avatar_url": "https://avatars.githubusercontent.com/u/613654?v=4",
+      "profile": "https://github.com/cekees",
+      "contributions": [
+        "ideas"
       ]
     }
   ]
