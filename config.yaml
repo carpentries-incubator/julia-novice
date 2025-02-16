@@ -27,7 +27,7 @@ life_cycle: 'alpha'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/fishtree-attempt/julia-novice/'
+source: 'https://github.com/carpentries-incubator/julia-novice'
 
 # Default branch of your lesson
 branch: 'main'
