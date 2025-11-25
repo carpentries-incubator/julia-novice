@@ -47,7 +47,7 @@
 # Julia users have also created domain-specific organizations, to better develop packages for specific fields. These can be a great place to go to learn more about the specific Julia packages available for your work. As just a sample:
 # 
 # - [JuliaActuary](https://juliaactuary.org/) for actuarial science
-# - [JuliaAstro](http://juliaastro.org/dev/index.html) for astronomy
+# - [JuliaAstro](https://juliaastro.org/dev/index.html) for astronomy
 # - [EcoJulia](https://ecojulia.org/) for ecological research
 # - [JuliaRobotics](https://juliarobotics.org/) for robotics control
 # - [BioJulia](https://biojulia.dev/) for biological and genetic research
