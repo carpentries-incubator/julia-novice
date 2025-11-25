@@ -38,7 +38,7 @@ jobs:
               with:
                 ref: 'main'
             - name: Download files
-              uses: actions/download-artifact@v3
+              uses: actions/download-artifact@v6
               with:
                 name: output
                 path: output
