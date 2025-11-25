@@ -167,7 +167,7 @@ environment = Environment(5, 100)
 #     This error message is clear: you're not allowed to define a `struct`
 #     using a name that's already in use.
 #md #
-#md #     !!! warning "Restart the REPL"
+#md #     !!! caution "Restart the REPL"
 #nb #     !!! warning "Restart the Kernel"
 #         In Julia it is not very easy to redefine `struct`s.
 #         It is necessary to restart the REPL to define the new definition of
