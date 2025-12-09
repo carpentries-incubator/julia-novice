@@ -57,6 +57,7 @@
           </ul></li>
       </div>
 
+
       <div class="dropdown" id="instructor-dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Learner View <i data-feather="chevron-down"></i>
@@ -364,7 +365,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Loops</h1>
-        <p>Last updated on 2024-11-15 |
+        <p>Last updated on 2025-12-09 |
 
         <a href="https://github.com/carpentries-incubator/julia-novice/edit/main/episodes/07_Loops.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -481,8 +482,8 @@ is uniformly distributed. So</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>2-element Trebuchet:
- 228.38576259167743
-   1.0428133782844782</code></pre>
+ 82.04221978013437
+  0.23223201848401745</code></pre>
 </div>
 <p>will give her a Trebuchet with a weight between 0 and 500 and a
 release angle between 0 and pi/2 radians at random.</p>
@@ -498,9 +499,9 @@ this</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>3-element Vector{Float64}:
- 75.81435701587722
- 83.01842049268829
- 67.14411448705451</code></pre>
+ 71.2304623716826
+ 90.30523354461468
+ 46.5684136387909</code></pre>
 </div>
 <p>This is called an <em>array comprehension</em>. To get the
 information of the parameters and the results in one place she writes
@@ -517,16 +518,16 @@ that again a bit differently</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>10-element Vector{Pair{Tuple{Float64, Float64}, Float64}}:
-  (3.3334597480246253, 0.7838682352298685) =&gt; 0.6815707596179541
-   (210.78228935379622, 1.381946534840864) =&gt; 35.85286633327975
-   (401.5993709331619, 0.2185755446723246) =&gt; 96.9029165112703
-   (174.8500444474639, 1.3802675063026215) =&gt; 34.83498096430634
-   (459.5195474131575, 0.6388081196321991) =&gt; 117.62925382680423
-   (325.9792258612826, 1.4742042308383514) =&gt; 23.118879918525415
- (424.04535348026496, 0.13367159006587603) =&gt; 84.32898973441384
-    (367.203106692998, 0.6088354356429886) =&gt; 117.46105246416498
-  (12.984772128024124, 1.5235451260228559) =&gt; 0.6815707596179541
-  (10.485349585032166, 0.6353974863672037) =&gt; 0.6815707596179541</code></pre>
+  (81.26977945216629, 0.6816804086844548) =&gt; 84.66243931633913
+  (196.7052630549182, 1.2602529699995595) =&gt; 54.66306818911467
+   (56.203596663160106, 0.65479176622091) =&gt; 71.14245152054725
+  (216.7918677501826, 0.7070153772894656) =&gt; 107.20236431291187
+ (288.96372956373415, 0.4488442021532229) =&gt; 109.18447405208049
+ (26.287520457035196, 1.4832407619042867) =&gt; 3.3064328724242706
+  (85.55853861437923, 0.7906806776331159) =&gt; 83.16344574677922
+   (89.12084433044154, 1.026916553571188) =&gt; 69.15818330481743
+  (39.74763851951424, 0.8201283596792035) =&gt; 51.81433615540801
+ (124.52294349993458, 0.5785033076849977) =&gt; 97.941342571322</code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -584,7 +585,7 @@ change the parameters to make the largest difference.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The correct solution is 4: <kbd>]</kbd> to enter pkg mode, then</p>
 <div class="codewrapper sourceCode" id="cb12">
@@ -650,7 +651,7 @@ gradient, such that it still improves the distance?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Try a bunch of values! </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -734,7 +735,7 @@ to automate the additional iterations. She writes a new function
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>This is a highly non-linear system and thus very sensitive. The
 distances across different values for the counterweight and the release
@@ -837,15 +838,17 @@ an unknown number of iterations.”</li>
 	
         | <a href="https://github.com/carpentries-incubator/julia-novice/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/carpentries-incubator/julia-novice/" class="external-link">Source</a></p>
-				<p><a href="https://github.com/carpentries-incubator/julia-novice/blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:SimonChrist@gmx.de">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
-			</div>
-			<div class="col-md-6">
+        <p>
+        <a href="https://github.com/carpentries-incubator/julia-novice/blob/main/" class="external-link">Cite</a>
+        | <a href="mailto:SimonChrist@gmx.de">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+		</div>
+		<div class="col-md-6">
 
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.17.1" class="external-link">sandpaper (0.17.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.7" class="external-link">varnish (1.0.7)</a></p>
-			</div>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.17.3" class="external-link">sandpaper (0.17.3)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
+		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
 		<a href="#top">
@@ -865,9 +868,9 @@ an unknown number of iterations.”</li>
   "creativeWorkStatus": "active",
   "url": "https://preview.carpentries.org/julia-novice/07_Loops.html",
   "identifier": "https://preview.carpentries.org/julia-novice/07_Loops.html",
-  "dateCreated": "2025-10-28",
-  "dateModified": "2024-11-15",
-  "datePublished": "2025-11-18"
+  "dateCreated": "2025-11-25",
+  "dateModified": "2025-12-09",
+  "datePublished": "2025-12-09"
 }
 
   </script><script>
