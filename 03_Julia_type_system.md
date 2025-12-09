@@ -239,7 +239,7 @@ Stacktrace:
 This error message is clear: you're not allowed to define a `struct`
 using a name that's already in use.
 
-:::::: warning
+:::::: caution
 
 ## Restart the REPL
 
