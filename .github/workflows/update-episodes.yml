@@ -22,7 +22,7 @@ jobs:
               run: |
                 include(joinpath(pwd(), "generate.jl"))
             - name: Upload output
-              uses: actions/upload-artifact@v5
+              uses: actions/upload-artifact@v6
               with:
                 name: output
                 path: output
