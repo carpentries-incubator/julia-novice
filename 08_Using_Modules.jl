@@ -77,10 +77,6 @@ end
 
 imprecise_trebuchet = Trebuchet(500.0, 0.25pi)
 
-# accessing the fields
-imprecise_trebuchet.counterweight
-imprecise_trebuchet.release_angle
-
 environment = Environment(5, 100)
 
 precise_trebuchet = aim(imprecise_trebuchet, environment)
