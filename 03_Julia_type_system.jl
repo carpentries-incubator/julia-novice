@@ -133,6 +133,12 @@ environment = Environment(5, 100)
 # `trebuchet` is being called an _instance_ or _object_ of the type `Trebuchet`.
 # There can only ever be one definition of the type `Trebuchet` but you can create many instances of that type with different values for its fields.
 
+# Once an object has been created, you can access the values stored in its
+# fields using a dot (`.`) followed by the field name.
+# This lets us inspect the data stored in a particular instance.
+
+trebuchet.counterweight
+trebuchet.release_angle
 
 # ## Creating a subtype
 
