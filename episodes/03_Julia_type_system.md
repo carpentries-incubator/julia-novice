@@ -211,6 +211,19 @@ Environment(5.0, 100.0)
 `trebuchet` is being called an _instance_ or _object_ of the type `Trebuchet`.
 There can only ever be one definition of the type `Trebuchet` but you can create many instances of that type with different values for its fields.
 
+Once an object has been created, you can access the values stored in its
+fields using a dot (`.`) followed by the field name.
+This lets us inspect the data stored in a particular instance.
+
+````julia
+trebuchet.counterweight
+trebuchet.release_angle
+````
+
+````output
+0.7853981633974483
+````
+
 ## Creating a subtype
 
 A concrete type can be made a subtype of an abstract type with the
