@@ -82,7 +82,7 @@ jobs:
       contents: write
     steps:
       - name: 'Checkout md outputs'
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: md-outputs
           path: built
