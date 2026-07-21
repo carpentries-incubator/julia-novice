@@ -262,7 +262,7 @@ end
 
 Base.size(::Trebuchet) = tuple(2)
 
-# !!! note Omitting unneeded arguments
+# !!! note "Omitting unneeded arguments"
 #     Melissa could also name the argument in the signature.
 #     Like this: `(trebuchet::Trebuchet)`, but since the argument is not needed to compute
 #     the output of the function she can omit it.
