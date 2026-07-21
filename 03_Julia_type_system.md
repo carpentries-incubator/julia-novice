@@ -26,7 +26,7 @@ exercises: 5
 
 ## Types and hierarchy
 
-In the previous episode we observed that `varinfo` does not only shows the names of bindings,
+In the [previous episode](02_Getting_started.jl) we observed that `varinfo` does not only shows the names of bindings,
 but also the types of the bounded values.
 ```julia
  name                    size summary
@@ -332,12 +332,18 @@ It is necessary to restart the REPL to define the new definition of
 
 *Melissa decides to keep going and come back to this later.*
 
-!!! spoiler `UnionAll` types
+:::::: spoiler
+
+## `UnionAll` types
+
 There is at least one type we did not cover here, which is the `UnionAll` type.
 For example `Vector{<:Number}` is the type fo the union of all vectors whose elements have a common type which is a subtype of `Number`.
 This is different from `Vector{Number}` which is a concrete type of a vector whose elements have a potentially different subtype of `Number`, e.g. `[1, 2.0, 3f0]`.
 Notably, since it is a concrete type, it cannot have subtypes, so `Vector{Float64} <: Vector{<:Number}` is `true`, but `Vector{Float64} <: Vector{Number}` is `false`.
 That is a common source of confusion.
+
+::::::
+
 :::::: keypoints
 
 ## Keypoints
