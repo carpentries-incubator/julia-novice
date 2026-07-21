@@ -1,8 +1,3 @@
-> **ATTENTION** This is an experimental test of [The Carpentries Workbench](https://carpentries.github.io/workbench) lesson infrastructure.
-> It was automatically converted from the source lesson via [the lesson transition script](https://github.com/carpentries/lesson-transition/).
->
-> If anything seems off, please contact Zhian Kamvar [zkamvar@carpentries.org](mailto:zkamvar@carpentries.org)
-
 # Programming with Julia
 
 [![Create a Slack Account with us][slack]](https://swc-slack-invite.herokuapp.com/)
