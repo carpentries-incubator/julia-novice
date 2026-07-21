@@ -16,44 +16,32 @@
 
 #md using InteractiveUtils #hide
 
-# ## Structuring variables
+# ## Types and hierarchy
 
-# Melissa wants to keep the variables corresponding to the trebuchet
-# (`counterweight`, `release_angle`) separate from the variables coming from the
-# environment (`wind`, `target_distance`).
-# That is why she chooses to group them together using _structures_.
-# There are two structure types:
+# In the previous episode we observed that `varinfo` does not only shows the names of bindings,
+# but also the types of the bounded values.
+# ```julia
+#  name                    size summary
+#  –––––––––––––––– ––––––––––– –––––––
+#  ...
+#  distance             8 bytes Float64
+#  distance_x_2         8 bytes Float64
+# ```  
+# We could have specified the type we wanted by writing
 
-# - immutable structures, whose fields can not be changed after creation
-#  - keyword: `struct`
-# - mutable structures, whose fields can change after creation
-#  - keyword: `mutable struct`
+distance::Float64 = 30.2
 
-# Since Melissa wants to change the parameters of the trebuchet, she uses a
-# `mutable struct` for it.
-# But she cannot influence the environment and thus uses a `struct` for those
-# values.
+# or for example
 
-mutable struct Trebuchet
-  counterweight::Float64
-  release_angle::Float64
-end
+distance_f::Float32 = 30.2
 
-struct Environment
-  wind::Float64
-  target_distance::Float64
-end
-
-
-# ### Types and hierarchy
+# to get the same number with a less precise number type, which saves memory at the cost of less precise results.
 
 # Here `::Float64` is a type specification, indicating that this variable should
 # be a 64-bit floating point number, and __`::`__ is an *operator* that
 # is read "is an instance of."
-# If Melissa hadn't specified the type, the variables would have the type `Any`
-# by default.
 
-# In Julia every type can have only one supertype, so let's count how many types
+# In Julia every type can only have one supertype, so let's count how many types
 # are between `Float64` and `Any`:
 
 #md # **1.**
@@ -88,6 +76,11 @@ typeof(1.0)
 # or
 1.0 isa Float64
 
+# In general, it is necessary to call **the constructor** of a type to create an instance of a type, like so:
+
+Float32(1)
+
+# For certain literal values that is not the case, since they are the default like `1.0 == Float64(1)`, but that is an exception.
 
 # All the other types are _abstract_ types that are used to address groups of
 # types.
@@ -118,7 +111,51 @@ subtypes(Real)
 #     !!! solution
 #         The correct answer is 4:
 #         while `1` is an integer, `1.0` is a floating-point value.
+# ## Structuring variables
 
+# In addition to basic types like numbers and strings, there are also composite types, which are used to group variables that belong together.
+
+# Melissa wants to keep the variables corresponding to the trebuchet
+# (`counterweight`, `release_angle`) separate from the variables coming from the
+# environment (`wind`, `target_distance`).
+# That is why she chooses to group them together using _structures_.
+# There are two structure types:
+
+# - immutable structures, whose fields can not be changed after creation
+#  - keyword: `struct`
+# - mutable structures, whose fields can change after creation
+#  - keyword: `mutable struct`
+
+# Since Melissa wants to change the parameters of the trebuchet, she uses a
+# `mutable struct` for it.
+# But she cannot influence the environment and thus uses a `struct` for those
+# values.
+
+mutable struct Trebuchet
+  counterweight::Float64
+  release_angle::Float64
+end
+
+struct Environment
+  wind::Float64
+  target_distance::Float64
+end
+
+# !!! caution
+#     ``` julia
+#      struct Environment
+#        wind
+#        target_distance
+#      end
+#     ```
+#     is equivaelnt to 
+#     ``` julia
+#      struct Environment
+#        wind::Any
+#        target_distance::Any
+#      end
+#     ```
+#     which is a common performance trap. 
 # ## Instances
 
 # So far Melissa only defined the layout of her new types `Trebuchet` and `Environment`.
