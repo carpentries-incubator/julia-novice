@@ -1043,9 +1043,9 @@ prints the resulting output to the user.”</li>
 <section><h2 class="section-heading" id="types-and-hierarchy">Types and hierarchy<a class="anchor" aria-label="anchor" href="#types-and-hierarchy"></a>
 </h2>
 <hr class="half-width">
-<p>In the previous episode we observed that <code>varinfo</code> does
-not only shows the names of bindings, but also the types of the bounded
-values.</p>
+<p>In the <a href="../02_Getting_started.jl">previous episode</a> we
+observed that <code>varinfo</code> does not only shows the names of
+bindings, but also the types of the bounded values.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1229,7 +1229,7 @@ return <code>false</code>?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The correct answer is 4: while <code>1</code> is an integer,
 <code>1.0</code> is a floating-point value.</p>
@@ -1403,26 +1403,42 @@ necessary to restart the REPL to define the new definition of
 </div>
 <p><em>Melissa decides to keep going and come back to this
 later.</em></p>
-<p>!!! spoiler <code>UnionAll</code> types There is at least one type we
-did not cover here, which is the <code>UnionAll</code> type. For example
-<code>Vector{&lt;:Number}</code> is the type fo the union of all vectors
-whose elements have a common type which is a subtype of
-<code>Number</code>. This is different from <code>Vector{Number}</code>
-which is a concrete type of a vector whose elements have a potentially
-different subtype of <code>Number</code>,
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> UnionAll types </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div class="accordion-body">
+<p>There is at least one type we did not cover here, which is the
+<code>UnionAll</code> type. For example <code>Vector{&lt;:Number}</code>
+is the type fo the union of all vectors whose elements have a common
+type which is a subtype of <code>Number</code>. This is different from
+<code>Vector{Number}</code> which is a concrete type of a vector whose
+elements have a potentially different subtype of <code>Number</code>,
 e.g. <code>[1, 2.0, 3f0]</code>. Notably, since it is a concrete type,
 it cannot have subtypes, so
 <code>Vector{Float64} &lt;: Vector{&lt;:Number}</code> is
 <code>true</code>, but <code>Vector{Float64} &lt;: Vector{Number}</code>
-is <code>false</code>. That is a common source of confusion. ::::::
-keypoints</p>
-</section><section><h2 class="section-heading" id="keypoints">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints"></a>
-</h2>
-<hr class="half-width">
+is <code>false</code>. That is a common source of confusion.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="keypoints" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div id="keypoints" class="callout-inner">
+<h3 class="callout-title">Keypoints</h3>
+<div class="callout-content">
 <ul>
 <li>“In Julia types have only one direct supertype.”</li>
 </ul>
-<p>::::::</p>
+</div>
+</div>
+</div>
 </section></section><section id="aio-04_Using_the_package_manager"><p>Content from <a href="04_Using_the_package_manager.html">Using the package manager</a></p>
 <hr>
 <p>Last updated on 2025-12-09 |
@@ -1658,7 +1674,7 @@ upon <code>import</code> using the keyword <em><code>as</code></em>:</p>
 </div>
 </section></section><section id="aio-05_Write_functions"><p>Content from <a href="05_Write_functions.html">Write functions!</a></p>
 <hr>
-<p>Last updated on 2024-11-14 |
+<p>Last updated on 2026-07-21 |
 
         <a href="https://github.com/carpentries-incubator/julia-novice/edit/main/episodes/05_Write_functions.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -1787,7 +1803,7 @@ What would the function call look like?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Both arguments are present, but <code>true</code> is presented
@@ -2215,12 +2231,23 @@ can also using the short form notation to fit this in a single line:</p>
 </h3>
 <pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb41-1"><a href="#cb41-1" tabindex="-1" aria-label="code-block-41-1"></a><span class="bu">Base</span>.<span class="fu">size</span>(<span class="op">::</span><span class="dt">Trebuchet</span>) <span class="op">=</span> <span class="fu">tuple</span>(<span class="fl">2</span>)</span></code></pre>
 </div>
-<p>!!! callout Omitting unneeded arguments Melissa could also name the
-argument in the signature. Like this:
+<div id="omitting-unneeded-arguments" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="omitting-unneeded-arguments" class="callout-inner">
+<h3 class="callout-title">Omitting unneeded arguments</h3>
+<div class="callout-content">
+<p>Melissa could also name the argument in the signature. Like this:
 <code>(trebuchet::Trebuchet)</code>, but since the argument is not
 needed to compute the output of the function she can omit it. The
-argument is in this case only used to dispatch to the correct method.
-Now she can try again</p>
+argument is in this case only used to dispatch to the correct
+method.</p>
+</div>
+</div>
+</div>
+<p>Now she can try again</p>
 <div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2600,7 +2627,7 @@ Melissas <code>getindex</code> function.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2779,8 +2806,8 @@ is uniformly distributed. So</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>2-element Trebuchet:
- 49.91862703791794
-  1.26504160621921</code></pre>
+ 448.5938843845938
+   0.2297455909332035</code></pre>
 </div>
 <p>will give her a Trebuchet with a weight between 0 and 500 and a
 release angle between 0 and pi/2 radians at random.</p>
@@ -2796,9 +2823,9 @@ this</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>3-element Vector{Float64}:
- 102.78149226924207
-  98.18969316686896
-  85.68484403919854</code></pre>
+ 80.70866172054447
+ 50.606830597542285
+ 61.70138200474863</code></pre>
 </div>
 <p>This is called an <em>array comprehension</em>. To get the
 information of the parameters and the results in one place she writes
@@ -2815,16 +2842,16 @@ that again a bit differently</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>10-element Vector{Pair{Tuple{Float64, Float64}, Float64}}:
-  (343.83590913710844, 1.1169022382283542) =&gt; 83.77231855678967
-   (333.3520896041067, 0.4129439288715931) =&gt; 112.83625969849307
- (225.69729179019993, 0.36966504035877945) =&gt; 102.32551644185237
-  (212.34712034210702, 0.8440292528643537) =&gt; 101.08995271689767
-    (486.2003406322714, 1.201855299510719) =&gt; 71.17939623060605
-   (188.2610426299764, 0.9751658799387203) =&gt; 89.81431194067929
-  (278.7653078192413, 0.47886381146444057) =&gt; 108.64350983639152
-   (491.20084383664755, 1.338965296799225) =&gt; 46.60985595977208
-  (316.04397648243105, 0.8209413048286073) =&gt; 109.57653270525698
-   (336.7952918412603, 0.6936641379151202) =&gt; 115.51553371309843</code></pre>
+   (153.4017186515968, 1.0811154247436097) =&gt; 75.94558183320551
+  (433.6997314801423, 0.30638412692836914) =&gt; 105.98867692249704
+ (24.341288453491817, 0.12045684966256007) =&gt; 18.75602651296803
+  (286.59688803082844, 1.5624213012247836) =&gt; 10.609444590528371
+  (475.11320237767416, 1.5195569254118224) =&gt; 17.196756160009514
+    (69.2095322645756, 0.9908974450309935) =&gt; 64.87063263481392
+   (361.6996105277568, 0.9820127582299857) =&gt; 98.44263127585704
+   (89.95302223685003, 0.7141199011203246) =&gt; 87.23616074780476
+  (157.03402647892034, 0.3670964278256715) =&gt; 96.94101188342367
+   (65.36615653283262, 0.8311997762049679) =&gt; 72.444986185825</code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -2885,7 +2912,7 @@ change the parameters to make the largest difference.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The correct solution is 4: <kbd>]</kbd> to enter pkg mode, then</p>
 <div class="codewrapper sourceCode" id="cb12">
@@ -2951,7 +2978,7 @@ gradient, such that it still improves the distance?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Try a bunch of values! </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3036,7 +3063,7 @@ to automate the additional iterations. She writes a new function
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>This is a highly non-linear system and thus very sensitive. The
 distances across different values for the counterweight and the release
@@ -3573,7 +3600,7 @@ name</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span><span class="fu">Test.DefaultTestSet</span><span class="op">(</span><span class="st">"Test arithmetic equalities"</span>, <span class="va">Any</span><span class="op">[</span><span class="op">]</span>, <span class="fl">1</span>, <span class="va">false</span>, <span class="va">false</span>, <span class="va">true</span>, <span class="fl">1.784636666925436e9</span>, <span class="fl">1.78463666696109e9</span>, <span class="va">false</span><span class="op">)</span></span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="fu">Test.DefaultTestSet</span><span class="op">(</span><span class="st">"Test arithmetic equalities"</span>, <span class="va">Any</span><span class="op">[</span><span class="op">]</span>, <span class="fl">1</span>, <span class="va">false</span>, <span class="va">false</span>, <span class="va">true</span>, <span class="fl">1.784641272874066e9</span>, <span class="fl">1.784641272906266e9</span>, <span class="va">false</span><span class="op">)</span></span></code></pre>
 </div>
 <p>With this Melissa can run her test using the pkg mode of the
 REPL:</p>

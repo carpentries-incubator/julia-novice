@@ -364,7 +364,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Write functions!</h1>
-        <p>Last updated on 2024-11-14 |
+        <p>Last updated on 2026-07-21 |
 
         <a href="https://github.com/carpentries-incubator/julia-novice/edit/main/episodes/05_Write_functions.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -488,7 +488,7 @@ What would the function call look like?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Both arguments are present, but <code>true</code> is presented
 without a keyword. This throws a
@@ -906,12 +906,23 @@ can also using the short form notation to fit this in a single line:</p>
 </h3>
 <pre class="sourceCode julia" tabindex="0"><code class="sourceCode julia"><span id="cb41-1"><a href="#cb41-1" tabindex="-1" aria-label="code-block-41-1"></a><span class="bu">Base</span>.<span class="fu">size</span>(<span class="op">::</span><span class="dt">Trebuchet</span>) <span class="op">=</span> <span class="fu">tuple</span>(<span class="fl">2</span>)</span></code></pre>
 </div>
-<p>!!! callout Omitting unneeded arguments Melissa could also name the
-argument in the signature. Like this:
+<div id="omitting-unneeded-arguments" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="omitting-unneeded-arguments" class="callout-inner">
+<h3 class="callout-title">Omitting unneeded arguments</h3>
+<div class="callout-content">
+<p>Melissa could also name the argument in the signature. Like this:
 <code>(trebuchet::Trebuchet)</code>, but since the argument is not
 needed to compute the output of the function she can omit it. The
-argument is in this case only used to dispatch to the correct method.
-Now she can try again</p>
+argument is in this case only used to dispatch to the correct
+method.</p>
+</div>
+</div>
+</div>
+<p>Now she can try again</p>
 <div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">JULIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1153,7 +1164,7 @@ and their type”</li>
   "url": "https://preview.carpentries.org/julia-novice/instructor/05_Write_functions.html",
   "identifier": "https://preview.carpentries.org/julia-novice/instructor/05_Write_functions.html",
   "dateCreated": "2026-07-21",
-  "dateModified": "2024-11-14",
+  "dateModified": "2026-07-21",
   "datePublished": "2026-07-21"
 }
 
