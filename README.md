@@ -9,7 +9,7 @@
 
 [![Our channel][channel]](https://swcarpentry.slack.com/archives/CBJ8C7NE6)
 
-[![All Contributors](https://img.shields.io/github/all-contributors/projectOwner/projectName?color=ee8449&style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/github/all-contributors/carpentries-incubator/julia-novice?color=ee8449&style=flat-square)](#contributors)
 
 This lesson targets people who already have some experience with (scientific)
 programming, but are new to Julia.
