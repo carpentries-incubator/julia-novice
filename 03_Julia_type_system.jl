@@ -18,7 +18,7 @@
 
 # ## Types and hierarchy
 
-# In the previous episode we observed that `varinfo` does not only shows the names of bindings,
+# In the [previous episode](02_Getting_started.jl) we observed that `varinfo` does not only shows the names of bindings,
 # but also the types of the bounded values.
 # ```julia
 #  name                    size summary
