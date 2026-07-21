@@ -24,45 +24,44 @@ exercises: 5
 ::::::
 
 
-## Structuring variables
+## Types and hierarchy
 
-Melissa wants to keep the variables corresponding to the trebuchet
-(`counterweight`, `release_angle`) separate from the variables coming from the
-environment (`wind`, `target_distance`).
-That is why she chooses to group them together using _structures_.
-There are two structure types:
-
-- immutable structures, whose fields can not be changed after creation
- - keyword: `struct`
-- mutable structures, whose fields can change after creation
- - keyword: `mutable struct`
-
-Since Melissa wants to change the parameters of the trebuchet, she uses a
-`mutable struct` for it.
-But she cannot influence the environment and thus uses a `struct` for those
-values.
+In the previous episode we observed that `varinfo` does not only shows the names of bindings,
+but also the types of the bounded values.
+```julia
+ name                    size summary
+ –––––––––––––––– ––––––––––– –––––––
+ ...
+ distance             8 bytes Float64
+ distance_x_2         8 bytes Float64
+```
+We could have specified the type we wanted by writing
 
 ````julia
-mutable struct Trebuchet
-  counterweight::Float64
-  release_angle::Float64
-end
-
-struct Environment
-  wind::Float64
-  target_distance::Float64
-end
+distance::Float64 = 30.2
 ````
 
-### Types and hierarchy
+````output
+30.2
+````
+
+or for example
+
+````julia
+distance_f::Float32 = 30.2
+````
+
+````output
+30.2
+````
+
+to get the same number with a less precise number type, which saves memory at the cost of less precise results.
 
 Here `::Float64` is a type specification, indicating that this variable should
 be a 64-bit floating point number, and __`::`__ is an *operator* that
 is read "is an instance of."
-If Melissa hadn't specified the type, the variables would have the type `Any`
-by default.
 
-In Julia every type can have only one supertype, so let's count how many types
+In Julia every type can only have one supertype, so let's count how many types
 are between `Float64` and `Any`:
 
 **1.**
@@ -133,6 +132,18 @@ or
 true
 ````
 
+In general, it is necessary to call **the constructor** of a type to create an instance of a type, like so:
+
+````julia
+Float32(1)
+````
+
+````output
+1.0f0
+````
+
+For certain literal values that is not the case, since they are the default like `1.0 == Float64(1)`, but that is an exception.
+
 All the other types are _abstract_ types that are used to address groups of
 types.
 For example, if we declare a variable as `a::Real` then it can be bound to any
@@ -185,8 +196,62 @@ while `1` is an integer, `1.0` is a floating-point value.
 
 ::::::
 
-## Instances
+## Structuring variables
+In addition to basic types like numbers and strings, there are also composite types, which are used to group variables that belong together.
 
+Melissa wants to keep the variables corresponding to the trebuchet
+(`counterweight`, `release_angle`) separate from the variables coming from the
+environment (`wind`, `target_distance`).
+That is why she chooses to group them together using _structures_.
+There are two structure types:
+
+- immutable structures, whose fields can not be changed after creation
+ - keyword: `struct`
+- mutable structures, whose fields can change after creation
+ - keyword: `mutable struct`
+
+Since Melissa wants to change the parameters of the trebuchet, she uses a
+`mutable struct` for it.
+But she cannot influence the environment and thus uses a `struct` for those
+values.
+
+````julia
+mutable struct Trebuchet
+  counterweight::Float64
+  release_angle::Float64
+end
+
+struct Environment
+  wind::Float64
+  target_distance::Float64
+end
+````
+
+:::::: caution
+
+## Caution
+
+```julia
+ struct Environment
+   wind
+   target_distance
+ end
+```
+
+is equivaelnt to
+
+```julia
+ struct Environment
+   wind::Any
+   target_distance::Any
+ end
+```
+
+which is a common performance trap.
+
+::::::
+
+## Instances
 So far Melissa only defined the layout of her new types `Trebuchet` and `Environment`.
 To actually create a value of this type she has to call the so called _constructor_, which is a function with the same name as the corresponding type and as many arguments as there are fields.
 
@@ -228,7 +293,7 @@ trebuchet.release_angle
 
 A concrete type can be made a subtype of an abstract type with the
 subtype operator __`<:`__.
-Since `Trebuchet` contains several fields that are mutable Melissa thinks it is
+Because Melissa thinks `Trebuchet` should be used essentially like a `Vector` it would be
 a good idea to make it a subtype of `AbstractVector`.
 
 :::::: callout
@@ -267,6 +332,12 @@ It is necessary to restart the REPL to define the new definition of
 
 *Melissa decides to keep going and come back to this later.*
 
+!!! spoiler `UnionAll` types
+There is at least one type we did not cover here, which is the `UnionAll` type.
+For example `Vector{<:Number}` is the type fo the union of all vectors whose elements have a common type which is a subtype of `Number`.
+This is different from `Vector{Number}` which is a concrete type of a vector whose elements have a potentially different subtype of `Number`, e.g. `[1, 2.0, 3f0]`.
+Notably, since it is a concrete type, it cannot have subtypes, so `Vector{Float64} <: Vector{<:Number}` is `true`, but `Vector{Float64} <: Vector{Number}` is `false`.
+That is a common source of confusion.
 :::::: keypoints
 
 ## Keypoints
