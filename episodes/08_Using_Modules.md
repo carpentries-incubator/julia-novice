@@ -209,7 +209,7 @@ include(joinpath(path,"MelissasCode.jl"))
 ````
 
 ````output
-100.05601729579894
+99.93175757844472
 ````
 
 where `path` is the path to her files.
