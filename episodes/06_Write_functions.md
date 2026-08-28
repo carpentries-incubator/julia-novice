@@ -118,6 +118,7 @@ Pkg.instantiate()
 
 ````
   Activating project at `~/projects/trebuchet`
+
 ````
 
 Importing the package under its modified name
@@ -205,8 +206,8 @@ Trebuchets.shoot(5, 0.25pi, 500)
 ````
 
 ````output
-(Trebuchet.TrebuchetState(Trebuchet.Lengths{Float64}(1.524, 2.0702016, 0.5334, 0.6096, 2.0826984, 0.8311896, 0.037947600000000005), Trebuchet.Masses{Float64}(226.796185, 0.14877829736, 4.8307587405), Trebuchet.Angles{Float64}(-0.4328124904398228, 1.1928977546511481, 1.437218009822302), Trebuchet.AnglularVelocities{Float64}(-6.80709816163242, 10.240657933288563, -22.420510883318446), Trebuchet.Constants{Float64}(5.0, 1.0, 1.0, 9.80665, 0.7853981633974482), Trebuchet.Inertias{Float64}(0.042140110093804806, 2.7288719786342384), Val{:End}(), 60.0, Trebuchet.Vec(114.88494815382731, -1.5239999999999991), Trebuchet.Vec(10.886295450427806, -21.290442812748466), Solution(387)
-, 3.943408301947865, Val{:Released}()), 114.88494815382731)
+(Trebuchet.TrebuchetState(Trebuchet.Lengths{Float64}(1.524, 2.0702016, 0.5334, 0.6096, 2.0826984, 0.8311896, 0.037947600000000005), Trebuchet.Masses{Float64}(226.796185, 0.14877829736, 4.8307587405), Trebuchet.Angles{Float64}(-0.43281249044032777, 1.1928977546521256, 1.4372180098230394), Trebuchet.AnglularVelocities{Float64}(-6.807098161641043, 10.240657933303282, -22.42051088332194), Trebuchet.Constants{Float64}(5.0, 1.0, 1.0, 9.80665, 0.7853981633974482), Trebuchet.Inertias{Float64}(0.042140110093804806, 2.7288719786342384), Val{:End}(), 60.0, Trebuchet.Vec(114.8849481538519, -1.5239999999999976), Trebuchet.Vec(10.886295450427038, -21.290442812749816), Solution(387)
+, 3.9434083019480943, Val{:Released}()), 114.8849481538519)
 ````
 
 That is a lot of output, but Melissa is actually only interested in the
@@ -218,7 +219,7 @@ Trebuchets.shoot(5, 0.25pi, 500)[2]
 ````
 
 ````output
-114.88494815382731
+114.8849481538519
 ````
 
 which means the shot traveled approximately 118 m.
@@ -257,7 +258,7 @@ shoot_distance(5, 0.25pi, 500)
 ````
 
 ````output
-114.88494815382731
+114.8849481538519
 ````
 
 ### Adding methods
@@ -331,7 +332,7 @@ shoot_distance(5, 0.25pi, 500)
 ````
 
 ````output
-114.88494815382731
+114.8849481538519
 ````
 
 ````julia
@@ -339,7 +340,7 @@ shoot_distance([5, 0.25pi, 500])
 ````
 
 ````output
-114.88494815382731
+114.8849481538519
 ````
 
 For the other method she needs to construct `Trebuchet` and `Environment` objects first
