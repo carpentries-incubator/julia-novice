@@ -208,7 +208,8 @@ trebuchet.release_angle
 #md #     ```
 #nb # !!! note
 #     This error message is clear: you're not allowed to define a `struct`
-#     using a name that's already in use.
+#     using a name that's already in use prior to Julia 1.12.
+#     For Julia versions 1.12 or greater it is possible, but any objects defined before the redefinition still are objects of the old type until you reassign them.
 #md #
 #md #     !!! caution "Restart the REPL"
 #nb #     !!! warning "Restart the Kernel"
