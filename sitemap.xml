@@ -10,7 +10,13 @@
     <loc>https://preview.carpentries.org/julia-novice/03_Julia_type_system.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/julia-novice/04_Interfacing_conditions.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/julia-novice/04_Using_the_package_manager.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/julia-novice/05_Using_the_package_manager.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/julia-novice/05_Write_functions.html</loc>
@@ -20,6 +26,9 @@
   </url>
   <url>
     <loc>https://preview.carpentries.org/julia-novice/06_Interfacing_conditions.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/julia-novice/06_Write_functions.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/julia-novice/07_Loops.html</loc>
@@ -79,7 +88,13 @@
     <loc>https://preview.carpentries.org/julia-novice/instructor/03_Julia_type_system.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/julia-novice/instructor/04_Interfacing_conditions.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/julia-novice/instructor/04_Using_the_package_manager.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/julia-novice/instructor/05_Using_the_package_manager.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/julia-novice/instructor/05_Write_functions.html</loc>
@@ -89,6 +104,9 @@
   </url>
   <url>
     <loc>https://preview.carpentries.org/julia-novice/instructor/06_Interfacing_conditions.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/julia-novice/instructor/06_Write_functions.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/julia-novice/instructor/07_Loops.html</loc>
