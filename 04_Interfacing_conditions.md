@@ -34,7 +34,6 @@ Pkg.instantiate()
 
 ````
   Activating project at `~/projects/trebuchet`
-
 ````
 
 Importing the package under its modified name
