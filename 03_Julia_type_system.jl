@@ -177,6 +177,16 @@ environment = Environment(5, 100)
 trebuchet.counterweight
 trebuchet.release_angle
 
+# ## Constructors
+
+# If we want to create our `Trebuchet` from a different data structure, like for example an array, we can add an additional constructor like this
+
+Trebuchet(array::AbstractVector) = Trebuchet(array[1], array[2])
+
+# and now Melissa can also construct a `Trebuchet` by passing an array.
+
+trebuchet2 = Trebuchet([250, 0.1pi])
+
 # ## Creating a subtype
 
 # A concrete type can be made a subtype of an abstract type with the

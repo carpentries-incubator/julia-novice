@@ -7,6 +7,8 @@ mutable struct Placeholder_Trebuchet <: AbstractVector{Float64}
     counterweight::Float64
     release_angle::Float64
 end
+Placeholder_Trebuchet(array::AbstractVector) = Placeholder_Trebuchet(array[1], array[2])
+
 
 Base.copy(trebuchet::Placeholder_Trebuchet) = Placeholder_Trebuchet(trebuchet.counterweight, trebuchet.release_angle)
 
@@ -48,7 +50,7 @@ function placeholder_aim(trebuchet::Placeholder_Trebuchet, environment::Placehol
         grad = gradient(hit, better_trebuchet)
         better_trebuchet -= η * grad
     end
-    return Placeholder_Trebuchet(better_trebuchet[1], better_trebuchet[2])
+    return Placeholder_Trebuchet(better_trebuchet)
 end
 
 placeholder_imprecise_trebuchet = Placeholder_Trebuchet(500.0, 0.25pi)

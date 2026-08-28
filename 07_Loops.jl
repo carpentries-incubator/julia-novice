@@ -126,9 +126,9 @@ grad = gradient(x ->(shoot_distance([environment.wind, x[2], x[1]])
 # and checks the new distance.
 
 
-better_trebuchet = imprecise_trebuchet - 0.05 * grad;
+better_trebuchet = Trebuchet(imprecise_trebuchet - 0.05 * grad);
 
-shoot_distance([5, better_trebuchet[2], better_trebuchet[1]])
+shoot_distance(better_trebuchet, environment)
 
 # Great! That didn't shoot past the target, but instead it landed a bit too short.
 
@@ -179,7 +179,7 @@ function aim(trebuchet, environment; N = 5, η = 0.05)
                                better_trebuchet)
                better_trebuchet -= η * grad
            end
-           return Trebuchet(better_trebuchet[1], better_trebuchet[2])
+           return Trebuchet(better_trebuchet)
        end
 
 better_trebuchet  = aim(imprecise_trebuchet, environment);
@@ -217,7 +217,7 @@ function aim(trebuchet, environment; ε = 0.1, η = 0.05)
                 grad = gradient(hit, better_trebuchet)
                 better_trebuchet -= η * grad
             end
-            return Trebuchet(better_trebuchet[1], better_trebuchet[2])
+            return Trebuchet(better_trebuchet)
         end
 
 better_trebuchet = aim(imprecise_trebuchet, environment);
