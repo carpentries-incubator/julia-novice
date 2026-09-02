@@ -48,6 +48,7 @@ mutable struct Trebuchet <: AbstractVector{Float64}
   counterweight::Float64
   release_angle::Float64
 end
+Trebuchet(array::AbstractVector) = Trebuchet(array[1], array[2])
 
 struct Environment
   wind::Float64
@@ -106,8 +107,8 @@ Trebuchet( rand() * 500, rand() * pi/2 )
 
 ````output
 2-element Trebuchet:
- 74.882912357834
-  0.43205531335414116
+ 220.4708662824051
+   1.1596968787784883
 ````
 
 will give her a Trebuchet with a weight between 0 and 500 and a release angle between 0 and pi/2 radians at random.
@@ -121,9 +122,9 @@ distances = [shoot_distance(Trebuchet(rand() * 500, rand() * pi / 2), env) for _
 
 ````output
 3-element Vector{Float64}:
-  67.24176190768348
-  52.02404974097324
- 117.07056006103
+ 117.08359219363749
+  41.465635075711084
+   8.574056574975495
 ````
 
 This is called an _array comprehension_.
@@ -138,16 +139,16 @@ distances = [(w,a) => shoot_distance(Trebuchet(w, a), env) for (w, a) in zip(wei
 
 ````output
 10-element Vector{Pair{Tuple{Float64, Float64}, Float64}}:
- (142.56843655981334, 0.08218474167827966) => 63.57228498889595
-   (7.960569553411901, 1.0551788984995516) => 0.6815707596179541
-  (184.88881768437264, 1.2735025014493275) => 52.14309033991526
-   (330.8438030990995, 1.5659608622863552) => 10.41816604737843
-  (247.09502695074252, 1.0437203248350782) => 87.87713268469646
-    (480.853969928145, 0.9379001544567266) => 103.84932923745501
-   (396.01941476111364, 1.534082109256583) => 14.897941994673733
-  (239.73708649005792, 0.6616846591140213) => 109.4570917229088
-    (134.534356109245, 0.6242083794127606) => 99.76838587052045
-   (241.2947077171662, 1.2296754821840483) => 61.45351345445787
+   (364.0898403213359, 1.3063894963294644) => 51.15204527483409
+   (448.7590672810839, 0.7777497317686402) => 113.26123207975463
+    (49.87000686544801, 1.299361525214583) => 28.025743769621744
+  (204.26542252346596, 1.4768702700453764) => 21.25801842682826
+  (296.58159816849826, 1.1517498396089798) => 75.88171380980403
+  (434.46815854704704, 1.2100798926345062) => 69.16764735640359
+  (418.84227647005014, 1.5526939638906692) => 12.443102738162404
+ (149.53141245330892, 0.42491054365171077) => 98.88689930780666
+ (400.81451113817025, 0.33177778820921544) => 108.2705295792383
+   (47.35182961800116, 0.5665434555785831) => 63.43370564448463
 ````
 
 ### Gradient descent
@@ -220,21 +221,21 @@ grad = gradient(x ->(shoot_distance([environment.wind, x[2], x[1]])
 
 ````output
 2-element Vector{Float64}:
-  -0.12516519503927254
- -49.44344243821112
+  -0.12516519503998055
+ -49.443442438172205
 ````
 
 Melissa now changes her arguments a little bit in the direction of the gradient
 and checks the new distance.
 
 ````julia
-better_trebuchet = imprecise_trebuchet - 0.05 * grad;
+better_trebuchet = Trebuchet(imprecise_trebuchet - 0.05 * grad);
 
-shoot_distance([5, better_trebuchet[2], better_trebuchet[1]])
+shoot_distance(better_trebuchet, environment)
 ````
 
 ````output
--2.7855495352707638
+-2.785549535224487
 ````
 
 Great! That didn't shoot past the target, but instead it landed a bit too short.
@@ -298,7 +299,7 @@ function aim(trebuchet, environment; N = 5, η = 0.05)
                                better_trebuchet)
                better_trebuchet -= η * grad
            end
-           return Trebuchet(better_trebuchet[1], better_trebuchet[2])
+           return Trebuchet(better_trebuchet)
        end
 
 better_trebuchet  = aim(imprecise_trebuchet, environment);
@@ -307,7 +308,7 @@ shoot_distance(environment.wind, better_trebuchet[2], better_trebuchet[1])
 ````
 
 ````output
--2.21951806206149
+-2.2195176928658915
 ````
 
 :::::: challenge
@@ -358,7 +359,7 @@ function aim(trebuchet, environment; ε = 0.1, η = 0.05)
                 grad = gradient(hit, better_trebuchet)
                 better_trebuchet -= η * grad
             end
-            return Trebuchet(better_trebuchet[1], better_trebuchet[2])
+            return Trebuchet(better_trebuchet)
         end
 
 better_trebuchet = aim(imprecise_trebuchet, environment);
@@ -367,7 +368,7 @@ shoot_distance(better_trebuchet, environment)
 ````
 
 ````output
-99.93175757844472
+100.05601729579894
 ````
 
 That is more what she had in mind. Your trebuchet may be tuned differently,
