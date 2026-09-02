@@ -129,6 +129,7 @@ mutable struct Trebuchet <: AbstractVector{Float64}
   counterweight::Float64
   release_angle::Float64
 end
+Trebuchet(array::AbstractVector) = Trebuchet(array[1], array[2])
 
 Base.size(trebuchet::Trebuchet) = tuple(2)
 
