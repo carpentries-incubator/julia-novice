@@ -365,7 +365,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Using Modules</h1>
-        <p>Last updated on 2026-08-28 |
+        <p>Last updated on 2026-09-03 |
 
         <a href="https://github.com/carpentries-incubator/julia-novice/edit/main/episodes/08_Using_Modules.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -422,51 +422,52 @@ there. This is what it looks like:</p>
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1" aria-label="code-block-1-7"></a>  counterweight<span class="op">::</span><span class="dt">Float64</span></span>
 <span id="cb1-8"><a href="#cb1-8" tabindex="-1" aria-label="code-block-1-8"></a>  release_angle<span class="op">::</span><span class="dt">Float64</span></span>
 <span id="cb1-9"><a href="#cb1-9" tabindex="-1" aria-label="code-block-1-9"></a><span class="kw">end</span></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1" aria-label="code-block-1-10"></a></span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1" aria-label="code-block-1-11"></a><span class="bu">Base</span>.<span class="fu">size</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>) <span class="op">=</span> <span class="fu">tuple</span>(<span class="fl">2</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1" aria-label="code-block-1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1" aria-label="code-block-1-13"></a><span class="bu">Base</span>.<span class="fu">getindex</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, i<span class="op">::</span><span class="dt">Int</span>) <span class="op">=</span> <span class="fu">getfield</span>(trebuchet, i)</span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1" aria-label="code-block-1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1" aria-label="code-block-1-15"></a><span class="kw">function</span> <span class="bu">Base</span>.<span class="fu">setindex!</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, v, i<span class="op">::</span><span class="dt">Int</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1" aria-label="code-block-1-16"></a>    <span class="cf">if</span> i <span class="op">===</span> <span class="fl">1</span></span>
-<span id="cb1-17"><a href="#cb1-17" tabindex="-1" aria-label="code-block-1-17"></a>        trebuchet.counterweight <span class="op">=</span> v</span>
-<span id="cb1-18"><a href="#cb1-18" tabindex="-1" aria-label="code-block-1-18"></a>    <span class="cf">elseif</span> i <span class="op">===</span> <span class="fl">2</span></span>
-<span id="cb1-19"><a href="#cb1-19" tabindex="-1" aria-label="code-block-1-19"></a>        trebuchet.release_angle <span class="op">=</span> v</span>
-<span id="cb1-20"><a href="#cb1-20" tabindex="-1" aria-label="code-block-1-20"></a>    <span class="cf">else</span></span>
-<span id="cb1-21"><a href="#cb1-21" tabindex="-1" aria-label="code-block-1-21"></a>        <span class="fu">error</span>(<span class="st">"Trebuchet only accepts indices 1 and 2, yours is </span><span class="sc">$</span>i<span class="st">"</span>)</span>
-<span id="cb1-22"><a href="#cb1-22" tabindex="-1" aria-label="code-block-1-22"></a>    <span class="cf">end</span></span>
-<span id="cb1-23"><a href="#cb1-23" tabindex="-1" aria-label="code-block-1-23"></a><span class="kw">end</span></span>
-<span id="cb1-24"><a href="#cb1-24" tabindex="-1" aria-label="code-block-1-24"></a></span>
-<span id="cb1-25"><a href="#cb1-25" tabindex="-1" aria-label="code-block-1-25"></a><span class="kw">struct</span> Environment</span>
-<span id="cb1-26"><a href="#cb1-26" tabindex="-1" aria-label="code-block-1-26"></a>  wind<span class="op">::</span><span class="dt">Float64</span></span>
-<span id="cb1-27"><a href="#cb1-27" tabindex="-1" aria-label="code-block-1-27"></a>  target_distance<span class="op">::</span><span class="dt">Float64</span></span>
-<span id="cb1-28"><a href="#cb1-28" tabindex="-1" aria-label="code-block-1-28"></a><span class="kw">end</span></span>
-<span id="cb1-29"><a href="#cb1-29" tabindex="-1" aria-label="code-block-1-29"></a></span>
-<span id="cb1-30"><a href="#cb1-30" tabindex="-1" aria-label="code-block-1-30"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(args<span class="op">...</span>)</span>
-<span id="cb1-31"><a href="#cb1-31" tabindex="-1" aria-label="code-block-1-31"></a>    Trebuchets.<span class="fu">shoot</span>(args<span class="op">...</span>)[<span class="fl">2</span>]</span>
-<span id="cb1-32"><a href="#cb1-32" tabindex="-1" aria-label="code-block-1-32"></a><span class="kw">end</span></span>
-<span id="cb1-33"><a href="#cb1-33" tabindex="-1" aria-label="code-block-1-33"></a></span>
-<span id="cb1-34"><a href="#cb1-34" tabindex="-1" aria-label="code-block-1-34"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, env<span class="op">::</span><span class="dt">Environment</span>)</span>
-<span id="cb1-35"><a href="#cb1-35" tabindex="-1" aria-label="code-block-1-35"></a>    <span class="fu">shoot_distance</span>(env.wind, trebuchet.release_angle, trebuchet.counterweight)</span>
-<span id="cb1-36"><a href="#cb1-36" tabindex="-1" aria-label="code-block-1-36"></a><span class="kw">end</span></span>
-<span id="cb1-37"><a href="#cb1-37" tabindex="-1" aria-label="code-block-1-37"></a></span>
-<span id="cb1-38"><a href="#cb1-38" tabindex="-1" aria-label="code-block-1-38"></a><span class="kw">function</span> <span class="fu">aim</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, environment<span class="op">::</span><span class="dt">Environment</span>; ε <span class="op">=</span> <span class="fl">1e-1</span>, η <span class="op">=</span> <span class="fl">0.05</span>)</span>
-<span id="cb1-39"><a href="#cb1-39" tabindex="-1" aria-label="code-block-1-39"></a>    better_trebuchet <span class="op">=</span> <span class="fu">copy</span>(trebuchet)</span>
-<span id="cb1-40"><a href="#cb1-40" tabindex="-1" aria-label="code-block-1-40"></a>    hit <span class="op">=</span> x <span class="op">-&gt;</span> (<span class="fu">shoot_distance</span>([environment.wind, x[<span class="fl">2</span>], x[<span class="fl">1</span>]]) <span class="op">-</span> environment.target_distance)</span>
-<span id="cb1-41"><a href="#cb1-41" tabindex="-1" aria-label="code-block-1-41"></a>    <span class="cf">while</span> <span class="fu">abs</span>(<span class="fu">hit</span>(better_trebuchet)) <span class="op">&gt;</span> ε</span>
-<span id="cb1-42"><a href="#cb1-42" tabindex="-1" aria-label="code-block-1-42"></a>        grad <span class="op">=</span> <span class="fu">gradient</span>(hit, better_trebuchet)</span>
-<span id="cb1-43"><a href="#cb1-43" tabindex="-1" aria-label="code-block-1-43"></a>        better_trebuchet <span class="op">-=</span> η <span class="op">*</span> grad</span>
-<span id="cb1-44"><a href="#cb1-44" tabindex="-1" aria-label="code-block-1-44"></a>    <span class="cf">end</span></span>
-<span id="cb1-45"><a href="#cb1-45" tabindex="-1" aria-label="code-block-1-45"></a>    <span class="cf">return</span> <span class="fu">Trebuchet</span>(better_trebuchet[<span class="fl">1</span>], better_trebuchet[<span class="fl">2</span>])</span>
-<span id="cb1-46"><a href="#cb1-46" tabindex="-1" aria-label="code-block-1-46"></a><span class="kw">end</span></span>
-<span id="cb1-47"><a href="#cb1-47" tabindex="-1" aria-label="code-block-1-47"></a></span>
-<span id="cb1-48"><a href="#cb1-48" tabindex="-1" aria-label="code-block-1-48"></a>imprecise_trebuchet <span class="op">=</span> <span class="fu">Trebuchet</span>(<span class="fl">500.0</span>, <span class="fl">0.25</span>pi)</span>
-<span id="cb1-49"><a href="#cb1-49" tabindex="-1" aria-label="code-block-1-49"></a></span>
-<span id="cb1-50"><a href="#cb1-50" tabindex="-1" aria-label="code-block-1-50"></a>environment <span class="op">=</span> <span class="fu">Environment</span>(<span class="fl">5</span>, <span class="fl">100</span>)</span>
-<span id="cb1-51"><a href="#cb1-51" tabindex="-1" aria-label="code-block-1-51"></a></span>
-<span id="cb1-52"><a href="#cb1-52" tabindex="-1" aria-label="code-block-1-52"></a>precise_trebuchet <span class="op">=</span> <span class="fu">aim</span>(imprecise_trebuchet, environment)</span>
-<span id="cb1-53"><a href="#cb1-53" tabindex="-1" aria-label="code-block-1-53"></a></span>
-<span id="cb1-54"><a href="#cb1-54" tabindex="-1" aria-label="code-block-1-54"></a><span class="fu">shoot_distance</span>(precise_trebuchet, environment)</span></code></pre>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1" aria-label="code-block-1-10"></a><span class="fu">Trebuchet</span>(array<span class="op">::</span><span class="dt">AbstractVector</span>) <span class="op">=</span> <span class="fu">Trebuchet</span>(array[<span class="fl">1</span>], array[<span class="fl">2</span>])</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1" aria-label="code-block-1-11"></a></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1" aria-label="code-block-1-12"></a><span class="bu">Base</span>.<span class="fu">size</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>) <span class="op">=</span> <span class="fu">tuple</span>(<span class="fl">2</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1" aria-label="code-block-1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1" aria-label="code-block-1-14"></a><span class="bu">Base</span>.<span class="fu">getindex</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, i<span class="op">::</span><span class="dt">Int</span>) <span class="op">=</span> <span class="fu">getfield</span>(trebuchet, i)</span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1" aria-label="code-block-1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1" aria-label="code-block-1-16"></a><span class="kw">function</span> <span class="bu">Base</span>.<span class="fu">setindex!</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, v, i<span class="op">::</span><span class="dt">Int</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1" aria-label="code-block-1-17"></a>    <span class="cf">if</span> i <span class="op">===</span> <span class="fl">1</span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1" aria-label="code-block-1-18"></a>        trebuchet.counterweight <span class="op">=</span> v</span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1" aria-label="code-block-1-19"></a>    <span class="cf">elseif</span> i <span class="op">===</span> <span class="fl">2</span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1" aria-label="code-block-1-20"></a>        trebuchet.release_angle <span class="op">=</span> v</span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1" aria-label="code-block-1-21"></a>    <span class="cf">else</span></span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1" aria-label="code-block-1-22"></a>        <span class="fu">error</span>(<span class="st">"Trebuchet only accepts indices 1 and 2, yours is </span><span class="sc">$</span>i<span class="st">"</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1" aria-label="code-block-1-23"></a>    <span class="cf">end</span></span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1" aria-label="code-block-1-24"></a><span class="kw">end</span></span>
+<span id="cb1-25"><a href="#cb1-25" tabindex="-1" aria-label="code-block-1-25"></a></span>
+<span id="cb1-26"><a href="#cb1-26" tabindex="-1" aria-label="code-block-1-26"></a><span class="kw">struct</span> Environment</span>
+<span id="cb1-27"><a href="#cb1-27" tabindex="-1" aria-label="code-block-1-27"></a>  wind<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb1-28"><a href="#cb1-28" tabindex="-1" aria-label="code-block-1-28"></a>  target_distance<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb1-29"><a href="#cb1-29" tabindex="-1" aria-label="code-block-1-29"></a><span class="kw">end</span></span>
+<span id="cb1-30"><a href="#cb1-30" tabindex="-1" aria-label="code-block-1-30"></a></span>
+<span id="cb1-31"><a href="#cb1-31" tabindex="-1" aria-label="code-block-1-31"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(args<span class="op">...</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" tabindex="-1" aria-label="code-block-1-32"></a>    Trebuchets.<span class="fu">shoot</span>(args<span class="op">...</span>)[<span class="fl">2</span>]</span>
+<span id="cb1-33"><a href="#cb1-33" tabindex="-1" aria-label="code-block-1-33"></a><span class="kw">end</span></span>
+<span id="cb1-34"><a href="#cb1-34" tabindex="-1" aria-label="code-block-1-34"></a></span>
+<span id="cb1-35"><a href="#cb1-35" tabindex="-1" aria-label="code-block-1-35"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, env<span class="op">::</span><span class="dt">Environment</span>)</span>
+<span id="cb1-36"><a href="#cb1-36" tabindex="-1" aria-label="code-block-1-36"></a>    <span class="fu">shoot_distance</span>(env.wind, trebuchet.release_angle, trebuchet.counterweight)</span>
+<span id="cb1-37"><a href="#cb1-37" tabindex="-1" aria-label="code-block-1-37"></a><span class="kw">end</span></span>
+<span id="cb1-38"><a href="#cb1-38" tabindex="-1" aria-label="code-block-1-38"></a></span>
+<span id="cb1-39"><a href="#cb1-39" tabindex="-1" aria-label="code-block-1-39"></a><span class="kw">function</span> <span class="fu">aim</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, environment<span class="op">::</span><span class="dt">Environment</span>; ε <span class="op">=</span> <span class="fl">1e-1</span>, η <span class="op">=</span> <span class="fl">0.05</span>)</span>
+<span id="cb1-40"><a href="#cb1-40" tabindex="-1" aria-label="code-block-1-40"></a>    better_trebuchet <span class="op">=</span> <span class="fu">copy</span>(trebuchet)</span>
+<span id="cb1-41"><a href="#cb1-41" tabindex="-1" aria-label="code-block-1-41"></a>    hit <span class="op">=</span> x <span class="op">-&gt;</span> (<span class="fu">shoot_distance</span>([environment.wind, x[<span class="fl">2</span>], x[<span class="fl">1</span>]]) <span class="op">-</span> environment.target_distance)</span>
+<span id="cb1-42"><a href="#cb1-42" tabindex="-1" aria-label="code-block-1-42"></a>    <span class="cf">while</span> <span class="fu">abs</span>(<span class="fu">hit</span>(better_trebuchet)) <span class="op">&gt;</span> ε</span>
+<span id="cb1-43"><a href="#cb1-43" tabindex="-1" aria-label="code-block-1-43"></a>        grad <span class="op">=</span> <span class="fu">gradient</span>(hit, better_trebuchet)</span>
+<span id="cb1-44"><a href="#cb1-44" tabindex="-1" aria-label="code-block-1-44"></a>        better_trebuchet <span class="op">-=</span> η <span class="op">*</span> grad</span>
+<span id="cb1-45"><a href="#cb1-45" tabindex="-1" aria-label="code-block-1-45"></a>    <span class="cf">end</span></span>
+<span id="cb1-46"><a href="#cb1-46" tabindex="-1" aria-label="code-block-1-46"></a>    <span class="cf">return</span> <span class="fu">Trebuchet</span>(better_trebuchet)</span>
+<span id="cb1-47"><a href="#cb1-47" tabindex="-1" aria-label="code-block-1-47"></a><span class="kw">end</span></span>
+<span id="cb1-48"><a href="#cb1-48" tabindex="-1" aria-label="code-block-1-48"></a></span>
+<span id="cb1-49"><a href="#cb1-49" tabindex="-1" aria-label="code-block-1-49"></a>imprecise_trebuchet <span class="op">=</span> <span class="fu">Trebuchet</span>(<span class="fl">500.0</span>, <span class="fl">0.25</span>pi)</span>
+<span id="cb1-50"><a href="#cb1-50" tabindex="-1" aria-label="code-block-1-50"></a></span>
+<span id="cb1-51"><a href="#cb1-51" tabindex="-1" aria-label="code-block-1-51"></a>environment <span class="op">=</span> <span class="fu">Environment</span>(<span class="fl">5</span>, <span class="fl">100</span>)</span>
+<span id="cb1-52"><a href="#cb1-52" tabindex="-1" aria-label="code-block-1-52"></a></span>
+<span id="cb1-53"><a href="#cb1-53" tabindex="-1" aria-label="code-block-1-53"></a>precise_trebuchet <span class="op">=</span> <span class="fu">aim</span>(imprecise_trebuchet, environment)</span>
+<span id="cb1-54"><a href="#cb1-54" tabindex="-1" aria-label="code-block-1-54"></a></span>
+<span id="cb1-55"><a href="#cb1-55" tabindex="-1" aria-label="code-block-1-55"></a><span class="fu">shoot_distance</span>(precise_trebuchet, environment)</span></code></pre>
 </div>
 <p>Now Melissa can run <code>include("aim_trebuchet.jl")</code> in the
 REPL to execute her code.</p>
@@ -501,44 +502,45 @@ leave her other code unchanged.</p>
 <span id="cb2-11"><a href="#cb2-11" tabindex="-1" aria-label="code-block-2-11"></a>  counterweight<span class="op">::</span><span class="dt">Float64</span></span>
 <span id="cb2-12"><a href="#cb2-12" tabindex="-1" aria-label="code-block-2-12"></a>  release_angle<span class="op">::</span><span class="dt">Float64</span></span>
 <span id="cb2-13"><a href="#cb2-13" tabindex="-1" aria-label="code-block-2-13"></a><span class="kw">end</span></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1" aria-label="code-block-2-14"></a></span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1" aria-label="code-block-2-15"></a><span class="bu">Base</span>.<span class="fu">size</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>) <span class="op">=</span> <span class="fu">tuple</span>(<span class="fl">2</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1" aria-label="code-block-2-16"></a></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1" aria-label="code-block-2-17"></a><span class="bu">Base</span>.<span class="fu">getindex</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, i<span class="op">::</span><span class="dt">Int</span>) <span class="op">=</span> <span class="fu">getfield</span>(trebuchet, i)</span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1" aria-label="code-block-2-18"></a></span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1" aria-label="code-block-2-19"></a><span class="kw">function</span> <span class="bu">Base</span>.<span class="fu">setindex!</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, v, i<span class="op">::</span><span class="dt">Int</span>)</span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1" aria-label="code-block-2-20"></a>    <span class="cf">if</span> i <span class="op">===</span> <span class="fl">1</span></span>
-<span id="cb2-21"><a href="#cb2-21" tabindex="-1" aria-label="code-block-2-21"></a>        trebuchet.counterweight <span class="op">=</span> v</span>
-<span id="cb2-22"><a href="#cb2-22" tabindex="-1" aria-label="code-block-2-22"></a>    <span class="cf">elseif</span> i <span class="op">===</span> <span class="fl">2</span></span>
-<span id="cb2-23"><a href="#cb2-23" tabindex="-1" aria-label="code-block-2-23"></a>        trebuchet.release_angle <span class="op">=</span> v</span>
-<span id="cb2-24"><a href="#cb2-24" tabindex="-1" aria-label="code-block-2-24"></a>    <span class="cf">else</span></span>
-<span id="cb2-25"><a href="#cb2-25" tabindex="-1" aria-label="code-block-2-25"></a>        <span class="fu">error</span>(<span class="st">"Trebuchet only accepts indices 1 and 2, yours is </span><span class="sc">$</span>i<span class="st">"</span>)</span>
-<span id="cb2-26"><a href="#cb2-26" tabindex="-1" aria-label="code-block-2-26"></a>    <span class="cf">end</span></span>
-<span id="cb2-27"><a href="#cb2-27" tabindex="-1" aria-label="code-block-2-27"></a><span class="kw">end</span></span>
-<span id="cb2-28"><a href="#cb2-28" tabindex="-1" aria-label="code-block-2-28"></a></span>
-<span id="cb2-29"><a href="#cb2-29" tabindex="-1" aria-label="code-block-2-29"></a><span class="kw">struct</span> Environment</span>
-<span id="cb2-30"><a href="#cb2-30" tabindex="-1" aria-label="code-block-2-30"></a>  wind<span class="op">::</span><span class="dt">Float64</span></span>
-<span id="cb2-31"><a href="#cb2-31" tabindex="-1" aria-label="code-block-2-31"></a>  target_distance<span class="op">::</span><span class="dt">Float64</span></span>
-<span id="cb2-32"><a href="#cb2-32" tabindex="-1" aria-label="code-block-2-32"></a><span class="kw">end</span></span>
-<span id="cb2-33"><a href="#cb2-33" tabindex="-1" aria-label="code-block-2-33"></a></span>
-<span id="cb2-34"><a href="#cb2-34" tabindex="-1" aria-label="code-block-2-34"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(args<span class="op">...</span>)</span>
-<span id="cb2-35"><a href="#cb2-35" tabindex="-1" aria-label="code-block-2-35"></a>    Trebuchets.<span class="fu">shoot</span>(args<span class="op">...</span>)[<span class="fl">2</span>]</span>
-<span id="cb2-36"><a href="#cb2-36" tabindex="-1" aria-label="code-block-2-36"></a><span class="kw">end</span></span>
-<span id="cb2-37"><a href="#cb2-37" tabindex="-1" aria-label="code-block-2-37"></a></span>
-<span id="cb2-38"><a href="#cb2-38" tabindex="-1" aria-label="code-block-2-38"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, env<span class="op">::</span><span class="dt">Environment</span>)</span>
-<span id="cb2-39"><a href="#cb2-39" tabindex="-1" aria-label="code-block-2-39"></a>    <span class="fu">shoot_distance</span>(env.wind, trebuchet.release_angle, trebuchet.counterweight)</span>
-<span id="cb2-40"><a href="#cb2-40" tabindex="-1" aria-label="code-block-2-40"></a><span class="kw">end</span></span>
-<span id="cb2-41"><a href="#cb2-41" tabindex="-1" aria-label="code-block-2-41"></a></span>
-<span id="cb2-42"><a href="#cb2-42" tabindex="-1" aria-label="code-block-2-42"></a><span class="kw">function</span> <span class="fu">aim</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, environment<span class="op">::</span><span class="dt">Environment</span>; ε <span class="op">=</span> <span class="fl">1e-1</span>, η <span class="op">=</span> <span class="fl">0.05</span>)</span>
-<span id="cb2-43"><a href="#cb2-43" tabindex="-1" aria-label="code-block-2-43"></a>    better_trebuchet <span class="op">=</span> <span class="fu">copy</span>(trebuchet)</span>
-<span id="cb2-44"><a href="#cb2-44" tabindex="-1" aria-label="code-block-2-44"></a>    hit <span class="op">=</span> x <span class="op">-&gt;</span> (<span class="fu">shoot_distance</span>([environment.wind, x[<span class="fl">2</span>], x[<span class="fl">1</span>]]) <span class="op">-</span> environment.target_distance)</span>
-<span id="cb2-45"><a href="#cb2-45" tabindex="-1" aria-label="code-block-2-45"></a>    <span class="cf">while</span> <span class="fu">abs</span>(<span class="fu">hit</span>(better_trebuchet)) <span class="op">&gt;</span> ε</span>
-<span id="cb2-46"><a href="#cb2-46" tabindex="-1" aria-label="code-block-2-46"></a>        grad <span class="op">=</span> <span class="fu">gradient</span>(hit, better_trebuchet)</span>
-<span id="cb2-47"><a href="#cb2-47" tabindex="-1" aria-label="code-block-2-47"></a>        better_trebuchet <span class="op">-=</span> η <span class="op">*</span> grad</span>
-<span id="cb2-48"><a href="#cb2-48" tabindex="-1" aria-label="code-block-2-48"></a>    <span class="cf">end</span></span>
-<span id="cb2-49"><a href="#cb2-49" tabindex="-1" aria-label="code-block-2-49"></a>    <span class="cf">return</span> <span class="fu">Trebuchet</span>(better_trebuchet[<span class="fl">1</span>], better_trebuchet[<span class="fl">2</span>])</span>
-<span id="cb2-50"><a href="#cb2-50" tabindex="-1" aria-label="code-block-2-50"></a><span class="kw">end</span></span>
-<span id="cb2-51"><a href="#cb2-51" tabindex="-1" aria-label="code-block-2-51"></a><span class="kw">end</span> <span class="co"># MelissasModule</span></span></code></pre>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1" aria-label="code-block-2-14"></a><span class="fu">Trebuchet</span>(array<span class="op">::</span><span class="dt">AbstractVector</span>) <span class="op">=</span> <span class="fu">Trebuchet</span>(array[<span class="fl">1</span>], array[<span class="fl">2</span>])</span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1" aria-label="code-block-2-15"></a></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1" aria-label="code-block-2-16"></a><span class="bu">Base</span>.<span class="fu">size</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>) <span class="op">=</span> <span class="fu">tuple</span>(<span class="fl">2</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1" aria-label="code-block-2-17"></a></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1" aria-label="code-block-2-18"></a><span class="bu">Base</span>.<span class="fu">getindex</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, i<span class="op">::</span><span class="dt">Int</span>) <span class="op">=</span> <span class="fu">getfield</span>(trebuchet, i)</span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1" aria-label="code-block-2-19"></a></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1" aria-label="code-block-2-20"></a><span class="kw">function</span> <span class="bu">Base</span>.<span class="fu">setindex!</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, v, i<span class="op">::</span><span class="dt">Int</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1" aria-label="code-block-2-21"></a>    <span class="cf">if</span> i <span class="op">===</span> <span class="fl">1</span></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1" aria-label="code-block-2-22"></a>        trebuchet.counterweight <span class="op">=</span> v</span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1" aria-label="code-block-2-23"></a>    <span class="cf">elseif</span> i <span class="op">===</span> <span class="fl">2</span></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1" aria-label="code-block-2-24"></a>        trebuchet.release_angle <span class="op">=</span> v</span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1" aria-label="code-block-2-25"></a>    <span class="cf">else</span></span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1" aria-label="code-block-2-26"></a>        <span class="fu">error</span>(<span class="st">"Trebuchet only accepts indices 1 and 2, yours is </span><span class="sc">$</span>i<span class="st">"</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1" aria-label="code-block-2-27"></a>    <span class="cf">end</span></span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1" aria-label="code-block-2-28"></a><span class="kw">end</span></span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1" aria-label="code-block-2-29"></a></span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1" aria-label="code-block-2-30"></a><span class="kw">struct</span> Environment</span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1" aria-label="code-block-2-31"></a>  wind<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1" aria-label="code-block-2-32"></a>  target_distance<span class="op">::</span><span class="dt">Float64</span></span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1" aria-label="code-block-2-33"></a><span class="kw">end</span></span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1" aria-label="code-block-2-34"></a></span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1" aria-label="code-block-2-35"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(args<span class="op">...</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1" aria-label="code-block-2-36"></a>    Trebuchets.<span class="fu">shoot</span>(args<span class="op">...</span>)[<span class="fl">2</span>]</span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1" aria-label="code-block-2-37"></a><span class="kw">end</span></span>
+<span id="cb2-38"><a href="#cb2-38" tabindex="-1" aria-label="code-block-2-38"></a></span>
+<span id="cb2-39"><a href="#cb2-39" tabindex="-1" aria-label="code-block-2-39"></a><span class="kw">function</span> <span class="fu">shoot_distance</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, env<span class="op">::</span><span class="dt">Environment</span>)</span>
+<span id="cb2-40"><a href="#cb2-40" tabindex="-1" aria-label="code-block-2-40"></a>    <span class="fu">shoot_distance</span>(env.wind, trebuchet.release_angle, trebuchet.counterweight)</span>
+<span id="cb2-41"><a href="#cb2-41" tabindex="-1" aria-label="code-block-2-41"></a><span class="kw">end</span></span>
+<span id="cb2-42"><a href="#cb2-42" tabindex="-1" aria-label="code-block-2-42"></a></span>
+<span id="cb2-43"><a href="#cb2-43" tabindex="-1" aria-label="code-block-2-43"></a><span class="kw">function</span> <span class="fu">aim</span>(trebuchet<span class="op">::</span><span class="dt">Trebuchet</span>, environment<span class="op">::</span><span class="dt">Environment</span>; ε <span class="op">=</span> <span class="fl">1e-1</span>, η <span class="op">=</span> <span class="fl">0.05</span>)</span>
+<span id="cb2-44"><a href="#cb2-44" tabindex="-1" aria-label="code-block-2-44"></a>    better_trebuchet <span class="op">=</span> <span class="fu">copy</span>(trebuchet)</span>
+<span id="cb2-45"><a href="#cb2-45" tabindex="-1" aria-label="code-block-2-45"></a>    hit <span class="op">=</span> x <span class="op">-&gt;</span> (<span class="fu">shoot_distance</span>([environment.wind, x[<span class="fl">2</span>], x[<span class="fl">1</span>]]) <span class="op">-</span> environment.target_distance)</span>
+<span id="cb2-46"><a href="#cb2-46" tabindex="-1" aria-label="code-block-2-46"></a>    <span class="cf">while</span> <span class="fu">abs</span>(<span class="fu">hit</span>(better_trebuchet)) <span class="op">&gt;</span> ε</span>
+<span id="cb2-47"><a href="#cb2-47" tabindex="-1" aria-label="code-block-2-47"></a>        grad <span class="op">=</span> <span class="fu">gradient</span>(hit, better_trebuchet)</span>
+<span id="cb2-48"><a href="#cb2-48" tabindex="-1" aria-label="code-block-2-48"></a>        better_trebuchet <span class="op">-=</span> η <span class="op">*</span> grad</span>
+<span id="cb2-49"><a href="#cb2-49" tabindex="-1" aria-label="code-block-2-49"></a>    <span class="cf">end</span></span>
+<span id="cb2-50"><a href="#cb2-50" tabindex="-1" aria-label="code-block-2-50"></a>    <span class="cf">return</span> <span class="fu">Trebuchet</span>(better_trebuchet)</span>
+<span id="cb2-51"><a href="#cb2-51" tabindex="-1" aria-label="code-block-2-51"></a><span class="kw">end</span></span>
+<span id="cb2-52"><a href="#cb2-52" tabindex="-1" aria-label="code-block-2-52"></a><span class="kw">end</span> <span class="co"># MelissasModule</span></span></code></pre>
 </div>
 <p>The rest of the code goes to a file she calls
 <code>MelissasCode.jl</code>.</p>
@@ -579,7 +581,7 @@ for included files (<code>t</code> for “tracking”)</li>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span><span class="fl">99.93175757844472</span></span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="fl">100.05601729579894</span></span></code></pre>
 </div>
 <p>where <code>path</code> is the path to her files.</p>
 <p>and any change she makes in <code>MelissasModule.jl</code> will be
@@ -668,9 +670,9 @@ visible in the next run of her code.</p>
   "creativeWorkStatus": "active",
   "url": "https://preview.carpentries.org/julia-novice/instructor/08_Using_Modules.html",
   "identifier": "https://preview.carpentries.org/julia-novice/instructor/08_Using_Modules.html",
-  "dateCreated": "2026-08-28",
-  "dateModified": "2026-08-28",
-  "datePublished": "2026-09-01"
+  "dateCreated": "2026-09-03",
+  "dateModified": "2026-09-03",
+  "datePublished": "2026-09-03"
 }
 
   </script><script>
