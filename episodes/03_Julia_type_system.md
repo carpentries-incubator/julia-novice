@@ -289,6 +289,28 @@ trebuchet.release_angle
 0.7853981633974483
 ````
 
+## Constructors
+
+If we want to create our `Trebuchet` from a different data structure, like for example an array, we can add an additional constructor like this
+
+````julia
+Trebuchet(array::AbstractVector) = Trebuchet(array[1], array[2])
+````
+
+````output
+Trebuchet
+````
+
+and now Melissa can also construct a `Trebuchet` by passing an array.
+
+````julia
+trebuchet2 = Trebuchet([250, 0.1pi])
+````
+
+````output
+Trebuchet(250.0, 0.3141592653589793)
+````
+
 ## Creating a subtype
 
 A concrete type can be made a subtype of an abstract type with the
