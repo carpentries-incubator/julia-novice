@@ -43,6 +43,7 @@ mutable struct Trebuchet <: AbstractVector{Float64}
   counterweight::Float64
   release_angle::Float64
 end
+Trebuchet(array::AbstractVector) = Trebuchet(array[1], array[2])
 
 Base.size(trebuchet::Trebuchet) = tuple(2)
 
@@ -78,7 +79,7 @@ function aim(trebuchet::Trebuchet, environment::Environment; ε = 1e-1, η = 0.0
         grad = gradient(hit, better_trebuchet)
         better_trebuchet -= η * grad
     end
-    return Trebuchet(better_trebuchet[1], better_trebuchet[2])
+    return Trebuchet(better_trebuchet)
 end
 
 imprecise_trebuchet = Trebuchet(500.0, 0.25pi)
@@ -127,6 +128,7 @@ mutable struct Trebuchet <: AbstractVector{Float64}
   counterweight::Float64
   release_angle::Float64
 end
+Trebuchet(array::AbstractVector) = Trebuchet(array[1], array[2])
 
 Base.size(trebuchet::Trebuchet) = tuple(2)
 
@@ -162,7 +164,7 @@ function aim(trebuchet::Trebuchet, environment::Environment; ε = 1e-1, η = 0.0
         grad = gradient(hit, better_trebuchet)
         better_trebuchet -= η * grad
     end
-    return Trebuchet(better_trebuchet[1], better_trebuchet[2])
+    return Trebuchet(better_trebuchet)
 end
 end # MelissasModule
 
@@ -209,7 +211,7 @@ include(joinpath(path,"MelissasCode.jl"))
 ````
 
 ````output
-99.93175757844472
+100.05601729579894
 ````
 
 where `path` is the path to her files.
